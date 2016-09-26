@@ -19,7 +19,7 @@
 <header class="site-header" role="banner">
 	<?php if ( schlicht_get_custom_logo() != '' ) {
 		if ( ( is_front_page() && is_home() ) ) { ?>
-			<h1 class="site-title">
+			<h1 class="logo">
 		<?php }
 		echo schlicht_get_custom_logo();
 		if ( ( is_front_page() && is_home() ) ) { ?>
