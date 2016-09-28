@@ -88,6 +88,11 @@ function schlicht_register_sidebars() {
 
 add_action( 'widgets_init', 'schlicht_register_sidebars' );
 
+/**
+ * Wrap inside function_exists() to preserve back compat with WordPress versions older than 4.5
+ *
+ * @return string
+ */
 function schlicht_get_custom_logo() {
 	if ( function_exists( 'get_custom_logo' ) ) {
 		return get_custom_logo();
