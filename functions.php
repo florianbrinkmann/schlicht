@@ -77,7 +77,7 @@ function schlicht_register_sidebars() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Sidebar', 'schlicht' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'sidebar-footer',
 		'description'   => __( 'Widgets will be displayed in the footer.', 'schlicht' ),
 		'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
 		'after_widget'  => '</div>',
