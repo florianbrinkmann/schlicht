@@ -1,6 +1,8 @@
 <?php
 /**
  * Main Template file
+ *
+ * @version 1.0
  */
 get_header(); ?>
 	<main>
