@@ -213,3 +213,18 @@ function schlicht_get_comments_by_type() {
 
 	return $comments_by_type;
 }
+
+/**
+ * Adds class to body if sidebar is used
+ *
+ * @return array
+ */
+function schlicht_body_classes( $classes ) {
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'sidebar-template';
+	}
+
+	return $classes;
+}
+
+add_filter( 'body_class', 'schlicht_body_classes' );
