@@ -11,6 +11,9 @@ get_header(); ?>
 				the_post();
 				get_template_part( 'template-parts/content-single', get_post_format() );
 			}
+			if ( comments_open() || get_comments_number() ) {
+				comments_template( '', true );
+			}
 		} else {
 			get_template_part( 'template-parts/content', 'none' );
 		} ?>
