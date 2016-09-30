@@ -13,7 +13,8 @@
 		</div>
 	</header>
 	<div class="entry-content">
-		<?php schlicht_the_content();
+		<?php the_post_thumbnail( 'large' );
+		schlicht_the_content();
 		wp_link_pages(); ?>
 	</div>
 	<footer class="entry-footer">
