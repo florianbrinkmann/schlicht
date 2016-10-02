@@ -22,8 +22,10 @@ get_header(); ?>
 					<?php printf( __( 'Nothing found for: %s', 'schlicht' ), esc_html( get_search_query() ) ); ?>
 				</h1>
 			</header>
-			<?php get_search_form();
-		}
+			<div class="no-search-results">
+				<?php get_search_form(); ?>
+			</div>
+		<?php }
 		the_posts_pagination( array( 'type' => 'list' ) ); ?>
 	</main>
 <?php get_sidebar();

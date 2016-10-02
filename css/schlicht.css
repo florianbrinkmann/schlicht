@@ -112,18 +112,10 @@ a {
 
 a:active,
 a:hover,
-a:focus {
+a:focus,
+.current-menu-item a {
     outline-width: 0;
     background-size: 0% 1px;
-}
-
-a[href$=jpg],
-a[href$=jpeg],
-a[href$=png],
-a[href$=gif],
-.linked-img,
-figure > a {
-    border-bottom: none;
 }
 
 /* Text-level semantics
@@ -972,6 +964,23 @@ figure.alignright {
 .comment-form p + p {
     text-indent: 0;
     margin-top: .8rem;
+}
+
+/**
+ * Archive
+ */
+
+.archive-title {
+    margin-top: 4.5rem;
+}
+
+/**
+ * 404 template and no search results
+ */
+
+.content-404,
+.no-search-results {
+    max-width: 770px;
 }
 
 /**
