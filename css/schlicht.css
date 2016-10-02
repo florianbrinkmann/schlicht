@@ -756,6 +756,10 @@ figure.alignright {
     margin-right: auto;
 }
 
+.sidebar-template .sticky {
+    max-width: inherit;
+}
+
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
@@ -1157,7 +1161,7 @@ figure.alignright {
         width: 30%;
     }
 
-    .sidebar .widget:first-child {
+    .sidebar .widget:first-of-type {
         margin-top: 4.8rem;
     }
 
