@@ -16,6 +16,7 @@
 	wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<a class="screen-reader-text skip-link" href="#content"><?php _e( '[Skip to Content]', 'schlicht' ); ?></a>
 <header class="site-header" role="banner">
 	<?php if ( schlicht_get_custom_logo() != '' ) {
 		if ( ( is_front_page() && is_home() ) ) { ?>
