@@ -21,6 +21,8 @@
 		wp_link_pages(); ?>
 	</div>
 	<footer class="entry-footer">
-		<?php schlicht_the_post_meta(); ?>
+		<div class="entry-footer-content">
+			<?php schlicht_the_post_meta(); ?>
+		</div>
 	</footer>
 </article>
