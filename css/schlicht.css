@@ -724,6 +724,23 @@ figure.alignright {
     text-transform: none;
 }
 
+.gallery {
+    margin-left: -.8rem;
+    margin-right: -.8rem;
+}
+
+.gallery::after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.gallery-item {
+    display: block;
+    float: left;
+    margin: .8rem;
+}
+
 /*------------------------------------*\
   #OBJECTS
 \*------------------------------------*/
@@ -736,7 +753,8 @@ figure.alignright {
     width: 85%;
 }
 
-.post {
+.post,
+.type-page {
     margin-top: 4.5rem;
 }
 
