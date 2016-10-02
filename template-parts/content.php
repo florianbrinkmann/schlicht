@@ -8,7 +8,7 @@
 		<div class="author-date">
 			<p class="author"><?php
 				/* translators: s=author name */
-				printf( __( 'by %s', 'schlicht' ), get_the_author() ) ?></p>
+				printf( __( 'by %s', 'schlicht' ), '<span class="author-name">' . get_the_author() . '</span>' ) ?></p>
 			<p class="date"><?php echo get_the_date(); ?></p>
 		</div>
 	</header>
