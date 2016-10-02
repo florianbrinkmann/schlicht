@@ -44,8 +44,8 @@ if ( post_password_required() ) {
 
 			<ul class="commentlist">
 				<?php wp_list_comments( array(
-					'callback' => 'schlicht_trackbacks',
-					'type'     => 'pings',
+					'type'       => 'pings',
+					'short_ping' => true
 				) ); ?>
 			</ul>
 		<?php }

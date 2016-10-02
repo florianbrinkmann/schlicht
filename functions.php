@@ -228,3 +228,54 @@ function schlicht_body_classes( $classes ) {
 }
 
 add_filter( 'body_class', 'schlicht_body_classes' );
+
+/**
+ * Callback function for displaying the comment list
+ *
+ * @param $comment , $args, $depth
+ *
+ * @return void
+ */
+function schlicht_comments( $comment, $args, $depth ) { ?>
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+	<div id="comment-<?php comment_ID(); ?>" class="<?php comment_class(); ?>">
+		<div class="comment-meta">
+			<?php echo get_avatar( $comment, 50 ); ?>
+			<p class="comment-author-name">
+				<?php comment_author_link(); ?>
+			</p>
+
+			<?php printf(
+				'<p class="comment-date"><a href="%1$s"><time datetime="%2$s">%3$s</time></a></p>',
+				get_comment_link( $comment->comment_ID ),
+				get_comment_time( 'c' ),
+				/* translators: 1=date 2=time */
+				sprintf( __( '%1$s @ %2$s', 'schlicht' ), get_comment_date(), get_comment_time() )
+			); ?>
+		</div>
+
+		<?php if ( '0' == $comment->comment_approved ) { ?>
+			<p class="comment-awaiting-moderation">
+				<?php _e( 'Your comment is awaiting moderation.', 'schlicht' ); ?>
+			</p>
+		<?php } ?>
+
+		<div class="comment-content-wrapper">
+			<div class="comment-content">
+				<?php comment_text(); ?>
+				<?php edit_comment_link( __( 'Edit', 'schlicht' ), '<p class="edit-link">', '</p>' ); ?>
+			</div>
+		</div>
+
+		<div class="reply">
+			<?php comment_reply_link(
+				array(
+					'reply_text' => __( 'Reply', 'schlicht' ),
+					'depth'      => $depth,
+					'max_depth'  => $args['max_depth']
+				)
+			); ?>
+		</div>
+	</div>
+	<?php
+}
