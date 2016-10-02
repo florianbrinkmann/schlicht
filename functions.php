@@ -103,13 +103,30 @@ function schlicht_scripts_styles() {
 add_action( 'wp_enqueue_scripts', 'schlicht_scripts_styles' );
 
 /**
+ * Removes the page jump after clicking on a read more link
+ *
+ * @param $link
+ *
+ * @return mixed
+ */
+function schlicht_remove_more_link_scroll( $link ) {
+	$link = preg_replace( '/#more-[0-9]+/', '', $link );
+
+	return $link;
+}
+
+add_filter( 'the_content_more_link', 'schlicht_remove_more_link_scroll' );
+
+/**
  * Wrap inside function_exists() to preserve back compat with WordPress versions older than 4.5
  *
  * @return string
  */
 function schlicht_get_custom_logo() {
 	if ( function_exists( 'get_custom_logo' ) ) {
-		return get_custom_logo();
+		if ( has_custom_logo() ) {
+			return get_custom_logo();
+		}
 	}
 }
 
@@ -293,3 +310,5 @@ function schlicht_comments( $comment, $args, $depth ) { ?>
 	</div>
 	<?php
 }
+
+require_once 'inc/customizer.php';
