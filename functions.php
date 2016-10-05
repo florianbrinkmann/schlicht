@@ -98,6 +98,11 @@ function schlicht_scripts_styles() {
 
 	wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht.css', array(), null );
 	wp_enqueue_style( 'schlicht-fonts', '//brick.a.ssl.fastly.net/Sorts+Mill+Goudy:400,400i', array(), null );
+
+	$dropcaps_enabled = get_theme_mod( 'schlicht_dropcap' );
+	if ( $dropcaps_enabled == 1 ) {
+		wp_enqueue_script( 'schlicht-dropcap', get_template_directory_uri() . '/js/dropcap.js', array( 'jquery' ), null, true );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'schlicht_scripts_styles' );
