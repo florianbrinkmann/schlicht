@@ -138,7 +138,8 @@ function schlicht_get_custom_logo() {
 /**
  * Displays the title of a post
  *
- * @param $heading , $link
+ * @param $heading
+ * @param $link
  *
  * @return void
  */
@@ -268,7 +269,9 @@ add_filter( 'body_class', 'schlicht_body_classes' );
 /**
  * Callback function for displaying the comment list
  *
- * @param $comment , $args, $depth
+ * @param $comment
+ * @param $args
+ * @param $depth
  *
  * @return void
  */
