@@ -256,7 +256,7 @@ function schlicht_get_comments_by_type() {
  * @return array
  */
 function schlicht_body_classes( $classes ) {
-	if ( is_active_sidebar( 'sidebar-1' ) ) {
+	if ( is_active_sidebar( 'sidebar-1' ) && get_page_template_slug() != 'page-templates/no-sidebar.php' ) {
 		$classes[] = 'sidebar-template';
 	}
 
