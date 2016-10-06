@@ -252,12 +252,13 @@ function schlicht_get_comments_by_type() {
 }
 
 /**
- * Adds class to body if sidebar is used
+ * Adds class to body if sidebar is used and other class if alternate
+ * post layout is enabled
  *
  * @return array
  */
 function schlicht_body_classes( $classes ) {
-	$display_sidebar_option = get_theme_mod( 'sidebar_visibility' );
+	$display_sidebar_option = get_theme_mod( 'schlicht_sidebar_visibility' );
 	if ( ( is_active_sidebar( 'sidebar-1' )
 	       && ( ( get_page_template_slug() != 'page-templates/no-sidebar.php' )
 	            && ( ( $display_sidebar_option == 'blog_view' && ! is_single() )
@@ -267,9 +268,13 @@ function schlicht_body_classes( $classes ) {
 		$classes[] = 'sidebar-template';
 	}
 
+	$alternate_post_layout_option = get_theme_mod( 'schlicht_alternate_post_layout' );
+	if ( $alternate_post_layout_option == 1 ) {
+		$classes[] = 'alternate-layout';
+	}
+
 	return $classes;
 }
-
 
 add_filter( 'body_class', 'schlicht_body_classes' );
 

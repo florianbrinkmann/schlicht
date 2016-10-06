@@ -749,13 +749,15 @@ figure.alignright {
     margin-top: 4.5rem;
 }
 
-.sticky {
-    max-width: 33rem;
+.sticky,
+.alternate-layout .post {
+    max-width: 39rem;
     margin-left: auto;
     margin-right: auto;
 }
 
-.sidebar-template .sticky {
+.sidebar-template .sticky,
+.sidebar-template .alternate-layout .post {
     max-width: inherit;
 }
 
@@ -923,9 +925,14 @@ figure.alignright {
  * Comments
  */
 
-.comments-area {
+.comments-area,
+.alternate-layout .comments-area {
     margin-left: auto;
     margin-right: auto;
+}
+
+.alternate-layout .comments-area {
+    max-width: 39rem;
 }
 
 .commentlist {
@@ -1171,6 +1178,7 @@ figure.alignright {
     }
 
     .sticky .entry-header,
+    .alternate-layout .entry-header,
     .sidebar-template .entry-header {
         float: none;
         text-align: left;
@@ -1183,6 +1191,7 @@ figure.alignright {
     }
 
     .sticky .entry-title,
+    .alternate-layout .entry-title,
     .sidebar-template .entry-title {
         font-size: 1.476rem;
         line-height: 2rem;
@@ -1193,6 +1202,7 @@ figure.alignright {
     }
 
     .sticky .author,
+    .alternate-layout .author,
     .sidebar-template .author {
         display: inline;
     }
@@ -1202,6 +1212,7 @@ figure.alignright {
     }
 
     .sticky .date::before,
+    .alternate-layout .date::before,
     .sidebar-template .date::before {
         display: inline;
     }
@@ -1212,6 +1223,7 @@ figure.alignright {
     }
 
     .sticky .date,
+    .alternate-layout .date,
     .sidebar-template .date {
         display: inline;
         margin-top: inherit;
@@ -1226,6 +1238,7 @@ figure.alignright {
     }
 
     .sticky .entry-content,
+    .alternate-layout .entry-content,
     .sidebar-template .entry-content {
         padding-left: 0;
         width: 100%;
@@ -1240,6 +1253,7 @@ figure.alignright {
     }
 
     .sticky .entry-content > :first-child,
+    .alternate-layout .entry-content > :first-child,
     .sidebar-template .entry-content > :first-child {
         margin-top: .8rem;
     }
@@ -1251,6 +1265,7 @@ figure.alignright {
     }
 
     .sticky .entry-footer,
+    .alternate-layout .entry-footer,
     .sidebar-template .entry-footer {
         margin-left: -1.6rem;
         width: calc(100% + 1.6rem);

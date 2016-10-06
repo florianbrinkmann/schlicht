@@ -21,21 +21,32 @@ function schlicht_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'schlicht_dropcap', array(
 		'default'           => 0,
-		'sanitize_callback' => 'schlicht_sanitize_callback'
+		'sanitize_callback' => 'schlicht_sanitize_checkbox'
 	) );
 
 	$wp_customize->add_control( 'schlicht_dropcap', array(
 		'type'    => 'checkbox',
 		'section' => 'schlicht_options',
-		'label'   => __( 'Enable Dropcaps' )
+		'label'   => __( 'Enable Dropcaps', 'schlicht' )
 	) );
 
-	$wp_customize->add_setting( 'sidebar_visibility', array(
+	$wp_customize->add_setting( 'schlicht_alternate_post_layout', array(
+		'default'           => 0,
+		'sanitize_callback' => 'schlicht_sanitize_checkbox'
+	) );
+
+	$wp_customize->add_control( 'schlicht_alternate_post_layout', array(
+		'type'    => 'checkbox',
+		'section' => 'schlicht_options',
+		'label'   => __( 'Enable alternate post layout where post title is above the entry content even on wide screens.', 'schlicht' )
+	) );
+
+	$wp_customize->add_setting( 'schlicht_sidebar_visibility', array(
 		'default'           => 'everywhere',
 		'sanitize_callback' => 'schlicht_sanitize_select'
 	) );
 
-	$wp_customize->add_control( 'sidebar_visibility', array(
+	$wp_customize->add_control( 'schlicht_sidebar_visibility', array(
 		'type'    => 'radio',
 		'section' => 'schlicht_options',
 		'label'   => __( 'Where to display the sidebar', 'schlicht' ),
@@ -60,7 +71,7 @@ add_action( 'customize_register', 'schlicht_customize_register', 11 );
  *
  * @return bool Whether the checkbox is checked.
  */
-function schlicht_sanitize_callback( $checked ) {
+function schlicht_sanitize_checkbox( $checked ) {
 	// Boolean check.
 	return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
