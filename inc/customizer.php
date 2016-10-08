@@ -15,8 +15,7 @@ function schlicht_customize_register( $wp_customize ) {
 	$wp_customize->remove_control( 'header_image' );
 
 	$wp_customize->add_section( 'schlicht_options', array(
-		'title'       => __( 'Schlicht Options', 'schlicht' ),
-		'description' => __( 'Theme options of Schlicht theme', 'schlicht' ),
+		'title' => __( 'Theme options', 'schlicht' ),
 	) );
 
 	$wp_customize->add_setting( 'schlicht_dropcap', array(
@@ -40,7 +39,7 @@ function schlicht_customize_register( $wp_customize ) {
 		'type'            => 'checkbox',
 		'section'         => 'schlicht_options',
 		'label'           => sprintf(
-			__( 'Don’t insert dropcaps automatically. You can insert dropcaps manually with wrapping a first letter of a paragraph inside %s', 'schlicht' ),
+			__( 'Don’t insert dropcaps automatically. You can insert dropcaps manually with wrapping a first letter of a paragraph inside %s in the text view of the editor.', 'schlicht' ),
 			'<span class="dropcap"></span>' ),
 		'active_callback' => 'schlicht_use_dropcaps'
 	) );
@@ -53,7 +52,7 @@ function schlicht_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'schlicht_alternate_post_layout', array(
 		'type'    => 'checkbox',
 		'section' => 'schlicht_options',
-		'label'   => __( 'Enable alternate post/page layout where title is above the entry content even on wide screens.', 'schlicht' )
+		'label'   => __( 'Enable alternate post/page layout where title is above the entry content even on wide viewports.', 'schlicht' )
 	) );
 
 	$wp_customize->add_setting( 'schlicht_sidebar_visibility', array(
