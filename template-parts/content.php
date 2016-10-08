@@ -1,3 +1,10 @@
+<?php
+/**
+ * Template part for posts
+ *
+ * @version 1.0
+ */
+?>
 <article <?php post_class( 'clearfix' ); ?>>
 	<header class="entry-header">
 		<?php if ( is_sticky() ) {
