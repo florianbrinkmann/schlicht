@@ -119,7 +119,11 @@ a:hover,
 a:focus,
 .current-menu-item a {
     outline-width: 0;
-    background-size: 0% 1px;
+    background-size: 0 1px;
+}
+
+a:focus {
+    border-top: 1px dotted;
 }
 
 /* Text-level semantics
@@ -894,6 +898,13 @@ figure.alignright {
 
 .entry-title a {
     background-image: none;
+}
+
+.entry-title a:focus {
+    background: transparent url('../img/link-underline.png') repeat no-repeat 0 93%;
+    background: transparent -webkit-linear-gradient(left, #333, #333) no-repeat 0 93%;
+    background: transparent linear-gradient(90deg, #333, #333) no-repeat 0 93%;
+    background-size: 100% 1px;
 }
 
 .entry-content {
