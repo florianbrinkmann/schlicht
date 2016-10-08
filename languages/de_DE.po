@@ -1,0 +1,280 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Schlicht\n"
+"POT-Creation-Date: 2016-10-08 17:27+0200\n"
+"PO-Revision-Date: 2016-10-08 17:29+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:12
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+#: 404.php:15
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr "Sorry, leider wurden keine Ergebnisse gefunden."
+
+#: comments.php:17
+#, php-format
+msgid "%1$s Comment on “%2$s”"
+msgid_plural "%1$s Comments on “%2$s”"
+msgstr[0] "%1$s Kommentar zu „%2$s“"
+msgstr[1] "%1$s Kommentare zu „%2$s“"
+
+#: comments.php:38
+#, php-format
+msgid "%1$s Trackback on “%2$s”"
+msgid_plural "%1$s Trackbacks on “%2$s”"
+msgstr[0] "%1$s Trackback zu „%2$s“"
+msgstr[1] "%1$s Trackbacks zu „%2$s“"
+
+#: comments.php:54
+msgid "Comments are closed."
+msgstr "Kommentare sind deaktiviert."
+
+#: comments.php:57
+msgid "Submit Comment"
+msgstr "Kommentar abschicken"
+
+#: footer.php:14
+msgid "Footer navigation"
+msgstr "Footer-Navigation"
+
+#: footer.php:29
+msgid "Footer widget area"
+msgstr "Widget-Bereich im Footer"
+
+#: footer.php:33
+#, php-format
+msgid "Theme: Schlicht by %s"
+msgstr "Theme: Schlicht von %s"
+
+#: functions.php:84
+msgid "Primary Menu"
+msgstr "Hauptmenü"
+
+#: functions.php:86
+msgid "Footer Menu"
+msgstr "Footer-Menü"
+
+#: functions.php:98
+msgid "Main Sidebar"
+msgstr "Sidebar"
+
+#: functions.php:100
+msgid ""
+"Widgets in this area will be displayed on all posts and pages by default."
+msgstr ""
+"Widgets aus diesem Bereich werden standardmäßig auf allen Beiträgen und "
+"Seiten angezeigt."
+
+#: functions.php:107
+msgid "Footer Sidebar"
+msgstr "Footer-Sidebar"
+
+#: functions.php:109
+msgid "Widgets will be displayed in the footer."
+msgstr "Widgets werden im Footer angezeigt."
+
+#: functions.php:220
+msgid "Continue reading"
+msgstr "Weiterlesen"
+
+#: functions.php:222
+#, php-format
+msgid "Continue reading %s"
+msgstr "%s weiterlesen"
+
+#: functions.php:239
+msgid "Category"
+msgid_plural "Categories"
+msgstr[0] "Kategorie"
+msgstr[1] "Kategorien"
+
+#: functions.php:246 functions.php:260
+msgid ", "
+msgstr ", "
+
+#: functions.php:253
+msgid "Tag"
+msgid_plural "Tags"
+msgstr[0] "Tag"
+msgstr[1] "Tags"
+
+#: functions.php:268
+msgid "Comments"
+msgstr "Kommentare"
+
+#: functions.php:278
+msgid "Trackbacks"
+msgstr "Trackbacks"
+
+#: functions.php:355
+#, php-format
+msgid "%1$s @ %2$s"
+msgstr "%1$s @ %2$s"
+
+#: functions.php:361
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar wartet auf Moderation."
+
+#: functions.php:368
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: functions.php:375
+msgid "Reply"
+msgstr "Antworten"
+
+#: header.php:19
+msgid "[Skip to Content]"
+msgstr "[Zum Inhalt springen]"
+
+#: header.php:50
+msgid "Main navigation"
+msgstr "Hauptmenü"
+
+#: inc/customizer.php:18
+msgid "Theme options"
+msgstr "Theme-Optionen"
+
+#: inc/customizer.php:29
+msgid "Enable Dropcaps"
+msgstr "Initiale aktivieren"
+
+#: inc/customizer.php:42
+#, php-format
+msgid ""
+"Don’t insert dropcaps automatically. You can insert dropcaps manually with "
+"wrapping a first letter of a paragraph inside %s in the text view of the "
+"editor."
+msgstr ""
+"Initiale nicht automatisch einfügen. Du kannst Initiale manuell einfügen, "
+"indem du den ersten Buchstaben eines Absatzes in der Textansicht des Editors "
+"mit %s umschließt."
+
+#: inc/customizer.php:55
+msgid ""
+"Enable alternate post/page layout where title is above the entry content "
+"even on wide viewports."
+msgstr ""
+"Alternatives Beitrags-/Seiten-Layout aktivieren, bei dem der Titel auch auf "
+"breiten Viewports über dem Fließtext steht."
+
+#: inc/customizer.php:66
+msgid "Where to display the sidebar"
+msgstr "Wo soll die Sidebar angezeigt werden"
+
+#: inc/customizer.php:68
+msgid "On blog and single view."
+msgstr "In der Blog- und Einzelansicht."
+
+#: inc/customizer.php:69
+msgid "On blog view."
+msgstr "In der Blogansicht."
+
+#: inc/customizer.php:70
+msgid "On single view."
+msgstr "In der Einzelansicht."
+
+#: search.php:13
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Suchergebnisse für: %s"
+
+#: search.php:23
+#, php-format
+msgid "Nothing found for: %s"
+msgstr "Nichts gefunden für: %s"
+
+#: searchform.php:3
+msgctxt "label"
+msgid "Search for:"
+msgstr "Suche für: "
+
+#: searchform.php:5
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Suche &hellip;"
+
+#: searchform.php:10
+msgctxt "submit button"
+msgid "Search"
+msgstr "Suche"
+
+#: sidebar.php:17
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: template-parts/content-none.php:9
+msgid "Sorry, no posts matched your criteria."
+msgstr "Sorry, nichts gefunden."
+
+#: template-parts/content-single.php:14 template-parts/content.php:11
+#, php-format
+msgid "by %s"
+msgstr "von %s"
+
+#: template-parts/content.php:5
+msgid "Featured"
+msgstr "Featured"
+
+#. Theme Name of the plugin/theme
+msgid "Schlicht"
+msgstr "Schlicht"
+
+#. Theme URI of the plugin/theme
+msgid "https://florianbrinkmann.de/wordpress-themes/schlicht/"
+msgstr "https://florianbrinkmann.de/wordpress-themes/schlicht/"
+
+#. Description of the plugin/theme
+msgid "Schlicht is made for bloggers."
+msgstr "Schlicht ist für Blogger gemacht."
+
+#. Author of the plugin/theme
+msgid "Florian Brinkmann"
+msgstr "Florian Brinkmann"
+
+#. Author URI of the plugin/theme
+msgid "https://florianbrinkmann.de"
+msgstr "https://florianbrinkmann.de"
+
+#~ msgid ""
+#~ "Enable alternate post/page layout where title is above the entry content "
+#~ "even on wide screens."
+#~ msgstr ""
+#~ "Alternatives Beitrags-/Seiten-Layout aktivieren, bei dem der Titel auch "
+#~ "auf breiten Viewports über dem Fließtext steht."
+
+#~ msgid ""
+#~ "Don’t insert dropcaps automatically. You can insert dropcaps manually "
+#~ "with wrapping a first letter of a paragraph inside %s."
+#~ msgstr ""
+#~ "Initiale nicht automatisch einfügen. Du kannst das manuell machen, indem "
+#~ "du den ersten Buchstaben eines Absatzes in %s "
+
+#~ msgid ""
+#~ "Don’t insert dropcaps automatically. You can insert dropcaps manually "
+#~ "with wrapping a first letter of a paragraph inside %s"
+#~ msgstr ""
+#~ "Initiale nicht automatisch einfügen. Du kannst ein Initial einfügen, "
+#~ "indem du den ersten Buchstaben eines Absatzes mit %s umschließt."
+
+#~ msgid "Enable Drop Caps"
+#~ msgstr "Drop-Caps aktivieren"
