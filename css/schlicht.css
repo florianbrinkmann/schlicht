@@ -1190,6 +1190,7 @@ figure.alignright {
 
     .sidebar-template .main-content {
         box-sizing: border-box;
+        clear: both;
         float: left;
         padding-right: 1.6rem;
         width: 70%;
