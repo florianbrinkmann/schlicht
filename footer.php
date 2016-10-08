@@ -23,7 +23,7 @@
 		</nav>
 	<?php }
 	if ( is_active_sidebar( 'sidebar-footer' ) ) { ?>
-		<aside class="site-footer-widget-area">
+		<aside class="site-footer-widget-area clearfix">
 			<h2 class="screen-reader-text">
 				<?php /* translators: screen reader text for the footer widget area */
 				_e( 'Footer widget area', 'schlicht' ) ?></h2>
