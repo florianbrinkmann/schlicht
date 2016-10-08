@@ -9,6 +9,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) {
 	if ( ( $display_sidebar_option == 'blog_view' && ! is_single() )
 	     || ( $display_sidebar_option == 'single_view' && is_single() )
 	     || $display_sidebar_option == 'everywhere'
+	     || is_page()
 	) { ?>
 		<aside class="sidebar" role="complementary">
 			<h2 class="screen-reader-text">

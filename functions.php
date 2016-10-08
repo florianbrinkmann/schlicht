@@ -285,7 +285,8 @@ function schlicht_body_classes( $classes ) {
 	       && ( ( get_page_template_slug() != 'page-templates/no-sidebar.php' )
 	            && ( ( $display_sidebar_option == 'blog_view' && ! is_single() )
 	                 || ( $display_sidebar_option == 'single_view' && is_single() )
-	                 || ( $display_sidebar_option == 'everywhere' ) ) ) )
+	                 || ( $display_sidebar_option == 'everywhere' )
+	                 || is_page() ) ) )
 	) {
 		$classes[] = 'sidebar-template';
 	}
