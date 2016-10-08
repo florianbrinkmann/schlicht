@@ -9,6 +9,7 @@ html {
     background: #f9f9f9;
     color: #333;
     font-family: "Sorts Mill Goudy", serif; /* 1 */
+    -webkit-font-feature-settings: "onum";
     font-feature-settings: "onum";
     font-size: 1rem;
     line-height: 1.6;
@@ -97,11 +98,13 @@ template, /* 1 */
 
 a {
     background: transparent url('../img/link-underline.png') repeat no-repeat 0 93%;
+    background: transparent -webkit-linear-gradient(left, #333, #333) no-repeat 0 93%;
     background: transparent linear-gradient(90deg, #333, #333) no-repeat 0 93%;
     background-size: 100% 1px;
     color: inherit;
     text-decoration: none;
     -webkit-text-decoration-skip: objects; /* 2 */
+    -webkit-transition: all .2s ease 0s;
     transition: all .2s ease 0s;
 }
 
@@ -176,10 +179,12 @@ sup {
 }
 
 sub {
+    -webkit-font-feature-settings: "sinf";
     font-feature-settings: "sinf";
 }
 
 sup {
+    -webkit-font-feature-settings: "sups";
     font-feature-settings: "sups";
 }
 
@@ -475,6 +480,7 @@ figure {
 
 b,
 strong {
+    -webkit-font-feature-settings: "smcp", "onum";
     font-feature-settings: "smcp", "onum";
     font-style: normal;
     font-weight: 400;
@@ -505,6 +511,7 @@ blockquote cite {
 }
 
 cite {
+    -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     font-style: normal;
     letter-spacing: .03rem;
@@ -615,6 +622,7 @@ textarea {
 [type="submit"] {
     background: none;
     border: 1px solid;
+    -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     letter-spacing: .03rem;
     margin-top: .375rem;
@@ -706,12 +714,14 @@ figure.alignright {
 }
 
 .small-caps {
+    -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     letter-spacing: .06rem;
     text-transform: lowercase;
 }
 
 .dropcap {
+    -webkit-font-feature-settings: unset;
     font-feature-settings: unset;
     text-transform: none;
 }
@@ -772,8 +782,13 @@ figure.alignright {
  */
 
 .primary-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 0;
 }
@@ -787,6 +802,7 @@ figure.alignright {
 }
 
 .page-numbers {
+    -webkit-font-feature-settings: "pnum";
     font-feature-settings: "pnum";
     margin: 0;
     padding: 0;
@@ -851,6 +867,7 @@ figure.alignright {
 }
 
 .author-name {
+    -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     font-style: normal;
     letter-spacing: .03rem;
@@ -867,6 +884,7 @@ figure.alignright {
 }
 
 .featured {
+    -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     letter-spacing: .03rem;
     text-transform: lowercase;
@@ -899,13 +917,17 @@ figure.alignright {
 }
 
 .entry-footer-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
 .entry-footer-block {
     box-sizing: border-box;
     color: #666;
+    -webkit-font-feature-settings: "smcp", "onum";
     font-feature-settings: "smcp", "onum";
     letter-spacing: .03rem;
     line-height: 1.3rem;
@@ -957,6 +979,7 @@ figure.alignright {
 
 .comment-author-name {
     display: block;
+    -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     letter-spacing: .03rem;
     margin-top: .8rem;
@@ -1004,6 +1027,8 @@ figure.alignright {
 
 .site-footer .widget {
     box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 16.9rem;
     flex: 0 1 16.9rem;
     padding: 0 .8rem;
 }
@@ -1020,6 +1045,7 @@ figure.alignright {
 }
 
 .tagcloud {
+    -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     letter-spacing: .03rem;
     text-transform: lowercase;
@@ -1031,12 +1057,18 @@ figure.alignright {
 }
 
 .search-form {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-top: .8rem;
 }
 
 .search-form label {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
 }
 
@@ -1079,7 +1111,11 @@ figure.alignright {
 }
 
 .footer-nav-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -1088,10 +1124,15 @@ figure.alignright {
 }
 
 .site-footer-widget-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-left: -.8rem;
     margin-right: -.8rem;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
