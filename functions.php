@@ -4,6 +4,34 @@
  */
 
 /**
+ * Load translation from translate.WordPress.org if available
+ */
+function schlicht_load_translation() {
+	if ( ( ! defined( 'DOING_AJAX' ) && ! 'DOING_AJAX' ) || ! schlicht_is_login_page() || ! schlicht_is_wp_comments_post() ) {
+		load_theme_textdomain( 'schlicht', get_template_directory() . '/languages' );
+	}
+}
+
+add_action( 'after_setup_theme', 'schlicht_load_translation' );
+/**
+ * Check if we are on the login page
+ *
+ * @return bool
+ */
+function schlicht_is_login_page() {
+	return in_array( $GLOBALS['pagenow'], array( 'wp-login.php', 'wp-register.php' ) );
+}
+
+/**
+ * Check if we are on the wp-comments-post.php
+ *
+ * @return bool
+ */
+function schlicht_is_wp_comments_post() {
+	return in_array( $GLOBALS['pagenow'], array( 'wp-comments-post.php' ) );
+}
+
+/**
  * Set content width to 845 px
  */
 if ( ! isset( $content_width ) ) {
