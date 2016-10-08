@@ -493,7 +493,7 @@ strong {
     font-feature-settings: "smcp", "onum";
     font-style: normal;
     font-weight: 400;
-    letter-spacing: .03rem;
+    letter-spacing: .06rem;
     text-transform: lowercase;
 }
 
@@ -523,7 +523,7 @@ cite {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     font-style: normal;
-    letter-spacing: .03rem;
+    letter-spacing: .06rem;
     text-transform: lowercase;
 }
 
@@ -633,7 +633,7 @@ textarea {
     border: 1px solid;
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .03rem;
+    letter-spacing: .06rem;
     margin-top: .375rem;
     padding: .2rem .375rem;
     text-transform: lowercase;
@@ -872,7 +872,7 @@ figure.alignright {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     font-style: normal;
-    letter-spacing: .03rem;
+    letter-spacing: .06rem;
     text-transform: lowercase;
 }
 
@@ -888,7 +888,7 @@ figure.alignright {
 .featured {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .03rem;
+    letter-spacing: .06rem;
     text-transform: lowercase;
 }
 
@@ -931,7 +931,7 @@ figure.alignright {
     color: #666;
     -webkit-font-feature-settings: "smcp", "onum";
     font-feature-settings: "smcp", "onum";
-    letter-spacing: .03rem;
+    letter-spacing: .06rem;
     line-height: 1.3rem;
     text-transform: lowercase;
     width: 100%;
@@ -983,7 +983,7 @@ figure.alignright {
     display: block;
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .03rem;
+    letter-spacing: .06rem;
     margin-top: .8rem;
     text-transform: lowercase;
 }
@@ -1051,7 +1051,7 @@ figure.alignright {
 .tagcloud {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .03rem;
+    letter-spacing: .06rem;
     text-transform: lowercase;
 }
 
