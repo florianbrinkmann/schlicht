@@ -27,7 +27,22 @@ function schlicht_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'schlicht_dropcap', array(
 		'type'    => 'checkbox',
 		'section' => 'schlicht_options',
-		'label'   => __( 'Enable Dropcaps', 'schlicht' )
+		'label'   => __( 'Enable Dropcaps', 'schlicht' ),
+	) );
+
+	$wp_customize->add_setting( 'schlicht_no_auto_dropcap', array(
+		'default'           => 0,
+		'sanitize_callback' => 'schlicht_sanitize_checkbox'
+	) );
+
+	/* translators: s=HTML markup for wrapping a dropcap */
+	$wp_customize->add_control( 'schlicht_no_auto_dropcap', array(
+		'type'            => 'checkbox',
+		'section'         => 'schlicht_options',
+		'label'           => sprintf(
+			__( 'Don’t insert dropcaps automatically. You can insert dropcaps manually with wrapping a first letter of a paragraph inside %s', 'schlicht' ),
+			'<span class="dropcap"></span>' ),
+		'active_callback' => 'schlicht_use_dropcaps'
 	) );
 
 	$wp_customize->add_setting( 'schlicht_alternate_post_layout', array(
@@ -104,6 +119,21 @@ function schlicht_sanitize_select( $input, $setting ) {
 
 	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
+
+/**
+ * Checks if checkbox for dropcaps is checked and returns true, otherwise false
+ *
+ * @param $control
+ *
+ * @return bool
+ */
+function schlicht_use_dropcaps( $control ) {
+	if ( $control->manager->get_setting( 'schlicht_dropcap' )->value() == 'checked' ) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 /**

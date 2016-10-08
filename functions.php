@@ -102,6 +102,28 @@ function schlicht_scripts_styles() {
 	$dropcaps_enabled = get_theme_mod( 'schlicht_dropcap' );
 	if ( $dropcaps_enabled == 1 ) {
 		wp_enqueue_script( 'schlicht-dropcap', get_template_directory_uri() . '/js/dropcap.js', array( 'jquery' ), null, true );
+
+		$no_auto_dropcaps = get_theme_mod( 'schlicht_no_auto_dropcap' );
+		if ( $no_auto_dropcaps == 0 ) {
+			wp_add_inline_script( "schlicht-dropcap", "jQuery('.entry-content > p:first-of-type').html(function (i, html){
+    return html.replace(/^([^<])/g, '<span class=\"dropcap\">$1</span>');
+});
+
+// regex from http://beutelevision.com/blog2/2011/06/17/get-the-first-n-words-with-javascript/
+jQuery('.entry-content .dropcap').parent().html(function (i, html){
+    return html.replace(/(([^\s]+\s\s*){2})/, '<span class=\"small-caps\">$1</span>');
+});", "before" );
+		}
+
+		wp_add_inline_script( "schlicht-dropcap", "// We retrieve our drop cap elements using a class selector...
+var dropcaps = document.querySelectorAll(\".dropcap\");
+
+// ...then give them a height of two lines and set the third line as baseline.
+window.Dropcap.layout(dropcaps, 2, 2);
+
+jQuery(window).resize(function() {
+    window.Dropcap.layout(dropcaps, 2, 2);
+});" );
 	}
 }
 
