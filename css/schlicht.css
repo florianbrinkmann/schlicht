@@ -777,7 +777,7 @@ figure.alignright {
 }
 
 .primary-nav li {
-    margin: 0 .8rem;
+    margin: 0 .4rem .4rem;
 }
 
 .pagination {
@@ -1136,10 +1136,6 @@ figure.alignright {
         display: block;
         float: left;
         margin-top: 0;
-    }
-
-    .primary-nav li:not(:first-of-type) {
-        margin-left: .8rem;
     }
 }
 
