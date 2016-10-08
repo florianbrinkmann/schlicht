@@ -608,7 +608,7 @@ input:not([type=submit]),
 textarea {
     background: none;
     border: 1px solid;
-    padding: .375rem;
+    padding: .375rem .375rem .1rem;
     width: 100%;
 }
 
@@ -1046,14 +1046,11 @@ figure.alignright {
 }
 
 .search-submit {
-    box-sizing: border-box;
-    border: none;
-    flex-grow: 0;
     height: 1.6rem;
     margin-left: .375rem;
-    margin-top: 0;
     padding: 0;
-    text-indent: -9999rem;
+    position: relative;
+    top: .3rem;
     width: 1.6rem;
 }
 
