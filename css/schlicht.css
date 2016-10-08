@@ -900,13 +900,6 @@ figure.alignright {
     background-image: none;
 }
 
-.entry-title a:focus {
-    background: transparent url('../img/link-underline.png') repeat no-repeat 0 93%;
-    background: transparent -webkit-linear-gradient(left, #333, #333) no-repeat 0 93%;
-    background: transparent linear-gradient(90deg, #333, #333) no-repeat 0 93%;
-    background-size: 100% 1px;
-}
-
 .entry-content {
     margin-top: 1.6rem;
 }
