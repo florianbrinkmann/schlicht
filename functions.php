@@ -229,7 +229,7 @@ function schlicht_the_post_meta() {
 				) )
 				?><span class="screen-reader-text">:</span></span>
 			<?php /* translators: term delimiter */
-			echo get_the_tag_list( '', __( ', ', 'hannover' ) ); ?>
+			echo get_the_tag_list( '', __( ', ', 'schlicht' ) ); ?>
 		</p>
 	<?php }
 	$comments_by_type = schlicht_get_comments_by_type();
