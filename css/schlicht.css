@@ -777,8 +777,8 @@ figure.alignright {
 }
 
 .sidebar-template .sticky,
-.sidebar-template .alternate-layout .post,
-.sidebar-template .alternate-layout .page {
+.sidebar-template.alternate-layout .post,
+.sidebar-template.alternate-layout .page {
     max-width: inherit;
 }
 
