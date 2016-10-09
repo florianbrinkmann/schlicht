@@ -771,7 +771,7 @@ figure.alignright {
 .sticky,
 .alternate-layout .post,
 .alternate-layout .page {
-    max-width: 39rem;
+    max-width: 37rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -957,7 +957,7 @@ figure.alignright {
 }
 
 .alternate-layout .comments-area {
-    max-width: 39rem;
+    max-width: 37rem;
 }
 
 .commentlist {
@@ -1196,7 +1196,7 @@ figure.alignright {
         box-sizing: border-box;
         clear: both;
         float: left;
-        padding-right: 1.6rem;
+        padding-right: 2.4rem;
         width: 70%;
     }
 
@@ -1328,7 +1328,6 @@ figure.alignright {
     }
 
     .comment-meta {
-        padding-right: 1.6rem;
         position: relative;
         text-align: left;
     }
