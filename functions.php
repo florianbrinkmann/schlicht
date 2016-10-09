@@ -308,14 +308,7 @@ function schlicht_get_comments_by_type() {
  * @return array
  */
 function schlicht_body_classes( $classes ) {
-	$display_sidebar_option = get_theme_mod( 'schlicht_sidebar_visibility' );
-	if ( ( is_active_sidebar( 'sidebar-1' )
-	       && ( ( get_page_template_slug() != 'page-templates/no-sidebar.php' )
-	            && ( ( $display_sidebar_option == 'blog_view' && ! is_single() )
-	                 || ( $display_sidebar_option == 'single_view' && is_single() )
-	                 || ( $display_sidebar_option == 'everywhere' )
-	                 || is_page() ) ) )
-	) {
+	if ( is_active_sidebar( 'sidebar-1' ) && get_page_template_slug() != 'page-templates/no-sidebar.php' ) {
 		$classes[] = 'sidebar-template';
 	}
 
