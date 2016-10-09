@@ -901,7 +901,7 @@ figure.alignright {
 }
 
 .entry-content {
-    margin-top: 1.6rem;
+    margin-top: 1.2rem;
 }
 
 .entry-content ul > li::before {
@@ -915,7 +915,7 @@ figure.alignright {
     clear: both;
     margin-left: auto;
     margin-right: auto;
-    padding-top: .8rem;
+    padding-top: .4rem;
 }
 
 .entry-footer-content {
@@ -1293,7 +1293,7 @@ figure.alignright {
     .sticky .entry-content > :first-child,
     .alternate-layout .entry-content > :first-child,
     .sidebar-template .entry-content > :first-child {
-        margin-top: 1.6rem;
+        margin-top: 1.2rem;
     }
 
     .entry-footer {
