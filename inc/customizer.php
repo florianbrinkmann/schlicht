@@ -54,22 +54,6 @@ function schlicht_customize_register( $wp_customize ) {
 		'section' => 'schlicht_options',
 		'label'   => __( 'Enable alternate post/page layout where title is above the entry content even on wide viewports.', 'schlicht' )
 	) );
-
-	$wp_customize->add_setting( 'schlicht_sidebar_visibility', array(
-		'default'           => 'everywhere',
-		'sanitize_callback' => 'schlicht_sanitize_select'
-	) );
-
-	$wp_customize->add_control( 'schlicht_sidebar_visibility', array(
-		'type'    => 'radio',
-		'section' => 'schlicht_options',
-		'label'   => __( 'Where to display the sidebar', 'schlicht' ),
-		'choices' => array(
-			'everywhere'  => __( 'On blog and single view.', 'schlicht' ),
-			'blog_view'   => __( 'On blog view.', 'schlicht' ),
-			'single_view' => __( 'On single view.', 'schlicht' ),
-		)
-	) );
 }
 
 add_action( 'customize_register', 'schlicht_customize_register', 11 );
@@ -128,7 +112,7 @@ function schlicht_sanitize_select( $input, $setting ) {
  * @return bool
  */
 function schlicht_use_dropcaps( $control ) {
-	if ( $control->manager->get_setting( 'schlicht_dropcap' )->value() == 'checked' ) {
+	if ( $control->manager->get_setting( 'schlicht_dropcap' )->value() == 1 ) {
 		return true;
 	} else {
 		return false;

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2016-10-08 17:27+0200\n"
-"PO-Revision-Date: 2016-10-08 17:29+0200\n"
+"POT-Creation-Date: 2016-10-09 07:50+0200\n"
+"PO-Revision-Date: 2016-10-09 07:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -177,22 +177,6 @@ msgstr ""
 "Alternatives Beitrags-/Seiten-Layout aktivieren, bei dem der Titel auch auf "
 "breiten Viewports über dem Fließtext steht."
 
-#: inc/customizer.php:66
-msgid "Where to display the sidebar"
-msgstr "Wo soll die Sidebar angezeigt werden"
-
-#: inc/customizer.php:68
-msgid "On blog and single view."
-msgstr "In der Blog- und Einzelansicht."
-
-#: inc/customizer.php:69
-msgid "On blog view."
-msgstr "In der Blogansicht."
-
-#: inc/customizer.php:70
-msgid "On single view."
-msgstr "In der Einzelansicht."
-
 #: search.php:13
 #, php-format
 msgid "Search Results for: %s"
@@ -226,12 +210,12 @@ msgstr "Sidebar"
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, nichts gefunden."
 
-#: template-parts/content-single.php:14 template-parts/content.php:11
+#: template-parts/content-single.php:14 template-parts/content.php:18
 #, php-format
 msgid "by %s"
 msgstr "von %s"
 
-#: template-parts/content.php:5
+#: template-parts/content.php:12
 msgid "Featured"
 msgstr "Featured"
 
@@ -254,6 +238,18 @@ msgstr "Florian Brinkmann"
 #. Author URI of the plugin/theme
 msgid "https://florianbrinkmann.de"
 msgstr "https://florianbrinkmann.de"
+
+#~ msgid "Where to display the sidebar"
+#~ msgstr "Wo soll die Sidebar angezeigt werden"
+
+#~ msgid "On blog and single view."
+#~ msgstr "In der Blog- und Einzelansicht."
+
+#~ msgid "On blog view."
+#~ msgstr "In der Blogansicht."
+
+#~ msgid "On single view."
+#~ msgstr "In der Einzelansicht."
 
 #~ msgid ""
 #~ "Enable alternate post/page layout where title is above the entry content "
