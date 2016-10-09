@@ -1034,7 +1034,7 @@ figure.alignright {
     -ms-flex: 0 1 16.9rem;
     flex: 0 1 16.9rem;
     max-width: 16.9rem;
-    padding: 0 .8rem;
+    padding: 0 1.2rem;
 }
 
 .widget-title {
