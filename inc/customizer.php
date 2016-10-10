@@ -50,9 +50,10 @@ function schlicht_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'schlicht_alternate_post_layout', array(
-		'type'    => 'checkbox',
-		'section' => 'schlicht_options',
-		'label'   => __( 'Enable alternate post/page layout where title is above the entry content even on wide viewports.', 'schlicht' )
+		'type'            => 'checkbox',
+		'section'         => 'schlicht_options',
+		'label'           => __( 'Enable alternate post/page layout where title is above the entry content even on wide viewports.', 'schlicht' ),
+		'active_callback' => 'schlicht_no_sidebar'
 	) );
 }
 
@@ -116,6 +117,19 @@ function schlicht_use_dropcaps( $control ) {
 		return true;
 	} else {
 		return false;
+	}
+}
+
+/**
+ * Checks if sidebar is active
+ *
+ * @return bool
+ */
+function schlicht_no_sidebar() {
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		return false;
+	} else {
+		return true;
 	}
 }
 
