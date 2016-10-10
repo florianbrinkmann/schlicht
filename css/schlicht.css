@@ -504,7 +504,7 @@ blockquote {
 }
 
 blockquote::before {
-    border: 2px solid #333;
+    border: 1px solid #333;
     border-right: 0;
     content: '';
     height: 100%;
