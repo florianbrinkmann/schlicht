@@ -133,10 +133,17 @@ function schlicht_scripts_styles() {
 
 		$no_auto_dropcaps = get_theme_mod( 'schlicht_no_auto_dropcap' );
 		if ( $no_auto_dropcaps == 0 ) {
-			wp_add_inline_script( "schlicht-dropcap", "document.querySelector('.entry-content > p:first-of-type').innerHTML = document.querySelector('.entry-content > p:first-of-type').innerHTML.replace(/^([^<])/g, '<span class=\"dropcap\">$1</span>');
+			$auto_dropcaps_only_for_posts = get_theme_mod( 'schlicht_auto_dropcaps_for_posts' );
+			if ( $auto_dropcaps_only_for_posts == 1 ) {
+				$container = '.post .entry-content';
+			} else {
+				$container = '.entry-content';
+			}
+			wp_add_inline_script( "schlicht-dropcap", "var container_selector = '$container';
+document.querySelector(container_selector + ' > p:first-of-type').innerHTML = document.querySelector('.entry-content > p:first-of-type').innerHTML.replace(/^([^<])/g, '<span class=\"dropcap\">$1</span>');
 
 // regex from http://beutelevision.com/blog2/2011/06/17/get-the-first-n-words-with-javascript/
-document.querySelector('.entry-content .dropcap').parentElement.innerHTML = document.querySelector('.entry-content .dropcap').parentElement.innerHTML.replace(/(([^\s]+\s\s*){2})/, '<span class=\"small-caps\">$1</span>');
+document.querySelector(container_selector + ' .dropcap').parentElement.innerHTML = document.querySelector('.entry-content .dropcap').parentElement.innerHTML.replace(/(([^\s]+\s\s*){2})/, '<span class=\"small-caps\">$1</span>');
 ", "before" );
 		}
 

@@ -29,6 +29,19 @@ function schlicht_customize_register( $wp_customize ) {
 		'label'   => __( 'Enable Dropcaps', 'schlicht' ),
 	) );
 
+	$wp_customize->add_setting( 'schlicht_auto_dropcaps_for_posts', array(
+		'default'           => 0,
+		'sanitize_callback' => 'schlicht_sanitize_checkbox'
+	) );
+
+	/* translators: s=HTML markup for wrapping a dropcap */
+	$wp_customize->add_control( 'schlicht_auto_dropcaps_for_posts', array(
+		'type'            => 'checkbox',
+		'section'         => 'schlicht_options',
+		'label'           => __( 'Auto integration of dropcaps only for posts, not pages.', 'schlicht' ),
+		'active_callback' => 'schlicht_use_dropcaps'
+	) );
+
 	$wp_customize->add_setting( 'schlicht_no_auto_dropcap', array(
 		'default'           => 0,
 		'sanitize_callback' => 'schlicht_sanitize_checkbox'
