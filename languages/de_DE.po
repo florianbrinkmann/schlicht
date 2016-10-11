@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2016-10-09 07:50+0200\n"
-"PO-Revision-Date: 2016-10-09 07:50+0200\n"
+"POT-Creation-Date: 2016-10-11 14:30+0200\n"
+"PO-Revision-Date: 2016-10-11 14:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -92,53 +92,53 @@ msgstr "Footer-Sidebar"
 msgid "Widgets will be displayed in the footer."
 msgstr "Widgets werden im Footer angezeigt."
 
-#: functions.php:220
+#: functions.php:224
 msgid "Continue reading"
 msgstr "Weiterlesen"
 
-#: functions.php:222
+#: functions.php:226
 #, php-format
 msgid "Continue reading %s"
 msgstr "%s weiterlesen"
 
-#: functions.php:239
+#: functions.php:243
 msgid "Category"
 msgid_plural "Categories"
 msgstr[0] "Kategorie"
 msgstr[1] "Kategorien"
 
-#: functions.php:246 functions.php:260
+#: functions.php:250 functions.php:264
 msgid ", "
 msgstr ", "
 
-#: functions.php:253
+#: functions.php:257
 msgid "Tag"
 msgid_plural "Tags"
 msgstr[0] "Tag"
 msgstr[1] "Tags"
 
-#: functions.php:268
+#: functions.php:272
 msgid "Comments"
 msgstr "Kommentare"
 
-#: functions.php:278
+#: functions.php:282
 msgid "Trackbacks"
 msgstr "Trackbacks"
 
-#: functions.php:355
+#: functions.php:352
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr "%1$s @ %2$s"
 
-#: functions.php:361
+#: functions.php:358
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: functions.php:368
+#: functions.php:365
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: functions.php:375
+#: functions.php:372
 msgid "Reply"
 msgstr "Antworten"
 
@@ -158,7 +158,11 @@ msgstr "Theme-Optionen"
 msgid "Enable Dropcaps"
 msgstr "Initiale aktivieren"
 
-#: inc/customizer.php:42
+#: inc/customizer.php:41
+msgid "Auto integration of dropcaps only for posts, not pages."
+msgstr "Automatische Initiale nur für Beiträge, nicht für Seiten."
+
+#: inc/customizer.php:55
 #, php-format
 msgid ""
 "Don’t insert dropcaps automatically. You can insert dropcaps manually with "
@@ -169,7 +173,7 @@ msgstr ""
 "indem du den ersten Buchstaben eines Absatzes in der Textansicht des Editors "
 "mit %s umschließt."
 
-#: inc/customizer.php:55
+#: inc/customizer.php:68
 msgid ""
 "Enable alternate post/page layout where title is above the entry content "
 "even on wide viewports."
@@ -202,7 +206,7 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Suche"
 
-#: sidebar.php:17
+#: sidebar.php:11
 msgid "Sidebar"
 msgstr "Sidebar"
 
