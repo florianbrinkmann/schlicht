@@ -772,19 +772,18 @@ figure.alignright {
 .post,
 .type-page {
     margin-top: 4.5rem;
-}
-
-.sticky,
-.alternate-layout .post,
-.alternate-layout .page {
     max-width: 37rem;
     margin-left: auto;
     margin-right: auto;
 }
 
-.sidebar-template .sticky,
-.sidebar-template.alternate-layout .post,
-.sidebar-template.alternate-layout .page {
+.alternate-layout .post,
+.alternate-layout .page {
+    max-width: inherit;
+}
+
+.sidebar-template .post,
+.sidebar-template .page {
     max-width: inherit;
 }
 
@@ -962,7 +961,7 @@ figure.alignright {
     margin-right: auto;
 }
 
-.alternate-layout .comments-area {
+.comments-area {
     max-width: 37rem;
 }
 
@@ -1215,65 +1214,55 @@ figure.alignright {
         margin-top: 4.8rem;
     }
 
-    .entry-header {
+    .alternate-layout .entry-header {
         float: left;
         text-align: right;
         width: 30%;
     }
 
-    .sticky .entry-header,
-    .alternate-layout .entry-header,
     .sidebar-template .entry-header {
         float: none;
         text-align: left;
         width: 100%;
     }
 
-    .entry-title {
+    .alternate-layout .entry-title {
         font-size: 1.138rem;
         line-height: 1.4rem;
     }
 
-    .sticky .entry-title,
-    .alternate-layout .entry-title,
     .sidebar-template .entry-title {
         font-size: 1.476rem;
         line-height: 2rem;
     }
 
-    .author {
+    .alternate-layout .author {
         display: block;
     }
 
-    .sticky .author,
-    .alternate-layout .author,
     .sidebar-template .author {
         display: inline;
     }
 
-    .date::before {
+    .alternate-layout .date::before {
         display: none;
     }
 
-    .sticky .date::before,
-    .alternate-layout .date::before,
     .sidebar-template .date::before {
         display: inline;
     }
 
-    .date {
+    .alternate-layout .date {
         display: block;
         margin-top: 0;
     }
 
-    .sticky .date,
-    .alternate-layout .date,
     .sidebar-template .date {
         display: inline;
         margin-top: inherit;
     }
 
-    .entry-content {
+    .alternate-layout .entry-content {
         float: left;
         box-sizing: border-box;
         margin: 0;
@@ -1281,35 +1270,29 @@ figure.alignright {
         width: 70%;
     }
 
-    .sticky .entry-content,
-    .alternate-layout .entry-content,
     .sidebar-template .entry-content {
         padding-left: 0;
         width: 100%;
     }
 
-    .entry-content > :first-child {
+    .alternate-layout .entry-content > :first-child {
         margin-top: 0;
     }
 
-    .entry-content .wp-post-image {
+    .alternate-layout .entry-content .wp-post-image {
         margin-top: .45rem;
     }
 
-    .sticky .entry-content > :first-child,
-    .alternate-layout .entry-content > :first-child,
     .sidebar-template .entry-content > :first-child {
         margin-top: 1.2rem;
     }
 
-    .entry-footer {
+    .alternate-layout .entry-footer {
         margin-left: auto;
         margin-right: 0;
         width: 70%;
     }
 
-    .sticky .entry-footer,
-    .alternate-layout .entry-footer,
     .sidebar-template .entry-footer {
         margin-left: -1.6rem;
         width: calc(100% + 1.6rem);
@@ -1320,7 +1303,7 @@ figure.alignright {
         width: 50%;
     }
 
-    .comments-area {
+    .alternate-layout .comments-area {
         margin-left: calc(30% + 1.6rem);
     }
 
@@ -1346,19 +1329,35 @@ figure.alignright {
 }
 
 @media screen and (min-width: 80em) {
-    .entry-header {
+    .alternate-layout .entry-header {
         width: 33%;
     }
 
-    .entry-content {
+    .sidebar-template .entry-header {
+        width: inherit;
+    }
+
+    .alternate-layout .entry-content {
         width: 67%;
     }
 
-    .entry-footer {
+    .sidebar-template .entry-content {
+        width: inherit;
+    }
+
+    .alternate-layout .entry-footer {
         width: 67%;
     }
 
-    .comments-area {
+    .sidebar-template .entry-footer {
+        width: inherit;
+    }
+
+    .alternate-layout .comments-area {
         margin-left: calc(33% + 1.6rem);
+    }
+
+    .sidebar-template .comments-area {
+        margin-left: 0;
     }
 }

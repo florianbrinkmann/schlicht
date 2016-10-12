@@ -63,10 +63,9 @@ function schlicht_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'schlicht_alternate_post_layout', array(
-		'type'            => 'checkbox',
-		'section'         => 'schlicht_options',
-		'label'           => __( 'Enable alternate post/page layout where title is above the entry content even on wide viewports.', 'schlicht' ),
-		'active_callback' => 'schlicht_no_sidebar'
+		'type'    => 'checkbox',
+		'section' => 'schlicht_options',
+		'label'   => __( 'Enable alternate post/page layout where title is displayed in a column left of the content.', 'schlicht' )
 	) );
 }
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2016-10-11 14:30+0200\n"
-"PO-Revision-Date: 2016-10-11 14:30+0200\n"
+"POT-Creation-Date: 2016-10-12 19:20+0200\n"
+"PO-Revision-Date: 2016-10-12 19:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -92,53 +92,53 @@ msgstr "Footer-Sidebar"
 msgid "Widgets will be displayed in the footer."
 msgstr "Widgets werden im Footer angezeigt."
 
-#: functions.php:224
+#: functions.php:217
 msgid "Continue reading"
 msgstr "Weiterlesen"
 
-#: functions.php:226
+#: functions.php:219
 #, php-format
 msgid "Continue reading %s"
 msgstr "%s weiterlesen"
 
-#: functions.php:243
+#: functions.php:236
 msgid "Category"
 msgid_plural "Categories"
 msgstr[0] "Kategorie"
 msgstr[1] "Kategorien"
 
-#: functions.php:250 functions.php:264
+#: functions.php:243 functions.php:257
 msgid ", "
 msgstr ", "
 
-#: functions.php:257
+#: functions.php:250
 msgid "Tag"
 msgid_plural "Tags"
 msgstr[0] "Tag"
 msgstr[1] "Tags"
 
-#: functions.php:272
+#: functions.php:265
 msgid "Comments"
 msgstr "Kommentare"
 
-#: functions.php:282
+#: functions.php:275
 msgid "Trackbacks"
 msgstr "Trackbacks"
 
-#: functions.php:352
+#: functions.php:345
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr "%1$s @ %2$s"
 
-#: functions.php:358
+#: functions.php:351
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: functions.php:365
+#: functions.php:358
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: functions.php:372
+#: functions.php:365
 msgid "Reply"
 msgstr "Antworten"
 
@@ -175,11 +175,11 @@ msgstr ""
 
 #: inc/customizer.php:68
 msgid ""
-"Enable alternate post/page layout where title is above the entry content "
-"even on wide viewports."
+"Enable alternate post/page layout where title is displayed in a column left "
+"of the content."
 msgstr ""
-"Alternatives Beitrags-/Seiten-Layout aktivieren, bei dem der Titel auch auf "
-"breiten Viewports über dem Fließtext steht."
+"Alternatives Layout für Beiträge/Seiten aktivieren, wo der Titel links neben "
+"dem Inhalt angezeigt wird."
 
 #: search.php:13
 #, php-format
@@ -242,6 +242,13 @@ msgstr "Florian Brinkmann"
 #. Author URI of the plugin/theme
 msgid "https://florianbrinkmann.de"
 msgstr "https://florianbrinkmann.de"
+
+#~ msgid ""
+#~ "Enable alternate post/page layout where title is above the entry content "
+#~ "even on wide viewports."
+#~ msgstr ""
+#~ "Alternatives Beitrags-/Seiten-Layout aktivieren, bei dem der Titel auch "
+#~ "auf breiten Viewports über dem Fließtext steht."
 
 #~ msgid "Where to display the sidebar"
 #~ msgstr "Wo soll die Sidebar angezeigt werden"
