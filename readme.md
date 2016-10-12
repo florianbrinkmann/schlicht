@@ -41,6 +41,11 @@ dropcap.js, Copyright 2014 Adobe Systems Incorporated<br>
 Licence: Apache 2.0 License<br>
 Source: https://github.com/adobe-webplatform/dropcap.js
 
+SmartDomDocument, Copyright 2015 Artem Russakovskii<br>
+Licence: MIT<br>
+Source: https://bitbucket.org/archon810/smartdomdocument/
+
+
 ## Changelog
 
 
