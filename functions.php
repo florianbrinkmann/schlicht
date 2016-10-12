@@ -140,15 +140,13 @@ function schlicht_scripts_styles() {
 				$container = '.entry-content';
 			}
 			wp_add_inline_script( "schlicht-dropcap", "var container_selector = '$container';
-var paragraphs = document.querySelectorAll(container_selector + ' > p:first-of-type');
-for(var i = 0; i < paragraphs.length; i++){
-	paragraphs[i].innerHTML = paragraphs[i].innerHTML.replace(/^([^<])/g, '<span class=\"dropcap\">$1</span>');
-}
-
 var dropcaps = document.querySelectorAll(container_selector + ' .dropcap');
 // regex from http://beutelevision.com/blog2/2011/06/17/get-the-first-n-words-with-javascript/
 for(var i = 0; i < dropcaps.length; i++){
-	dropcaps[i].parentElement.innerHTML = dropcaps[i].parentElement.innerHTML.replace(/(([^\s]+\s\s*){2})/, '<span class=\"small-caps\">$1</span>');
+	if ( dropcaps[i].parentElement.className == 'small-caps' ) {
+	} else {
+		dropcaps[i].parentElement.innerHTML = dropcaps[i].parentElement.innerHTML.replace(/(([^\s]+\s\s*){2})/, '<span class=\"small-caps\">$1</span>');
+	}
 } ", "before" );
 		}
 	}
@@ -373,5 +371,105 @@ function schlicht_comments( $comment, $args, $depth ) { ?>
 	</div>
 	<?php
 }
+
+require_once 'inc/SmartDomDocument.php';
+
+function schlicht_add_dropcap_markup( $content ) {
+	$dropcaps_enabled = get_theme_mod( 'schlicht_dropcap' );
+	$no_auto_dropcaps = get_theme_mod( 'schlicht_no_auto_dropcap' );
+	if ( $dropcaps_enabled == 1 && $no_auto_dropcaps == 0 ) {
+		$auto_dropcaps_only_for_posts = get_theme_mod( 'schlicht_auto_dropcaps_for_posts' );
+		if ( $auto_dropcaps_only_for_posts == 0 || ( $auto_dropcaps_only_for_posts == 1 && ! is_page() ) ) {
+			$dom = new \archon810\SmartDOMDocument();
+			$dom->loadHTML( $content );
+
+			/**
+			 * get all paragraphs
+			 */
+			$paragraphs = $dom->getElementsByTagName( 'p' );
+
+			/**
+			 * get text value of first paragraph
+			 */
+			$first_paragraph_text = $paragraphs->item( 0 )->nodeValue;
+
+			/**
+			 * get first word
+			 * http://stackoverflow.com/a/10635638
+			 */
+			$first_word = preg_split( '/[\s,]+/', $first_paragraph_text )[0];
+
+			/**
+			 * Get first letter of paragraph
+			 * http://stackoverflow.com/a/1972111
+			 */
+			$first_letter = mb_substr( $first_paragraph_text, 0, 1 );
+
+			/**
+			 * remove first word from paragraph
+			 */
+			$first_paragraph_text_without_first_word = preg_replace( "/$first_word/", "", $first_paragraph_text, 1 );
+
+			/**
+			 * Create markup for small caps part
+			 * Result: <span class="small-caps"></span>
+			 */
+			$sc_class_attribute        = $dom->createAttribute( 'class' );
+			$small_caps_element        = $dom->createElement( 'span' );
+			$sc_class_attribute->value = 'small-caps';
+			$small_caps_element->appendChild( $sc_class_attribute );
+
+			/**
+			 * Create markup for dropcap.
+			 * Result: <span class="dropcap">$first_letter</span> where
+			 * $first_letter is the first letter
+			 */
+			$dc_class_attribute        = $dom->createAttribute( 'class' );
+			$dropcap_element           = $dom->createElement( 'span', $first_letter );
+			$dc_class_attribute->value = 'dropcap';
+			$dropcap_element->appendChild( $dc_class_attribute );
+
+			/**
+			 * append the dropcap span to the small caps span
+			 */
+			$small_caps_element->appendChild( $dropcap_element );
+
+			/**
+			 * get first word without first letter
+			 */
+			$first_word_without_first_letter = mb_substr( $first_word, 1 );
+
+			/**
+			 * create text node of the result (so it can be used
+			 * as an argument for appendChild) and append it to the small caps
+			 * element
+			 */
+			$first_word_text_node = $dom->createTextNode( $first_word_without_first_letter );
+			$small_caps_element->appendChild( $first_word_text_node );
+
+			/**
+			 * Overwrite value of first paragraph with empty string so the
+			 * small caps element with drop cap child can be inserted at beginning
+			 */
+			$paragraphs->item( 0 )->nodeValue = '';
+			$paragraphs->item( 0 )->appendChild( $small_caps_element );
+
+			/**
+			 * Create text node with value of the first paragraph without first word.
+			 * Append it to the value of first paragraph node
+			 */
+			$first_paragraph_text_node = $dom->createTextNode( $first_paragraph_text_without_first_word );
+			$paragraphs->item( 0 )->appendChild( $first_paragraph_text_node );
+
+			$content = $dom->saveHTMLExact();
+		}
+	} else {
+
+	}
+
+	return $content;
+}
+
+add_filter( 'the_content', 'schlicht_add_dropcap_markup' );
 
 require_once 'inc/customizer.php';
