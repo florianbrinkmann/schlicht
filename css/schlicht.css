@@ -730,8 +730,14 @@ figure.alignright {
 }
 
 .dropcap {
+    float: left;
     -webkit-font-feature-settings: unset;
     font-feature-settings: unset;
+    padding: 0px;
+    font-size: 3.353em;
+    height: 2.2802rem;
+    line-height: .8em;
+    margin-top: 0.45rem;
     text-transform: none;
 }
 

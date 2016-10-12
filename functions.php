@@ -141,26 +141,16 @@ function schlicht_scripts_styles() {
 			}
 			wp_add_inline_script( "schlicht-dropcap", "var container_selector = '$container';
 var paragraphs = document.querySelectorAll(container_selector + ' > p:first-of-type');
-for (var paragraph of paragraphs) {
-  paragraph.innerHTML = paragraph.innerHTML.replace(/^([^<])/g, '<span class=\"dropcap\">$1</span>');;
-} 
+for(var i = 0; i < paragraphs.length; i++){
+	paragraphs[i].innerHTML = paragraphs[i].innerHTML.replace(/^([^<])/g, '<span class=\"dropcap\">$1</span>');
+}
 
 var dropcaps = document.querySelectorAll(container_selector + ' .dropcap');
 // regex from http://beutelevision.com/blog2/2011/06/17/get-the-first-n-words-with-javascript/
-for (var dropcap of dropcaps) {
-  dropcap.parentElement.innerHTML = dropcap.parentElement.innerHTML.replace(/(([^\s]+\s\s*){2})/, '<span class=\"small-caps\">$1</span>');
+for(var i = 0; i < dropcaps.length; i++){
+	dropcaps[i].parentElement.innerHTML = dropcaps[i].parentElement.innerHTML.replace(/(([^\s]+\s\s*){2})/, '<span class=\"small-caps\">$1</span>');
 } ", "before" );
 		}
-
-		wp_add_inline_script( "schlicht-dropcap", "// We retrieve our drop cap elements using a class selector...
-var dropcaps = document.querySelectorAll(\".dropcap\");
-
-// ...then give them a height of two lines and set the third line as baseline.
-window.Dropcap.layout(dropcaps, 2, 2);
-
-window.onresize = function() {
-    window.Dropcap.layout(dropcaps, 2, 2);
-};" );
 	}
 }
 
