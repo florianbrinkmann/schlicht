@@ -375,6 +375,9 @@ function schlicht_comments( $comment, $args, $depth ) { ?>
 require_once 'inc/SmartDomDocument.php';
 
 function schlicht_add_dropcap_markup( $content ) {
+	if ( $content == '' ) {
+		return;
+	}
 	$dropcaps_enabled = get_theme_mod( 'schlicht_dropcap' );
 	$no_auto_dropcaps = get_theme_mod( 'schlicht_no_auto_dropcap' );
 	if ( $dropcaps_enabled == 1 && $no_auto_dropcaps == 0 ) {
