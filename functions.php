@@ -392,9 +392,17 @@ function schlicht_add_dropcap_markup( $content ) {
 			$paragraphs = $dom->getElementsByTagName( 'p' );
 
 			/**
-			 * get text value of first paragraph
+			 * get content of first paragraph
 			 */
-			$first_paragraph_text = $paragraphs->item( 0 )->nodeValue;
+			$first_paragraph_text = $dom->saveXML( $paragraphs->item( 0 ) );
+
+			/**
+			 * Remove paragraph tags from beginning and end
+			 * Regex from http://stackoverflow.com/a/4713811
+			 */
+			$pattern = '=^<p>(.*)</p>$=i';
+			preg_match( $pattern, $first_paragraph_text, $matches );
+			$first_paragraph_text = $matches[1];
 
 			/**
 			 * get first word
@@ -458,11 +466,11 @@ function schlicht_add_dropcap_markup( $content ) {
 			$paragraphs->item( 0 )->appendChild( $small_caps_element );
 
 			/**
-			 * Create text node with value of the first paragraph without first word.
-			 * Append it to the value of first paragraph node
+			 * Way with createDocumentFragment() from http://stackoverflow.com/a/4401512
 			 */
-			$first_paragraph_text_node = $dom->createTextNode( $first_paragraph_text_without_first_word );
-			$paragraphs->item( 0 )->appendChild( $first_paragraph_text_node );
+			$temp = $dom->createDocumentFragment();
+			$temp->appendXML( $first_paragraph_text_without_first_word );
+			$paragraphs->item( 0 )->appendChild( $temp );
 
 			$content = $dom->saveHTMLExact();
 		}
