@@ -224,6 +224,20 @@ function schlicht_the_content() {
 }
 
 /**
+ * Displays a pagination for paginated posts and pages
+ *
+ * @return void
+ */
+function schlicht_wp_link_pages() {
+	/* translators: Label for pagination of paginated posts and pages */
+	wp_link_pages( array(
+		'before'    => '<ul class="page-numbers"><li><span>' . __( 'Pages:', 'schlicht' ) . '</span></li><li>',
+		'after'     => '</li></ul>',
+		'separator' => '</li><li>'
+	) );
+}
+
+/**
  * Displays footer meta for a post
  *
  * @return void

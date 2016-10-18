@@ -22,7 +22,7 @@
 	<div class="entry-content">
 		<?php the_post_thumbnail( 'large' );
 		schlicht_the_content();
-		wp_link_pages(); ?>
+		schlicht_wp_link_pages(); ?>
 	</div>
 	<footer class="entry-footer">
 		<div class="entry-footer-content">
