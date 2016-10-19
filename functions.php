@@ -405,6 +405,10 @@ function schlicht_add_dropcap_markup( $content ) {
 			 */
 			$paragraphs = $dom->getElementsByTagName( 'p' );
 
+			if ( ! $paragraphs ) {
+				return $content;
+			}
+
 			/**
 			 * get content of first paragraph
 			 */
@@ -416,6 +420,9 @@ function schlicht_add_dropcap_markup( $content ) {
 			 */
 			$pattern = '=^<p>(.*)</p>$=i';
 			preg_match( $pattern, $first_paragraph_text, $matches );
+			if ( ! $matches ) {
+				return $content;
+			}
 			$first_paragraph_text = $matches[1];
 
 			/**
@@ -434,6 +441,9 @@ function schlicht_add_dropcap_markup( $content ) {
 			 * remove first word from paragraph
 			 */
 			$first_paragraph_text_without_first_word = preg_replace( "/$first_word/", "", $first_paragraph_text, 1 );
+			if ( ! $first_paragraph_text_without_first_word ) {
+				return $content;
+			}
 
 			/**
 			 * Create markup for small caps part
