@@ -758,6 +758,14 @@ figure.alignright {
     margin: .8rem;
 }
 
+.gallery-caption {
+    display: none;
+}
+
+.gallery-size-large .gallery-caption {
+    display: block;
+}
+
 /*------------------------------------*\
   #OBJECTS
 \*------------------------------------*/
