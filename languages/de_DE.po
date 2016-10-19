@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2016-10-12 19:20+0200\n"
-"PO-Revision-Date: 2016-10-12 19:21+0200\n"
+"POT-Creation-Date: 2016-10-19 13:26+0200\n"
+"PO-Revision-Date: 2016-10-19 13:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -101,44 +101,48 @@ msgstr "Weiterlesen"
 msgid "Continue reading %s"
 msgstr "%s weiterlesen"
 
-#: functions.php:236
+#: functions.php:234
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: functions.php:250
 msgid "Category"
 msgid_plural "Categories"
 msgstr[0] "Kategorie"
 msgstr[1] "Kategorien"
 
-#: functions.php:243 functions.php:257
+#: functions.php:257 functions.php:271
 msgid ", "
 msgstr ", "
 
-#: functions.php:250
+#: functions.php:264
 msgid "Tag"
 msgid_plural "Tags"
 msgstr[0] "Tag"
 msgstr[1] "Tags"
 
-#: functions.php:265
+#: functions.php:279
 msgid "Comments"
 msgstr "Kommentare"
 
-#: functions.php:275
+#: functions.php:289
 msgid "Trackbacks"
 msgstr "Trackbacks"
 
-#: functions.php:345
+#: functions.php:359
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr "%1$s @ %2$s"
 
-#: functions.php:351
+#: functions.php:365
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: functions.php:358
+#: functions.php:372
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: functions.php:365
+#: functions.php:379
 msgid "Reply"
 msgstr "Antworten"
 
