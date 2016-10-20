@@ -126,11 +126,13 @@ function schlicht_scripts_styles() {
 
 	wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht.css', array(), null );
 	wp_enqueue_style( 'schlicht-fonts', '//brick.a.ssl.fastly.net/Sorts+Mill+Goudy:400,400i', array(), null );
+}
 
+add_action( 'wp_enqueue_scripts', 'schlicht_scripts_styles' );
+
+function schlicht_dropcap_inline_script() {
 	$dropcaps_enabled = get_theme_mod( 'schlicht_dropcap' );
 	if ( $dropcaps_enabled == 1 ) {
-		wp_enqueue_script( 'schlicht-dropcap', get_template_directory_uri() . '/js/dropcap.js', array(), null, true );
-
 		$no_auto_dropcaps = get_theme_mod( 'schlicht_no_auto_dropcap' );
 		if ( $no_auto_dropcaps == 0 ) {
 			$auto_dropcaps_only_for_posts = get_theme_mod( 'schlicht_auto_dropcaps_for_posts' );
@@ -139,7 +141,7 @@ function schlicht_scripts_styles() {
 			} else {
 				$container = '.entry-content';
 			}
-			wp_add_inline_script( "schlicht-dropcap", "var container_selector = '$container';
+			echo "<script>var container_selector = '$container';
 var dropcaps = document.querySelectorAll(container_selector + ' .dropcap');
 // regex from http://beutelevision.com/blog2/2011/06/17/get-the-first-n-words-with-javascript/
 for(var i = 0; i < dropcaps.length; i++){
@@ -147,12 +149,12 @@ for(var i = 0; i < dropcaps.length; i++){
 	} else {
 		dropcaps[i].parentElement.innerHTML = dropcaps[i].parentElement.innerHTML.replace(/(([^\s]+\s\s*){2})/, '<span class=\"small-caps\">$1</span>');
 	}
-} ", "before" );
+}</script>";
 		}
 	}
 }
 
-add_action( 'wp_enqueue_scripts', 'schlicht_scripts_styles' );
+add_action( 'wp_footer', 'schlicht_dropcap_inline_script' );
 
 /**
  * Removes the page jump after clicking on a read more link
