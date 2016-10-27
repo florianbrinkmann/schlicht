@@ -280,8 +280,10 @@ function schlicht_the_post_meta() {
 				<?php /* translators: Label for comment number in entry footer. */
 				_e( 'Comments', 'schlicht' );
 				?><span class="screen-reader-text">:</span></span>
-			<?php /* translators: term delimiter */
-			echo number_format_i18n( $comment_number ); ?>
+			<a href="<?php the_permalink(); ?>#comments-title">
+				<?php /* translators: term delimiter */
+				echo number_format_i18n( $comment_number ); ?>
+			</a>
 		</p>
 	<?php }
 	if ( $comments_by_type['pings'] ) {
@@ -290,8 +292,10 @@ function schlicht_the_post_meta() {
 				<?php /* translators: Label for trackback number in entry footer. */
 				_e( 'Trackbacks', 'schlicht' );
 				?><span class="screen-reader-text">:</span></span>
-			<?php /* translators: term delimiter */
-			echo number_format_i18n( $trackback_number ); ?>
+			<a href="<?php the_permalink(); ?>#trackbacks-title">
+				<?php /* translators: term delimiter */
+				echo number_format_i18n( $trackback_number ); ?>
+			</a>
 		</p>
 	<?php };
 }
@@ -428,6 +432,15 @@ function schlicht_add_dropcap_markup( $content ) {
 			$first_paragraph_text = $matches[1];
 
 			/**
+			 * Check if text starts with “<”
+			 */
+			$pattern = '|^<|i';
+			preg_match( $pattern, $first_paragraph_text, $matches );
+			if ( $matches ) {
+				return $content;
+			}
+
+			/**
 			 * get first word
 			 * http://stackoverflow.com/a/10635638
 			 */
@@ -442,7 +455,7 @@ function schlicht_add_dropcap_markup( $content ) {
 			/**
 			 * remove first word from paragraph
 			 */
-			$first_paragraph_text_without_first_word = preg_replace( "/$first_word/", "", $first_paragraph_text, 1 );
+			$first_paragraph_text_without_first_word = preg_replace( "|$first_word|", "", $first_paragraph_text, 1 );
 			if ( ! $first_paragraph_text_without_first_word ) {
 				return $content;
 			}

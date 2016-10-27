@@ -11,7 +11,7 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) {
 		if ( ! empty( $comments_by_type['comment'] ) ) {
 			$comment_number = count( $comments_by_type['comment'] ); ?>
-			<h2 class="comments-title">
+			<h2 class="comments-title" id="comments-title">
 				<?php /* translators: Title for comment list. 1=comment number, 2=post title */
 				printf( _n(
 					'%1$s Comment on “%2$s”',
@@ -32,7 +32,7 @@ if ( post_password_required() ) {
 		<?php }
 		if ( ! empty( $comments_by_type['pings'] ) ) {
 			$trackback_number = count( $comments_by_type['pings'] ); ?>
-			<h2 class="trackbacks-title">
+			<h2 class="trackbacks-title" id="trackbacks-title">
 				<?php /* translators: Title for trackback list. 1=trackback number, 2=post title */
 				printf( _n(
 					'%1$s Trackback on “%2$s”',
