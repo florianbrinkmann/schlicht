@@ -20,7 +20,12 @@
 		</div>
 	</header>
 	<div class="entry-content">
-		<?php the_post_thumbnail( 'large' );
+		<?php $post_thumbnail = get_the_post_thumbnail( $post->ID, 'large' );
+		if ( $post_thumbnail != '' ) { ?>
+			<a href="<?php the_permalink(); ?>">
+				<?php echo $post_thumbnail; ?>
+			</a>
+		<?php }
 		schlicht_the_content();
 		schlicht_wp_link_pages(); ?>
 	</div>
