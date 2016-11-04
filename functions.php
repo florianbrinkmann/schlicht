@@ -4,7 +4,7 @@
  */
 
 /**
- * Load translation from translate.WordPress.org if available
+ * Load translation
  */
 function schlicht_load_translation() {
 	if ( ( ! defined( 'DOING_AJAX' ) && ! 'DOING_AJAX' ) || ! schlicht_is_login_page() || ! schlicht_is_wp_comments_post() ) {
@@ -13,6 +13,7 @@ function schlicht_load_translation() {
 }
 
 add_action( 'after_setup_theme', 'schlicht_load_translation' );
+
 /**
  * Check if we are on the login page
  *
