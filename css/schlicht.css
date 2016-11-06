@@ -678,6 +678,22 @@ textarea:active {
     word-wrap: normal !important;
 }
 
+.skip-link:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    height: auto;
+    left: 5px;
+    padding: .5rem .8rem;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+
 .alignleft {
     display: block;
     float: left;
