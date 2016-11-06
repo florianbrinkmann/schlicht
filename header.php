@@ -29,15 +29,17 @@
 	} else {
 		if ( ( is_front_page() && is_home() ) ) { ?>
 			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-		<?php } else {
-			if ( ! is_front_page() ) { ?>
+		<?php } else { ?>
+			<p class="site-title">
+				<?php if ( ! is_front_page() ) { ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php }
+					bloginfo( 'name' );
+					if ( ! is_front_page() ) { ?>
+				</a>
 			<?php } ?>
-			<p class="site-title"><?php bloginfo( 'name' ); ?></p>
-			<?php if ( ! is_front_page() ) { ?>
-				</a >
-			<?php }
-		}
+			</p>
+		<?php }
 	}
 	$description = get_bloginfo( 'description', 'display' );
 	if ( $description ) { ?>
