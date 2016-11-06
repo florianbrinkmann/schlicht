@@ -925,8 +925,16 @@ figure.alignright {
     margin-top: 0;
 }
 
-.entry-title a {
-    background-image: none;
+.entry-title a,
+.date a {
+    background-size: 0 1px;
+}
+
+.entry-title a:hover,
+.entry-title a:active,
+.date a:hover,
+.date a:active {
+    background-size: 100% 1px;
 }
 
 .entry-content {
