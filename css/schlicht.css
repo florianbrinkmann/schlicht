@@ -893,6 +893,15 @@ figure.alignright {
     margin: 0;
 }
 
+.site-title a {
+    background-size: 0 1px;
+}
+
+.site-title a:hover,
+.site-title a:active {
+    background-size: 100% 1px;
+}
+
 .site-description {
     color: #666;
     font-style: italic;
