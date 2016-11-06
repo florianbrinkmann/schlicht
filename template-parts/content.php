@@ -16,7 +16,7 @@
 			<p class="author"><?php
 				/* translators: s=author name */
 				printf( __( 'by %s', 'schlicht' ), '<span class="author-name">' . get_the_author() . '</span>' ) ?></p>
-			<p class="date"><?php echo get_the_date(); ?></p>
+			<p class="date"><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a></p>
 		</div>
 	</header>
 	<div class="entry-content">
