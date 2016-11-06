@@ -67,6 +67,11 @@ function schlicht_customize_register( $wp_customize ) {
 		'section' => 'schlicht_options',
 		'label'   => __( 'Enable alternate post/page layout where title is displayed in a column left of the content.', 'schlicht' )
 	) );
+
+	/**
+	 * Change transport to refresh
+	 */
+	$wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
 }
 
 add_action( 'customize_register', 'schlicht_customize_register', 11 );
