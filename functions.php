@@ -247,7 +247,7 @@ function schlicht_wp_link_pages() {
  */
 function schlicht_the_post_meta() {
 	if ( get_the_category() ) { ?>
-		<p class="entry-footer-block categories"><span class="entry-footer-block-label">
+        <p class="entry-footer-block categories"><span class="entry-footer-block-label">
 				<?php /* translators: Label for category list in entry footer. s=categories */
 				printf( _n(
 					'Category',
@@ -258,10 +258,10 @@ function schlicht_the_post_meta() {
 				?><span class="screen-reader-text">:</span></span>
 			<?php /* translators: term delimiter */
 			echo get_the_category_list( __( ', ', 'schlicht' ) ); ?>
-		</p>
+        </p>
 	<?php }
 	if ( get_the_tags() ) { ?>
-		<p class="entry-footer-block tags"><span class="entry-footer-block-label">
+        <p class="entry-footer-block tags"><span class="entry-footer-block-label">
 				<?php /* translators: Label for tags list in entry footer. */
 				printf( _n(
 					'Tag',
@@ -272,32 +272,32 @@ function schlicht_the_post_meta() {
 				?><span class="screen-reader-text">:</span></span>
 			<?php /* translators: term delimiter */
 			echo get_the_tag_list( '', __( ', ', 'schlicht' ) ); ?>
-		</p>
+        </p>
 	<?php }
 	$comments_by_type = schlicht_get_comments_by_type();
 	if ( $comments_by_type['comment'] ) {
 		$comment_number = count( $comments_by_type['comment'] ); ?>
-		<p class="entry-footer-block comments"><span class="entry-footer-block-label">
+        <p class="entry-footer-block comments"><span class="entry-footer-block-label">
 				<?php /* translators: Label for comment number in entry footer. */
 				_e( 'Comments', 'schlicht' );
 				?><span class="screen-reader-text">:</span></span>
-			<a href="<?php the_permalink(); ?>#comments-title">
+            <a href="<?php the_permalink(); ?>#comments-title">
 				<?php /* translators: term delimiter */
 				echo number_format_i18n( $comment_number ); ?>
-			</a>
-		</p>
+            </a>
+        </p>
 	<?php }
 	if ( $comments_by_type['pings'] ) {
 		$trackback_number = count( $comments_by_type['pings'] ); ?>
-		<p class="entry-footer-block trackbacks"><span class="entry-footer-block-label">
+        <p class="entry-footer-block trackbacks"><span class="entry-footer-block-label">
 				<?php /* translators: Label for trackback number in entry footer. */
 				_e( 'Trackbacks', 'schlicht' );
 				?><span class="screen-reader-text">:</span></span>
-			<a href="<?php the_permalink(); ?>#trackbacks-title">
+            <a href="<?php the_permalink(); ?>#trackbacks-title">
 				<?php /* translators: term delimiter */
 				echo number_format_i18n( $trackback_number ); ?>
-			</a>
-		</p>
+            </a>
+        </p>
 	<?php };
 }
 
@@ -351,12 +351,12 @@ add_filter( 'body_class', 'schlicht_body_classes' );
  */
 function schlicht_comments( $comment, $args, $depth ) { ?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-	<div id="comment-<?php comment_ID(); ?>" class="<?php comment_class(); ?>">
-		<div class="comment-meta">
+    <div id="comment-<?php comment_ID(); ?>" class="<?php comment_class(); ?>">
+        <div class="comment-meta">
 			<?php echo get_avatar( $comment, 50 ); ?>
-			<p class="comment-author-name">
+            <p class="comment-author-name">
 				<?php comment_author_link(); ?>
-			</p>
+            </p>
 
 			<?php printf(
 				'<p class="comment-date"><a href="%1$s"><time datetime="%2$s">%3$s</time></a></p>',
@@ -365,22 +365,22 @@ function schlicht_comments( $comment, $args, $depth ) { ?>
 				/* translators: 1=date 2=time */
 				sprintf( __( '%1$s @ %2$s', 'schlicht' ), get_comment_date(), get_comment_time() )
 			); ?>
-		</div>
+        </div>
 
 		<?php if ( '0' == $comment->comment_approved ) { ?>
-			<p class="comment-awaiting-moderation">
+            <p class="comment-awaiting-moderation">
 				<?php _e( 'Your comment is awaiting moderation.', 'schlicht' ); ?>
-			</p>
+            </p>
 		<?php } ?>
 
-		<div class="comment-content-wrapper">
-			<div class="comment-content">
+        <div class="comment-content-wrapper">
+            <div class="comment-content">
 				<?php comment_text(); ?>
 				<?php edit_comment_link( __( 'Edit', 'schlicht' ), '<p class="edit-link">', '</p>' ); ?>
-			</div>
-		</div>
+            </div>
+        </div>
 
-		<div class="reply">
+        <div class="reply">
 			<?php comment_reply_link(
 				array(
 					'reply_text' => __( 'Reply', 'schlicht' ),
@@ -388,8 +388,8 @@ function schlicht_comments( $comment, $args, $depth ) { ?>
 					'max_depth'  => $args['max_depth']
 				)
 			); ?>
-		</div>
-	</div>
+        </div>
+    </div>
 	<?php
 }
 
@@ -524,3 +524,22 @@ function schlicht_add_dropcap_markup( $content ) {
 add_filter( 'the_content', 'schlicht_add_dropcap_markup' );
 
 require_once 'inc/customizer.php';
+
+/**
+ * Load API Class for automatic updates
+ */
+if ( ! class_exists( 'AM_License_Menu' ) ) {
+
+	require_once( 'am-license-menu.php' );
+
+	/**
+	 * @param string $file Must be __FILE__ from the root plugin file, or theme functions file.
+	 * @param string $software_title Must be exactly the same as the Software Title in the product.
+	 * @param string $software_version This product's current software version.
+	 * @param string $plugin_or_theme 'plugin' or 'theme'
+	 * @param string $api_url The URL to the site that is running the API Manager. Example: https://www.toddlahman.com/
+	 *
+	 * @return \AM_License_Submenu|null
+	 */
+	AM_License_Menu::instance( __FILE__, 'Schlicht', '1.0', 'theme', 'https://florianbrinkmann.de/' );
+}

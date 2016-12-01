@@ -10,7 +10,7 @@
 
 ## Description
 
-Schlicht is made for bloggers.
+Schlicht is a blogger theme, kept simple with clear focus on content.
 
 ## Copyright
 
@@ -44,6 +44,5 @@ Source: https://bitbucket.org/archon810/smartdomdocument/
 
 ## Changelog
 
-
-### 1.0 -
+### 1.0 - 01.12.2016
 * Initial release
