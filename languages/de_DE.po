@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2016-12-01 13:33+0100\n"
-"PO-Revision-Date: 2016-12-01 13:34+0100\n"
+"POT-Creation-Date: 2017-01-17 11:58+0100\n"
+"PO-Revision-Date: 2017-01-17 11:59+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -32,11 +32,11 @@ msgstr "Sorry, leider wurden keine Ergebnisse gefunden."
 
 #: am-license-menu.php:107 am-license-menu.php:162
 msgid " Activation"
-msgstr "-Aktivierung"
+msgstr " Aktivierung"
 
 #: am-license-menu.php:108 am-license-menu.php:302
 msgid " Key Activation"
-msgstr "-Schlüssel-Aktivierung"
+msgstr " Schlüssel-Aktivierung"
 
 #: am-license-menu.php:109 am-license-menu.php:334
 msgid "Key Activation"
@@ -273,14 +273,19 @@ msgstr "Kommentar abschicken"
 msgid "Footer navigation"
 msgstr "Footer-Navigation"
 
-#: footer.php:29
+#: footer.php:30
 msgid "Footer widget area"
 msgstr "Widget-Bereich im Footer"
 
-#: footer.php:33
+#: footer.php:35
 #, php-format
 msgid "Theme: Schlicht by %s"
 msgstr "Theme: Schlicht von %s"
+
+#. Author URI of the plugin/theme
+#: footer.php:36
+msgid "https://en.florianbrinkmann.de"
+msgstr "https://florianbrinkmann.de"
 
 #: functions.php:85
 msgid "Primary Menu"
@@ -309,57 +314,57 @@ msgstr "Footer-Sidebar"
 msgid "Widgets will be displayed in the footer."
 msgstr "Widgets werden im Footer angezeigt."
 
-#: functions.php:220
+#: functions.php:219
 msgid "Continue reading"
 msgstr "Weiterlesen"
 
-#: functions.php:222
+#: functions.php:221
 #, php-format
 msgid "Continue reading %s"
 msgstr "%s weiterlesen"
 
-#: functions.php:237
+#: functions.php:236
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: functions.php:253
+#: functions.php:252
 msgid "Category"
 msgid_plural "Categories"
 msgstr[0] "Kategorie"
 msgstr[1] "Kategorien"
 
-#: functions.php:260 functions.php:274
+#: functions.php:259 functions.php:273
 msgid ", "
 msgstr ", "
 
-#: functions.php:267
+#: functions.php:266
 msgid "Tag"
 msgid_plural "Tags"
 msgstr[0] "Tag"
 msgstr[1] "Tags"
 
-#: functions.php:282
+#: functions.php:281
 msgid "Comments"
 msgstr "Kommentare"
 
-#: functions.php:294
+#: functions.php:293
 msgid "Trackbacks"
 msgstr "Trackbacks"
 
-#: functions.php:366
+#: functions.php:365
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr "%1$s @ %2$s"
 
-#: functions.php:372
+#: functions.php:371
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: functions.php:379
+#: functions.php:378
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: functions.php:386
+#: functions.php:385
 msgid "Reply"
 msgstr "Antworten"
 
@@ -449,7 +454,7 @@ msgid "Schlicht"
 msgstr "Schlicht"
 
 #. Theme URI of the plugin/theme
-msgid "https://florianbrinkmann.de/wordpress-themes/schlicht/"
+msgid "https://en.florianbrinkmann.de/wordpress-themes/schlicht/"
 msgstr "https://florianbrinkmann.de/wordpress-themes/schlicht/"
 
 #. Description of the plugin/theme
@@ -462,9 +467,11 @@ msgstr ""
 msgid "Florian Brinkmann"
 msgstr "Florian Brinkmann"
 
-#. Author URI of the plugin/theme
-msgid "https://florianbrinkmann.de"
-msgstr "https://florianbrinkmann.de"
+#~ msgid "https://florianbrinkmann.de/wordpress-themes/schlicht/"
+#~ msgstr "https://florianbrinkmann.de/wordpress-themes/schlicht/"
+
+#~ msgid "https://florianbrinkmann.de"
+#~ msgstr "https://florianbrinkmann.de"
 
 #~ msgid "Schlicht is made for bloggers."
 #~ msgstr "Schlicht ist für Blogger gemacht."

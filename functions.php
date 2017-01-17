@@ -126,7 +126,6 @@ function schlicht_scripts_styles() {
 	}
 
 	wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht.css', array(), null );
-	wp_enqueue_style( 'schlicht-fonts', '//brick.a.ssl.fastly.net/Sorts+Mill+Goudy:400,400i', array(), null );
 }
 
 add_action( 'wp_enqueue_scripts', 'schlicht_scripts_styles' );

@@ -41,8 +41,16 @@ SmartDomDocument, Copyright 2015 Artem Russakovskii<br>
 Licence: MIT<br>
 Source: https://bitbucket.org/archon810/smartdomdocument/
 
+Sorts Mill Goudy, Copyright 2009 Barry Schwartz <br>
+Licence: SIL Open Font License, Version 1.1<br>
+Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
+
 
 ## Changelog
+
+### 1.1 - 17.01.2017
+* integrated font files so they need not to be loaded from external server.
+* limited depth of main and footer nav to 1
 
 ### 1.0 - 01.12.2016
 * Initial release

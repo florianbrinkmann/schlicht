@@ -3,7 +3,7 @@
 /**
  * @copyright   Copyright (c) Todd Lahman LLC
  *              Author URI:       https://www.toddlahman.com/
- *              Version: 1.0
+ *              Version: 1.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -66,18 +66,18 @@ if ( ! class_exists( 'AM_License_Menu' ) ) {
 				'?'
 			), '_', strtolower( $this->software_title ) );
 
-			if ( $this->plugin_or_theme == 'plugin' ) {
-				register_activation_hook( $this->file, array( $this, 'activation' ) );
-			}
-
-			if ( $this->plugin_or_theme == 'theme' ) {
-				add_action( 'admin_init', array( $this, 'activation' ) );
-			}
-
-			add_action( 'admin_menu', array( $this, 'register_menu' ) );
-			add_action( 'admin_init', array( $this, 'load_settings' ) );
-
 			if ( is_admin() ) {
+				if ( ! empty( $this->plugin_or_theme ) && $this->plugin_or_theme == 'theme' ) {
+					add_action( 'admin_init', array( $this, 'activation' ) );
+				}
+				if ( ! empty( $this->plugin_or_theme ) && $this->plugin_or_theme == 'plugin' ) {
+					register_activation_hook( $this->file, array( $this, 'activation' ) );
+				}
+
+
+				add_action( 'admin_menu', array( $this, 'register_menu' ) );
+				add_action( 'admin_init', array( $this, 'load_settings' ) );
+
 				// Check for external connection blocking
 				add_action( 'admin_notices', array( $this, 'check_external_blocking' ) );
 
@@ -264,9 +264,9 @@ if ( ! class_exists( 'AM_License_Menu' ) ) {
 			<?php if ( isset( $_GET['page'] ) && $this->ame_activation_tab_key == $_GET['page'] ) {
 				return;
 			} ?>
-			<div id="message" class="notice-error notice">
-				<p><?php printf( __( 'The <strong>%s</strong> Licence Key has not been activated, so there will be no automatic updates for the theme! %sClick here%s to activate <strong>%s</strong>.', 'schlicht' ), esc_attr( $this->software_title ), '<a href="' . esc_url( admin_url( 'options-general.php?page=' . $this->ame_activation_tab_key ) ) . '">', '</a>', esc_attr( $this->software_title ) ); ?></p>
-			</div>
+            <div id="message" class="notice-error notice">
+                <p><?php printf( __( 'The <strong>%s</strong> Licence Key has not been activated, so there will be no automatic updates for the theme! %sClick here%s to activate <strong>%s</strong>.', 'schlicht' ), esc_attr( $this->software_title ), '<a href="' . esc_url( admin_url( 'options-general.php?page=' . $this->ame_activation_tab_key ) ) . '">', '</a>', esc_attr( $this->software_title ) ); ?></p>
+            </div>
 			<?php
 		}
 
@@ -281,9 +281,9 @@ if ( ! class_exists( 'AM_License_Menu' ) ) {
 
 				if ( ! defined( 'WP_ACCESSIBLE_HOSTS' ) || stristr( WP_ACCESSIBLE_HOSTS, $host ) === false ) {
 					?>
-					<div class="error">
-						<p><?php printf( __( '<b>Warning!</b> You\'re blocking external requests which means you won\'t be able to get %s updates. Please add %s to %s.', 'schlicht' ), $this->ame_software_product_id, '<strong>' . $host . '</strong>', '<code>WP_ACCESSIBLE_HOSTS</code>' ); ?></p>
-					</div>
+                    <div class="error">
+                        <p><?php printf( __( '<b>Warning!</b> You\'re blocking external requests which means you won\'t be able to get %s updates. Please add %s to %s.', 'schlicht' ), $this->ame_software_product_id, '<strong>' . $host . '</strong>', '<code>WP_ACCESSIBLE_HOSTS</code>' ); ?></p>
+                    </div>
 					<?php
 				}
 			}
@@ -292,24 +292,24 @@ if ( ! class_exists( 'AM_License_Menu' ) ) {
 		// Draw option page
 		public function config_page() {
 			$settings_tabs = array(
-				$this->ame_activation_tab_key   => __( $this->ame_menu_tab_activation_title, 'schlicht' ),
-				$this->ame_deactivation_tab_key => __( $this->ame_menu_tab_deactivation_title, 'schlicht' )
+				$this->ame_activation_tab_key   => __( 'Key Activation', 'schlicht' ),
+				$this->ame_deactivation_tab_key => __( 'Key Deactivation', 'schlicht' )
 			);
 			$current_tab   = isset( $_GET['tab'] ) ? $_GET['tab'] : $this->ame_activation_tab_key;
 			$tab           = isset( $_GET['tab'] ) ? $_GET['tab'] : $this->ame_activation_tab_key;
 			?>
-			<div class='wrap'>
-				<h2><?php echo $this->software_title . __( ' Key Activation', 'schlicht' ); ?></h2>
-				<h2 class="nav-tab-wrapper">
+            <div class='wrap'>
+                <h2><?php echo $this->software_title . __( ' Key Activation', 'schlicht' ); ?></h2>
+                <h2 class="nav-tab-wrapper">
 					<?php
 					foreach ( $settings_tabs as $tab_page => $tab_name ) {
 						$active_tab = $current_tab == $tab_page ? 'nav-tab-active' : '';
 						echo '<a class="nav-tab ' . $active_tab . '" href="?page=' . $this->ame_activation_tab_key . '&tab=' . $tab_page . '">' . $tab_name . '</a>';
 					}
 					?>
-				</h2>
-				<form action='options.php' method='post'>
-					<div class="main">
+                </h2>
+                <form action='options.php' method='post'>
+                    <div class="main">
 						<?php
 						if ( $tab == $this->ame_activation_tab_key ) {
 							settings_fields( $this->ame_data_key );
@@ -321,9 +321,9 @@ if ( ! class_exists( 'AM_License_Menu' ) ) {
 							submit_button( __( 'Save Changes', 'schlicht' ) );
 						}
 						?>
-					</div>
-				</form>
-			</div>
+                    </div>
+                </form>
+            </div>
 			<?php
 		}
 
@@ -639,7 +639,7 @@ if ( ! class_exists( 'AM_License_Menu' ) ) {
 			echo checked( get_option( $this->ame_deactivate_checkbox ), 'on' );
 			echo '/>';
 			?><span
-				class="description"><?php _e( 'Deactivates an Key so it can be used on another blog.', 'schlicht' ); ?></span>
+                    class="description"><?php _e( 'Deactivates an Key so it can be used on another blog.', 'schlicht' ); ?></span>
 			<?php
 		}
 

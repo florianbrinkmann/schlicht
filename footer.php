@@ -2,35 +2,38 @@
 /**
  * Template for website footer
  *
- * @version 1.0
+ * @version 1.1
  */
 ?>
 </div><!--.content-wrapper-->
 <footer class="site-footer clearfix">
 	<?php if ( has_nav_menu( 'footer' ) ) { ?>
-		<nav class="footer-nav-container">
-			<h2 class="screen-reader-text">
+        <nav class="footer-nav-container">
+            <h2 class="screen-reader-text">
 				<?php /* translators: hidden screen reader headline for the footer navigation */
 				_e( 'Footer navigation', 'schlicht' ); ?>
-			</h2>
+            </h2>
 			<?php wp_nav_menu(
 				array(
 					'theme_location' => 'footer',
 					'menu_class'     => 'footer-nav',
-					'container'      => ''
+					'container'      => '',
+					'depth'          => 1
 				)
 			); ?>
-		</nav>
+        </nav>
 	<?php }
 	if ( is_active_sidebar( 'sidebar-footer' ) ) { ?>
-		<aside class="site-footer-widget-area clearfix">
-			<h2 class="screen-reader-text">
+        <aside class="site-footer-widget-area clearfix">
+            <h2 class="screen-reader-text">
 				<?php /* translators: screen reader text for the footer widget area */
 				_e( 'Footer widget area', 'schlicht' ) ?></h2>
 			<?php dynamic_sidebar( 'sidebar-footer' ); ?>
-		</aside>
+        </aside>
 	<?php } ?>
-	<p class="theme-author"><?php printf( __( 'Theme: Schlicht by %s', 'schlicht' ), '<a rel="nofollow" href="https://florianbrinkmann.de">Florian Brinkmann</a>' ) ?></p>
+    <p class="theme-author"><?php printf(
+			__( 'Theme: Schlicht by %s', 'schlicht' ),
+			sprintf( '<a rel="nofollow" href="%s">Florian Brinkmann</a>', __( 'https://en.florianbrinkmann.de', 'schlicht' ) ) ); ?></p>
 </footer>
 <?php wp_footer(); ?>
 </body>
