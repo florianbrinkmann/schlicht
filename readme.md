@@ -51,6 +51,7 @@ Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 ### 1.1 - 17.01.2017
 * integrated font files so they need not to be loaded from external server.
 * limited depth of main and footer nav to 1
+* updated automatic update script to 1.1
 
 ### 1.0 - 01.12.2016
 * Initial release
