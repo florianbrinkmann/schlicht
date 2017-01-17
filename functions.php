@@ -540,5 +540,5 @@ if ( ! class_exists( 'AM_License_Menu' ) ) {
 	 *
 	 * @return \AM_License_Submenu|null
 	 */
-	AM_License_Menu::instance( __FILE__, 'Schlicht', '1.0', 'theme', 'https://florianbrinkmann.de/' );
+	AM_License_Menu::instance( __FILE__, 'Schlicht', '1.1', 'theme', 'https://florianbrinkmann.de/' );
 }
