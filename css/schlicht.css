@@ -1050,7 +1050,7 @@ figure.alignright {
     text-align: center;
 }
 
-.avatar {
+.comment .avatar {
     display: block;
     margin: 0 auto;
 }
@@ -1392,7 +1392,7 @@ figure.alignright {
         text-align: left;
     }
 
-    .avatar {
+    .comment .avatar {
         position: absolute;
         left: -3rem;
         top: .5rem;

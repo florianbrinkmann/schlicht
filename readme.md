@@ -48,6 +48,9 @@ Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 
 ## Changelog
 
+### 1.2 - 19.01.2017
+* wrapped funtions in functions.php with if ( !function_exists() ) calls so they can be overwritten by child themes
+
 ### 1.1 - 17.01.2017
 * integrated font files so they need not to be loaded from external server.
 * limited depth of main and footer nav to 1
