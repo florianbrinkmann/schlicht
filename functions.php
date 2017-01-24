@@ -437,11 +437,11 @@ if ( ! function_exists( 'schlicht_add_dropcap_markup' ) ) {
 	 *
 	 * @param $content
 	 *
-	 * @return string|void
+	 * @return string
 	 */
 	function schlicht_add_dropcap_markup( $content ) {
 		if ( $content == '' ) {
-			return;
+			return $content;
 		}
 		$dropcaps_enabled = get_theme_mod( 'schlicht_dropcap' );
 		$no_auto_dropcaps = get_theme_mod( 'schlicht_no_auto_dropcap' );
@@ -586,5 +586,5 @@ if ( ! class_exists( 'AM_License_Menu' ) ) {
 	 *
 	 * @return \AM_License_Submenu|null
 	 */
-	AM_License_Menu::instance( __FILE__, 'Schlicht', '1.2', 'theme', 'https://florianbrinkmann.de/' );
+	AM_License_Menu::instance( __FILE__, 'Schlicht', '1.0.3', 'theme', 'https://florianbrinkmann.de/' );
 }

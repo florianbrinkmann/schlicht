@@ -113,7 +113,7 @@ if ( ! class_exists( 'AM_License_Menu' ) ) {
 				 * Set all software update data here
 				 */
 				$this->ame_options           = get_option( $this->ame_data_key );
-				$this->ame_plugin_name       = $this->plugin_or_theme == 'plugin' ? untrailingslashit( plugin_basename( $this->file ) ) : get_stylesheet(); // same as plugin slug. if a theme use a theme name like 'twentyeleven'
+				$this->ame_plugin_name       = $this->plugin_or_theme == 'plugin' ? untrailingslashit( plugin_basename( $this->file ) ) : 'schlicht'; // same as plugin slug. if a theme use a theme name like 'twentyeleven'
 				$this->ame_product_id        = get_option( $this->ame_product_id_key ); // Software Title
 				$this->ame_renew_license_url = $this->api_url . 'my-account'; // URL to renew an API Key. Trailing slash in the upgrade_url is required.
 				$this->ame_instance_id       = get_option( $this->ame_instance_key ); // Instance ID (unique to each blog activation)
@@ -151,7 +151,7 @@ if ( ! class_exists( 'AM_License_Menu' ) ) {
 			}
 
 			if ( $this->plugin_or_theme == 'theme' ) {
-				add_action( 'switch_theme', array( $this, 'uninstall' ) );
+				//add_action( 'switch_theme', array( $this, 'uninstall' ) );
 			}
 		}
 

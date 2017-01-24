@@ -1,9 +1,9 @@
-# Twenty Seventeen
+# Schlicht
 
 **Contributors:** Florian Brinkmann  
 **Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 4.7  
-**Version:** 1.0  
+**Tested up to:** WordPress 4.7.1  
+**Version:** 1.0.3  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -14,7 +14,7 @@ Schlicht is a blogger theme, kept simple with clear focus on content.
 
 ## Copyright
 
-Schlicht WordPress Theme, Copyright 2016 Florian Brinkmann
+Schlicht WordPress Theme, Copyright 2017 Florian Brinkmann
 Schlicht is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -48,10 +48,19 @@ Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 
 ## Changelog
 
-### 1.2 - 19.01.2017
+### 1.0.3 - 24.01.2017
+#### Fixed
+* problems with update script and child themes
+
+#### Changed
+* next/prev arguments to the_posts_pagination() calls
+
+### 1.0.2 - 19.01.2017
+#### Changed
 * wrapped funtions in functions.php with if ( !function_exists() ) calls so they can be overwritten by child themes
 
-### 1.1 - 17.01.2017
+### 1.0.1 - 17.01.2017
+#### Changed
 * integrated font files so they need not to be loaded from external server.
 * limited depth of main and footer nav to 1
 * updated automatic update script to 1.1

@@ -2,7 +2,7 @@
 /**
  * Template for displaying the header
  *
- * @version 1.1
+ * @version 1.0.3
  */
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,14 @@
 		<?php }
 	} else {
 		if ( ( is_front_page() && is_home() ) ) { ?>
-            <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+            <h1 class="site-title"><?php
+				if ( is_paged() ) { ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php }
+					bloginfo( 'name' );
+					if ( is_paged() ) { ?>
+                </a>
+			<?php } ?></h1>
 		<?php } else { ?>
             <p class="site-title">
 				<?php if ( ! is_front_page() ) { ?>

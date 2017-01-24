@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2017-01-17 11:58+0100\n"
-"PO-Revision-Date: 2017-01-17 11:59+0100\n"
+"POT-Creation-Date: 2017-01-24 15:46+0100\n"
+"PO-Revision-Date: 2017-01-24 15:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -38,11 +38,11 @@ msgstr " Aktivierung"
 msgid " Key Activation"
 msgstr " Schlüssel-Aktivierung"
 
-#: am-license-menu.php:109 am-license-menu.php:334
+#: am-license-menu.php:109 am-license-menu.php:295 am-license-menu.php:334
 msgid "Key Activation"
 msgstr "Schlüssel-Aktivierung"
 
-#: am-license-menu.php:110
+#: am-license-menu.php:110 am-license-menu.php:296
 msgid "Key Deactivation"
 msgstr "Schlüssel-Deaktivierung"
 
@@ -247,6 +247,14 @@ msgstr ""
 "your email inbox, if not you can get it by logging into your account <a href="
 "\"%s\" target=\"_blank\">dashboard</a>."
 
+#: archive.php:27 index.php:25 search.php:32
+msgid "Previous"
+msgstr "Neuere"
+
+#: archive.php:28 index.php:26 search.php:33
+msgid "Next"
+msgstr "Ältere"
+
 #: comments.php:17
 #, php-format
 msgid "%1$s Comment on “%2$s”"
@@ -287,84 +295,84 @@ msgstr "Theme: Schlicht von %s"
 msgid "https://en.florianbrinkmann.de"
 msgstr "https://florianbrinkmann.de"
 
-#: functions.php:85
+#: functions.php:94
 msgid "Primary Menu"
 msgstr "Hauptmenü"
 
-#: functions.php:87
+#: functions.php:96
 msgid "Footer Menu"
 msgstr "Footer-Menü"
 
-#: functions.php:99
+#: functions.php:110
 msgid "Main Sidebar"
 msgstr "Sidebar"
 
-#: functions.php:101
+#: functions.php:112
 msgid ""
 "Widgets in this area will be displayed on all posts and pages by default."
 msgstr ""
 "Widgets aus diesem Bereich werden standardmäßig auf allen Beiträgen und "
 "Seiten angezeigt."
 
-#: functions.php:108
+#: functions.php:119
 msgid "Footer Sidebar"
 msgstr "Footer-Sidebar"
 
-#: functions.php:110
+#: functions.php:121
 msgid "Widgets will be displayed in the footer."
 msgstr "Widgets werden im Footer angezeigt."
 
-#: functions.php:219
+#: functions.php:245
 msgid "Continue reading"
 msgstr "Weiterlesen"
 
-#: functions.php:221
+#: functions.php:247
 #, php-format
 msgid "Continue reading %s"
 msgstr "%s weiterlesen"
 
-#: functions.php:236
+#: functions.php:264
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: functions.php:252
+#: functions.php:282
 msgid "Category"
 msgid_plural "Categories"
 msgstr[0] "Kategorie"
 msgstr[1] "Kategorien"
 
-#: functions.php:259 functions.php:273
+#: functions.php:289 functions.php:303
 msgid ", "
 msgstr ", "
 
-#: functions.php:266
+#: functions.php:296
 msgid "Tag"
 msgid_plural "Tags"
 msgstr[0] "Tag"
 msgstr[1] "Tags"
 
-#: functions.php:281
+#: functions.php:311
 msgid "Comments"
 msgstr "Kommentare"
 
-#: functions.php:293
+#: functions.php:323
 msgid "Trackbacks"
 msgstr "Trackbacks"
 
-#: functions.php:365
+#: functions.php:401
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr "%1$s @ %2$s"
 
-#: functions.php:371
+#: functions.php:407
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: functions.php:378
+#: functions.php:414
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: functions.php:385
+#: functions.php:421
 msgid "Reply"
 msgstr "Antworten"
 
