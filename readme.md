@@ -3,7 +3,7 @@
 **Contributors:** Florian Brinkmann  
 **Requires at least:** WordPress 4.4  
 **Tested up to:** WordPress 4.7.1  
-**Version:** 1.0.3  
+**Version:** 1.0.4  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -47,6 +47,10 @@ Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 
 
 ## Changelog
+
+### 1.0.4 - 26.01.2017
+#### Changed
+* Own update script for theme upgrades
 
 ### 1.0.3 - 24.01.2017
 #### Fixed

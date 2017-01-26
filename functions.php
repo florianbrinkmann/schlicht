@@ -569,22 +569,4 @@ if ( ! function_exists( 'schlicht_add_dropcap_markup' ) ) {
 add_filter( 'the_content', 'schlicht_add_dropcap_markup' );
 
 require_once 'inc/customizer.php';
-
-/**
- * Load API Class for automatic updates
- */
-if ( ! class_exists( 'AM_License_Menu' ) ) {
-
-	require_once( 'am-license-menu.php' );
-
-	/**
-	 * @param string $file Must be __FILE__ from the root plugin file, or theme functions file.
-	 * @param string $software_title Must be exactly the same as the Software Title in the product.
-	 * @param string $software_version This product's current software version.
-	 * @param string $plugin_or_theme 'plugin' or 'theme'
-	 * @param string $api_url The URL to the site that is running the API Manager. Example: https://www.toddlahman.com/
-	 *
-	 * @return \AM_License_Submenu|null
-	 */
-	AM_License_Menu::instance( __FILE__, 'Schlicht', '1.0.3', 'theme', 'https://florianbrinkmann.de/' );
-}
+require_once 'inc/theme-updates.php';
