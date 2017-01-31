@@ -53,7 +53,7 @@ function schlicht_esc_update_url( $url ) {
  *
  * @return mixed
  */
-function fbn_theme_update( $transient ) {
+function schlicht_theme_update( $transient ) {
     if ( empty( $transient->checked ) ) {
         return $transient;
     }
@@ -85,7 +85,7 @@ function fbn_theme_update( $transient ) {
     return $transient;
 }
 
-add_filter( 'pre_set_site_transient_update_themes', 'fbn_theme_update' );
+add_filter( 'pre_set_site_transient_update_themes', 'schlicht_theme_update' );
 
 /**
  * Fetch data of latest theme version
@@ -103,21 +103,12 @@ function schlicht_fetch_data_of_latest_version() {
  * if the new theme is not schlicht or a child theme of schlicht
  */
 function schlicht_remove_upgrade_url() {
-    global $blog_id;
     $theme_object = wp_get_theme();
     $template     = $theme_object->template;
     if ( $template == 'schlicht' ) {
 
     } else {
-        if ( is_multisite() ) {
-            switch_to_blog( $blog_id );
-
-            delete_option( 'schlicht_upgrade_url' );
-
-            restore_current_blog();
-        } else {
-            delete_option( 'schlicht_upgrade_url' );
-        }
+        delete_option( 'schlicht_upgrade_url' );
     }
 }
 
