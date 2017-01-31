@@ -6,5 +6,5 @@
  */
 ?>
 <article class="post">
-	<p><?php _e( 'Sorry, no posts matched your criteria.', 'schlicht' ); ?></p>
+    <p><?php _e( 'Sorry, no posts matched your criteria.', 'schlicht' ); ?></p>
 </article>
