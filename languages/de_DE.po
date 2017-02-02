@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2017-01-24 15:46+0100\n"
-"PO-Revision-Date: 2017-01-24 15:46+0100\n"
+"POT-Creation-Date: 2017-02-02 10:31+0100\n"
+"PO-Revision-Date: 2017-02-02 10:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -29,223 +29,6 @@ msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr "Sorry, leider wurden keine Ergebnisse gefunden."
-
-#: am-license-menu.php:107 am-license-menu.php:162
-msgid " Activation"
-msgstr " Aktivierung"
-
-#: am-license-menu.php:108 am-license-menu.php:302
-msgid " Key Activation"
-msgstr " Schlüssel-Aktivierung"
-
-#: am-license-menu.php:109 am-license-menu.php:295 am-license-menu.php:334
-msgid "Key Activation"
-msgstr "Schlüssel-Aktivierung"
-
-#: am-license-menu.php:110 am-license-menu.php:296
-msgid "Key Deactivation"
-msgstr "Schlüssel-Deaktivierung"
-
-#: am-license-menu.php:268
-#, php-format
-msgid ""
-"The <strong>%s</strong> Licence Key has not been activated, so there will be "
-"no automatic updates for the theme! %sClick here%s to activate <strong>%s</"
-"strong>."
-msgstr ""
-"Der <strong>%s</strong>-Lizenzschlüssel wurde nicht aktiviert, deshalb wird "
-"es keine automatischen Updates für das Theme geben! %sKlicke hier%s, um "
-"<strong>%s</strong> zu aktivieren."
-
-#: am-license-menu.php:285
-#, php-format
-msgid ""
-"<b>Warning!</b> You're blocking external requests which means you won't be "
-"able to get %s updates. Please add %s to %s."
-msgstr ""
-"<strong>Warnung!</strong> Du blockst externe Anfragen. Das bedeutet, du "
-"wirst keine %s-Updates bekommen. Bitte füge %s zu %s hinzu."
-
-#: am-license-menu.php:317 am-license-menu.php:321
-msgid "Save Changes"
-msgstr "Änderungen speichern"
-
-#: am-license-menu.php:338
-msgid "Key Status"
-msgstr "Status des Schlüssels"
-
-#: am-license-menu.php:342
-msgid "Key"
-msgstr "Schlüssel"
-
-#: am-license-menu.php:346
-msgid "Email"
-msgstr "E-Mail-Adresse"
-
-#: am-license-menu.php:355
-msgid "Deactivation"
-msgstr "Deaktivierung"
-
-#: am-license-menu.php:359
-msgid "Deactivate Key"
-msgstr "Schlüssel deaktivieren"
-
-#: am-license-menu.php:428
-#, php-format
-msgid "%s activated. "
-msgstr "%s aktiviert."
-
-#: am-license-menu.php:434
-msgid "Connection failed to the License Key API server. Try again later."
-msgstr ""
-"Die Verbindung zum Lizenzschlüssel-API-Server ist fehlgeschlagen. Versuche "
-"es später noch mal."
-
-#: am-license-menu.php:532
-msgid ""
-"The Key could not be deactivated. Use the Key Deactivation tab to manually "
-"deactivate the Key before activating a new Key."
-msgstr ""
-"Der Schlüssel konnte nicht deaktiviert werden. Nutze den Deaktivierungs-Tab, "
-"um den Schlüssel manuell zu deaktivieren, bevor du einen neuen Schlüssel "
-"aktivierst."
-
-#: am-license-menu.php:567
-msgid "Key deactivated. "
-msgstr "Schlüssel deaktiviert."
-
-#: am-license-menu.php:642
-msgid "Deactivates an Key so it can be used on another blog."
-msgstr ""
-"Deaktiviert einen Schlüssel, sodass er auf einem anderen Blog genutzt werden "
-"kann."
-
-#: am-license-menu.php:1006
-#, php-format
-msgid ""
-"The license key for %s has expired. You can reactivate or purchase a license "
-"key from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-"Der Lizenzschlüssel für %s ist ausgelaufen. Du kannst einen neuen Schlüssel "
-"von deinem <a href=\"%s\" target=\"_blank\">Account-Dashboard kaufen</a>."
-
-#: am-license-menu.php:1013
-#, php-format
-msgid ""
-"The subscription for %s is on-hold. You can reactivate the subscription from "
-"your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-"Das Abo für %s ist ausgesetzt. Du kannst das Abo von deinem <a href=\"%s\" "
-"target=\"_blank\">Account-Dashboard</a> aus reaktivieren."
-
-#: am-license-menu.php:1020
-#, php-format
-msgid ""
-"The subscription for %s has been cancelled. You can renew the subscription "
-"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>. A new "
-"license key will be emailed to you after your order has been completed."
-msgstr ""
-"Das Abo für %s wurde beendet. Du kannst es von deinem <a href=\"%s\" target="
-"\"_blank\">Account-Dashboard</a> aus erneuern. Ein neuer Lizenzschlüssel "
-"wird an deine E-Mail-Adresse geschickt, sobald die Bestellung abgeschlossen "
-"ist."
-
-#: am-license-menu.php:1027
-#, php-format
-msgid ""
-"The subscription for %s has expired. You can reactivate the subscription "
-"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-"Das Abo für %s ist ausgelaufen. Du kannst es über dein <a href=\"%s\" target="
-"\"_blank\">Account-Dashboard</a> erneuern."
-
-#: am-license-menu.php:1034
-#, php-format
-msgid ""
-"The subscription for %s has been suspended. You can reactivate the "
-"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
-"a>."
-msgstr ""
-"The subscription for %s has been suspended. You can reactivate the "
-"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
-"a>."
-
-#: am-license-menu.php:1041
-#, php-format
-msgid ""
-"The subscription for %s is still pending. You can check on the status of the "
-"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
-"a>."
-msgstr ""
-"The subscription for %s is still pending. You can check on the status of the "
-"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
-"a>."
-
-#: am-license-menu.php:1048
-#, php-format
-msgid ""
-"The subscription for %s has been placed in the trash and will be deleted "
-"soon. You can purchase a new subscription from your account <a href=\"%s\" "
-"target=\"_blank\">dashboard</a>."
-msgstr ""
-"The subscription for %s has been placed in the trash and will be deleted "
-"soon. You can purchase a new subscription from your account <a href=\"%s\" "
-"target=\"_blank\">dashboard</a>."
-
-#: am-license-menu.php:1055
-#, php-format
-msgid ""
-"A subscription for %s could not be found. You can purchase a subscription "
-"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-"A subscription for %s could not be found. You can purchase a subscription "
-"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-
-#: am-license-menu.php:1062
-#, php-format
-msgid ""
-"A license key for %s could not be found. Maybe you forgot to enter a license "
-"key when setting up %s, or the key was deactivated in your account. You can "
-"reactivate or purchase a license key from your account <a href=\"%s\" target="
-"\"_blank\">dashboard</a>."
-msgstr ""
-"A license key for %s could not be found. Maybe you forgot to enter a license "
-"key when setting up %s, or the key was deactivated in your account. You can "
-"reactivate or purchase a license key from your account <a href=\"%s\" target="
-"\"_blank\">dashboard</a>."
-
-#: am-license-menu.php:1069
-#, php-format
-msgid ""
-"Download permission for %s has been revoked possibly due to a license key or "
-"subscription expiring. You can reactivate or purchase a license key from "
-"your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-"Download permission for %s has been revoked possibly due to a license key or "
-"subscription expiring. You can reactivate or purchase a license key from "
-"your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
-
-#: am-license-menu.php:1076
-#, php-format
-msgid ""
-"%s has not been activated. Go to the settings page and enter the license key "
-"and license email to activate %s."
-msgstr ""
-"%s has not been activated. Go to the settings page and enter the license key "
-"and license email to activate %s."
-
-#: am-license-menu.php:1083
-#, php-format
-msgid ""
-"You changed the subscription for %s, so you will need to enter your new API "
-"License Key in the settings page. The License Key should have arrived in "
-"your email inbox, if not you can get it by logging into your account <a href="
-"\"%s\" target=\"_blank\">dashboard</a>."
-msgstr ""
-"You changed the subscription for %s, so you will need to enter your new API "
-"License Key in the settings page. The License Key should have arrived in "
-"your email inbox, if not you can get it by logging into your account <a href="
-"\"%s\" target=\"_blank\">dashboard</a>."
 
 #: archive.php:27 index.php:25 search.php:32
 msgid "Previous"
@@ -380,7 +163,7 @@ msgstr "Antworten"
 msgid "[Skip to Content]"
 msgstr "[Zum Inhalt springen]"
 
-#: header.php:52
+#: header.php:59
 msgid "Main navigation"
 msgstr "Hauptmenü"
 
@@ -414,6 +197,13 @@ msgid ""
 msgstr ""
 "Alternatives Layout für Beiträge/Seiten aktivieren, wo der Titel links neben "
 "dem Inhalt angezeigt wird."
+
+#: inc/theme-updates.php:24
+msgid ""
+"Paste your download link for »Schlicht« to enable automatic theme updates."
+msgstr ""
+"Füge deinen Download-Link für »Schlicht« ein, um automatische Updates zu "
+"aktivieren."
 
 #: search.php:13
 #, php-format
@@ -474,6 +264,182 @@ msgstr ""
 #. Author of the plugin/theme
 msgid "Florian Brinkmann"
 msgstr "Florian Brinkmann"
+
+#~ msgid " Activation"
+#~ msgstr " Aktivierung"
+
+#~ msgid " Key Activation"
+#~ msgstr " Schlüssel-Aktivierung"
+
+#~ msgid "Key Activation"
+#~ msgstr "Schlüssel-Aktivierung"
+
+#~ msgid "Key Deactivation"
+#~ msgstr "Schlüssel-Deaktivierung"
+
+#~ msgid ""
+#~ "The <strong>%s</strong> Licence Key has not been activated, so there will "
+#~ "be no automatic updates for the theme! %sClick here%s to activate <strong>"
+#~ "%s</strong>."
+#~ msgstr ""
+#~ "Der <strong>%s</strong>-Lizenzschlüssel wurde nicht aktiviert, deshalb "
+#~ "wird es keine automatischen Updates für das Theme geben! %sKlicke hier%s, "
+#~ "um <strong>%s</strong> zu aktivieren."
+
+#~ msgid ""
+#~ "<b>Warning!</b> You're blocking external requests which means you won't "
+#~ "be able to get %s updates. Please add %s to %s."
+#~ msgstr ""
+#~ "<strong>Warnung!</strong> Du blockst externe Anfragen. Das bedeutet, du "
+#~ "wirst keine %s-Updates bekommen. Bitte füge %s zu %s hinzu."
+
+#~ msgid "Save Changes"
+#~ msgstr "Änderungen speichern"
+
+#~ msgid "Key Status"
+#~ msgstr "Status des Schlüssels"
+
+#~ msgid "Key"
+#~ msgstr "Schlüssel"
+
+#~ msgid "Email"
+#~ msgstr "E-Mail-Adresse"
+
+#~ msgid "Deactivation"
+#~ msgstr "Deaktivierung"
+
+#~ msgid "Deactivate Key"
+#~ msgstr "Schlüssel deaktivieren"
+
+#~ msgid "%s activated. "
+#~ msgstr "%s aktiviert."
+
+#~ msgid "Connection failed to the License Key API server. Try again later."
+#~ msgstr ""
+#~ "Die Verbindung zum Lizenzschlüssel-API-Server ist fehlgeschlagen. "
+#~ "Versuche es später noch mal."
+
+#~ msgid ""
+#~ "The Key could not be deactivated. Use the Key Deactivation tab to "
+#~ "manually deactivate the Key before activating a new Key."
+#~ msgstr ""
+#~ "Der Schlüssel konnte nicht deaktiviert werden. Nutze den Deaktivierungs-"
+#~ "Tab, um den Schlüssel manuell zu deaktivieren, bevor du einen neuen "
+#~ "Schlüssel aktivierst."
+
+#~ msgid "Key deactivated. "
+#~ msgstr "Schlüssel deaktiviert."
+
+#~ msgid "Deactivates an Key so it can be used on another blog."
+#~ msgstr ""
+#~ "Deaktiviert einen Schlüssel, sodass er auf einem anderen Blog genutzt "
+#~ "werden kann."
+
+#~ msgid ""
+#~ "The license key for %s has expired. You can reactivate or purchase a "
+#~ "license key from your account <a href=\"%s\" target=\"_blank\">dashboard</"
+#~ "a>."
+#~ msgstr ""
+#~ "Der Lizenzschlüssel für %s ist ausgelaufen. Du kannst einen neuen "
+#~ "Schlüssel von deinem <a href=\"%s\" target=\"_blank\">Account-Dashboard "
+#~ "kaufen</a>."
+
+#~ msgid ""
+#~ "The subscription for %s is on-hold. You can reactivate the subscription "
+#~ "from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+#~ msgstr ""
+#~ "Das Abo für %s ist ausgesetzt. Du kannst das Abo von deinem <a href=\"%s"
+#~ "\" target=\"_blank\">Account-Dashboard</a> aus reaktivieren."
+
+#~ msgid ""
+#~ "The subscription for %s has been cancelled. You can renew the "
+#~ "subscription from your account <a href=\"%s\" target=\"_blank"
+#~ "\">dashboard</a>. A new license key will be emailed to you after your "
+#~ "order has been completed."
+#~ msgstr ""
+#~ "Das Abo für %s wurde beendet. Du kannst es von deinem <a href=\"%s\" "
+#~ "target=\"_blank\">Account-Dashboard</a> aus erneuern. Ein neuer "
+#~ "Lizenzschlüssel wird an deine E-Mail-Adresse geschickt, sobald die "
+#~ "Bestellung abgeschlossen ist."
+
+#~ msgid ""
+#~ "The subscription for %s has expired. You can reactivate the subscription "
+#~ "from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+#~ msgstr ""
+#~ "Das Abo für %s ist ausgelaufen. Du kannst es über dein <a href=\"%s\" "
+#~ "target=\"_blank\">Account-Dashboard</a> erneuern."
+
+#~ msgid ""
+#~ "The subscription for %s has been suspended. You can reactivate the "
+#~ "subscription from your account <a href=\"%s\" target=\"_blank"
+#~ "\">dashboard</a>."
+#~ msgstr ""
+#~ "The subscription for %s has been suspended. You can reactivate the "
+#~ "subscription from your account <a href=\"%s\" target=\"_blank"
+#~ "\">dashboard</a>."
+
+#~ msgid ""
+#~ "The subscription for %s is still pending. You can check on the status of "
+#~ "the subscription from your account <a href=\"%s\" target=\"_blank"
+#~ "\">dashboard</a>."
+#~ msgstr ""
+#~ "The subscription for %s is still pending. You can check on the status of "
+#~ "the subscription from your account <a href=\"%s\" target=\"_blank"
+#~ "\">dashboard</a>."
+
+#~ msgid ""
+#~ "The subscription for %s has been placed in the trash and will be deleted "
+#~ "soon. You can purchase a new subscription from your account <a href=\"%s"
+#~ "\" target=\"_blank\">dashboard</a>."
+#~ msgstr ""
+#~ "The subscription for %s has been placed in the trash and will be deleted "
+#~ "soon. You can purchase a new subscription from your account <a href=\"%s"
+#~ "\" target=\"_blank\">dashboard</a>."
+
+#~ msgid ""
+#~ "A subscription for %s could not be found. You can purchase a subscription "
+#~ "from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+#~ msgstr ""
+#~ "A subscription for %s could not be found. You can purchase a subscription "
+#~ "from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+
+#~ msgid ""
+#~ "A license key for %s could not be found. Maybe you forgot to enter a "
+#~ "license key when setting up %s, or the key was deactivated in your "
+#~ "account. You can reactivate or purchase a license key from your account "
+#~ "<a href=\"%s\" target=\"_blank\">dashboard</a>."
+#~ msgstr ""
+#~ "A license key for %s could not be found. Maybe you forgot to enter a "
+#~ "license key when setting up %s, or the key was deactivated in your "
+#~ "account. You can reactivate or purchase a license key from your account "
+#~ "<a href=\"%s\" target=\"_blank\">dashboard</a>."
+
+#~ msgid ""
+#~ "Download permission for %s has been revoked possibly due to a license key "
+#~ "or subscription expiring. You can reactivate or purchase a license key "
+#~ "from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+#~ msgstr ""
+#~ "Download permission for %s has been revoked possibly due to a license key "
+#~ "or subscription expiring. You can reactivate or purchase a license key "
+#~ "from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+
+#~ msgid ""
+#~ "%s has not been activated. Go to the settings page and enter the license "
+#~ "key and license email to activate %s."
+#~ msgstr ""
+#~ "%s has not been activated. Go to the settings page and enter the license "
+#~ "key and license email to activate %s."
+
+#~ msgid ""
+#~ "You changed the subscription for %s, so you will need to enter your new "
+#~ "API License Key in the settings page. The License Key should have arrived "
+#~ "in your email inbox, if not you can get it by logging into your account "
+#~ "<a href=\"%s\" target=\"_blank\">dashboard</a>."
+#~ msgstr ""
+#~ "You changed the subscription for %s, so you will need to enter your new "
+#~ "API License Key in the settings page. The License Key should have arrived "
+#~ "in your email inbox, if not you can get it by logging into your account "
+#~ "<a href=\"%s\" target=\"_blank\">dashboard</a>."
 
 #~ msgid "https://florianbrinkmann.de/wordpress-themes/schlicht/"
 #~ msgstr "https://florianbrinkmann.de/wordpress-themes/schlicht/"
