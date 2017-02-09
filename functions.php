@@ -39,14 +39,14 @@ if ( ! function_exists( 'schlicht_is_wp_comments_post' ) ) {
 }
 
 /**
- * Set content width to 845 px
+ * Set content width to 806 px
  */
 if ( ! isset( $content_width ) ) {
     $content_width = 806;
 }
 
 /**
- * Set width of large image size to 845 px
+ * Set width of large image size to 806 px
  */
 update_option( 'large_size_w', 806 );
 
@@ -82,6 +82,17 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 }
 
 add_action( 'after_setup_theme', 'schlicht_add_theme_support' );
+
+if ( ! function_exists( 'schlicht_add_editor_style' ) ) {
+    /**
+     * Adds stylesheet for Tiny MCE editor in the backend
+     */
+    function schlicht_add_editor_style() {
+        add_editor_style( 'css/editor-style.css' );
+    }
+}
+
+add_action( 'after_setup_theme', 'schlicht_add_editor_style' );
 
 if ( ! function_exists( 'schlicht_register_menus' ) ) {
     /**

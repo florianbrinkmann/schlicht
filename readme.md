@@ -48,6 +48,10 @@ Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 
 ## Changelog
 
+### 1.1 - 09.02.2017
+#### Added
+* Editor stylesheet
+
 ### 1.0.4 - 26.01.2017
 #### Changed
 * Own update script for theme upgrades
