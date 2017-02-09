@@ -69,7 +69,8 @@ function schlicht_theme_update( $transient ) {
     $theme_id = $data->theme_id;
     unset( $data->theme_id );
     if ( version_compare( $transient->checked['schlicht'], $data->new_version, '<' ) ) {
-        $transient->response['schlicht'] = (array) $data;
+        $transient->response['schlicht']        = (array) $data;
+        $transient->response['schlicht']['url'] = __( 'https://en.florianbrinkmann.de/wordpress-themes/schlicht/changelog/', 'schlicht' );
 
         $theme_package = get_option( 'schlicht_upgrade_url' );
         if ( ! empty ( $theme_package ) ) {

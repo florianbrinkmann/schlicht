@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2017-02-02 10:31+0100\n"
-"PO-Revision-Date: 2017-02-02 10:31+0100\n"
+"POT-Creation-Date: 2017-02-09 08:34+0100\n"
+"PO-Revision-Date: 2017-02-09 08:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -78,84 +78,84 @@ msgstr "Theme: Schlicht von %s"
 msgid "https://en.florianbrinkmann.de"
 msgstr "https://florianbrinkmann.de"
 
-#: functions.php:94
+#: functions.php:105
 msgid "Primary Menu"
 msgstr "Hauptmenü"
 
-#: functions.php:96
+#: functions.php:107
 msgid "Footer Menu"
 msgstr "Footer-Menü"
 
-#: functions.php:110
+#: functions.php:121
 msgid "Main Sidebar"
 msgstr "Sidebar"
 
-#: functions.php:112
+#: functions.php:123
 msgid ""
 "Widgets in this area will be displayed on all posts and pages by default."
 msgstr ""
 "Widgets aus diesem Bereich werden standardmäßig auf allen Beiträgen und "
 "Seiten angezeigt."
 
-#: functions.php:119
+#: functions.php:130
 msgid "Footer Sidebar"
 msgstr "Footer-Sidebar"
 
-#: functions.php:121
+#: functions.php:132
 msgid "Widgets will be displayed in the footer."
 msgstr "Widgets werden im Footer angezeigt."
 
-#: functions.php:245
+#: functions.php:256
 msgid "Continue reading"
 msgstr "Weiterlesen"
 
-#: functions.php:247
+#: functions.php:258
 #, php-format
 msgid "Continue reading %s"
 msgstr "%s weiterlesen"
 
-#: functions.php:264
+#: functions.php:275
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: functions.php:282
+#: functions.php:293
 msgid "Category"
 msgid_plural "Categories"
 msgstr[0] "Kategorie"
 msgstr[1] "Kategorien"
 
-#: functions.php:289 functions.php:303
+#: functions.php:300 functions.php:314
 msgid ", "
 msgstr ", "
 
-#: functions.php:296
+#: functions.php:307
 msgid "Tag"
 msgid_plural "Tags"
 msgstr[0] "Tag"
 msgstr[1] "Tags"
 
-#: functions.php:311
+#: functions.php:322
 msgid "Comments"
 msgstr "Kommentare"
 
-#: functions.php:323
+#: functions.php:334
 msgid "Trackbacks"
 msgstr "Trackbacks"
 
-#: functions.php:401
+#: functions.php:412
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr "%1$s @ %2$s"
 
-#: functions.php:407
+#: functions.php:418
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: functions.php:414
+#: functions.php:425
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: functions.php:421
+#: functions.php:432
 msgid "Reply"
 msgstr "Antworten"
 
@@ -204,6 +204,10 @@ msgid ""
 msgstr ""
 "Füge deinen Download-Link für »Schlicht« ein, um automatische Updates zu "
 "aktivieren."
+
+#: inc/theme-updates.php:73
+msgid "https://en.florianbrinkmann.de/wordpress-themes/schlicht/changelog/"
+msgstr "https://florianbrinkmann.de/wordpress-themes/schlicht/changelog/"
 
 #: search.php:13
 #, php-format
