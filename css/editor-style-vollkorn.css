@@ -42,6 +42,7 @@ a {
     background-size: 100% 1px;
     color: inherit;
     padding-bottom: 3px;
+    padding-top: 3px;
     text-decoration: none;
     -webkit-text-decoration-skip: objects; /* 2 */
     -webkit-transition: all .2s ease 0s;
