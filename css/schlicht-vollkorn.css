@@ -25,7 +25,7 @@ html {
     font-family: "Vollkorn", serif; /* 1 */
     -webkit-font-feature-settings: "onum";
     font-feature-settings: "onum";
-    font-size: 1rem;
+    font-size: 1.02rem;
     line-height: 1.5;
     overflow-y: scroll;
     -ms-text-size-adjust: 100%; /* 2 */
@@ -510,7 +510,7 @@ strong {
     font-feature-settings: "smcp", "onum";
     font-style: normal;
     font-weight: 400;
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: lowercase;
 }
 
@@ -540,7 +540,7 @@ cite {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     font-style: normal;
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: lowercase;
 }
 
@@ -578,7 +578,7 @@ th {
 
 dt,
 th {
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: uppercase;
 }
 
@@ -650,7 +650,7 @@ textarea {
     border: 1px solid;
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     margin-top: .375rem;
     padding: .3rem .375rem .2rem;
     text-transform: lowercase;
@@ -758,7 +758,7 @@ figure.alignright {
 .small-caps {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: lowercase;
 }
 
@@ -860,7 +860,7 @@ figure.alignright {
 .page-numbers .prev,
 .page-numbers span {
     font-feature-settings: "smcp";
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: lowercase;
 }
 
@@ -943,7 +943,7 @@ figure.alignright {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     font-style: normal;
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: lowercase;
 }
 
@@ -959,7 +959,7 @@ figure.alignright {
 .featured {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: lowercase;
 }
 
@@ -1010,7 +1010,7 @@ figure.alignright {
     color: #666;
     -webkit-font-feature-settings: "smcp", "onum";
     font-feature-settings: "smcp", "onum";
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     line-height: 1.3rem;
     text-transform: lowercase;
     width: 100%;
@@ -1062,7 +1062,7 @@ figure.alignright {
     display: block;
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     margin-top: .75rem;
     text-transform: lowercase;
 }
@@ -1130,7 +1130,7 @@ figure.alignright {
 .tagcloud {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: lowercase;
 }
 
@@ -1261,7 +1261,7 @@ figure.alignright {
 
 @media screen and (min-width: 50em) {
     html {
-        font-size: 1.3em;
+        font-size: 1.301em;
     }
 }
 

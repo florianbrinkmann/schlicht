@@ -14,7 +14,7 @@
 
 html {
     background: #f9f9f9;
-    font-size: 1em;
+    font-size: 1.02em;
     margin-left: 1.6rem;
     margin-right: 1.6rem;
 }
@@ -135,7 +135,7 @@ strong {
     font-feature-settings: "smcp", "onum";
     font-style: normal;
     font-weight: 400;
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: lowercase;
 }
 
@@ -165,7 +165,7 @@ cite {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     font-style: normal;
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: lowercase;
 }
 
@@ -203,7 +203,7 @@ th {
 
 dt,
 th {
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: uppercase;
 }
 
@@ -282,7 +282,7 @@ textarea {
     border: 1px solid;
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     margin-top: .375rem;
     padding: .2rem .375rem;
     text-transform: lowercase;
@@ -354,7 +354,7 @@ figure.alignright {
 .small-caps {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
     text-transform: lowercase;
 }
 
@@ -384,6 +384,6 @@ figure.alignright {
 
 @media screen and (min-width: 50rem) {
     html {
-        font-size: 1.3em;
+        font-size: 1.301em;
     }
 }
