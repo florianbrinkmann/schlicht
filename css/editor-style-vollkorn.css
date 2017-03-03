@@ -1,15 +1,15 @@
 @font-face {
-    font-family: 'Sorts Mill Goudy';
+    font-family: 'Vollkorn';
     font-style: normal;
     font-weight: 400;
-    src: local('OFL Sorts Mill Goudy'), url('../fonts/sortsmillgoudy-400.woff') format('woff')
+    src: local('Vollkorn'), url('../fonts/vollkorn-regular.woff2') format('woff2')
 }
 
 @font-face {
-    font-family: 'Sorts Mill Goudy';
+    font-family: 'Vollkorn';
     font-style: italic;
     font-weight: 400;
-    src: local('OFL Sorts Mill Goudy Italic'), url('../fonts/sortsmillgoudy-400i.woff') format('woff')
+    src: local('Vollkorn Italic'), url('../fonts/vollkorn-italic.woff2') format('woff2')
 }
 
 html {
@@ -22,11 +22,11 @@ html {
 body {
     background: #f9f9f9;
     color: #333;
-    font-family: "Sorts Mill Goudy", serif; /* 1 */
+    font-family: "Vollkorn", serif; /* 1 */
     -webkit-font-feature-settings: "onum";
     font-feature-settings: "onum";
     font-size: inherit;
-    line-height: 1.6;
+    line-height: 1.5;
     margin-left: auto;
     margin-right: auto;
     max-width: 806px;
@@ -36,11 +36,12 @@ body {
 }
 
 a {
-    background: transparent url('../img/link-underline.png') repeat no-repeat 0 93%;
-    background: transparent -webkit-linear-gradient(left, #333, #333) no-repeat 0 93%;
-    background: transparent linear-gradient(90deg, #333, #333) no-repeat 0 93%;
+    background: transparent url('../img/link-underline.png') repeat no-repeat 0 100%;
+    background: transparent -webkit-linear-gradient(left, #333, #333) no-repeat 0 100%;
+    background: transparent linear-gradient(90deg, #333, #333) no-repeat 0 100%;
     background-size: 100% 1px;
     color: inherit;
+    padding-bottom: 3px;
     text-decoration: none;
     -webkit-text-decoration-skip: objects; /* 2 */
     -webkit-transition: all .2s ease 0s;
@@ -66,54 +67,54 @@ h4,
 h5,
 h6 {
     font-weight: 400;
-    margin: 2.25rem 0 0;
+    margin: 2rem 0 0;
 }
 
 h1,
 .entry-title {
-    font-size: 1.476rem;
-    line-height: 2rem;
+    font-size: 1.802rem;
+    line-height: 2.25rem;
 }
 
 h2 {
-    font-size: 1.383rem;
+    font-size: 1.602rem;
     line-height: 2rem;
 }
 
 h3 {
-    font-size: 1.296rem;
-    line-height: 1.8rem;
+    font-size: 1.424rem;
+    line-height: 1.75rem;
 }
 
 h4 {
-    font-size: 1.215rem;
-    line-height: 1.6rem;
+    font-size: 1.266rem;
+    line-height: 1.5rem;
 }
 
 h5 {
-    font-size: 1.138rem;
-    line-height: 1.4rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
 }
 
 h6 {
     font-size: 1rem;
-    line-height: 1.4rem;
+    line-height: 1.5rem;
 }
 
 h2 + h3 {
-    margin-top: .8rem;
+    margin-top: .75rem;
 }
 
 h3 + h4 {
-    margin-top: .8rem;
+    margin-top: .75rem;
 }
 
 h4 + h5 {
-    margin-top: .8rem;
+    margin-top: .75rem;
 }
 
 h5 + h6 {
-    margin-top: .8rem;
+    margin-top: .75rem;
 }
 
 p,
@@ -123,7 +124,7 @@ ol,
 ul,
 table,
 figure {
-    margin: .8rem 0 0;
+    margin: .75rem 0 0;
     padding: 0;
 }
 
@@ -139,7 +140,7 @@ strong {
 
 blockquote {
     margin-left: .375rem;
-    padding-left: .8rem;
+    padding-left: .75rem;
     position: relative;
 }
 
@@ -206,13 +207,13 @@ th {
 }
 
 dd {
-    margin-bottom: .8rem;
-    margin-left: .8rem;
+    margin-bottom: .75rem;
+    margin-left: .75rem;
 }
 
 ul,
 ol {
-    padding-left: .8rem;
+    padding-left: .75rem;
 }
 
 li {
@@ -319,7 +320,7 @@ textarea:active {
 .aligncenter,
 .alignnone {
     display: block;
-    margin: 1.6rem 0;
+    margin: 1.5rem 0;
 }
 
 .aligncenter {
@@ -329,8 +330,8 @@ textarea:active {
 
 .alignleft,
 .alignright {
-    margin-top: .4rem;
-    margin-bottom: .8rem;
+    margin-top: .375rem;
+    margin-bottom: .75rem;
 }
 
 figure.alignleft,
@@ -346,7 +347,7 @@ figure.alignright {
 .wp-caption-dd {
     font-size: 1rem;
     font-style: italic;
-    margin-top: .3rem;
+    margin-top: .375rem;
 }
 
 .small-caps {
@@ -360,11 +361,11 @@ figure.alignright {
     float: left;
     -webkit-font-feature-settings: unset;
     font-feature-settings: unset;
-    padding: 0px;
-    font-size: 3.353rem;
-    height: 2.2802rem;
-    line-height: .8rem;
-    margin-top: 0.45rem;
+    padding: 0;
+    font-size: 3.23881em;
+    height: 2.17rem;
+    line-height: .82em;
+    margin-top: 0.33rem;
     text-transform: none;
 }
 
