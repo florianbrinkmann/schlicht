@@ -17,12 +17,14 @@ function schlicht_update_customize_register( $wp_customize ) {
         'sanitize_callback' => 'schlicht_esc_update_url'
     ) );
 
-    $wp_customize->add_control( 'schlicht_upgrade_url', array(
-        'priority' => 1,
-        'type'     => 'url',
-        'section'  => 'schlicht_options',
-        'label'    => __( 'Paste your download link for »Schlicht« to enable automatic theme updates.', 'schlicht' ),
-    ) );
+    if ( ! is_multisite() ) {
+        $wp_customize->add_control( 'schlicht_upgrade_url', array(
+            'priority' => 1,
+            'type'     => 'url',
+            'section'  => 'schlicht_options',
+            'label'    => __( 'Paste your download link for »Schlicht« to enable automatic theme updates.', 'schlicht' ),
+        ) );
+    }
 }
 
 add_action( 'customize_register', 'schlicht_update_customize_register', 12 );
