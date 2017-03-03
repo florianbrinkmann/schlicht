@@ -27,6 +27,7 @@ html {
     font-feature-settings: "onum";
     font-size: 1rem;
     line-height: 1.6;
+    overflow-y: scroll;
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
     word-wrap: break-word;
