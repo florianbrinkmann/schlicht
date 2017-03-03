@@ -29,24 +29,37 @@ GNU General Public License for more details.
 
 **Schlicht bundles the following third-party resources:**
 
-Search icon from Genericons, Copyright 2013-2016 Automattic.com<br>
-License: GNU GPL, Version 2 (or later)<br>
+Search icon from Genericons, Copyright 2013-2016 Automattic.com  
+License: GNU GPL, Version 2 (or later)  
 Source: https://genericons.com/
 
-normalize.css v4.1.1, Copyright Nicolas Gallagher and Jonathan Neal<br>
-Licence: MIT<br>
+normalize.css v4.1.1, Copyright Nicolas Gallagher and Jonathan Neal  
+Licence: MIT  
 Source: https://github.com/necolas/normalize.css
 
-SmartDomDocument, Copyright 2015 Artem Russakovskii<br>
-Licence: MIT<br>
+SmartDomDocument, Copyright 2015 Artem Russakovskii  
+Licence: MIT  
 Source: https://bitbucket.org/archon810/smartdomdocument/
 
-Sorts Mill Goudy, Copyright 2009 Barry Schwartz <br>
-Licence: SIL Open Font License, Version 1.1<br>
+Sorts Mill Goudy, Copyright 2009 Barry Schwartz  
+Licence: SIL Open Font License, Version 1.1  
 Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
+
+Vollkorn, Copyright 2006-2017 Friedrich Althausen  
+Licence: SIL Open Font License  
+Source: http://vollkorn-typeface.com/  
 
 
 ## Changelog
+
+### 1.2 - 03.03.2017
+#### Added
+* Layout option with Vollkorn font instead of Sorts Mill Goudy
+
+#### Changed
+* Do not display upgrade URL field in the customizer, if multisite
+* `overflow-y: scroll;` on `html` element
+* background color also on `html` element for the editor stylesheet
 
 ### 1.1 - 09.02.2017
 #### Added
