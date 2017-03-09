@@ -2,7 +2,7 @@
 /**
  * Handling automatic theme updates
  *
- * @version 1.0.4
+ * @version 1.2
  */
 
 /**
@@ -30,7 +30,7 @@ function schlicht_update_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'schlicht_update_customize_register', 12 );
 
 /**
- * Escape URL and check if it matches format https://florianbrinkmann.de/?download_file=
+ * Escape URL and check if it matches format https://florianbrinkmann.com/?download_file=
  *
  * @param $url
  *
@@ -38,7 +38,7 @@ add_action( 'customize_register', 'schlicht_update_customize_register', 12 );
  */
 function schlicht_esc_update_url( $url ) {
     $url     = esc_url_raw( $url );
-    $pattern = '|^(https:\/\/florianbrinkmann\.de\/\?download_file=)|';
+    $pattern = '/^https:\/\/florianbrinkmann\.com\/(en\/)?\?download_file=|^https:\/\/(en\.)?florianbrinkmann\.de\/\?download_file=/';
     preg_match( $pattern, $url, $matches );
 
     if ( ! empty ( $matches ) ) {
@@ -72,11 +72,11 @@ function schlicht_theme_update( $transient ) {
     unset( $data->theme_id );
     if ( version_compare( $transient->checked['schlicht'], $data->new_version, '<' ) ) {
         $transient->response['schlicht']        = (array) $data;
-        $transient->response['schlicht']['url'] = __( 'https://en.florianbrinkmann.de/wordpress-themes/schlicht/changelog/', 'schlicht' );
+        $transient->response['schlicht']['url'] = __( 'https://florianbrinkmann.com/en/wordpress-themes/schlicht/changelog/', 'schlicht' );
 
         $theme_package = get_option( 'schlicht_upgrade_url' );
         if ( ! empty ( $theme_package ) ) {
-            $pattern = '|^(https:\/\/florianbrinkmann\.de\/\?download_file=' . $theme_id . ')|';
+            $pattern = '/^https:\/\/florianbrinkmann\.com\/(en\/)?\?download_file=' . $theme_id . '|^https:\/\/(en\.)?florianbrinkmann\.de\/\?download_file=' . $theme_id . '/';
             preg_match( $pattern, $theme_package, $matches );
             if ( ! empty ( $matches ) ) {
                 $transient->response['schlicht']['package'] = $theme_package;
@@ -96,7 +96,7 @@ add_filter( 'pre_set_site_transient_update_themes', 'schlicht_theme_update' );
  * @return array|WP_Error
  */
 function schlicht_fetch_data_of_latest_version() {
-    $request = wp_safe_remote_get( 'https://florianbrinkmann.de/wordpress-themes/schlicht/upgrade-json/' );
+    $request = wp_safe_remote_get( 'https://florianbrinkmann.com/wordpress-themes/schlicht/upgrade-json/' );
 
     return $request;
 }

@@ -60,6 +60,7 @@ Source: http://vollkorn-typeface.com/
 * Do not display upgrade URL field in the customizer, if multisite
 * `overflow-y: scroll;` on `html` element
 * background color also on `html` element for the editor stylesheet
+* small changes in update script
 
 ### 1.1 - 09.02.2017
 #### Added
