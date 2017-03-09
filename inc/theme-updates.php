@@ -30,7 +30,7 @@ function schlicht_update_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'schlicht_update_customize_register', 12 );
 
 /**
- * Escape URL and check if it matches format https://florianbrinkmann.com/?download_file=
+ * Escape URL and check if it matches a valid download format
  *
  * @param $url
  *
