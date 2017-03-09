@@ -1,0 +1,15 @@
+image: tetraweb/php
+
+before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - mkdir -p ~/.ssh
+  - eval $(ssh-agent -s)
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+  
+stage_deploy:
+  script:
+    - ssh -p22 fbndev@aries.uberspace.de "rm -rf /var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes/schlicht/*"
+    - ssh -p22 fbndev@aries.uberspace.de "rm -rf /var/www/virtual/fbndev/stable-version.florianbrinkmann.de/wp-content/themes/schlicht/*"
+    - scp -P22 -r [!.]* fbndev@aries.uberspace.de:/var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes/schlicht
+    - scp -P22 -r [!.]* fbndev@aries.uberspace.de:/var/www/virtual/fbndev/stable-version.florianbrinkmann.de/wp-content/themes/schlicht
