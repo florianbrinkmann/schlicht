@@ -33,7 +33,7 @@
     <?php } ?>
     <p class="theme-author"><?php printf(
             __( 'Theme: Schlicht by %s', 'schlicht' ),
-            sprintf( '<a rel="nofollow" href="%s">Florian Brinkmann</a>', __( 'https://en.florianbrinkmann.de', 'schlicht' ) ) ); ?></p>
+            sprintf( '<a rel="nofollow" href="%s">Florian Brinkmann</a>', __( 'https://florianbrinkmann.com/en/', 'schlicht' ) ) ); ?></p>
 </footer>
 <?php wp_footer(); ?>
 </body>
