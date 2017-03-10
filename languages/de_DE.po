@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2017-02-09 08:34+0100\n"
-"PO-Revision-Date: 2017-02-09 08:34+0100\n"
+"POT-Creation-Date: 2017-03-10 08:53+0100\n"
+"PO-Revision-Date: 2017-03-10 08:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -75,87 +75,87 @@ msgstr "Theme: Schlicht von %s"
 
 #. Author URI of the plugin/theme
 #: footer.php:36
-msgid "https://en.florianbrinkmann.de"
-msgstr "https://florianbrinkmann.de"
+msgid "https://florianbrinkmann.com/en/"
+msgstr "https://florianbrinkmann.com/"
 
-#: functions.php:105
+#: functions.php:110
 msgid "Primary Menu"
 msgstr "Hauptmenü"
 
-#: functions.php:107
+#: functions.php:112
 msgid "Footer Menu"
 msgstr "Footer-Menü"
 
-#: functions.php:121
+#: functions.php:126
 msgid "Main Sidebar"
 msgstr "Sidebar"
 
-#: functions.php:123
+#: functions.php:128
 msgid ""
 "Widgets in this area will be displayed on all posts and pages by default."
 msgstr ""
 "Widgets aus diesem Bereich werden standardmäßig auf allen Beiträgen und "
 "Seiten angezeigt."
 
-#: functions.php:130
+#: functions.php:135
 msgid "Footer Sidebar"
 msgstr "Footer-Sidebar"
 
-#: functions.php:132
+#: functions.php:137
 msgid "Widgets will be displayed in the footer."
 msgstr "Widgets werden im Footer angezeigt."
 
-#: functions.php:256
+#: functions.php:266
 msgid "Continue reading"
 msgstr "Weiterlesen"
 
-#: functions.php:258
+#: functions.php:268
 #, php-format
 msgid "Continue reading %s"
 msgstr "%s weiterlesen"
 
-#: functions.php:275
+#: functions.php:285
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: functions.php:293
+#: functions.php:303
 msgid "Category"
 msgid_plural "Categories"
 msgstr[0] "Kategorie"
 msgstr[1] "Kategorien"
 
-#: functions.php:300 functions.php:314
+#: functions.php:310 functions.php:324
 msgid ", "
 msgstr ", "
 
-#: functions.php:307
+#: functions.php:317
 msgid "Tag"
 msgid_plural "Tags"
 msgstr[0] "Tag"
 msgstr[1] "Tags"
 
-#: functions.php:322
+#: functions.php:332
 msgid "Comments"
 msgstr "Kommentare"
 
-#: functions.php:334
+#: functions.php:344
 msgid "Trackbacks"
 msgstr "Trackbacks"
 
-#: functions.php:412
+#: functions.php:422
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr "%1$s @ %2$s"
 
-#: functions.php:418
+#: functions.php:428
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: functions.php:425
+#: functions.php:435
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: functions.php:432
+#: functions.php:442
 msgid "Reply"
 msgstr "Antworten"
 
@@ -198,16 +198,20 @@ msgstr ""
 "Alternatives Layout für Beiträge/Seiten aktivieren, wo der Titel links neben "
 "dem Inhalt angezeigt wird."
 
-#: inc/theme-updates.php:24
+#: inc/customizer.php:79
+msgid "Use the Vollkorn font instead of Sorts Mill Goudy."
+msgstr "Nutze den Vollkorn-Font statt Sorts Mill Goudy."
+
+#: inc/theme-updates.php:25
 msgid ""
 "Paste your download link for »Schlicht« to enable automatic theme updates."
 msgstr ""
 "Füge deinen Download-Link für »Schlicht« ein, um automatische Updates zu "
 "aktivieren."
 
-#: inc/theme-updates.php:73
-msgid "https://en.florianbrinkmann.de/wordpress-themes/schlicht/changelog/"
-msgstr "https://florianbrinkmann.de/wordpress-themes/schlicht/changelog/"
+#: inc/theme-updates.php:75
+msgid "https://florianbrinkmann.com/en/wordpress-themes/schlicht/changelog/"
+msgstr "https://florianbrinkmann.com/wordpress-themes/schlicht/changelog/"
 
 #: search.php:13
 #, php-format
@@ -256,8 +260,8 @@ msgid "Schlicht"
 msgstr "Schlicht"
 
 #. Theme URI of the plugin/theme
-msgid "https://en.florianbrinkmann.de/wordpress-themes/schlicht/"
-msgstr "https://florianbrinkmann.de/wordpress-themes/schlicht/"
+msgid "https://florianbrinkmann.com/en/wordpress-themes/schlicht/"
+msgstr "https://florianbrinkmann.com/wordpress-themes/schlicht/"
 
 #. Description of the plugin/theme
 msgid "Schlicht is a blogger theme, kept simple with clear focus on content."
@@ -268,6 +272,15 @@ msgstr ""
 #. Author of the plugin/theme
 msgid "Florian Brinkmann"
 msgstr "Florian Brinkmann"
+
+#~ msgid "https://en.florianbrinkmann.de"
+#~ msgstr "https://florianbrinkmann.de"
+
+#~ msgid "https://en.florianbrinkmann.de/wordpress-themes/schlicht/changelog/"
+#~ msgstr "https://florianbrinkmann.de/wordpress-themes/schlicht/changelog/"
+
+#~ msgid "https://en.florianbrinkmann.de/wordpress-themes/schlicht/"
+#~ msgstr "https://florianbrinkmann.de/wordpress-themes/schlicht/"
 
 #~ msgid " Activation"
 #~ msgstr " Aktivierung"
