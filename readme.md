@@ -52,7 +52,7 @@ Source: http://vollkorn-typeface.com/
 
 ## Changelog
 
-### 1.2 - 03.03.2017
+### 1.2.0 - 03.03.2017
 #### Added
 * Layout option with Vollkorn font instead of Sorts Mill Goudy
 
@@ -61,6 +61,7 @@ Source: http://vollkorn-typeface.com/
 * `overflow-y: scroll;` on `html` element
 * background color also on `html` element for the editor stylesheet
 * small changes in update script
+* from now on, always three number releases. Also if the last is a 0 
 
 ### 1.1 - 09.02.2017
 #### Added
