@@ -57,6 +57,8 @@ Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 * tabs instead of spaces for intending
 * added @package in file comments
 * added comma after last array items
+* theme no longer updates size of large image size
+* changed $content-width to 791px
 
 #### Fixed
 * make update script work with florianbrinkmann.com update urls and old florianbrinkmann.de URLs.
