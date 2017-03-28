@@ -2,8 +2,11 @@
 /**
  * Template for website footer
  *
- * @version 1.0.1
+ * @version 1.1.1
+ *
+ * @package Schlicht
  */
+
 ?>
 </div><!--.content-wrapper-->
 <footer class="site-footer clearfix">
@@ -18,7 +21,7 @@
 					'theme_location' => 'footer',
 					'menu_class'     => 'footer-nav',
 					'container'      => '',
-					'depth'          => 1
+					'depth'          => 1,
 				)
 			); ?>
 		</nav>

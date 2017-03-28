@@ -2,7 +2,9 @@
 /**
  * Handling automatic theme updates
  *
- * @version 1.2
+ * @version 1.1.1
+ *
+ * @package Schlicht
  */
 
 /**
@@ -14,7 +16,7 @@ function schlicht_update_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'schlicht_upgrade_url', array(
 		'type'              => 'option',
 		'default'           => '',
-		'sanitize_callback' => 'schlicht_esc_update_url'
+		'sanitize_callback' => 'schlicht_esc_update_url',
 	) );
 
 	if ( ! is_multisite() ) {

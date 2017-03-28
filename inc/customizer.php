@@ -2,7 +2,9 @@
 /**
  * Customizer functions
  *
- * @version 1.0.4
+ * @version 1.1.1
+ *
+ * @package Schlicht
  */
 
 /**
@@ -20,7 +22,7 @@ function schlicht_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'schlicht_dropcap', array(
 		'default'           => 0,
-		'sanitize_callback' => 'schlicht_sanitize_checkbox'
+		'sanitize_callback' => 'schlicht_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'schlicht_dropcap', array(
@@ -31,7 +33,7 @@ function schlicht_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'schlicht_auto_dropcaps_for_posts', array(
 		'default'           => 0,
-		'sanitize_callback' => 'schlicht_sanitize_checkbox'
+		'sanitize_callback' => 'schlicht_sanitize_checkbox',
 	) );
 
 	/* translators: s=HTML markup for wrapping a dropcap */
@@ -39,12 +41,12 @@ function schlicht_customize_register( $wp_customize ) {
 		'type'            => 'checkbox',
 		'section'         => 'schlicht_options',
 		'label'           => __( 'Auto integration of dropcaps only for posts, not pages.', 'schlicht' ),
-		'active_callback' => 'schlicht_use_dropcaps'
+		'active_callback' => 'schlicht_use_dropcaps',
 	) );
 
 	$wp_customize->add_setting( 'schlicht_no_auto_dropcap', array(
 		'default'           => 0,
-		'sanitize_callback' => 'schlicht_sanitize_checkbox'
+		'sanitize_callback' => 'schlicht_sanitize_checkbox',
 	) );
 
 	/* translators: s=HTML markup for wrapping a dropcap */
@@ -54,18 +56,18 @@ function schlicht_customize_register( $wp_customize ) {
 		'label'           => sprintf(
 			__( 'Don’t insert dropcaps automatically. You can insert dropcaps manually with wrapping a first letter of a paragraph inside %s in the text view of the editor.', 'schlicht' ),
 			'<span class="dropcap"></span>' ),
-		'active_callback' => 'schlicht_use_dropcaps'
+		'active_callback' => 'schlicht_use_dropcaps',
 	) );
 
 	$wp_customize->add_setting( 'schlicht_alternate_post_layout', array(
 		'default'           => 0,
-		'sanitize_callback' => 'schlicht_sanitize_checkbox'
+		'sanitize_callback' => 'schlicht_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'schlicht_alternate_post_layout', array(
 		'type'    => 'checkbox',
 		'section' => 'schlicht_options',
-		'label'   => __( 'Enable alternate post/page layout where title is displayed in a column left of the content.', 'schlicht' )
+		'label'   => __( 'Enable alternate post/page layout where title is displayed in a column left of the content.', 'schlicht' ),
 	) );
 
 	/**

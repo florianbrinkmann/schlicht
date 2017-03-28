@@ -2,8 +2,11 @@
 /**
  * Template for 404 error
  *
- * @version 1.0
+ * @version 1.1.1
+ *
+ * @package Schlicht
  */
+
 get_header(); ?>
 	<main>
 		<div class="main-content">

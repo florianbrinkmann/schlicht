@@ -2,8 +2,11 @@
 /**
  * Template for displaying the header
  *
- * @version 1.0.3
+ * @version 1.1.1
+ *
+ * @package Schlicht
  */
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -63,7 +66,7 @@
 					'theme_location' => 'primary',
 					'menu_class'     => 'primary-nav',
 					'container'      => '',
-					'depth'          => 1
+					'depth'          => 1,
 				)
 			); ?>
 		</nav>

@@ -2,8 +2,11 @@
 /**
  * Comments template
  *
- * @version 1.0
+ * @version 1.1.1
+ *
+ * @package Schlicht
  */
+
 if ( post_password_required() ) {
 	return;
 } ?>
@@ -45,7 +48,7 @@ if ( post_password_required() ) {
 			<ul class="commentlist">
 				<?php wp_list_comments( array(
 					'type'       => 'pings',
-					'short_ping' => true
+					'short_ping' => true,
 				) ); ?>
 			</ul>
 		<?php }

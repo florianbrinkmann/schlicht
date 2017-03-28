@@ -2,7 +2,9 @@
 /**
  * Template for displaying content of pages
  *
- * @version 1.0
+ * @version 1.1.1
+ *
+ * @package Schlicht
  */
 ?>
 <article <?php post_class( 'clearfix' ); ?>>

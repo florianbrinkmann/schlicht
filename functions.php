@@ -1,6 +1,8 @@
 <?php
 /**
  * Functions file
+ *
+ * @package Schlicht
  */
 
 if ( ! function_exists( 'schlicht_load_translation' ) ) {
@@ -269,7 +271,7 @@ if ( ! function_exists( 'schlicht_wp_link_pages' ) ) {
 		wp_link_pages( array(
 			'before'    => '<ul class="page-numbers"><li><span>' . __( 'Pages:', 'schlicht' ) . '</span></li><li>',
 			'after'     => '</li></ul>',
-			'separator' => '</li><li>'
+			'separator' => '</li><li>',
 		) );
 	}
 }
@@ -426,7 +428,7 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 					array(
 						'reply_text' => __( 'Reply', 'schlicht' ),
 						'depth'      => $depth,
-						'max_depth'  => $args['max_depth']
+						'max_depth'  => $args['max_depth'],
 					)
 				); ?>
 			</div>

@@ -1,3 +1,13 @@
+<?php
+/**
+ * Template file for search form
+ *
+ * @version 1.1.1
+ *
+ * @package Schlicht
+ */
+
+?>
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label>
 		<span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'schlicht' ); ?></span>

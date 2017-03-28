@@ -2,8 +2,11 @@
 /**
  * Template for displaying the sidebar
  *
- * @version 1.0
+ * @version 1.1.1
+ *
+ * @package Schlicht
  */
+
 if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
 	<aside class="sidebar" role="complementary">
 		<h2 class="screen-reader-text">

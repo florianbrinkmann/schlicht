@@ -2,8 +2,11 @@
 /**
  * Template for displaying single post content
  *
- * @version 1.0
+ * @version 1.1.1
+ *
+ * @package Schlicht
  */
+
 ?>
 <article <?php post_class( 'clearfix' ); ?>>
 	<header class="entry-header">

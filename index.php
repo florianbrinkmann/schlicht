@@ -2,8 +2,11 @@
 /**
  * Main Template file
  *
- * @version 1.0.3
+ * @version 1.1.1
+ *
+ * @package Schlicht
  */
+
 get_header(); ?>
 	<main>
 		<div class="main-content">
@@ -23,7 +26,7 @@ get_header(); ?>
 			the_posts_pagination( array(
 				'type'      => 'list',
 				'prev_text' => __( 'Previous', 'schlicht' ),
-				'next_text' => __( 'Next', 'schlicht' )
+				'next_text' => __( 'Next', 'schlicht' ),
 			) ); ?>
 		</div>
 	</main>
