@@ -39,16 +39,16 @@ if ( ! function_exists( 'schlicht_is_wp_comments_post' ) ) {
 }
 
 /**
- * Set content width to 806 px
+ * Set content width to 791 px
  */
 if ( ! isset( $content_width ) ) {
-    $content_width = 806;
+    $content_width = 791;
 }
 
 /**
- * Set width of large image size to 806 px
+ * Set width of large image size to 791 px
  */
-update_option( 'large_size_w', 806 );
+update_option( 'large_size_w', 791 );
 
 if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
     /**
