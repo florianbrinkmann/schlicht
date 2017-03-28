@@ -61,7 +61,7 @@ Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 * added `@package` in file comments
 * added comma after last array items
 * theme no longer updates size of large image size
-* changed `$content-width` to 791px
+* changed `$content-width` to 791
 
 ### 1.1 - 09.02.2017
 #### Added
