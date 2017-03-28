@@ -68,17 +68,6 @@ function schlicht_customize_register( $wp_customize ) {
 		'label'   => __( 'Enable alternate post/page layout where title is displayed in a column left of the content.', 'schlicht' )
 	) );
 
-	$wp_customize->add_setting( 'schlicht_vollkorn_font', array(
-		'default'           => 0,
-		'sanitize_callback' => 'schlicht_sanitize_checkbox'
-	) );
-
-	$wp_customize->add_control( 'schlicht_vollkorn_font', array(
-		'type'    => 'checkbox',
-		'section' => 'schlicht_options',
-		'label'   => __( 'Use the Vollkorn font instead of Sorts Mill Goudy.', 'schlicht' )
-	) );
-
 	/**
 	 * Change transport to refresh
 	 */

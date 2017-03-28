@@ -45,23 +45,19 @@ Sorts Mill Goudy, Copyright 2009 Barry Schwartz
 Licence: SIL Open Font License, Version 1.1  
 Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 
-Vollkorn, Copyright 2006-2017 Friedrich Althausen  
-Licence: SIL Open Font License  
-Source: http://vollkorn-typeface.com/  
-
-
 ## Changelog
 
-### 1.2.0 - 03.03.2017
-#### Added
-* Layout option with Vollkorn font instead of Sorts Mill Goudy
-
+### 1.1.1 - 28.03.2017
 #### Changed
 * Do not display upgrade URL field in the customizer, if multisite
 * `overflow-y: scroll;` on `html` element
 * background color also on `html` element for the editor stylesheet
 * small changes in update script
-* from now on, always three number releases. Also if the last is a 0 
+* from now on, always three number releases. Also if the last is a 0
+* use tabs instead of spaces for intending
+
+#### Fixed
+* make update script work with florianbrinkmann.com update urls and old florianbrinkmann.de URLs.
 
 ### 1.1 - 09.02.2017
 #### Added

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2017-03-10 08:53+0100\n"
-"PO-Revision-Date: 2017-03-10 08:54+0100\n"
+"POT-Creation-Date: 2017-03-28 11:15+0200\n"
+"PO-Revision-Date: 2017-03-28 11:16+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -78,84 +78,84 @@ msgstr "Theme: Schlicht von %s"
 msgid "https://florianbrinkmann.com/en/"
 msgstr "https://florianbrinkmann.com/"
 
-#: functions.php:110
+#: functions.php:100
 msgid "Primary Menu"
 msgstr "Hauptmenü"
 
-#: functions.php:112
+#: functions.php:102
 msgid "Footer Menu"
 msgstr "Footer-Menü"
 
-#: functions.php:126
+#: functions.php:116
 msgid "Main Sidebar"
 msgstr "Sidebar"
 
-#: functions.php:128
+#: functions.php:118
 msgid ""
 "Widgets in this area will be displayed on all posts and pages by default."
 msgstr ""
 "Widgets aus diesem Bereich werden standardmäßig auf allen Beiträgen und "
 "Seiten angezeigt."
 
-#: functions.php:135
+#: functions.php:125
 msgid "Footer Sidebar"
 msgstr "Footer-Sidebar"
 
-#: functions.php:137
+#: functions.php:127
 msgid "Widgets will be displayed in the footer."
 msgstr "Widgets werden im Footer angezeigt."
 
-#: functions.php:266
+#: functions.php:251
 msgid "Continue reading"
 msgstr "Weiterlesen"
 
-#: functions.php:268
+#: functions.php:253
 #, php-format
 msgid "Continue reading %s"
 msgstr "%s weiterlesen"
 
-#: functions.php:285
+#: functions.php:270
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: functions.php:303
+#: functions.php:288
 msgid "Category"
 msgid_plural "Categories"
 msgstr[0] "Kategorie"
 msgstr[1] "Kategorien"
 
-#: functions.php:310 functions.php:324
+#: functions.php:295 functions.php:309
 msgid ", "
 msgstr ", "
 
-#: functions.php:317
+#: functions.php:302
 msgid "Tag"
 msgid_plural "Tags"
 msgstr[0] "Tag"
 msgstr[1] "Tags"
 
-#: functions.php:332
+#: functions.php:317
 msgid "Comments"
 msgstr "Kommentare"
 
-#: functions.php:344
+#: functions.php:329
 msgid "Trackbacks"
 msgstr "Trackbacks"
 
-#: functions.php:422
+#: functions.php:407
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr "%1$s @ %2$s"
 
-#: functions.php:428
+#: functions.php:413
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: functions.php:435
+#: functions.php:420
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: functions.php:442
+#: functions.php:427
 msgid "Reply"
 msgstr "Antworten"
 
@@ -197,10 +197,6 @@ msgid ""
 msgstr ""
 "Alternatives Layout für Beiträge/Seiten aktivieren, wo der Titel links neben "
 "dem Inhalt angezeigt wird."
-
-#: inc/customizer.php:79
-msgid "Use the Vollkorn font instead of Sorts Mill Goudy."
-msgstr "Nutze den Vollkorn-Font statt Sorts Mill Goudy."
 
 #: inc/theme-updates.php:25
 msgid ""
@@ -272,6 +268,9 @@ msgstr ""
 #. Author of the plugin/theme
 msgid "Florian Brinkmann"
 msgstr "Florian Brinkmann"
+
+#~ msgid "Use the Vollkorn font instead of Sorts Mill Goudy."
+#~ msgstr "Nutze den Vollkorn-Font statt Sorts Mill Goudy."
 
 #~ msgid "https://en.florianbrinkmann.de"
 #~ msgstr "https://florianbrinkmann.de"

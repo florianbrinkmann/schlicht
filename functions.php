@@ -83,12 +83,7 @@ if ( ! function_exists( 'schlicht_add_editor_style' ) ) {
 	 * Adds stylesheet for Tiny MCE editor in the backend
 	 */
 	function schlicht_add_editor_style() {
-		$vollkorn_font = get_theme_mod( 'schlicht_vollkorn_font' );
-		if ( $vollkorn_font == 0 ) {
-			add_editor_style( 'css/editor-style.css' );
-		} else {
-			add_editor_style( 'css/editor-style-vollkorn.css' );
-		}
+		add_editor_style( 'css/editor-style.css' );
 	}
 }
 
@@ -149,12 +144,7 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		$vollkorn_font = get_theme_mod( 'schlicht_vollkorn_font' );
-		if ( $vollkorn_font == 0 ) {
-			wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht.css', array(), null );
-		} else {
-			wp_enqueue_style( 'schlicht-vollkorn-style', get_template_directory_uri() . '/css/schlicht-vollkorn.css', array(), null );
-		}
+		wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht.css', array(), null );
 	}
 }
 
