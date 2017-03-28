@@ -48,6 +48,9 @@ Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 ## Changelog
 
 ### 1.1.1 - 28.03.2017
+#### Fixed
+* make update script work with florianbrinkmann.com update urls and old florianbrinkmann.de URLs.
+
 #### Changed
 * Do not display upgrade URL field in the customizer, if multisite
 * `overflow-y: scroll;` on `html` element
@@ -59,9 +62,6 @@ Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 * added comma after last array items
 * theme no longer updates size of large image size
 * changed $content-width to 791px
-
-#### Fixed
-* make update script work with florianbrinkmann.com update urls and old florianbrinkmann.de URLs.
 
 ### 1.1 - 09.02.2017
 #### Added
