@@ -58,10 +58,10 @@ Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 * small changes in update script
 * from now on, always three number releases. Also if the last is a 0
 * tabs instead of spaces for intending
-* added @package in file comments
+* added `@package` in file comments
 * added comma after last array items
 * theme no longer updates size of large image size
-* changed $content-width to 791px
+* changed `$content-width` to 791px
 
 ### 1.1 - 09.02.2017
 #### Added
