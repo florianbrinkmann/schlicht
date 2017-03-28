@@ -54,7 +54,9 @@ Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 * background color also on `html` element for the editor stylesheet
 * small changes in update script
 * from now on, always three number releases. Also if the last is a 0
-* use tabs instead of spaces for intending
+* tabs instead of spaces for intending
+* added @package in file comments
+* added comma after last array items
 
 #### Fixed
 * make update script work with florianbrinkmann.com update urls and old florianbrinkmann.de URLs.
