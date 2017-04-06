@@ -394,7 +394,7 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 	 */
 	function schlicht_comments( $comment, $args, $depth ) { ?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<div id="comment-<?php comment_ID(); ?>" class="<?php comment_class(); ?>">
+		<div id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 			<div class="comment-meta">
 				<?php echo get_avatar( $comment, 50 ); ?>
 				<p class="comment-author-name">
