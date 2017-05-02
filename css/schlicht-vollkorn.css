@@ -942,14 +942,6 @@ figure.alignright {
     margin-top: 0;
 }
 
-.author-name {
-    -webkit-font-feature-settings: "smcp";
-    font-feature-settings: "smcp";
-    font-style: normal;
-    letter-spacing: .03rem;
-    text-transform: lowercase;
-}
-
 .date {
     display: inline;
 }
