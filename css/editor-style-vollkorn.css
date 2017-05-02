@@ -38,29 +38,30 @@ body {
 }
 
 a {
-    background: transparent url('../img/link-underline.png') repeat no-repeat 0 100%;
-    background: transparent -webkit-linear-gradient(left, #333, #333) no-repeat 0 100%;
-    background: transparent linear-gradient(90deg, #333, #333) no-repeat 0 100%;
+    background: transparent url('../img/link-underline.png') repeat no-repeat 0 92%;
+    background: transparent -webkit-linear-gradient(left, rgba(51, 51, 51, 1), rgba(51, 51, 51, 1)) no-repeat 0 92%;
+    background: transparent linear-gradient(90deg, rgba(51, 51, 51, 1), rgba(51, 51, 51, 1)) no-repeat 0 92%;
     background-size: 100% 1px;
     color: inherit;
-    padding-bottom: 3px;
-    padding-top: 3px;
+    outline-width: 0;
     text-decoration: none;
     -webkit-text-decoration-skip: objects; /* 2 */
-    -webkit-transition: all .2s ease 0s;
-    transition: all .2s ease 0s;
+    -webkit-transition: all .15s ease 0s;
+    transition: all .15s ease 0s;
 }
 
 a:active,
 a:hover,
 a:focus,
-.current-menu-itrem a {
-    outline-width: 0;
-    background-size: 0 1px;
+.current-menu-item a {
+    background-position: 0 calc(100% + 2px);
 }
 
 a:focus {
-    border-top: 1px dotted;
+    background-image: -webkit-linear-gradient(left, rgba(51, 51, 51, .7), rgba(51, 51, 51, .7));
+    background-image: linear-gradient(90deg, rgba(51, 51, 51, .7), rgba(51, 51, 51, .7));
+    background-size: 100% 3px;
+    background-position: 0 calc(92% + 2px);
 }
 
 h1,

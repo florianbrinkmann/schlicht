@@ -118,6 +118,7 @@ a {
     background: transparent linear-gradient(90deg, #333, #333) no-repeat 0 93%;
     background-size: 100% 1px;
     color: inherit;
+    outline-width: 0;
     text-decoration: none;
     -webkit-text-decoration-skip: objects; /* 2 */
     -webkit-transition: all .2s ease 0s;
