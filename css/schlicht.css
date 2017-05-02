@@ -943,7 +943,7 @@ figure.alignright {
 }
 
 .date::before {
-    content: " | ";
+    content: " · ";
     font-style: normal;
 }
 
