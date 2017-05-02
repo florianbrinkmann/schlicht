@@ -928,6 +928,10 @@ figure.alignright {
  * Blog entry
  */
 
+.entry-header {
+    position: relative;
+}
+
 .author-date {
     color: #666;
     font-style: italic;
@@ -950,8 +954,11 @@ figure.alignright {
 .featured {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
-    letter-spacing: .06rem;
+    letter-spacing: .03rem;
+    position: absolute;
+    left: 0;
     text-transform: lowercase;
+    transform: translateY(-100%);
 }
 
 .entry-title {
@@ -1294,6 +1301,11 @@ figure.alignright {
     .alternate-layout .entry-title {
         font-size: 1.138rem;
         line-height: 1.6rem;
+    }
+
+    .alternate-layout .featured {
+        left: auto;
+        right: 0;
     }
 
     .sidebar-template .entry-title {

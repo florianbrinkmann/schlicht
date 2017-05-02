@@ -932,6 +932,10 @@ figure.alignright {
  * Blog entry
  */
 
+.entry-header {
+    position: relative;
+}
+
 .author-date {
     color: #666;
     font-style: italic;
@@ -955,7 +959,11 @@ figure.alignright {
     -webkit-font-feature-settings: "smcp";
     font-feature-settings: "smcp";
     letter-spacing: .03rem;
+    position: absolute;
+    left: 0;
     text-transform: lowercase;
+    top: -.1875rem;
+    transform: translateY(-100%);
 }
 
 .entry-title {
@@ -1302,6 +1310,11 @@ figure.alignright {
         width: 100%;
     }
 
+    .alternate-layout .featured {
+        left: auto;
+        right: 0;
+    }
+
     .alternate-layout .entry-title {
         font-size: 1.266rem;
         line-height: 1.5rem;
@@ -1309,6 +1322,7 @@ figure.alignright {
 
     .alternate-layout .author {
         display: block;
+        margin-top: .375rem;
     }
 
     .sidebar-template .author {
