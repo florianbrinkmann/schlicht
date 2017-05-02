@@ -1340,7 +1340,7 @@ figure.alignright {
 
     .alternate-layout .date {
         display: block;
-        margin-top: 0;
+        margin-top: -.375rem;
     }
 
     .sidebar-template .date {
