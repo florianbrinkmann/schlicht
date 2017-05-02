@@ -67,7 +67,7 @@ function schlicht_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'schlicht_alternate_post_layout', array(
 		'type'    => 'checkbox',
 		'section' => 'schlicht_options',
-		'label'   => __( 'Enable alternate post/page layout where title is displayed in a column left of the content.', 'schlicht' ),
+		'label'   => __( 'Enable alternate post/page layout where title is displayed in a column left of the content (only works if no widgets are in the sidebar).', 'schlicht' ),
 	) );
 
 	$wp_customize->add_setting( 'schlicht_vollkorn_font', array(

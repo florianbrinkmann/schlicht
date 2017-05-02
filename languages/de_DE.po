@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2017-05-02 14:11+0200\n"
-"PO-Revision-Date: 2017-05-02 15:50+0200\n"
+"POT-Creation-Date: 2017-05-02 17:04+0200\n"
+"PO-Revision-Date: 2017-05-02 17:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -193,10 +193,11 @@ msgstr ""
 #: inc/customizer.php:70
 msgid ""
 "Enable alternate post/page layout where title is displayed in a column left "
-"of the content."
+"of the content (only works if no widgets are in the sidebar)."
 msgstr ""
 "Alternatives Layout für Beiträge/Seiten aktivieren, wo der Titel links neben "
-"dem Inhalt angezeigt wird."
+"dem Inhalt angezeigt wird (funktioniert nur, wenn keine Widgets in der "
+"Sidebar sind)."
 
 #: inc/customizer.php:81
 msgid "Use the Vollkorn font instead of Sorts Mill Goudy."
@@ -226,7 +227,7 @@ msgstr "Nichts gefunden für: %s"
 #: searchform.php:13
 msgctxt "label"
 msgid "Search for:"
-msgstr "Suche für: "
+msgstr "Suche nach:"
 
 #: searchform.php:15
 msgctxt "placeholder"

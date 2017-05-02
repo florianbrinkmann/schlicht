@@ -85,8 +85,8 @@ if ( ! function_exists( 'schlicht_add_editor_style' ) ) {
 	 * Adds stylesheet for Tiny MCE editor in the backend
 	 */
 	function schlicht_add_editor_style() {
-		$vollkorn_font = get_theme_mod( 'schlicht_vollkorn_font' );
-		if ( $vollkorn_font == 0 ) {
+		$vollkorn_font = get_theme_mod( 'schlicht_vollkorn_font', false );
+		if ( $vollkorn_font === false ) {
 			add_editor_style( 'css/editor-style.css' );
 		} else {
 			add_editor_style( 'css/editor-style-vollkorn.css' );
@@ -151,8 +151,8 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		$vollkorn_font = get_theme_mod( 'schlicht_vollkorn_font' );
-		if ( $vollkorn_font == 0 ) {
+		$vollkorn_font = get_theme_mod( 'schlicht_vollkorn_font', false );
+		if ( $vollkorn_font === false ) {
 			wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht.css', array(), null );
 		} else {
 			wp_enqueue_style( 'schlicht-vollkorn-style', get_template_directory_uri() . '/css/schlicht-vollkorn.css', array(), null );
@@ -167,12 +167,12 @@ if ( ! function_exists( 'schlicht_dropcap_inline_script' ) ) {
 	 * Inserts inline script for small caps after drop cap.
 	 */
 	function schlicht_dropcap_inline_script() {
-		$dropcaps_enabled = get_theme_mod( 'schlicht_dropcap' );
-		if ( $dropcaps_enabled == 1 ) {
-			$no_auto_dropcaps = get_theme_mod( 'schlicht_no_auto_dropcap' );
-			if ( $no_auto_dropcaps == 0 ) {
-				$auto_dropcaps_only_for_posts = get_theme_mod( 'schlicht_auto_dropcaps_for_posts' );
-				if ( $auto_dropcaps_only_for_posts == 1 ) {
+		$dropcaps_enabled = get_theme_mod( 'schlicht_dropcap', false );
+		if ( $dropcaps_enabled === true ) {
+			$no_auto_dropcaps = get_theme_mod( 'schlicht_no_auto_dropcap', false );
+			if ( $no_auto_dropcaps === true ) {
+				$auto_dropcaps_only_for_posts = get_theme_mod( 'schlicht_auto_dropcaps_for_posts', false );
+				if ( $auto_dropcaps_only_for_posts === true ) {
 					$container = '.post .entry-content';
 				} else {
 					$container = '.entry-content';
@@ -377,12 +377,12 @@ if ( ! function_exists( 'schlicht_body_classes' ) ) {
 	 * @return array
 	 */
 	function schlicht_body_classes( $classes ) {
-		if ( is_active_sidebar( 'sidebar-1' ) && get_page_template_slug() != 'page-templates/no-sidebar.php' ) {
+		if ( is_active_sidebar( 'sidebar-1' ) && get_page_template_slug() !== 'page-templates/no-sidebar.php' ) {
 			$classes[] = 'sidebar-template';
 		}
 
-		$alternate_post_layout_option = get_theme_mod( 'schlicht_alternate_post_layout' );
-		if ( $alternate_post_layout_option == 1 ) {
+		$alternate_post_layout_option = get_theme_mod( 'schlicht_alternate_post_layout', false );
+		if ( $alternate_post_layout_option === true && ! is_active_sidebar( 'sidebar-1' ) ) {
 			$classes[] = 'alternate-layout';
 		}
 
