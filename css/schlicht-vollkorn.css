@@ -1318,11 +1318,12 @@ figure.alignright {
     .alternate-layout .entry-title {
         font-size: 1.266rem;
         line-height: 1.5rem;
+        margin-top: -.1rem;
     }
 
     .alternate-layout .author {
         display: block;
-        margin-top: .375rem;
+        margin-top: .88rem;
     }
 
     .sidebar-template .author {
