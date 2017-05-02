@@ -55,6 +55,11 @@ Source: http://vollkorn-typeface.com/
 #### Added
 * Layout option with Vollkorn font instead of Sorts Mill Goudy
 
+#### Changed
+* Removed small caps style from post author.
+* · instead of | between author & date in entry meta
+* changed position of »Featured«.
+
 ### 1.1.1 - 28.03.2017
 #### Fixed
 * make update script work with florianbrinkmann.com update urls and old florianbrinkmann.de URLs.
