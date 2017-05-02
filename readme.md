@@ -45,7 +45,15 @@ Sorts Mill Goudy, Copyright 2009 Barry Schwartz
 Licence: SIL Open Font License, Version 1.1  
 Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
 
+Vollkorn, Copyright 2006-2017 Friedrich Althausen  
+Licence: SIL Open Font License  
+Source: http://vollkorn-typeface.com/  
+
 ## Changelog
+
+### 1.2.0 - 02.05.2017
+#### Added
+* Layout option with Vollkorn font instead of Sorts Mill Goudy
 
 ### 1.1.1 - 28.03.2017
 #### Fixed
