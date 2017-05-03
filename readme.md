@@ -59,6 +59,7 @@ Source: http://vollkorn-typeface.com/
 * Removed small caps style from post author.
 * · instead of | between author & date in entry meta
 * changed position of »Featured«.
+* further small style improvements in the entry meta section in the alternative layout
 
 ### 1.1.1 - 28.03.2017
 #### Fixed
