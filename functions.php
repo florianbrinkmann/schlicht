@@ -155,7 +155,7 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 		if ( $vollkorn_font === false ) {
 			wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht.css', array(), null );
 		} else {
-			wp_enqueue_style( 'schlicht-vollkorn-style', get_template_directory_uri() . '/css/schlicht-vollkorn.css', array(), null );
+			wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht-vollkorn.css', array(), null );
 		}
 	}
 }
