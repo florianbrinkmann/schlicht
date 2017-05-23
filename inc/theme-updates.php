@@ -45,7 +45,7 @@ add_action( 'customize_register', 'schlicht_update_customize_register', 12 );
  *
  * @param string $url Update URL from customizer control.
  *
- * @return string
+ * @return string Escaped update URL or empty string.
  */
 function schlicht_esc_update_url( $url ) {
 	/**
@@ -78,7 +78,7 @@ function schlicht_esc_update_url( $url ) {
  *
  * @param object $transient Transient object for theme updates.
  *
- * @return object
+ * @return object Theme update transient.
  */
 function schlicht_theme_update( $transient ) {
 	if ( empty( $transient->checked ) ) {
@@ -161,7 +161,7 @@ add_filter( 'pre_set_site_transient_update_themes', 'schlicht_theme_update' );
 /**
  * Fetch data of latest theme version
  *
- * @return array|WP_Error
+ * @return array|WP_Error Array with data of the latest theme version or WP_Error.
  */
 function schlicht_fetch_data_of_latest_version() {
 	$request = wp_safe_remote_get( 'https://florianbrinkmann.com/wordpress-themes/schlicht/upgrade-json/' );

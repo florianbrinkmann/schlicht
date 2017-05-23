@@ -182,11 +182,11 @@ function schlicht_sanitize_select( $input, $setting ) {
 }
 
 /**
- * Checks if checkbox for dropcaps is checked and returns true, otherwise false.
+ * Checks if checkbox for dropcaps is checked.
  *
  * @param WP_Customize_Control $control Control object.
  *
- * @return bool
+ * @return bool true if drop caps checkbox is checked, otherwise false.
  */
 function schlicht_use_dropcaps( $control ) {
 	/**
@@ -202,7 +202,7 @@ function schlicht_use_dropcaps( $control ) {
 /**
  * Checks if sidebar is active.
  *
- * @return bool
+ * @return bool true if sidebar is active, false if not.
  */
 function schlicht_no_sidebar() {
 	/**

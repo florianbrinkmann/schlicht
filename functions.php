@@ -7,7 +7,7 @@
 
 if ( ! function_exists( 'schlicht_load_translation' ) ) {
 	/**
-	 * Load translation
+	 * Load translation.
 	 */
 	function schlicht_load_translation() {
 		/**
@@ -29,9 +29,9 @@ add_action( 'after_setup_theme', 'schlicht_load_translation' );
 
 if ( ! function_exists( 'schlicht_is_login_page' ) ) {
 	/**
-	 * Check if we are on the login page
+	 * Check if we are on the login page.
 	 *
-	 * @return bool
+	 * @return bool true if on login page, otherwise false.
 	 */
 	function schlicht_is_login_page() {
 		return in_array( $GLOBALS['pagenow'], [ 'wp-login.php', 'wp-register.php' ], true );
@@ -40,9 +40,9 @@ if ( ! function_exists( 'schlicht_is_login_page' ) ) {
 
 if ( ! function_exists( 'schlicht_is_wp_comments_post' ) ) {
 	/**
-	 * Check if we are on the wp-comments-post.php
+	 * Check if we are on the wp-comments-post.php.
 	 *
-	 * @return bool
+	 * @return bool true if on wp-comments.-post.php, otherwise false.
 	 */
 	function schlicht_is_wp_comments_post() {
 		return in_array( $GLOBALS['pagenow'], [ 'wp-comments-post.php' ], true );
@@ -58,7 +58,7 @@ if ( ! isset( $content_width ) ) {
 
 if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 	/**
-	 * Adds theme support for feed links, custom head, html5, post formats, post thumbnails, title element and custom logo
+	 * Adds theme support for feed links, custom head, html5, post formats, post thumbnails, title element and custom logo.
 	 */
 	function schlicht_add_theme_support() {
 		/**
@@ -118,7 +118,7 @@ add_action( 'after_setup_theme', 'schlicht_add_theme_support' );
 
 if ( ! function_exists( 'schlicht_add_editor_style' ) ) {
 	/**
-	 * Adds stylesheet for Tiny MCE editor in the backend
+	 * Adds stylesheet for Tiny MCE editor in the backend.
 	 */
 	function schlicht_add_editor_style() {
 		/**
@@ -147,7 +147,7 @@ add_action( 'after_setup_theme', 'schlicht_add_editor_style' );
 
 if ( ! function_exists( 'schlicht_register_menus' ) ) {
 	/**
-	 * Register Menus
+	 * Register Menus.
 	 */
 	function schlicht_register_menus() {
 		register_nav_menus(
@@ -165,7 +165,7 @@ add_action( 'init', 'schlicht_register_menus' );
 
 if ( ! function_exists( 'schlicht_register_sidebars' ) ) {
 	/**
-	 * Register sidebar
+	 * Register sidebar.
 	 */
 	function schlicht_register_sidebars() {
 		/**
@@ -200,7 +200,7 @@ add_action( 'widgets_init', 'schlicht_register_sidebars' );
 
 if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 	/**
-	 * Adds the scripts and styles to the header
+	 * Adds the scripts and styles to the header.
 	 */
 	function schlicht_scripts_styles() {
 		/**
@@ -304,11 +304,11 @@ add_action( 'wp_footer', 'schlicht_dropcap_inline_script' );
 
 if ( ! function_exists( 'schlicht_remove_more_link_scroll' ) ) {
 	/**
-	 * Removes the page jump after clicking on a read more link
+	 * Removes the page jump after clicking on a read more link.
 	 *
 	 * @param string $link Post URL.
 	 *
-	 * @return string
+	 * @return string Link without more hash.
 	 */
 	function schlicht_remove_more_link_scroll( $link ) {
 		/**
@@ -326,7 +326,7 @@ if ( ! function_exists( 'schlicht_get_custom_logo' ) ) {
 	/**
 	 * Get the custom logo.
 	 *
-	 * @return string
+	 * @return string Logo HTML or empty string.
 	 */
 	function schlicht_get_custom_logo() {
 		/**
@@ -353,7 +353,7 @@ if ( ! function_exists( 'schlicht_get_custom_logo' ) ) {
 
 if ( ! function_exists( 'schlicht_the_title' ) ) {
 	/**
-	 * Displays the title of a post
+	 * Displays the title of a post.
 	 *
 	 * @param string $heading Heading level.
 	 * @param bool   $link    If the title should be linked to the single view.
@@ -397,7 +397,7 @@ if ( ! function_exists( 'schlicht_the_content' ) ) {
 
 if ( ! function_exists( 'schlicht_wp_link_pages' ) ) {
 	/**
-	 * Displays a pagination for paginated posts and pages
+	 * Displays a pagination for paginated posts and pages.
 	 *
 	 * @return void
 	 */
@@ -413,7 +413,7 @@ if ( ! function_exists( 'schlicht_wp_link_pages' ) ) {
 
 if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 	/**
-	 * Displays footer meta for a post
+	 * Displays footer meta for a post.
 	 *
 	 * @return void
 	 */
@@ -523,9 +523,9 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 
 if ( ! function_exists( 'schlicht_get_comments_by_type' ) ) {
 	/**
-	 * Gets the reactions seperated by type
+	 * Gets the reactions seperated by type.
 	 *
-	 * @return array
+	 * @return array Post reactions separated by type.
 	 */
 	function schlicht_get_comments_by_type() {
 		$comment_args     = [
@@ -544,9 +544,9 @@ if ( ! function_exists( 'schlicht_get_comments_by_type' ) ) {
 if ( ! function_exists( 'schlicht_body_classes' ) ) {
 	/**
 	 * Adds class to body if sidebar is used and other class if alternate
-	 * post layout is enabled
+	 * post layout is enabled.
 	 *
-	 * @return array
+	 * @return array Array of body classes.
 	 */
 	function schlicht_body_classes( $classes ) {
 		/**
@@ -582,7 +582,7 @@ add_filter( 'body_class', 'schlicht_body_classes' );
 
 if ( ! function_exists( 'schlicht_comments' ) ) {
 	/**
-	 * Callback function for displaying the comment list
+	 * Callback function for displaying the comment list.
 	 *
 	 * @param object $comment WP_Comment object.
 	 * @param array  $args    Array of arguments.
@@ -663,11 +663,11 @@ require_once 'inc/SmartDomDocument.php';
 
 if ( ! function_exists( 'schlicht_add_dropcap_markup' ) ) {
 	/**
-	 * Adds markup for drop caps to post content
+	 * Adds markup for drop caps to post content.
 	 *
 	 * @param string $content Post content.
 	 *
-	 * @return string
+	 * @return string Post content.
 	 */
 	function schlicht_add_dropcap_markup( $content ) {
 		/**
