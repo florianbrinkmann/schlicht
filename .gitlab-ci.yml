@@ -16,6 +16,8 @@ deploy_staging:
     - ssh -p22 fbndev@aries.uberspace.de "mkdir -p /var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes/schlicht"
     - rsync -rav -e ssh --exclude='.git/' --exclude='.gitlab-ci.yml' --delete-excluded ./ fbndev@aries.uberspace.de:/var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes/schlicht
     - rsync -rav -e ssh --exclude='.git/' --exclude='.gitlab-ci.yml' --delete-excluded ./ fbndev@aries.uberspace.de:/var/www/virtual/fbndev/stable-version.florianbrinkmann.de/wp-content/themes/schlicht
+    - ssh -p22 fbndev@aries.uberspace.de "mkdir -p /var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes-for-docblock-parser"
+    - ssh -p22 fbndev@aries.uberspace.de "mkdir -p /var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes-for-docblock-parser"
     - ssh -p22 fbndev@aries.uberspace.de "cp -Rf /var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes/schlicht/ /var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes-for-docblock-parser/schlicht/"
     - ssh -p22 fbndev@aries.uberspace.de "cp -Rf /var/www/virtual/fbndev/stable-version.florianbrinkmann.de/wp-content/themes/schlicht/ /var/www/virtual/fbndev/stable-version.florianbrinkmann.de/wp-content/themes-for-docblock-parser/schlicht/"
   environment:
@@ -39,6 +41,7 @@ deploy_production:
     - rsync -rav -e ssh --exclude='.git/' --exclude='.gitlab-ci.yml' --delete-excluded ./ fbn@horologium.uberspace.de:/var/www/virtual/fbn/html/wp-content/themes/_tmp-schlicht
     - ssh -p22 fbn@horologium.uberspace.de "mv /var/www/virtual/fbn/html/wp-content/themes/schlicht /var/www/virtual/fbn/html/wp-content/themes/_old-schlicht && mv /var/www/virtual/fbn/html/wp-content/themes/_tmp-schlicht /var/www/virtual/fbn/html/wp-content/themes/schlicht"
     - ssh -p22 fbn@horologium.uberspace.de "rm -rf /var/www/virtual/fbn/html/wp-content/themes/_old-schlicht"
+    - ssh -p22 fbn@horologium.uberspace.de "mkdir -p /var/www/virtual/fbn/html/wp-content/themes-for-docblock-parser"
     - ssh -p22 fbn@horologium.uberspace.de "cp -Rf /var/www/virtual/fbn/html/wp-content/themes/schlicht/ /var/www/virtual/fbn/html/wp-content/themes-for-docblock-parser/schlicht/"
     - ssh -p22 fbn@horologium.uberspace.de "cd /var/www/virtual/fbn/html/wp-content/themes/ && zip -r schlicht.zip schlicht/"
     - ssh -p22 fbn@horologium.uberspace.de "mv /var/www/virtual/fbn/html/wp-content/themes/schlicht.zip /var/www/virtual/fbn/woocommerce-downloads/schlicht.zip"
