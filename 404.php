@@ -28,5 +28,13 @@ get_header(); ?>
 			</article>
 		</div>
 	</main>
-<?php get_sidebar();
+<?php
+/**
+ * Include the sidebar.php.
+ */
+get_sidebar();
+
+/**
+ * Include the footer.php.
+ */
 get_footer();
