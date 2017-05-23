@@ -8,7 +8,7 @@
  */
 
 /**
- * Customizer settings for theme update
+ * Customizer settings for theme update.
  *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
@@ -41,7 +41,7 @@ function schlicht_update_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'schlicht_update_customize_register', 12 );
 
 /**
- * Escape URL and check if it matches a valid download format
+ * Escape URL and check if it matches a valid download format.
  *
  * @param string $url Update URL from customizer control.
  *
@@ -74,7 +74,7 @@ function schlicht_esc_update_url( $url ) {
 }
 
 /**
- * Checking for updates and updating the transient for theme updates
+ * Checking for updates and updating the transient for theme updates.
  *
  * @param object $transient Transient object for theme updates.
  *
@@ -159,7 +159,7 @@ function schlicht_theme_update( $transient ) {
 add_filter( 'pre_set_site_transient_update_themes', 'schlicht_theme_update' );
 
 /**
- * Fetch data of latest theme version
+ * Fetch data of latest theme version.
  *
  * @return array|WP_Error Array with data of the latest theme version or WP_Error.
  */
@@ -171,7 +171,7 @@ function schlicht_fetch_data_of_latest_version() {
 
 /**
  * Remove upgrade URL option after switching the theme,
- * if the new theme is not Schlicht or a child theme of Schlicht
+ * if the new theme is not Schlicht or a child theme of Schlicht.
  */
 function schlicht_remove_upgrade_url() {
 	/**
