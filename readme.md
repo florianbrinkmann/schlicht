@@ -2,8 +2,8 @@
 
 **Contributors:** Florian Brinkmann  
 **Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 4.7.1  
-**Version:** 1.0.4  
+**Tested up to:** WordPress 4.7.5  
+**Version:** 1.2.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -50,6 +50,15 @@ Licence: SIL Open Font License
 Source: http://vollkorn-typeface.com/  
 
 ## Changelog
+
+### 1.2.1 - 23.05.2017
+#### Changed
+* Doc improvements
+* Use [] array syntax instead array().
+* Add comments_template() call to page.php
+
+#### Fixed
+* Issues with separated and paginated comments.
 
 ### 1.2.0 - 02.05.2017
 #### Added

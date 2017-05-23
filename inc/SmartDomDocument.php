@@ -1,4 +1,13 @@
 <?php
+/**
+ * SnartDomDocument Class.
+ *
+ * @link https://bitbucket.org/archon810/smartdomdocument/
+ *
+ * @version 1.2.1
+ *
+ * @package Schlicht
+ */
 
 namespace archon810;
 /**

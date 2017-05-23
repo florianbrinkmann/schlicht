@@ -2,7 +2,7 @@
 /**
  * Customizer functions
  *
- * @version 1.1.1
+ * @version 1.2.1
  *
  * @package Schlicht
  */
@@ -13,76 +13,114 @@
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
 function schlicht_customize_register( $wp_customize ) {
+	/**
+	 * Remove header text color control.
+	 */
 	$wp_customize->remove_control( 'header_textcolor' );
+
+	/**
+	 * Remove header image control.
+	 */
 	$wp_customize->remove_control( 'header_image' );
 
-	$wp_customize->add_section( 'schlicht_options', array(
+	/**
+	 * Add Section for theme options.
+	 */
+	$wp_customize->add_section( 'schlicht_options', [
 		'title' => __( 'Theme options', 'schlicht' ),
-	) );
+	] );
 
-	$wp_customize->add_setting( 'schlicht_dropcap', array(
+	/**
+	 * Add setting for drop cap option.
+	 */
+	$wp_customize->add_setting( 'schlicht_dropcap', [
 		'default'           => 0,
 		'sanitize_callback' => 'schlicht_sanitize_checkbox',
-	) );
+	] );
 
-	$wp_customize->add_control( 'schlicht_dropcap', array(
+	/**
+	 * Add control for drop cap option.
+	 */
+	$wp_customize->add_control( 'schlicht_dropcap', [
 		'type'    => 'checkbox',
 		'section' => 'schlicht_options',
 		'label'   => __( 'Enable Dropcaps', 'schlicht' ),
-	) );
+	] );
 
-	$wp_customize->add_setting( 'schlicht_auto_dropcaps_for_posts', array(
+	/**
+	 * Add setting for auto drop caps for posts.
+	 */
+	$wp_customize->add_setting( 'schlicht_auto_dropcaps_for_posts', [
 		'default'           => 0,
 		'sanitize_callback' => 'schlicht_sanitize_checkbox',
-	) );
+	] );
 
-	/* translators: s=HTML markup for wrapping a dropcap */
-	$wp_customize->add_control( 'schlicht_auto_dropcaps_for_posts', array(
+	/**
+	 * Add control for auto drop caps for posts.
+	 */
+	$wp_customize->add_control( 'schlicht_auto_dropcaps_for_posts', [
 		'type'            => 'checkbox',
 		'section'         => 'schlicht_options',
 		'label'           => __( 'Auto integration of dropcaps only for posts, not pages.', 'schlicht' ),
 		'active_callback' => 'schlicht_use_dropcaps',
-	) );
+	] );
 
-	$wp_customize->add_setting( 'schlicht_no_auto_dropcap', array(
+	/**
+	 * Add setting for disabling auto drop caps.
+	 */
+	$wp_customize->add_setting( 'schlicht_no_auto_dropcap', [
 		'default'           => 0,
 		'sanitize_callback' => 'schlicht_sanitize_checkbox',
-	) );
+	] );
 
-	/* translators: s=HTML markup for wrapping a dropcap */
-	$wp_customize->add_control( 'schlicht_no_auto_dropcap', array(
+	/**
+	 * Add control for disabling auto drop caps.
+	 */
+	$wp_customize->add_control( 'schlicht_no_auto_dropcap', [
 		'type'            => 'checkbox',
 		'section'         => 'schlicht_options',
-		'label'           => sprintf(
+		'label'           => sprintf( /* translators: s=HTML markup for wrapping a dropcap */
 			__( 'Don’t insert dropcaps automatically. You can insert dropcaps manually with wrapping a first letter of a paragraph inside %s in the text view of the editor.', 'schlicht' ),
 			'<span class="dropcap"></span>' ),
 		'active_callback' => 'schlicht_use_dropcaps',
-	) );
+	] );
 
-	$wp_customize->add_setting( 'schlicht_alternate_post_layout', array(
+	/**
+	 * Add setting for alternative post layout.
+	 */
+	$wp_customize->add_setting( 'schlicht_alternate_post_layout', [
 		'default'           => 0,
 		'sanitize_callback' => 'schlicht_sanitize_checkbox',
-	) );
+	] );
 
-	$wp_customize->add_control( 'schlicht_alternate_post_layout', array(
+	/**
+	 * Add control for alternative post layout.
+	 */
+	$wp_customize->add_control( 'schlicht_alternate_post_layout', [
 		'type'    => 'checkbox',
 		'section' => 'schlicht_options',
 		'label'   => __( 'Enable alternate post/page layout where title is displayed in a column left of the content (only works if no widgets are in the sidebar).', 'schlicht' ),
-	) );
+	] );
 
-	$wp_customize->add_setting( 'schlicht_vollkorn_font', array(
+	/**
+	 * Add setting for Vollkorn font option.
+	 */
+	$wp_customize->add_setting( 'schlicht_vollkorn_font', [
 		'default'           => 0,
 		'sanitize_callback' => 'schlicht_sanitize_checkbox'
-	) );
+	] );
 
-	$wp_customize->add_control( 'schlicht_vollkorn_font', array(
+	/**
+	 * Add control for Vollkorn font option.
+	 */
+	$wp_customize->add_control( 'schlicht_vollkorn_font', [
 		'type'    => 'checkbox',
 		'section' => 'schlicht_options',
 		'label'   => __( 'Use the Vollkorn font instead of Sorts Mill Goudy.', 'schlicht' )
-	) );
+	] );
 
 	/**
-	 * Change transport to refresh
+	 * Change transport to refresh for custom logo setting.
 	 */
 	$wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
 }
@@ -101,8 +139,10 @@ add_action( 'customize_register', 'schlicht_customize_register', 11 );
  * @return bool Whether the checkbox is checked.
  */
 function schlicht_sanitize_checkbox( $checked ) {
-	// Boolean check.
-	return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	/**
+	 * Boolean check.
+	 */
+	return ( ( isset( $checked ) && true === $checked ) ? true : false );
 }
 
 /**
@@ -125,25 +165,34 @@ function schlicht_sanitize_checkbox( $checked ) {
  */
 function schlicht_sanitize_select( $input, $setting ) {
 
-	// Ensure input is a slug.
+	/**
+	 * Ensure input is a slug.
+	 */
 	$input = sanitize_key( $input );
 
-	// Get list of choices from the control associated with the setting.
+	/**
+	 * Get list of choices from the control associated with the setting.
+	 */
 	$choices = $setting->manager->get_control( $setting->id )->choices;
 
-	// If the input is a valid key, return it; otherwise, return the default.
+	/**
+	 * If the input is a valid key, return it; otherwise, return the default.
+	 */
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
 
 /**
- * Checks if checkbox for dropcaps is checked and returns true, otherwise false
+ * Checks if checkbox for dropcaps is checked and returns true, otherwise false.
  *
- * @param $control
+ * @param WP_Customize_Control $control Control object.
  *
  * @return bool
  */
 function schlicht_use_dropcaps( $control ) {
-	if ( $control->manager->get_setting( 'schlicht_dropcap' )->value() == 1 ) {
+	/**
+	 * Check if checkbox is checked.
+	 */
+	if ( $control->manager->get_setting( 'schlicht_dropcap' )->value() === true ) {
 		return true;
 	} else {
 		return false;
@@ -151,11 +200,14 @@ function schlicht_use_dropcaps( $control ) {
 }
 
 /**
- * Checks if sidebar is active
+ * Checks if sidebar is active.
  *
  * @return bool
  */
 function schlicht_no_sidebar() {
+	/**
+	 * Check if sidebar-1 is active.
+	 */
 	if ( is_active_sidebar( 'sidebar-1' ) ) {
 		return false;
 	} else {
@@ -164,14 +216,21 @@ function schlicht_no_sidebar() {
 }
 
 /**
- * Prints CSS inside header
+ * Prints CSS inside header.
  *
  * @return void
  */
 function schlicht_customizer_css() {
+	/**
+	 * Check if the header text should be displayed.
+	 */
 	if ( display_header_text() ) {
 		return;
-	} else { ?>
+	} else {
+		/**
+		 * Output CSS to hide header text.
+		 */
+		?>
 		<style type="text/css">
 			.site-title,
 			.site-description {
