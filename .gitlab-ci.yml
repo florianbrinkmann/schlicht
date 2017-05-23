@@ -16,10 +16,8 @@ deploy_staging:
     - ssh -p22 fbndev@aries.uberspace.de "mkdir -p /var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes/schlicht"
     - rsync -rav -e ssh --exclude='.git/' --exclude='.gitlab-ci.yml' --delete-excluded ./ fbndev@aries.uberspace.de:/var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes/schlicht
     - rsync -rav -e ssh --exclude='.git/' --exclude='.gitlab-ci.yml' --delete-excluded ./ fbndev@aries.uberspace.de:/var/www/virtual/fbndev/stable-version.florianbrinkmann.de/wp-content/themes/schlicht
-    - ssh -p22 fbndev@aries.uberspace.de "mkdir -p /var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes-for-docblock-parser"
-    - ssh -p22 fbndev@aries.uberspace.de "mkdir -p /var/www/virtual/fbndev/stable-version.florianbrinkmann.de/wp-content/themes-for-docblock-parser"
-    - ssh -p22 fbndev@aries.uberspace.de "cp -Rf /var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes/schlicht/ /var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes-for-docblock-parser/schlicht/"
-    - ssh -p22 fbndev@aries.uberspace.de "cp -Rf /var/www/virtual/fbndev/stable-version.florianbrinkmann.de/wp-content/themes/schlicht/ /var/www/virtual/fbndev/stable-version.florianbrinkmann.de/wp-content/themes-for-docblock-parser/schlicht/"
+    - ssh -p22 fbndev@aries.uberspace.de "mkdir -p /var/www/virtual/fbndev/html/wp-content/themes-for-docblock-parser"
+    - ssh -p22 fbndev@aries.uberspace.de "cp -Rf /var/www/virtual/fbndev/trunk-version.florianbrinkmann.de/wp-content/themes/schlicht/ /var/www/virtual/fbndev/html/wp-content/themes-for-docblock-parser/schlicht/"
   environment:
     name: staging
   only:
