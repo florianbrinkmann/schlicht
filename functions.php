@@ -357,8 +357,6 @@ if ( ! function_exists( 'schlicht_the_title' ) ) {
 	 *
 	 * @param string $heading Heading level.
 	 * @param bool   $link    If the title should be linked to the single view.
-	 *
-	 * @return void
 	 */
 	function schlicht_the_title( $heading, $link = true ) {
 		if ( $link ) {
@@ -378,8 +376,6 @@ if ( ! function_exists( 'schlicht_the_title' ) ) {
 if ( ! function_exists( 'schlicht_the_content' ) ) {
 	/**
 	 * Displays the_content() with a more accessible more tag.
-	 *
-	 * @return void
 	 */
 	function schlicht_the_content() {
 		the_content(
@@ -398,8 +394,6 @@ if ( ! function_exists( 'schlicht_the_content' ) ) {
 if ( ! function_exists( 'schlicht_wp_link_pages' ) ) {
 	/**
 	 * Displays a pagination for paginated posts and pages.
-	 *
-	 * @return void
 	 */
 	function schlicht_wp_link_pages() {
 		/* translators: Label for pagination of paginated posts and pages */
@@ -414,8 +408,6 @@ if ( ! function_exists( 'schlicht_wp_link_pages' ) ) {
 if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 	/**
 	 * Displays footer meta for a post.
-	 *
-	 * @return void
 	 */
 	function schlicht_the_post_meta() {
 		/**
@@ -587,8 +579,6 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 	 * @param object $comment WP_Comment object.
 	 * @param array  $args    Array of arguments.
 	 * @param int    $depth   Depth of comment.
-	 *
-	 * @return void
 	 */
 	function schlicht_comments( $comment, $args, $depth ) { ?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">

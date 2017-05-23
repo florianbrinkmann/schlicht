@@ -217,8 +217,6 @@ function schlicht_no_sidebar() {
 
 /**
  * Prints CSS inside header.
- *
- * @return void
  */
 function schlicht_customizer_css() {
 	/**
