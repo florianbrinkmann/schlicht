@@ -19,8 +19,8 @@ deploy_staging:
     - ssh -p22 fbndev@aries.uberspace.de "mkdir -p /var/www/virtual/fbndev/html/wp-content/themes-for-docblock-parser"
     - ssh -p22 fbndev@aries.uberspace.de "mkdir -p /var/www/virtual/fbndev/html/wp-content/themes-for-docblock-parser-tmp"
     - ssh -p22 fbndev@aries.uberspace.de "mkdir -p /var/www/virtual/fbndev/html/wp-content/themes-for-docblock-parser/schlicht"
-    - ssh -p22 fbndev@aries.uberspace.de "mv /var/www/virtual/fbndev/html/wp-content/themes-for-docblock-parser/schlicht /var/www/virtual/fbndev/html/wp-content/themes-for-parser-tmp/_old-schlicht && mv /var/www/virtual/fbndev/html/wp-content/themes/schlicht /var/www/virtual/fbndev/html/wp-content/themes-for-docblock-parser/schlicht"
-    - ssh -p22 fbndev@aries.uberspace.de "rm -rf /var/www/virtual/fbndev/html/wp-content/themes-for-parser-tmp/_old-schlicht"
+    - ssh -p22 fbndev@aries.uberspace.de "mv /var/www/virtual/fbndev/html/wp-content/themes-for-docblock-parser/schlicht /var/www/virtual/fbndev/html/wp-content/themes-for-docblock-parser-tmp/_old-schlicht && mv /var/www/virtual/fbndev/html/wp-content/themes/schlicht /var/www/virtual/fbndev/html/wp-content/themes-for-docblock-parser/schlicht"
+    - ssh -p22 fbndev@aries.uberspace.de "rm -rf /var/www/virtual/fbndev/html/wp-content/themes-for-docblock-parser-tmp/_old-schlicht"
     - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar --silent
     - chmod +x wp-cli.phar
     - mv wp-cli.phar /usr/bin/wp
@@ -52,8 +52,8 @@ deploy_production:
     - ssh -p22 fbn@horologium.uberspace.de "mkdir -p /var/www/virtual/fbn/html/wp-content/themes-for-docblock-parser"
     - ssh -p22 fbn@horologium.uberspace.de "mkdir -p /var/www/virtual/fbn/html/wp-content/themes-for-docblock-parser-tmp"
     - ssh -p22 fbn@horologium.uberspace.de "mkdir -p /var/www/virtual/fbn/html/wp-content/themes-for-docblock-parser/schlicht"
-    - ssh -p22 fbn@horologium.uberspace.de "mv /var/www/virtual/fbn/html/wp-content/themes-for-docblock-parser/schlicht /var/www/virtual/fbn/html/wp-content/themes-for-parser-tmp/_old-schlicht && mv /var/www/virtual/fbn/html/wp-content/themes/schlicht /var/www/virtual/fbn/html/wp-content/themes-for-docblock-parser/schlicht"
-    - ssh -p22 fbn@horologium.uberspace.de "rm -rf /var/www/virtual/fbn/html/wp-content/themes-for-parser-tmp/_old-schlicht"
+    - ssh -p22 fbn@horologium.uberspace.de "mv /var/www/virtual/fbn/html/wp-content/themes-for-docblock-parser/schlicht /var/www/virtual/fbn/html/wp-content/themes-for-docblock-parser-tmp/_old-schlicht && mv /var/www/virtual/fbn/html/wp-content/themes/schlicht /var/www/virtual/fbn/html/wp-content/themes-for-docblock-parser/schlicht"
+    - ssh -p22 fbn@horologium.uberspace.de "rm -rf /var/www/virtual/fbn/html/wp-content/themes-for-docblock-parser-tmp/_old-schlicht"
     - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar --silent
     - chmod +x wp-cli.phar
     - mv wp-cli.phar /usr/bin/wp
