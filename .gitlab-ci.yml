@@ -10,6 +10,8 @@ deploy_staging:
     - eval $(ssh-agent -s)
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+    - rm /etc/apt/sources.list.d/additional.list
+    - apt-get -qq update
     - apt-get -qq install rsync
   script:
     - ssh -p22 fbndev@aries.uberspace.de "mkdir -p /var/www/virtual/fbndev/stable-version.florianbrinkmann.de/wp-content/themes/schlicht"
@@ -41,6 +43,8 @@ deploy_production:
     - eval $(ssh-agent -s)
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+    - rm /etc/apt/sources.list.d/additional.list
+    - apt-get -qq update
     - apt-get -qq install rsync zip
   script:
     - ssh -p22 fbn@horologium.uberspace.de "mkdir -p /var/www/virtual/fbn/html/wp-content/themes/_tmp-schlicht"
