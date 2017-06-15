@@ -21,7 +21,7 @@ if ( post_password_required() ) {
 		 *
 		 * Because of that, we use our own function to get the comments by type.
 		 */
-		$comments_by_type = photographus_get_comments_by_type();
+		$comments_by_type = schlicht_get_comments_by_type();
 		if ( ! empty( $comments_by_type['comment'] ) ) {
 			/**
 			 * Save the comment count.

@@ -51,6 +51,10 @@ Source: http://vollkorn-typeface.com/
 
 ## Changelog
 
+### 1.2.2 - 15.06.2017
+#### Fixed
+* Bug in comments.php which causes fatal error.
+
 ### 1.2.1 - 23.05.2017
 #### Changed
 * Doc improvements
