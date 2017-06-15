@@ -240,6 +240,26 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 
 add_action( 'wp_enqueue_scripts', 'schlicht_scripts_styles' );
 
+if ( ! function_exists( 'schlicht_admin_script' ) ) {
+	/**
+	 * Include admin script.
+	 *
+	 * @param string $hook_suffix The current admin page.
+	 */
+	function schlicht_admin_script( $hook_suffix ) {
+		/**
+		 * @todo check for edit page.
+		 */
+
+		/**
+		 * Include the editor functions js.
+		 */
+		wp_enqueue_script( 'schlicht_editor-functions', get_theme_file_uri( 'js/backend-editor-functions.js' ), [], false, true );
+	}
+}
+
+add_action( 'admin_enqueue_scripts', 'schlicht_admin_script' );
+
 if ( ! function_exists( 'schlicht_dropcap_inline_script' ) ) {
 	/**
 	 * Inserts inline script for small caps after drop cap.

@@ -1,67 +1,67 @@
 @font-face {
-    font-family: 'Vollkorn';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Vollkorn'), url('../fonts/vollkorn-regular.woff2') format('woff2'),
-    url('../fonts/vollkorn-regular.woff') format('woff');
+	font-family: 'Vollkorn';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Vollkorn'), url('../fonts/vollkorn-regular.woff2') format('woff2'),
+	url('../fonts/vollkorn-regular.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Vollkorn';
-    font-style: italic;
-    font-weight: 400;
-    src: local('Vollkorn Italic'), url('../fonts/vollkorn-italic.woff2') format('woff2'),
-    url('../fonts/vollkorn-italic.woff') format('woff');
+	font-family: 'Vollkorn';
+	font-style: italic;
+	font-weight: 400;
+	src: local('Vollkorn Italic'), url('../fonts/vollkorn-italic.woff2') format('woff2'),
+	url('../fonts/vollkorn-italic.woff') format('woff');
 }
 
 html {
-    background: #f9f9f9;
-    font-size: 1.02em;
-    margin-left: 1.6rem;
-    margin-right: 1.6rem;
+	background: #f9f9f9;
+	font-size: 1.02em;
+	margin-left: 1.6rem;
+	margin-right: 1.6rem;
 }
 
 body {
-    background: #f9f9f9;
-    color: #333;
-    font-family: "Vollkorn", serif; /* 1 */
-    -webkit-font-feature-settings: "onum";
-    font-feature-settings: "onum";
-    font-size: inherit;
-    line-height: 1.5;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 806px;
-    -ms-text-size-adjust: 100%; /* 2 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-    word-wrap: break-word;
+	background: #f9f9f9;
+	color: #333;
+	font-family: "Vollkorn", serif; /* 1 */
+	-webkit-font-feature-settings: "onum";
+	font-feature-settings: "onum";
+	font-size: inherit;
+	line-height: 1.5;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 806px;
+	-ms-text-size-adjust: 100%; /* 2 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+	word-wrap: break-word;
 }
 
 a {
-    background: transparent url('../img/link-underline.png') repeat no-repeat 0 92%;
-    background: transparent -webkit-linear-gradient(left, rgba(51, 51, 51, 1), rgba(51, 51, 51, 1)) no-repeat 0 92%;
-    background: transparent linear-gradient(90deg, rgba(51, 51, 51, 1), rgba(51, 51, 51, 1)) no-repeat 0 92%;
-    background-size: 100% 1px;
-    color: inherit;
-    outline-width: 0;
-    text-decoration: none;
-    -webkit-text-decoration-skip: objects; /* 2 */
-    -webkit-transition: all .15s ease 0s;
-    transition: all .15s ease 0s;
+	background: transparent url('../img/link-underline.png') repeat no-repeat 0 92%;
+	background: transparent -webkit-linear-gradient(left, rgba(51, 51, 51, 1), rgba(51, 51, 51, 1)) no-repeat 0 92%;
+	background: transparent linear-gradient(90deg, rgba(51, 51, 51, 1), rgba(51, 51, 51, 1)) no-repeat 0 92%;
+	background-size: 100% 1px;
+	color: inherit;
+	outline-width: 0;
+	text-decoration: none;
+	-webkit-text-decoration-skip: objects; /* 2 */
+	-webkit-transition: all .15s ease 0s;
+	transition: all .15s ease 0s;
 }
 
 a:active,
 a:hover,
 a:focus,
 .current-menu-item a {
-    background-position: 0 calc(100% + 2px);
+	background-position: 0 calc(100% + 2px);
 }
 
 a:focus {
-    background-image: -webkit-linear-gradient(left, rgba(51, 51, 51, .7), rgba(51, 51, 51, .7));
-    background-image: linear-gradient(90deg, rgba(51, 51, 51, .7), rgba(51, 51, 51, .7));
-    background-size: 100% 3px;
-    background-position: 0 calc(92% + 2px);
+	background-image: -webkit-linear-gradient(left, rgba(51, 51, 51, .7), rgba(51, 51, 51, .7));
+	background-image: linear-gradient(90deg, rgba(51, 51, 51, .7), rgba(51, 51, 51, .7));
+	background-size: 100% 3px;
+	background-position: 0 calc(92% + 2px);
 }
 
 h1,
@@ -70,55 +70,55 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 400;
-    margin: 2rem 0 0;
+	font-weight: 400;
+	margin: 2rem 0 0;
 }
 
 h1,
 .entry-title {
-    font-size: 1.802rem;
-    line-height: 2.25rem;
+	font-size: 1.802rem;
+	line-height: 2.25rem;
 }
 
 h2 {
-    font-size: 1.602rem;
-    line-height: 2rem;
+	font-size: 1.602rem;
+	line-height: 2rem;
 }
 
 h3 {
-    font-size: 1.424rem;
-    line-height: 1.75rem;
+	font-size: 1.424rem;
+	line-height: 1.75rem;
 }
 
 h4 {
-    font-size: 1.266rem;
-    line-height: 1.5rem;
+	font-size: 1.266rem;
+	line-height: 1.5rem;
 }
 
 h5 {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
+	font-size: 1.125rem;
+	line-height: 1.5rem;
 }
 
 h6 {
-    font-size: 1rem;
-    line-height: 1.5rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
 }
 
 h2 + h3 {
-    margin-top: .75rem;
+	margin-top: .75rem;
 }
 
 h3 + h4 {
-    margin-top: .75rem;
+	margin-top: .75rem;
 }
 
 h4 + h5 {
-    margin-top: .75rem;
+	margin-top: .75rem;
 }
 
 h5 + h6 {
-    margin-top: .75rem;
+	margin-top: .75rem;
 }
 
 p,
@@ -128,139 +128,139 @@ ol,
 ul,
 table,
 figure {
-    margin: .75rem 0 0;
-    padding: 0;
+	margin: .75rem 0 0;
+	padding: 0;
 }
 
 b,
 strong {
-    -webkit-font-feature-settings: "smcp", "onum";
-    font-feature-settings: "smcp", "onum";
-    font-style: normal;
-    font-weight: 400;
-    letter-spacing: .03rem;
-    text-transform: lowercase;
+	-webkit-font-feature-settings: "smcp", "onum";
+	font-feature-settings: "smcp", "onum";
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: .03rem;
+	text-transform: lowercase;
 }
 
 blockquote {
-    margin-left: .375rem;
-    padding-left: .75rem;
-    position: relative;
+	margin-left: .375rem;
+	padding-left: .75rem;
+	position: relative;
 }
 
 blockquote::before {
-    border: 1px solid #333;
-    border-right: 0;
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: -.1rem;
-    width: .2rem;
+	border: 1px solid #333;
+	border-right: 0;
+	content: '';
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: -.1rem;
+	width: .2rem;
 }
 
 blockquote cite {
-    display: block;
-    margin-top: .375rem;
+	display: block;
+	margin-top: .375rem;
 }
 
 cite {
-    -webkit-font-feature-settings: "smcp";
-    font-feature-settings: "smcp";
-    font-style: normal;
-    letter-spacing: .03rem;
-    text-transform: lowercase;
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";
+	font-style: normal;
+	letter-spacing: .03rem;
+	text-transform: lowercase;
 }
 
 figure,
 img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 table {
-    border-spacing: 0;
-    width: 100%;
+	border-spacing: 0;
+	width: 100%;
 }
 
 th {
-    border-bottom: 2px solid;
-    text-align: left;
-    font-weight: normal;
+	border-bottom: 2px solid;
+	text-align: left;
+	font-weight: normal;
 }
 
 td {
-    border: 0;
-    border-bottom: 1px solid;
-    margin: 0;
+	border: 0;
+	border-bottom: 1px solid;
+	margin: 0;
 }
 
 tr:last-child td {
-    border-bottom: 0;
+	border-bottom: 0;
 }
 
 td,
 th {
-    padding: .375rem;
+	padding: .375rem;
 }
 
 dt,
 th {
-    letter-spacing: .03rem;
-    text-transform: uppercase;
+	letter-spacing: .03rem;
+	text-transform: uppercase;
 }
 
 dd {
-    margin-bottom: .75rem;
-    margin-left: .75rem;
+	margin-bottom: .75rem;
+	margin-left: .75rem;
 }
 
 ul,
 ol {
-    padding-left: .75rem;
+	padding-left: .75rem;
 }
 
 li {
-    margin-top: .375rem;
+	margin-top: .375rem;
 }
 
 li::before {
-    content: "–";
-    left: -.8rem;
-    top: 0;
-    position: absolute;
+	content: "–";
+	left: -.8rem;
+	top: 0;
+	position: absolute;
 }
 
 ul ul,
 ol ol,
 ol ul,
 ul ol {
-    margin: 0;
+	margin: 0;
 }
 
 ul > li {
-    list-style-type: none;
-    position: relative;
+	list-style-type: none;
+	position: relative;
 }
 
 ::-webkit-input-placeholder {
-    opacity: 1;
+	opacity: 1;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-    opacity: 1;
+	opacity: 1;
 }
 
 ::-moz-placeholder { /* Firefox 19+ */
-    opacity: 1;
+	opacity: 1;
 }
 
 :-ms-input-placeholder {
-    opacity: 1;
+	opacity: 1;
 }
 
 label {
-    display: block;
+	display: block;
 }
 
 /**
@@ -268,27 +268,27 @@ label {
  */
 
 textarea {
-    overflow: auto;
-    resize: vertical;
+	overflow: auto;
+	resize: vertical;
 }
 
 input:not([type=submit]),
 textarea {
-    background: none;
-    border: 1px solid;
-    padding: .375rem .375rem .1rem;
-    width: 100%;
+	background: none;
+	border: 1px solid;
+	padding: .375rem .375rem .1rem;
+	width: 100%;
 }
 
 [type="submit"] {
-    background: none;
-    border: 1px solid;
-    -webkit-font-feature-settings: "smcp";
-    font-feature-settings: "smcp";
-    letter-spacing: .03rem;
-    margin-top: .375rem;
-    padding: .2rem .375rem;
-    text-transform: lowercase;
+	background: none;
+	border: 1px solid;
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";
+	letter-spacing: .03rem;
+	margin-top: .375rem;
+	padding: .2rem .375rem;
+	text-transform: lowercase;
 }
 
 input:hover,
@@ -297,96 +297,139 @@ input:active,
 textarea:hover,
 textarea:focus,
 textarea:active {
-    border-left-width: 3px;
-    outline: none !important;
-    padding-left: calc(.375rem - 2px);
+	border-left-width: 3px;
+	outline: none !important;
+	padding-left: calc(.375rem - 2px);
 }
 
 [type=submit]:hover,
 [type=submit]:focus,
 [type=submit]:active {
-    border-right-width: 3px;
-    padding-right: calc(.375rem - 2px);
+	border-right-width: 3px;
+	padding-right: calc(.375rem - 2px);
 }
 
 .alignleft {
-    display: block;
-    float: left;
-    margin-right: 1.125rem;
+	display: block;
+	float: left;
+	margin-right: 1.125rem;
 }
 
 .alignright {
-    display: block;
-    float: right;
-    margin-left: 1.125rem;
+	display: block;
+	float: right;
+	margin-left: 1.125rem;
 }
 
 .aligncenter,
 .alignnone {
-    display: block;
-    margin: 1.5rem 0;
+	display: block;
+	margin: 1.5rem 0;
 }
 
 .aligncenter {
-    margin-left: auto;
-    margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .alignleft,
 .alignright {
-    margin-top: .375rem;
-    margin-bottom: .75rem;
+	margin-top: .375rem;
+	margin-bottom: .75rem;
 }
 
 figure.alignleft,
 figure.alignright {
-    margin-top: 1.125rem;
+	margin-top: 1.125rem;
 }
 
 .alignleft img,
 .alignright img {
-    margin: 0;
+	margin: 0;
 }
 
 .wp-caption-dd {
-    font-size: 1rem;
-    font-style: italic;
-    margin-top: .375rem;
+	font-size: 1rem;
+	font-style: italic;
+	margin-top: .375rem;
 }
 
 .small-caps {
-    -webkit-font-feature-settings: "smcp";
-    font-feature-settings: "smcp";
-    letter-spacing: .03rem;
-    text-transform: lowercase;
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";
+	letter-spacing: .03rem;
+	text-transform: lowercase;
 }
 
 .dropcap {
-    float: left;
-    -webkit-font-feature-settings: unset;
-    font-feature-settings: unset;
-    padding: 0;
-    font-size: 3.23881em;
-    height: 2.17rem;
-    line-height: .82em;
-    margin-top: 0.33rem;
-    text-transform: none;
+	float: left;
+	-webkit-font-feature-settings: unset;
+	font-feature-settings: unset;
+	padding: 0;
+	font-size: 3.23881em;
+	height: 2.17rem;
+	line-height: .82em;
+	margin-top: 0.33rem;
+	text-transform: uppercase;
+}
+
+.side-note {
+	font-style: italic;
+	display: block;
+}
+
+@media screen and (min-width: 30rem) {
+	.side-note {
+		float: left;
+		font-style: italic;
+		display: block;
+		margin-bottom: .8em;
+		margin-right: 1.2em;
+		max-width: 35%;
+	}
 }
 
 @media screen and (min-width: 40rem) {
-    html {
-        font-size: 1.1em;
-    }
+	html {
+		font-size: 1.1em;
+	}
 }
 
 @media screen and (min-width: 45rem) {
-    html {
-        font-size: 1.2em;
-    }
+	html {
+		font-size: 1.2em;
+	}
 }
 
 @media screen and (min-width: 50rem) {
-    html {
-        font-size: 1.301em;
-    }
+	html {
+		font-size: 1.301em;
+	}
+}
+
+@media screen and (min-width: 60rem) {
+	.side-note {
+		margin-left: -1.6rem;
+		max-width: calc(35% + 1.6rem)
+	}
+}
+
+@media screen and (min-width: 78rem) {
+	@supports (display:grid) {
+		body {
+			display: grid;
+			grid-template-columns: [full-start] minmax(1em, 1fr) [main-start] minmax(0, 773px) [main-end] minmax(1em, 1fr) [full-end];
+			max-width: 100%;
+		}
+
+		body > * {
+			grid-column: main;
+		}
+
+		body > .side-note {
+			grid-column: full-start;
+			margin-left: 0;
+			max-width: 100%;
+		}
+	}
 }

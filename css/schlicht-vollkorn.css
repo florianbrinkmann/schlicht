@@ -774,7 +774,7 @@ figure.alignright {
     height: 2.17rem;
     line-height: .82em;
     margin-top: 0.33rem;
-    text-transform: none;
+    text-transform: uppercase;
 }
 
 .gallery {
