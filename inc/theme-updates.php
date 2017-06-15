@@ -116,7 +116,7 @@ function schlicht_theme_update( $transient ) {
 	 */
 	if ( version_compare( $transient->checked['schlicht'], $data->new_version, '<' ) ) {
 		/**
-		 * Add response array for Photographus in $transient object.
+		 * Add response array for Schlicht in $transient object.
 		 */
 		$transient->response['schlicht'] = (array) $data;
 
