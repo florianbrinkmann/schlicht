@@ -133,12 +133,20 @@ if ( ! function_exists( 'schlicht_add_editor_style' ) ) {
 			/**
 			 * Include editor styles with default font Sorts Mill Goudy.
 			 */
-			add_editor_style( 'css/editor-style.css' );
+			if ( is_rtl() ) {
+				add_editor_style( 'css/editor-style-rtl.css' );
+			} else {
+				add_editor_style( 'css/editor-style.css' );
+			}
 		} else {
 			/**
 			 * Include editor styles with Vollkorn font.
 			 */
-			add_editor_style( 'css/editor-style-vollkorn.css' );
+			if ( is_rtl() ) {
+				add_editor_style( 'css/editor-style-vollkorn-rtl.css' );
+			} else {
+				add_editor_style( 'css/editor-style-vollkorn.css' );
+			}
 		}
 	}
 } // End if().
@@ -228,12 +236,20 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 			/**
 			 * Include default style.
 			 */
-			wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht.css', [], null );
+			if ( is_rtl() ) {
+				wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht-rtl.css', [], null );
+			} else {
+				wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht.css', [], null );
+			}
 		} else {
 			/**
 			 * Include Vollkorn style.
 			 */
-			wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht-vollkorn.css', [], null );
+			if ( is_rtl() ) {
+				wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht-vollkorn-rtl.css', [], null );
+			} else {
+				wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht-vollkorn.css', [], null );
+			}
 		}
 	}
 }
@@ -248,13 +264,15 @@ if ( ! function_exists( 'schlicht_admin_script' ) ) {
 	 */
 	function schlicht_admin_script( $hook_suffix ) {
 		/**
-		 * @todo check for edit page.
+		 * Check for post or page edit page.
 		 */
+		if ( 'post.php' === $hook_suffix ) {
+			/**
+			 * Include the editor functions js.
+			 */
+			wp_enqueue_script( 'schlicht_editor-functions', get_theme_file_uri( 'js/backend-editor-functions.js' ), [], false, true );
 
-		/**
-		 * Include the editor functions js.
-		 */
-		wp_enqueue_script( 'schlicht_editor-functions', get_theme_file_uri( 'js/backend-editor-functions.js' ), [], false, true );
+		}
 	}
 }
 
