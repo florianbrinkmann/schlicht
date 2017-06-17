@@ -23,6 +23,11 @@ add_action( 'after_setup_theme', 'schlicht_add_theme_support' );
 add_action( 'after_setup_theme', 'schlicht_add_editor_style' );
 
 /**
+ * Set the content width.
+ */
+add_action( 'after_setup_theme', 'schlicht_set_content_width' );
+
+/**
  * Register menus.
  */
 add_action( 'init', 'schlicht_register_menus' );
