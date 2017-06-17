@@ -49,7 +49,7 @@ if ( post_password_required() ) {
 					'callback' => 'schlicht_comments',
 					'style'    => 'ul',
 					'type'     => 'comment',
-					'per_page' => $comment_args['number'],
+					'per_page' => ( isset( $comment_args['number'] ) ? $comment_args['number'] : - 1 ),
 				] ); ?>
 			</ul>
 		<?php }
@@ -76,7 +76,7 @@ if ( post_password_required() ) {
 				wp_list_comments( [
 					'type'       => 'pings',
 					'short_ping' => true,
-					'per_page'   => $comment_args['number'],
+					'per_page'   => ( isset( $comment_args['number'] ) ? $comment_args['number'] : - 1 ),
 				] ); ?>
 			</ul>
 		<?php }
@@ -86,7 +86,10 @@ if ( post_password_required() ) {
 		 * of our separation. Otherwise, the navigation would also be displayed if
 		 * we should display 4 comments per page and have 3 comments and 2 trackbacks.
 		 */
-		if ( ( isset( $trackback_number ) && $trackback_number > $comment_args['number'] ) || ( isset( $comment_number ) && $comment_number > $comment_args['number'] ) ) {
+		if (
+			( ( isset( $trackback_number ) && isset( $comment_args['number'] ) ) && $trackback_number > $comment_args['number'] )
+			|| ( ( isset( $comment_number ) && isset( $comment_args['number'] ) ) && $comment_number > $comment_args['number'] )
+		) {
 			the_comments_navigation();
 		}
 
