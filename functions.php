@@ -20,7 +20,7 @@ if ( ! function_exists( 'schlicht_load_translation' ) ) {
 			/**
 			 * Load the translation.
 			 */
-			load_theme_textdomain( 'schlicht', get_template_directory() . '/languages' );
+			load_theme_textdomain( 'schlicht', get_theme_file_path() . '/languages' );
 		}
 	}
 }
@@ -237,18 +237,18 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 			 * Include default style.
 			 */
 			if ( is_rtl() ) {
-				wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht-rtl.css', [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri() . '/css/schlicht-rtl.css', [], null );
 			} else {
-				wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht.css', [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri() . '/css/schlicht.css', [], null );
 			}
 		} else {
 			/**
 			 * Include Vollkorn style.
 			 */
 			if ( is_rtl() ) {
-				wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht-vollkorn-rtl.css', [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri() . '/css/schlicht-vollkorn-rtl.css', [], null );
 			} else {
-				wp_enqueue_style( 'schlicht-style', get_template_directory_uri() . '/css/schlicht-vollkorn.css', [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri() . '/css/schlicht-vollkorn.css', [], null );
 			}
 		}
 	}
