@@ -22,3 +22,7 @@ add_action( 'wp_enqueue_scripts', 'schlicht_scripts_styles' );
 add_action( 'admin_enqueue_scripts', 'schlicht_admin_script' );
 
 add_action( 'wp_footer', 'schlicht_dropcap_inline_script' );
+
+add_action( 'customize_register', 'schlicht_update_customize_register', 12 );
+
+add_action( 'switch_theme', 'schlicht_remove_upgrade_url', 10, 2 );

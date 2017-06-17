@@ -38,8 +38,6 @@ function schlicht_update_customize_register( $wp_customize ) {
 	}
 }
 
-add_action( 'customize_register', 'schlicht_update_customize_register', 12 );
-
 /**
  * Escape URL and check if it matches a valid download format.
  *
@@ -156,8 +154,6 @@ function schlicht_theme_update( $transient ) {
 	return $transient;
 }
 
-add_filter( 'pre_set_site_transient_update_themes', 'schlicht_theme_update' );
-
 /**
  * Fetch data of latest theme version.
  *
@@ -191,5 +187,3 @@ function schlicht_remove_upgrade_url() {
 		delete_option( 'schlicht_upgrade_url' );
 	}
 }
-
-add_action( 'switch_theme', 'schlicht_remove_upgrade_url', 10, 2 );
