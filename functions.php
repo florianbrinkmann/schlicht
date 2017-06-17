@@ -23,9 +23,7 @@ if ( ! function_exists( 'schlicht_load_translation' ) ) {
 			load_theme_textdomain( 'schlicht', get_theme_file_path() . '/languages' );
 		}
 	}
-}
-
-add_action( 'after_setup_theme', 'schlicht_load_translation' );
+} // End if().
 
 if ( ! function_exists( 'schlicht_is_login_page' ) ) {
 	/**
@@ -114,8 +112,6 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 	}
 } // End if().
 
-add_action( 'after_setup_theme', 'schlicht_add_theme_support' );
-
 if ( ! function_exists( 'schlicht_add_editor_style' ) ) {
 	/**
 	 * Adds stylesheet for Tiny MCE editor in the backend.
@@ -151,8 +147,6 @@ if ( ! function_exists( 'schlicht_add_editor_style' ) ) {
 	}
 } // End if().
 
-add_action( 'after_setup_theme', 'schlicht_add_editor_style' );
-
 if ( ! function_exists( 'schlicht_register_menus' ) ) {
 	/**
 	 * Register Menus.
@@ -167,9 +161,7 @@ if ( ! function_exists( 'schlicht_register_menus' ) ) {
 			]
 		);
 	}
-}
-
-add_action( 'init', 'schlicht_register_menus' );
+} // End if().
 
 if ( ! function_exists( 'schlicht_register_sidebars' ) ) {
 	/**
@@ -202,9 +194,7 @@ if ( ! function_exists( 'schlicht_register_sidebars' ) ) {
 			'after_title'   => '</h3>',
 		] );
 	}
-}
-
-add_action( 'widgets_init', 'schlicht_register_sidebars' );
+} // End if().
 
 if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 	/**
@@ -252,9 +242,7 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 			}
 		}
 	}
-}
-
-add_action( 'wp_enqueue_scripts', 'schlicht_scripts_styles' );
+} // End if().
 
 if ( ! function_exists( 'schlicht_admin_script' ) ) {
 	/**
@@ -274,71 +262,7 @@ if ( ! function_exists( 'schlicht_admin_script' ) ) {
 
 		}
 	}
-}
-
-add_action( 'admin_enqueue_scripts', 'schlicht_admin_script' );
-
-if ( ! function_exists( 'schlicht_dropcap_inline_script' ) ) {
-	/**
-	 * Inserts inline script for small caps after drop cap.
-	 */
-	function schlicht_dropcap_inline_script() {
-		/**
-		 * Get value of drop cap option.
-		 */
-		$dropcaps_enabled = get_theme_mod( 'schlicht_dropcap', false );
-
-		/**
-		 * Check if drop caps are enabled.
-		 */
-		if ( $dropcaps_enabled === true ) {
-			/**
-			 * Get value of auto drop caps option.
-			 */
-			$no_auto_dropcaps = get_theme_mod( 'schlicht_no_auto_dropcap', false );
-
-			/**
-			 * Check if auto drop caps are disabled.
-			 */
-			if ( $no_auto_dropcaps === true ) {
-				/**
-				 * Get value of customizer option for auto drop caps only in posts.
-				 */
-				$auto_dropcaps_only_for_posts = get_theme_mod( 'schlicht_auto_dropcaps_for_posts', false );
-
-				/**
-				 * Check if auto drop caps should only be used in posts.
-				 */
-				if ( $auto_dropcaps_only_for_posts === true ) {
-					/**
-					 * Selector for the JavaScript — only posts.
-					 */
-					$container = '.post .entry-content';
-				} else {
-					/**
-					 * Selector for the JavaScript — posts and pages.
-					 */
-					$container = '.entry-content';
-				}
-
-				/**
-				 * Echo the inline script.
-				 */
-				echo "<script>var container_selector = '$container';
-var dropcaps = document.querySelectorAll(container_selector + ' .dropcap');
-// regex from http://beutelevision.com/blog2/2011/06/17/get-the-first-n-words-with-javascript/
-for(var i = 0; i < dropcaps.length; i++){
-	if ( dropcaps[i].parentElement.className === 'small-caps' ) {
-	} else {
-		dropcaps[i].parentElement.innerHTML = dropcaps[i].parentElement.innerHTML.replace(/(([^\s]+\s\s*){2})/, '<span class=\"small-caps\">$1</span>');
-	}
-}</script>";
-			}
-		} // End if().
-	}
 } // End if().
-
-add_action( 'wp_footer', 'schlicht_dropcap_inline_script' );
 
 if ( ! function_exists( 'schlicht_remove_more_link_scroll' ) ) {
 	/**
@@ -356,9 +280,7 @@ if ( ! function_exists( 'schlicht_remove_more_link_scroll' ) ) {
 
 		return $link;
 	}
-}
-
-add_filter( 'the_content_more_link', 'schlicht_remove_more_link_scroll' );
+} // End if().
 
 if ( ! function_exists( 'schlicht_get_custom_logo' ) ) {
 	/**
@@ -606,9 +528,7 @@ if ( ! function_exists( 'schlicht_body_classes' ) ) {
 
 		return $classes;
 	}
-}
-
-add_filter( 'body_class', 'schlicht_body_classes' );
+} // End if().
 
 if ( ! function_exists( 'schlicht_comments' ) ) {
 	/**
@@ -687,184 +607,17 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 	}
 } // End if().
 
-require_once 'inc/SmartDomDocument.php';
-
-if ( ! function_exists( 'schlicht_add_dropcap_markup' ) ) {
-	/**
-	 * Adds markup for drop caps to post content.
-	 *
-	 * @param string $content Post content.
-	 *
-	 * @return string Post content.
-	 */
-	function schlicht_add_dropcap_markup( $content ) {
-		/**
-		 * Check if the post has content.
-		 */
-		if ( '' === $content ) {
-			return $content;
-		}
-
-		/**
-		 * Get value of drop cap option.
-		 */
-		$dropcaps_enabled = get_theme_mod( 'schlicht_dropcap' );
-
-		/**
-		 * Get value of no auto drop caps option.
-		 */
-		$no_auto_dropcaps = get_theme_mod( 'schlicht_no_auto_dropcap' );
-
-		/**
-		 * Check if drop caps are enabled and auto dropcaps not disabled.
-		 */
-		if ( true === $dropcaps_enabled && false === $no_auto_dropcaps ) {
-			/**
-			 * Get value of option for auto drop caps only for posts.
-			 */
-			$auto_dropcaps_only_for_posts = get_theme_mod( 'schlicht_auto_dropcaps_for_posts' );
-
-			/**
-			 * Check if auto drop caps only for posts are disabled, or it is enabled but we are not on a page.
-			 */
-			if ( false === $auto_dropcaps_only_for_posts || ( true === $auto_dropcaps_only_for_posts && ! is_page() ) ) {
-				/**
-				 * Create new SmartDOMDocument object.
-				 */
-				$dom = new \archon810\SmartDOMDocument();
-
-				/**
-				 * Load the post’s HTML.
-				 */
-				$dom->loadHTML( $content );
-
-				/**
-				 * Get all paragraphs.
-				 */
-				$paragraphs = $dom->getElementsByTagName( 'p' );
-
-				/**
-				 * Check if we have no paragraphs.
-				 */
-				if ( ! $paragraphs ) {
-					return $content;
-				}
-
-				/**
-				 * Get content of first paragraph.
-				 */
-				$first_paragraph_text = $dom->saveXML( $paragraphs->item( 0 ) );
-
-				/**
-				 * Remove paragraph tags from beginning and end.
-				 * Regex from http://stackoverflow.com/a/4713811
-				 */
-				$pattern = '=^<p>(.*)</p>$=i';
-				preg_match( $pattern, $first_paragraph_text, $matches );
-				if ( ! $matches ) {
-					return $content;
-				}
-				$first_paragraph_text = $matches[1];
-
-				/**
-				 * Check if text starts with »<«
-				 */
-				$pattern = '|^<|i';
-				preg_match( $pattern, $first_paragraph_text, $matches );
-				if ( $matches ) {
-					return $content;
-				}
-
-				/**
-				 * Fet first word.
-				 * http://stackoverflow.com/a/10635638
-				 */
-				$first_word = preg_split( '/[\s,]+/', $first_paragraph_text )[0];
-
-				/**
-				 * Get first letter of paragraph.
-				 * http://stackoverflow.com/a/1972111
-				 */
-				$first_letter = mb_substr( $first_paragraph_text, 0, 1 );
-
-				/**
-				 * Remove first word from paragraph.
-				 */
-				$first_paragraph_text_without_first_word = preg_replace( "|$first_word|", "", $first_paragraph_text, 1 );
-				if ( ! $first_paragraph_text_without_first_word ) {
-					return $content;
-				}
-
-				/**
-				 * Create markup for small caps part.
-				 * Result: <span class="small-caps"></span>
-				 */
-				$sc_class_attribute        = $dom->createAttribute( 'class' );
-				$small_caps_element        = $dom->createElement( 'span' );
-				$sc_class_attribute->value = 'small-caps';
-				$small_caps_element->appendChild( $sc_class_attribute );
-
-				/**
-				 * Create markup for dropcap.
-				 * Result: <span class="dropcap">$first_letter</span>
-				 * where $first_letter is the first letter
-				 */
-				$dc_class_attribute        = $dom->createAttribute( 'class' );
-				$dropcap_element           = $dom->createElement( 'span', $first_letter );
-				$dc_class_attribute->value = 'dropcap';
-				$dropcap_element->appendChild( $dc_class_attribute );
-
-				/**
-				 * Append the dropcap span to the small caps span.
-				 */
-				$small_caps_element->appendChild( $dropcap_element );
-
-				/**
-				 * Get first word without first letter.
-				 */
-				$first_word_without_first_letter = mb_substr( $first_word, 1 );
-
-				/**
-				 * Create text node of the result (so it can be used
-				 * as an argument for appendChild) and append it to the small caps
-				 * element
-				 */
-				$first_word_text_node = $dom->createTextNode( $first_word_without_first_letter );
-				$small_caps_element->appendChild( $first_word_text_node );
-
-				/**
-				 * Overwrite value of first paragraph with empty string so the
-				 * small caps element with drop cap child can be inserted at beginning
-				 */
-				$paragraphs->item( 0 )->nodeValue = '';
-				$paragraphs->item( 0 )->appendChild( $small_caps_element );
-
-				/**
-				 * Way with createDocumentFragment() from http://stackoverflow.com/a/4401512
-				 */
-				$temp = $dom->createDocumentFragment();
-				$temp->appendXML( $first_paragraph_text_without_first_word );
-				$paragraphs->item( 0 )->appendChild( $temp );
-
-				/**
-				 * Save the modified content.
-				 */
-				$content = $dom->saveHTMLExact();
-			} // End if().
-		} // End if().
-
-		return $content;
-	}
-}
-
-add_filter( 'the_content', 'schlicht_add_dropcap_markup' );
+/**
+ * Include file with add_action() calls.
+ */
+require_once locate_template( 'inc/actions.php' );
 
 /**
  * Include customizer functions.
  */
-require_once 'inc/customizer.php';
+require_once locate_template( 'inc/customizer.php' );
 
 /**
  * Include functions for theme update handling.
  */
-require_once 'inc/theme-updates.php';
+require_once locate_template( 'inc/theme-updates.php' );
