@@ -125,8 +125,6 @@ function schlicht_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
 }
 
-add_action( 'customize_register', 'schlicht_customize_register', 11 );
-
 /**
  * Checkbox sanitization callback example.
  *
@@ -242,5 +240,3 @@ function schlicht_customizer_css() {
 		</style>
 	<?php }
 }
-
-add_action( 'wp_head', 'schlicht_customizer_css' );
