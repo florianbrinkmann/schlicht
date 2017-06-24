@@ -1,67 +1,10 @@
-/*
- * Adds button to the backend editor to create a side note.
+/**
+ * Listen to setup of a TinyMCE instance.
  */
 jQuery(document).on('tinymce-editor-setup', function (event, editor) {
 	/**
-	 * Wait until the editor is initialized before
-	 * registering style.
-	 *
-	 * Original hint from http://archive.tinymce.com/forum/viewtopic.php?pid=92762#p92762
-	 * onInit is deprecated, so https://www.tinymce.com/docs/advanced/migration-guide-from-3.x/#eventhandling
-	 */
-	editor.on('init', function () {
-		/**
-		 * Register the new format for the side note.
-		 */
-		editor.formatter.register('schlicht_side_note_format', {
-			/**
-			 * It is the block element aside.
-			 */
-			block: 'aside',
-
-			/**
-			 * The aside element gets the class side-note.
-			 */
-			classes: 'side-note',
-
-			/**
-			 * The aside is the wrapper for other block elements
-			 * and does not replace them.
-			 */
-			wrapper: true
-		});
-
-		/**
-		 * Register the new format for the drop cap.
-		 */
-		editor.formatter.register('schlicht_drop_cap_format', {
-			/**
-			 * It is the block element aside.
-			 */
-			block: 'p',
-
-			/**
-			 * Only make it work for paragraph elements.
-			 */
-			selector: 'p',
-
-			/**
-			 * The aside element gets the class side-note.
-			 */
-			classes: 'dropcap-paragraph',
-		});
-
-		/**
-		 * Callback on drop cap format change.
-		 */
-		editor.formatter.formatChanged('schlicht_drop_cap_format', function (state, currentNodeObj) {
-			schlicht_toggle_dropcap_markup(state, currentNodeObj);
-		});
-	});
-
-	/**
 	 * Add the id of the soon-to-create button to the
-	 * toolbar settings.
+	 * toolbar1.
 	 *
 	 * @type {string}
 	 */
@@ -101,6 +44,63 @@ jQuery(document).on('tinymce-editor-setup', function (event, editor) {
 				}
 			}
 		]
+	});
+
+	/**
+	 * Wait until the editor is initialized before
+	 * registering style.
+	 *
+	 * Original hint from http://archive.tinymce.com/forum/viewtopic.php?pid=92762#p92762
+	 * onInit is deprecated, so https://www.tinymce.com/docs/advanced/migration-guide-from-3.x/#eventhandling
+	 */
+	editor.on('init', function () {
+		/**
+		 * Register the new format for the side note.
+		 */
+		editor.formatter.register('schlicht_side_note_format', {
+			/**
+			 * It is the block element div.
+			 */
+			block: 'div',
+
+			/**
+			 * The div element gets the class side-note.
+			 */
+			classes: 'side-note',
+
+			/**
+			 * The div is the wrapper for other block elements
+			 * and does not replace them.
+			 */
+			wrapper: true
+		});
+
+		/**
+		 * Register the new format for the drop cap.
+		 */
+		editor.formatter.register('schlicht_drop_cap_format', {
+			/**
+			 * It is the block element p.
+			 */
+			block: 'p',
+
+			/**
+			 * Only make it work for paragraph elements.
+			 */
+			selector: 'p',
+
+			/**
+			 * The p element gets the class side-note.
+			 */
+			classes: 'dropcap-paragraph',
+		});
+
+		/**
+		 * Callback on drop cap format change.
+		 */
+		editor.formatter.formatChanged('schlicht_drop_cap_format', function (state, currentNodeObj) {
+			schlicht_toggle_dropcap_markup(state, currentNodeObj);
+		});
 	});
 });
 

@@ -11,6 +11,8 @@ gulp.task('css-rtl', function () {
 		.pipe(gulp.dest('css/'));
 });
 
-gulp.task('default', ['css-rtl']);
+gulp.task('default', ['css-rtl'], function () {
+	gulp.watch('css/*.css', ['css-rtl']);
+});
 
 gulp.task('production', ['css-rtl']);
