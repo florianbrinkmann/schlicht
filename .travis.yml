@@ -19,6 +19,10 @@ before_deploy:
 - gulp production
 deploy:
 - provider: script
+  script: scripts/push.sh $GH_TOKEN
+  on:
+    branch: master
+- provider: script
   skip_cleanup: true
   script: ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_STABLE/wp-content/themes/schlicht"
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_TRUNK/wp-content/themes/schlicht"
@@ -75,10 +79,6 @@ deploy:
     --quiet
   on:
     tags: true
-- provider: script
-    script: scripts/push.sh $GH_TOKEN
-    on:
-      branch: master
 env:
   global:
   - secure: fzCmnX4QidvdjF8P5ikuhqclHUCDNjJNzRWTU0rDqw9sVgoxQnxy7+rD58JRzz8OrM9KXHLubyYbrCYmDytjijYk4wbBS3cyb3KY3P8FB16VHLvvQH+3JXRo3aqBreYUY+sUCBFyYMYaa21/Gq4smXNL7cvnQiAZmJYHHEELhnhglNoHv5KpsbUHzvHfDsChEfAjqWwRAbnWtsyQ+yS2h8kzwfeOb8b7TlSCvHpg/xMwAL8KppRdQMwfXDhcZs35GSxCvSEMrdJg9uMbfoIfpKk3n8LXQE/63p/M+31wTdNaS6yZZzOSCGQk06VeiWVubi1fQR/JxPKN+T45l3x1pCd8o+vjMYH1yaH9Db2aq/f6QB21biYiY2WesqPqejiizdT34MXITwwdpi4eF1I2jD/a0NfjnZpdXGPpkYMI8x3yU+RNnUa7OfJWcG89o2Yw/7hSIeBz6X9rXDGst4YT+tTJEWz5BrniyJoY0Zj+Q2BUX92/M5D0uOpvDPBZkI/Lly5IUwl1BY5bLkq3lEhlhJz3O2MzcvQISFAbHq89NnUV2Ek628dkBTGiPAPrrjeE0Cbj5hgAETmeZ/e5BOFhLjctKkv/wQNNag8ipPYaRH7qKdP/MUPKBpdf5vNDJ7cNeKfIsuxjNurEJL/kWatOnOVtDLeBK26KccTA4e0xEVc=
