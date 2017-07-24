@@ -6,6 +6,9 @@ addons:
 before_script:
 - echo -e "Host $STAGING_SERVER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - echo -e "Host $PRODUCTION_SERVER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+script:
+-
+before_deploy:
 - openssl aes-256-cbc -K $encrypted_557243a56511_key -iv $encrypted_557243a56511_iv
   -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 - eval "$(ssh-agent -s)"
@@ -14,22 +17,19 @@ before_script:
 - npm install --silent
 - npm install -g gulp-cli
 - gulp production
-script:
-- ".travis/push.sh"
-
 deploy:
 - provider: script
   skip_cleanup: true
   script: ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_STABLE/wp-content/themes/schlicht"
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_TRUNK/wp-content/themes/schlicht"
     && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/
-    --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='.travis/'
+    --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='scripts/'
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_TRUNK/wp-content/themes/schlicht
     && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/
-    --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='.travis/'
+    --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='scripts/'
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_STABLE/wp-content/themes/schlicht
     && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/
-    --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='.travis/'
+    --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='scripts/'
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_HTML/wp-content/themes/schlicht
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser"
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser-tmp"
@@ -51,7 +51,7 @@ deploy:
   script: ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht"
     && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes/schlicht"
     && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/
-    --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='.travis/'
+    --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='scripts/'
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER:$PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht
     && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mv $PRODUCTION_PATH_HTML/wp-content/themes/schlicht
     $PRODUCTION_PATH_HTML/wp-content/themes/_old-schlicht && mv $PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht
@@ -75,6 +75,10 @@ deploy:
     --quiet
   on:
     tags: true
+- provider: script
+    script: scripts/push.sh $GH_TOKEN
+    on:
+      branch: master
 env:
   global:
   - secure: fzCmnX4QidvdjF8P5ikuhqclHUCDNjJNzRWTU0rDqw9sVgoxQnxy7+rD58JRzz8OrM9KXHLubyYbrCYmDytjijYk4wbBS3cyb3KY3P8FB16VHLvvQH+3JXRo3aqBreYUY+sUCBFyYMYaa21/Gq4smXNL7cvnQiAZmJYHHEELhnhglNoHv5KpsbUHzvHfDsChEfAjqWwRAbnWtsyQ+yS2h8kzwfeOb8b7TlSCvHpg/xMwAL8KppRdQMwfXDhcZs35GSxCvSEMrdJg9uMbfoIfpKk3n8LXQE/63p/M+31wTdNaS6yZZzOSCGQk06VeiWVubi1fQR/JxPKN+T45l3x1pCd8o+vjMYH1yaH9Db2aq/f6QB21biYiY2WesqPqejiizdT34MXITwwdpi4eF1I2jD/a0NfjnZpdXGPpkYMI8x3yU+RNnUa7OfJWcG89o2Yw/7hSIeBz6X9rXDGst4YT+tTJEWz5BrniyJoY0Zj+Q2BUX92/M5D0uOpvDPBZkI/Lly5IUwl1BY5bLkq3lEhlhJz3O2MzcvQISFAbHq89NnUV2Ek628dkBTGiPAPrrjeE0Cbj5hgAETmeZ/e5BOFhLjctKkv/wQNNag8ipPYaRH7qKdP/MUPKBpdf5vNDJ7cNeKfIsuxjNurEJL/kWatOnOVtDLeBK26KccTA4e0xEVc=
