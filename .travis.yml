@@ -36,10 +36,10 @@ deploy:
     cp -Rf $STAGING_PATH_HTML/wp-content/themes/schlicht $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht"
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "rm -rf $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser-tmp/_old-schlicht"
     && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-    --silent && chmod +x wp-cli.phar && wp-cli.phar parser create
+    --silent && chmod +x wp-cli.phar && php wp-cli.phar parser create
     wp-content/themes-for-docblock-parser/ --user=florian --url=dev.florianbrinkmann.de
     --allow-root --ssh=$STAGING_SERVER_USER@$STAGING_SERVER$STAGING_PATH_HTML/ --quiet
-    && wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian --url=dev.florianbrinkmann.de/en
+    && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian --url=dev.florianbrinkmann.de/en
     --allow-root --ssh=$STAGING_SERVER_USER@$STAGING_SERVER$STAGING_PATH_HTML/ --quiet
   on:
     branch: master
