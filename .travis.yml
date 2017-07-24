@@ -4,8 +4,8 @@ addons:
   - "$STAGING_SERVER"
   - "$PRODUCTION_SERVER"
 before_script:
-- echo -e "Host $STAGING_SERVERntStrictHostKeyChecking non" >> ~/.ssh/config
-- echo -e "Host $PRODUCTION_SERVERntStrictHostKeyChecking non" >> ~/.ssh/config
+- echo -e "Host $STAGING_SERVER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- echo -e "Host $PRODUCTION_SERVER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
 - 
 before_deploy:
