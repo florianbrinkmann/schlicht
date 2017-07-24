@@ -409,23 +409,3 @@ figure.alignright {
 		max-width: calc(35% + 1.6rem)
 	}
 }
-
-@media screen and (min-width: 78rem) {
-	@supports (display:grid) {
-		body {
-			display: grid;
-			grid-template-columns: [full-start] minmax(1em, 1fr) [main-start] minmax(0, 773px) [main-end] minmax(1em, 1fr) [full-end];
-			max-width: 100%;
-		}
-
-		body > * {
-			grid-column: main;
-		}
-
-		body > .side-note {
-			grid-column: full-start;
-			margin-left: 0;
-			max-width: 100%;
-		}
-	}
-}
