@@ -13,8 +13,8 @@ commit_website_files() {
 }
 
 upload_files() {
-  #git remote add origin-pages https://${GH_TOKEN}@github.com/FlorianBrinkmann/schlicht.git > /dev/null 2>&1
-  #git push --quiet --set-upstream origin-pages gh-pages
+  #git remote add origin https://${GH_TOKEN}@github.com/FlorianBrinkmann/schlicht.git > /dev/null 2>&1
+  #git push --set-upstream production-branch
 }
 
 setup_git
