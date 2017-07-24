@@ -19,6 +19,7 @@ before_deploy:
 - gulp production
 deploy:
 - provider: script
+  skip_cleanup: true
   script: scripts/push.sh $GH_TOKEN
   on:
     branch: master
