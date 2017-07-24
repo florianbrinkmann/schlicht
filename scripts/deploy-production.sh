@@ -22,6 +22,7 @@ SHA=`git rev-parse --verify HEAD`
 git clone $REPO ${SHA}
 cd ${SHA}
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+git merge SOURCE_BRANCH
 
 # Run our compile script
 npm install --silent
