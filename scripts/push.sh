@@ -32,15 +32,6 @@ npm install --silent
 npm install -g gulp-cli
 gulp production
 
-
-# Delete all files and directories we do not need in production (except the scripts directory and .travis.yml)
-rm -r .dpl
-rm -r node_modules
-rm -r gulpfile.js
-rm -r .gitignore
-rm -r deploy_rsa.enc
-rm -r package.json
-
 # Now let's go have some fun with the cloned repo
 cd out
 git config user.name "Travis CI"
@@ -54,11 +45,16 @@ fi
 
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
-git add -A .
+git add .
 
 # remove scripts folder and .travis.yml from commit
 git reset -- scripts/*
+git reset -- node_modules/*
 git reset -- .travis.yml
+git reset -- .gitignore
+git reset -- deploy_rsa.enc
+git reset -- gulpfile.js
+git reset -- package.json
 
 git commit -m "Deploy to production branch: ${SHA}"
 
