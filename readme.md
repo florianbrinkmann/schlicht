@@ -1,8 +1,8 @@
 # Schlicht
 
 **Contributors:** Florian Brinkmann  
-**Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 4.7.5  
+**Requires at least:** WordPress 4.7
+**Tested up to:** WordPress 4.8
 **Version:** 1.2.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
@@ -37,10 +37,6 @@ normalize.css v4.1.1, Copyright Nicolas Gallagher and Jonathan Neal
 Licence: MIT  
 Source: https://github.com/necolas/normalize.css
 
-SmartDomDocument, Copyright 2015 Artem Russakovskii  
-Licence: MIT  
-Source: https://bitbucket.org/archon810/smartdomdocument/
-
 Sorts Mill Goudy, Copyright 2009 Barry Schwartz  
 Licence: SIL Open Font License, Version 1.1  
 Source: https://github.com/alfredxing/brick/tree/gh-pages/_fonts/sortsmillgoudy
@@ -50,6 +46,18 @@ Licence: SIL Open Font License
 Source: http://vollkorn-typeface.com/  
 
 ## Changelog
+
+### 1.3.0 - 24.07.2017
+#### Added
+* Editor buttons for drop caps and side notes.
+
+#### Changed
+* Grouped functions into various inc/ files.
+* Removed auto drop cap feature.
+* Make use of new get_theme_file_* functions (requires WordPress 4.7).
+
+#### Fixed
+* CSS fixes.
 
 ### 1.2.2 - 15.06.2017
 #### Fixed

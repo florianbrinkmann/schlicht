@@ -1445,26 +1445,6 @@ figure.alignright {
 	}
 }
 
-@media screen and (min-width: 78em) {
-	@supports (display:grid) {
-		.entry-content {
-			display: grid;
-			grid-template-columns: [full-start] minmax(1em, 1fr) [main-start] minmax(0, 773px) [main-end] minmax(1em, 1fr) [full-end];
-			max-width: 100%;
-		}
-
-		.entry-content > * {
-			grid-column: main;
-		}
-
-		.entry-content > .side-note {
-			grid-column: full-start;
-			margin-left: 0;
-			max-width: 100%;
-		}
-	}
-}
-
 @media screen and (min-width: 80em) {
 	.alternate-layout .entry-header {
 		width: 33%;

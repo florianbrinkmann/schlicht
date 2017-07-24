@@ -1243,6 +1243,22 @@ figure.alignright {
 	font-style: italic;
 }
 
+.side-note {
+	font-style: italic;
+	display: block;
+}
+
+@media screen and (min-width: 30em) {
+	.side-note {
+		float: left;
+		font-style: italic;
+		display: block;
+		margin-bottom: .8em;
+		margin-right: 1.2em;
+		max-width: 35%;
+	}
+}
+
 @media screen and (min-width: 30em) {
 	blockquote {
 		margin-left: .8rem;
@@ -1423,6 +1439,11 @@ figure.alignright {
 		position: absolute;
 		left: -3rem;
 		top: .5rem;
+	}
+
+	.side-note {
+		margin-left: -1.6rem;
+		max-width: calc(35% + 1.6rem)
 	}
 }
 

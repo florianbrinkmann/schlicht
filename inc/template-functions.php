@@ -269,7 +269,6 @@ if ( ! function_exists( 'schlicht_admin_script' ) ) {
 			 * Include the editor functions js.
 			 */
 			wp_enqueue_script( 'schlicht_editor-functions', get_theme_file_uri( 'js/backend-editor-functions.js' ), [], false, true );
-
 		}
 	}
 } // End if().
