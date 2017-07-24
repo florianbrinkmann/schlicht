@@ -42,7 +42,7 @@ deploy:
     && wp parser create wp-content/themes-for-docblock-parser/ --user=florian --url=dev.florianbrinkmann.de/en
     --allow-root --ssh=$STAGING_SERVER_USER@$STAGING_SERVER$STAGING_PATH_HTML/ --quiet
   on:
-    branch: staging
+    branch: master
 - provider: script
   skip_cleanup: true
   script: ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht"
@@ -70,8 +70,6 @@ deploy:
     --quiet && wp parser create wp-content/themes-for-docblock-parser/ --user=florian
     --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/
     --quiet
-  after_success:
-  - ".travis/push.sh"
   on:
     tags: true
 env:
