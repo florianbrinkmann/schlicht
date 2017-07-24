@@ -17,38 +17,9 @@ before_deploy:
 - npm install --silent
 - npm install -g gulp-cli
 - gulp production
-deploy:
 - provider: script
   skip_cleanup: true
-  script: ./scripts/push.sh
-  on:
-    branch: master
-- provider: script
-  skip_cleanup: true
-  script: ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_STABLE/wp-content/themes/schlicht"
-    && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_TRUNK/wp-content/themes/schlicht"
-    && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/
-    --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='scripts/'
-    --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_TRUNK/wp-content/themes/schlicht
-    && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/
-    --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='scripts/'
-    --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_STABLE/wp-content/themes/schlicht
-    && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/
-    --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='scripts/'
-    --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_HTML/wp-content/themes/schlicht
-    && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser"
-    && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser-tmp"
-    && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht"
-    && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mv $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht
-    $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser-tmp/_old-schlicht &&
-    cp -Rf $STAGING_PATH_HTML/wp-content/themes/schlicht $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht"
-    && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "rm -rf $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser-tmp/_old-schlicht"
-    && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-    --silent && chmod +x wp-cli.phar && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/
-    --user=florian --url=dev.florianbrinkmann.de --allow-root --ssh=$STAGING_SERVER_USER@$STAGING_SERVER$STAGING_PATH_HTML/
-    --quiet && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/
-    --user=florian --url=dev.florianbrinkmann.de/en --allow-root --ssh=$STAGING_SERVER_USER@$STAGING_SERVER$STAGING_PATH_HTML/
-    --quiet
+  script: ./scripts/deploy-production.sh
   on:
     branch: master
 - provider: script
