@@ -2,7 +2,6 @@
 # @link https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
 set -e # Exit with nonzero exit code if anything fails
 
-SOURCE_BRANCH="master"
 TARGET_BRANCH="production"
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
@@ -16,17 +15,6 @@ fi
 REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
-
-# Clone the existing gh-pages for this repo into out/
-# Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
-git clone $REPO ${SHA}
-cd ${SHA}
-git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-
-# Run our compile script
-npm install --silent
-npm install -g gulp-cli
-gulp production
 
 ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_STABLE/wp-content/themes/schlicht" && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_TRUNK/wp-content/themes/schlicht" && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='scripts/' --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_TRUNK/wp-content/themes/schlicht && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='scripts/' --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_STABLE/wp-content/themes/schlicht && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc --exclude='scripts/' --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_HTML/wp-content/themes/schlicht && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser" && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser-tmp" && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht" && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mv $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser-tmp/_old-schlicht && cp -Rf $STAGING_PATH_HTML/wp-content/themes/schlicht $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht" && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "rm -rf $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser-tmp/_old-schlicht" && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar --silent && chmod +x wp-cli.phar && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian --url=dev.florianbrinkmann.de --allow-root --ssh=$STAGING_SERVER_USER@$STAGING_SERVER$STAGING_PATH_HTML/ --quiet && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian --url=dev.florianbrinkmann.de/en --allow-root --ssh=$STAGING_SERVER_USER@$STAGING_SERVER$STAGING_PATH_HTML/ --quiet
 
