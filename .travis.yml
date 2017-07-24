@@ -20,7 +20,7 @@ before_deploy:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: ./scripts/push.sh $GH_TOKEN
+  script: ./scripts/push.sh
   on:
     branch: master
 - provider: script
