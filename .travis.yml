@@ -40,7 +40,8 @@ deploy:
     branch: master
 - provider: script
   skip_cleanup: true
-  script:   on:
+  script: ./scripts/deploy-production.sh
+  on:
     tags: true
 env:
   global:
