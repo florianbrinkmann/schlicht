@@ -71,13 +71,17 @@ deploy:
     $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser-tmp/_old-schlicht
     && cp -Rf $PRODUCTION_PATH_HTML/wp-content/themes/schlicht $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht"
     && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "rm -rf $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser-tmp/_old-schlicht"
-    && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-    --silent && chmod +x wp-cli.phar && php wp-cli.phar parser create
-    wp-content/themes-for-docblock-parser/ --user=florian --url=florianbrinkmann.com
-    --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/
-    --quiet && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian
-    --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/
-    --quiet
+    && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar --silent && chmod +x wp-cli.phar
+    && php wp-cli.phar wp post delete $(wp post list --post_type='wp-parser-function' --format=ids) --user=florian --url=florianbrinkmann.com --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/  --quiet
+    && php wp-cli.phar wp post delete $(wp post list --post_type='wp-parser-method' --format=ids) --user=florian --url=florianbrinkmann.com --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/  --quiet
+    && php wp-cli.phar wp post delete $(wp post list --post_type='wp-parser-class' --format=ids) --user=florian --url=florianbrinkmann.com --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
+    && php wp-cli.phar wp post delete $(wp post list --post_type='wp-parser-hook' --format=ids) --user=florian --url=florianbrinkmann.com --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
+    && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian --url=florianbrinkmann.com --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
+    && php wp-cli.phar wp post delete $(wp post list --post_type='wp-parser-function' --format=ids) --user=florian --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/  --quiet
+    && php wp-cli.phar wp post delete $(wp post list --post_type='wp-parser-method' --format=ids) --user=florian --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/  --quiet
+    && php wp-cli.phar wp post delete $(wp post list --post_type='wp-parser-class' --format=ids) --user=florian --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
+    && php wp-cli.phar wp post delete $(wp post list --post_type='wp-parser-hook' --format=ids) --user=florian --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
+    && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
   on:
     tags: true
 env:
