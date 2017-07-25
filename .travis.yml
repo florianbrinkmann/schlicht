@@ -1,4 +1,6 @@
 language: php
+php:
+  - '7.1'
 addons:
   ssh_known_hosts:
   - "$STAGING_SERVER"
