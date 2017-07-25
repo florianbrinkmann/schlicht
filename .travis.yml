@@ -18,9 +18,9 @@ before_deploy:
 - npm install -g gulp-cli
 - gulp production
 - mkdir -p schlicht
-- rsync -ravq -e --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht/ --exclude=package.json --exclude='.gitlab-ci.yml' --delete-excluded ./ schlicht
+- rsync -rav -e --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht/ --exclude=package.json --exclude='.gitlab-ci.yml' --delete-excluded ./ schlicht
 - zip -r schlicht.zip schlicht/
-- rm -r schlicht
+- rm -rf schlicht
 deploy:
 - provider: releases
   api_key:
