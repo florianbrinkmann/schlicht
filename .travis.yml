@@ -4,8 +4,8 @@ addons:
   - "$STAGING_SERVER"
   - "$PRODUCTION_SERVER"
 before_script:
-- echo -e "Host $STAGING_SERVERntStrictHostKeyChecking non" >> ~/.ssh/config
-- echo -e "Host $PRODUCTION_SERVERntStrictHostKeyChecking non" >> ~/.ssh/config
+- echo -e "Host $STAGING_SERVER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- echo -e "Host $PRODUCTION_SERVER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
 - 
 before_deploy:
@@ -18,7 +18,7 @@ before_deploy:
 - npm install -g gulp-cli
 - gulp production
 - mkdir -p schlicht
-- rsync -rav -e --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht/ --exclude=package.json --exclude='.gitlab-ci.yml' --delete-excluded ./ schlicht
+- rsync -rav -e --exclude=/.git/ --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht/ --exclude=package.json --exclude=.travis.yml --exclude=.gitignore --delete-excluded ./ schlicht
 - zip -r schlicht.zip schlicht/
 - rm -rf schlicht
 deploy:
@@ -33,11 +33,11 @@ deploy:
   skip_cleanup: true
   script: ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_STABLE/wp-content/themes/schlicht"
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_TRUNK/wp-content/themes/schlicht"
-    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip
+    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip --exclude=.gitignore
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_TRUNK/wp-content/themes/schlicht
-    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip
+    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip --exclude=.gitignore
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_STABLE/wp-content/themes/schlicht
-    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip
+    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip --exclude=.gitignore
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_HTML/wp-content/themes/schlicht
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser"
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser-tmp"
@@ -58,7 +58,7 @@ deploy:
   skip_cleanup: true
   script: ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht"
     && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes/schlicht"
-    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip
+    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip --exclude=.gitignore
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER:$PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht
     && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mv $PRODUCTION_PATH_HTML/wp-content/themes/schlicht
     $PRODUCTION_PATH_HTML/wp-content/themes/_old-schlicht && mv $PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht
