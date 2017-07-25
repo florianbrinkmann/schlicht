@@ -24,14 +24,6 @@ before_deploy:
 - zip -r schlicht.zip schlicht/
 - rm -rf schlicht
 deploy:
-- provider: releases
-  skip_cleanup: true
-  api_key:
-    secure: q4HnsOAxs/otO6Yj/ziq+ofcSmnMELujrGIelzGZJr0trNq3jb3XR/opuChDKBy0Ldc7ZEg7OOSp+emXkOmIV04XvX4+5L5pEnQOkZ+g0+GGPGWyuMoL+aRNnuAQtQk/wLh6+vvfhHHET8E3C8+RvlZi94SNdFm7Z/aCcQgfyKKv1G44en/zZs0Qd8o3TfvS5wVknhZwPo/lzwdiDr5/0aEPJsZ23NbnVGwB7FOovpMy4OVCKyCZhEDLTqlfptkix1Chv2iz4kBzxoPYleOaKcoEAyaiGz/XlsZYnIPI9BT83bqjnbqfZY08ycE4hWUFUHF56XrYUr00ZGUb3GtwRtbpNqK6P6Qd+gw3VenWWZExgwNR3mceLmDNAeUNBkKezUmdiQiioerG/GzEuobWZhtSY3qv99YznbhfabdIoYi4LzCKzVRAw/ZzpMQ20qHAzPNdHII5nl1tBm3TWlQL5EpxrB+1nVixvKnOnC0bUMYEo52Gb+WcL2cNTpCe8jSzmbSWpAtgzQpRkVZSPmBNcvaiHziltzbija7nRvK9jmWh1H58p+Tlvq0I4fSSLeASQFj9VZAoD9qkkj7Nep0JvMZ7NzpGcjmY90JqkTElIW5K0tQbjUbHXIQgsnO/soiMxDbUJxJVUo+qNO7vOE6NA5vkEzoKjky2ttHbXW+jy/4=
-  file: schlicht.zip
-  on:
-    repo: FlorianBrinkmann/schlicht
-    tags: true
 - provider: script
   skip_cleanup: true
   script: ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_STABLE/wp-content/themes/schlicht"
@@ -60,38 +52,6 @@ deploy:
     && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian --url=dev.florianbrinkmann.de/en --allow-root --ssh=$STAGING_SERVER_USER@$STAGING_SERVER$STAGING_PATH_HTML/ --quiet
   on:
     branch: master
-- provider: script
-  skip_cleanup: true
-  script: ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht"
-    && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes/schlicht"
-    && rsync -ravq -e ssh --exclude-from='.rsync-exclude' --delete-excluded ./ $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER:$PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht
-    && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mv $PRODUCTION_PATH_HTML/wp-content/themes/schlicht
-    $PRODUCTION_PATH_HTML/wp-content/themes/_old-schlicht && mv $PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht
-    $PRODUCTION_PATH_HTML/wp-content/themes/schlicht" && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER
-    "rm -rf $PRODUCTION_PATH_HTML/wp-content/themes/_old-schlicht" && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER
-    "cd $PRODUCTION_PATH_HTML/wp-content/themes/ && zip -r schlicht.zip schlicht/"
-    && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mv $PRODUCTION_PATH_HTML/wp-content/themes/schlicht.zip
-    $PRODUCTION_DOWNLOADS_PATH/schlicht.zip" && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER
-    "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser" && ssh
-    -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser-tmp"
-    && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht"
-    && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mv $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht
-    $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser-tmp/_old-schlicht
-    && cp -Rf $PRODUCTION_PATH_HTML/wp-content/themes/schlicht $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht"
-    && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "rm -rf $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser-tmp/_old-schlicht"
-    && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar --silent && chmod +x wp-cli.phar
-    && php wp-cli.phar post delete $(php wp-cli.phar post list --post_type='wp-parser-function' --format=ids) --user=florian --url=florianbrinkmann.com --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/  --quiet
-    && php wp-cli.phar post delete $(php wp-cli.phar post list --post_type='wp-parser-method' --format=ids) --user=florian --url=florianbrinkmann.com --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/  --quiet
-    && php wp-cli.phar post delete $(php wp-cli.phar post list --post_type='wp-parser-class' --format=ids) --user=florian --url=florianbrinkmann.com --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
-    && php wp-cli.phar post delete $(php wp-cli.phar post list --post_type='wp-parser-hook' --format=ids) --user=florian --url=florianbrinkmann.com --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
-    && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian --url=florianbrinkmann.com --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
-    && php wp-cli.phar post delete $(php wp-cli.phar post list --post_type='wp-parser-function' --format=ids) --user=florian --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/  --quiet
-    && php wp-cli.phar post delete $(php wp-cli.phar post list --post_type='wp-parser-method' --format=ids) --user=florian --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/  --quiet
-    && php wp-cli.phar post delete $(php wp-cli.phar post list --post_type='wp-parser-class' --format=ids) --user=florian --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
-    && php wp-cli.phar post delete $(php wp-cli.phar post list --post_type='wp-parser-hook' --format=ids) --user=florian --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
-    && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/ --quiet
-  on:
-    tags: true
 env:
   global:
   - secure: fzCmnX4QidvdjF8P5ikuhqclHUCDNjJNzRWTU0rDqw9sVgoxQnxy7+rD58JRzz8OrM9KXHLubyYbrCYmDytjijYk4wbBS3cyb3KY3P8FB16VHLvvQH+3JXRo3aqBreYUY+sUCBFyYMYaa21/Gq4smXNL7cvnQiAZmJYHHEELhnhglNoHv5KpsbUHzvHfDsChEfAjqWwRAbnWtsyQ+yS2h8kzwfeOb8b7TlSCvHpg/xMwAL8KppRdQMwfXDhcZs35GSxCvSEMrdJg9uMbfoIfpKk3n8LXQE/63p/M+31wTdNaS6yZZzOSCGQk06VeiWVubi1fQR/JxPKN+T45l3x1pCd8o+vjMYH1yaH9Db2aq/f6QB21biYiY2WesqPqejiizdT34MXITwwdpi4eF1I2jD/a0NfjnZpdXGPpkYMI8x3yU+RNnUa7OfJWcG89o2Yw/7hSIeBz6X9rXDGst4YT+tTJEWz5BrniyJoY0Zj+Q2BUX92/M5D0uOpvDPBZkI/Lly5IUwl1BY5bLkq3lEhlhJz3O2MzcvQISFAbHq89NnUV2Ek628dkBTGiPAPrrjeE0Cbj5hgAETmeZ/e5BOFhLjctKkv/wQNNag8ipPYaRH7qKdP/MUPKBpdf5vNDJ7cNeKfIsuxjNurEJL/kWatOnOVtDLeBK26KccTA4e0xEVc=
