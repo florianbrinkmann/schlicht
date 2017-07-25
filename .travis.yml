@@ -4,29 +4,40 @@ addons:
   - "$STAGING_SERVER"
   - "$PRODUCTION_SERVER"
 before_script:
-- echo -e "Host $STAGING_SERVER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- echo -e "Host $PRODUCTION_SERVER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- echo -e "Host $STAGING_SERVERntStrictHostKeyChecking non" >> ~/.ssh/config
+- echo -e "Host $PRODUCTION_SERVERntStrictHostKeyChecking non" >> ~/.ssh/config
 script:
--
+- 
 before_deploy:
-- openssl aes-256-cbc -K $encrypted_557243a56511_key -iv $encrypted_557243a56511_iv
-  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+- openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_rsa.enc -out
+  /tmp/deploy_rsa -d
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/deploy_rsa
 - ssh-add /tmp/deploy_rsa
 - npm install --silent
 - npm install -g gulp-cli
 - gulp production
+- mkdir -p schlicht
+- rsync -ravq -e --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht/ --exclude=package.json --exclude='.gitlab-ci.yml' --delete-excluded ./ schlicht
+- zip -r schlicht.zip schlicht/
+- rm -r schlicht
 deploy:
+- provider: releases
+  api_key:
+    secure: q4HnsOAxs/otO6Yj/ziq+ofcSmnMELujrGIelzGZJr0trNq3jb3XR/opuChDKBy0Ldc7ZEg7OOSp+emXkOmIV04XvX4+5L5pEnQOkZ+g0+GGPGWyuMoL+aRNnuAQtQk/wLh6+vvfhHHET8E3C8+RvlZi94SNdFm7Z/aCcQgfyKKv1G44en/zZs0Qd8o3TfvS5wVknhZwPo/lzwdiDr5/0aEPJsZ23NbnVGwB7FOovpMy4OVCKyCZhEDLTqlfptkix1Chv2iz4kBzxoPYleOaKcoEAyaiGz/XlsZYnIPI9BT83bqjnbqfZY08ycE4hWUFUHF56XrYUr00ZGUb3GtwRtbpNqK6P6Qd+gw3VenWWZExgwNR3mceLmDNAeUNBkKezUmdiQiioerG/GzEuobWZhtSY3qv99YznbhfabdIoYi4LzCKzVRAw/ZzpMQ20qHAzPNdHII5nl1tBm3TWlQL5EpxrB+1nVixvKnOnC0bUMYEo52Gb+WcL2cNTpCe8jSzmbSWpAtgzQpRkVZSPmBNcvaiHziltzbija7nRvK9jmWh1H58p+Tlvq0I4fSSLeASQFj9VZAoD9qkkj7Nep0JvMZ7NzpGcjmY90JqkTElIW5K0tQbjUbHXIQgsnO/soiMxDbUJxJVUo+qNO7vOE6NA5vkEzoKjky2ttHbXW+jy/4=
+  file: schlicht.zip
+  on:
+    repo: FlorianBrinkmann/schlicht
+    tags: true
 - provider: script
   skip_cleanup: true
   script: ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_STABLE/wp-content/themes/schlicht"
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_TRUNK/wp-content/themes/schlicht"
-    && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc
+    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_TRUNK/wp-content/themes/schlicht
-    && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc
+    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_STABLE/wp-content/themes/schlicht
-    && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc
+    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $STAGING_SERVER_USER@$STAGING_SERVER:$STAGING_PATH_HTML/wp-content/themes/schlicht
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser"
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "mkdir -p $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser-tmp"
@@ -36,10 +47,10 @@ deploy:
     cp -Rf $STAGING_PATH_HTML/wp-content/themes/schlicht $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht"
     && ssh -p22 $STAGING_SERVER_USER@$STAGING_SERVER "rm -rf $STAGING_PATH_HTML/wp-content/themes-for-docblock-parser-tmp/_old-schlicht"
     && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-    --silent && chmod +x wp-cli.phar && php wp-cli.phar parser create
+    --silent && chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp && wp parser create
     wp-content/themes-for-docblock-parser/ --user=florian --url=dev.florianbrinkmann.de
     --allow-root --ssh=$STAGING_SERVER_USER@$STAGING_SERVER$STAGING_PATH_HTML/ --quiet
-    && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian --url=dev.florianbrinkmann.de/en
+    && wp parser create wp-content/themes-for-docblock-parser/ --user=florian --url=dev.florianbrinkmann.de/en
     --allow-root --ssh=$STAGING_SERVER_USER@$STAGING_SERVER$STAGING_PATH_HTML/ --quiet
   on:
     branch: master
@@ -47,7 +58,7 @@ deploy:
   skip_cleanup: true
   script: ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht"
     && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes/schlicht"
-    && rsync -ravq -e ssh --exclude='.git/' --exclude='.dpl/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=.gitignore --exclude=deploy_rsa.enc
+    && rsync -ravq -e ssh --exclude='.git/' --exclude=node_modules/ --exclude=gulpfile.js --exclude=schlicht.zip
     --exclude=package.json --exclude='.travis.yml' --delete-excluded ./ $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER:$PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht
     && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mv $PRODUCTION_PATH_HTML/wp-content/themes/schlicht
     $PRODUCTION_PATH_HTML/wp-content/themes/_old-schlicht && mv $PRODUCTION_PATH_HTML/wp-content/themes/_tmp-schlicht
@@ -64,10 +75,10 @@ deploy:
     && cp -Rf $PRODUCTION_PATH_HTML/wp-content/themes/schlicht $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht"
     && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "rm -rf $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser-tmp/_old-schlicht"
     && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-    --silent && chmod +x wp-cli.phar && php wp-cli.phar parser create
+    --silent && chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp && wp parser create
     wp-content/themes-for-docblock-parser/ --user=florian --url=florianbrinkmann.com
     --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/
-    --quiet && php wp-cli.phar parser create wp-content/themes-for-docblock-parser/ --user=florian
+    --quiet && wp parser create wp-content/themes-for-docblock-parser/ --user=florian
     --url=florianbrinkmann.com/en --allow-root --ssh=$PRODUCTION_SERVER_USER@$PRODUCTION_SERVER$PRODUCTION_PATH_HTML/
     --quiet
   on:
