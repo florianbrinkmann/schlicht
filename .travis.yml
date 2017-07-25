@@ -23,6 +23,7 @@ before_deploy:
 - rm -rf schlicht
 deploy:
 - provider: releases
+  skip_cleanup: true
   api_key:
     secure: q4HnsOAxs/otO6Yj/ziq+ofcSmnMELujrGIelzGZJr0trNq3jb3XR/opuChDKBy0Ldc7ZEg7OOSp+emXkOmIV04XvX4+5L5pEnQOkZ+g0+GGPGWyuMoL+aRNnuAQtQk/wLh6+vvfhHHET8E3C8+RvlZi94SNdFm7Z/aCcQgfyKKv1G44en/zZs0Qd8o3TfvS5wVknhZwPo/lzwdiDr5/0aEPJsZ23NbnVGwB7FOovpMy4OVCKyCZhEDLTqlfptkix1Chv2iz4kBzxoPYleOaKcoEAyaiGz/XlsZYnIPI9BT83bqjnbqfZY08ycE4hWUFUHF56XrYUr00ZGUb3GtwRtbpNqK6P6Qd+gw3VenWWZExgwNR3mceLmDNAeUNBkKezUmdiQiioerG/GzEuobWZhtSY3qv99YznbhfabdIoYi4LzCKzVRAw/ZzpMQ20qHAzPNdHII5nl1tBm3TWlQL5EpxrB+1nVixvKnOnC0bUMYEo52Gb+WcL2cNTpCe8jSzmbSWpAtgzQpRkVZSPmBNcvaiHziltzbija7nRvK9jmWh1H58p+Tlvq0I4fSSLeASQFj9VZAoD9qkkj7Nep0JvMZ7NzpGcjmY90JqkTElIW5K0tQbjUbHXIQgsnO/soiMxDbUJxJVUo+qNO7vOE6NA5vkEzoKjky2ttHbXW+jy/4=
   file: schlicht.zip
