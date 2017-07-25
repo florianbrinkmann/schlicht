@@ -63,7 +63,7 @@ deploy:
     "rm -rf $PRODUCTION_PATH_HTML/wp-content/themes/_old-schlicht" && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER
     "cd $PRODUCTION_PATH_HTML/wp-content/themes/ && zip -r schlicht.zip schlicht/"
     && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mv $PRODUCTION_PATH_HTML/wp-content/themes/schlicht.zip
-    $PRODUCTION_DOWNLOADS_PATH/woocommerce-downloads/schlicht.zip" && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER
+    $PRODUCTION_DOWNLOADS_PATH/schlicht.zip" && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER
     "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser" && ssh
     -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser-tmp"
     && ssh -p22 $PRODUCTION_SERVER_USER@$PRODUCTION_SERVER "mkdir -p $PRODUCTION_PATH_HTML/wp-content/themes-for-docblock-parser/schlicht"
