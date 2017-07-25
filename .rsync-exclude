@@ -1,6 +1,7 @@
 - .git/
 - node_modules/
 - schlicht/
+- scripts/
 - package.json
 - gulpfile.js
 - schlicht.zip
