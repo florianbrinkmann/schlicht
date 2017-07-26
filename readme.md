@@ -47,6 +47,10 @@ Source: http://vollkorn-typeface.com/
 
 ## Changelog
 
+### 1.3.1 - 26.07.2017
+#### Fixed
+* Removed drop cap options from the customizer (obsolete since 1.3.0).
+
 ### 1.3.0 - 24.07.2017
 #### Added
 * Editor buttons for drop caps and side notes.

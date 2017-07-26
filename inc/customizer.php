@@ -2,7 +2,7 @@
 /**
  * Customizer functions
  *
- * @version 1.2.1
+ * @version 1.3.1
  *
  * @package Schlicht
  */
@@ -28,61 +28,6 @@ function schlicht_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_section( 'schlicht_options', [
 		'title' => __( 'Theme options', 'schlicht' ),
-	] );
-
-	/**
-	 * Add setting for drop cap option.
-	 */
-	$wp_customize->add_setting( 'schlicht_dropcap', [
-		'default'           => 0,
-		'sanitize_callback' => 'schlicht_sanitize_checkbox',
-	] );
-
-	/**
-	 * Add control for drop cap option.
-	 */
-	$wp_customize->add_control( 'schlicht_dropcap', [
-		'type'    => 'checkbox',
-		'section' => 'schlicht_options',
-		'label'   => __( 'Enable Dropcaps', 'schlicht' ),
-	] );
-
-	/**
-	 * Add setting for auto drop caps for posts.
-	 */
-	$wp_customize->add_setting( 'schlicht_auto_dropcaps_for_posts', [
-		'default'           => 0,
-		'sanitize_callback' => 'schlicht_sanitize_checkbox',
-	] );
-
-	/**
-	 * Add control for auto drop caps for posts.
-	 */
-	$wp_customize->add_control( 'schlicht_auto_dropcaps_for_posts', [
-		'type'            => 'checkbox',
-		'section'         => 'schlicht_options',
-		'label'           => __( 'Auto integration of dropcaps only for posts, not pages.', 'schlicht' ),
-		'active_callback' => 'schlicht_use_dropcaps',
-	] );
-
-	/**
-	 * Add setting for disabling auto drop caps.
-	 */
-	$wp_customize->add_setting( 'schlicht_no_auto_dropcap', [
-		'default'           => 0,
-		'sanitize_callback' => 'schlicht_sanitize_checkbox',
-	] );
-
-	/**
-	 * Add control for disabling auto drop caps.
-	 */
-	$wp_customize->add_control( 'schlicht_no_auto_dropcap', [
-		'type'            => 'checkbox',
-		'section'         => 'schlicht_options',
-		'label'           => sprintf( /* translators: s=HTML markup for wrapping a dropcap */
-			__( 'Don’t insert dropcaps automatically. You can insert dropcaps manually with wrapping a first letter of a paragraph inside %s in the text view of the editor.', 'schlicht' ),
-			'<span class="dropcap"></span>' ),
-		'active_callback' => 'schlicht_use_dropcaps',
 	] );
 
 	/**
