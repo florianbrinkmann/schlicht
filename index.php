@@ -33,7 +33,7 @@ get_header(); ?>
 				 */
 				while ( have_posts() ) {
 					/**
-					 * Setup post data.
+					 * Setup post.
 					 */
 					the_post();
 

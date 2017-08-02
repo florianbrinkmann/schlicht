@@ -56,7 +56,7 @@ Source: http://vollkorn-typeface.com/
 * Editor buttons for drop caps and side notes.
 
 #### Changed
-* Grouped functions into various inc/ files.
+* Grouped functions into various files inside inc/.
 * Removed auto drop cap feature.
 * Make use of new get_theme_file_* functions (requires WordPress 4.7).
 
