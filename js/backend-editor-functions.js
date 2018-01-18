@@ -1,103 +1,64 @@
-/**
- * Listen to setup of a TinyMCE instance.
- */
+// Listen to setup of a TinyMCE instance.
 jQuery(document).on('tinymce-editor-setup', function (event, editor) {
-	/**
-	 * Add the id of the soon-to-create button to the
-	 * toolbar1.
-	 *
-	 * @type {string}
-	 */
+	// Add the id of the soon-to-create button to the toolbar1.
 	editor.settings.toolbar1 += ',schlicht-formats';
 
-	/**
-	 * Create the button.
-	 */
+	// Create the button.
 	editor.addButton('schlicht-formats', {
-		/**
-		 * It is a menubutton.
-		 */
+		// It is a menubutton.
 		type: 'menubutton',
 		text: '»Schlicht« Formats',
 		icon: false,
 
-		/**
-		 * Add the menu items.
-		 */
+		// Add the menu items.
 		menu: [
 			{
 				text: 'Drop cap',
 				onclick: function () {
-					/**
-					 * Toggle the custom drop cap format.
-					 */
+					// Toggle the custom drop cap format.
 					editor.formatter.toggle('schlicht_drop_cap_format');
 				},
 			},
 			{
 				text: 'Side note',
 				onclick: function () {
-					/**
-					 * Toggle the custom side note format.
-					 */
+					// Toggle the custom side note format.
 					editor.formatter.toggle('schlicht_side_note_format');
 				}
 			}
 		]
 	});
 
-	/**
-	 * Wait until the editor is initialized before
-	 * registering style.
-	 *
-	 * Original hint from http://archive.tinymce.com/forum/viewtopic.php?pid=92762#p92762
-	 * onInit is deprecated, so https://www.tinymce.com/docs/advanced/migration-guide-from-3.x/#eventhandling
-	 */
+	// Wait until the editor is initialized before registering style.
+	//
+	// Original hint from http://archive.tinymce.com/forum/viewtopic.php?pid=92762#p92762
+	// onInit is deprecated, so https://www.tinymce.com/docs/advanced/migration-guide-from-3.x/#eventhandling
 	editor.on('init', function () {
-		/**
-		 * Register the new format for the side note.
-		 */
+		// Register the new format for the side note.
 		editor.formatter.register('schlicht_side_note_format', {
-			/**
-			 * It is the block element div.
-			 */
+			// It is the block element div.
 			block: 'div',
 
-			/**
-			 * The div element gets the class side-note.
-			 */
+			// The div element gets the class side-note.
 			classes: 'side-note',
 
-			/**
-			 * The div is the wrapper for other block elements
-			 * and does not replace them.
-			 */
+			// The div is the wrapper for other block elements and does not replace them.
 			wrapper: true
 		});
 
-		/**
-		 * Register the new format for the drop cap.
-		 */
+		// Register the new format for the drop cap.
 		editor.formatter.register('schlicht_drop_cap_format', {
-			/**
-			 * It is the block element p.
-			 */
+			// It is the block element p.
 			block: 'p',
 
-			/**
-			 * Only make it work for paragraph elements.
-			 */
+			// Only make it work for paragraph elements.
 			selector: 'p',
 
-			/**
-			 * The p element gets the class side-note.
-			 */
+			// The p element gets the class side-note.
 			classes: 'dropcap-paragraph',
 		});
 
-		/**
-		 * Callback on drop cap format change.
-		 */
+		// Callback on drop cap format change.
 		editor.formatter.formatChanged('schlicht_drop_cap_format', function (state, currentNodeObj) {
 			schlicht_toggle_dropcap_markup(state, currentNodeObj);
 		});
@@ -111,116 +72,72 @@ jQuery(document).on('tinymce-editor-setup', function (event, editor) {
  * @param currentNodeObj object of currently selected node.
  */
 function schlicht_toggle_dropcap_markup(state, currentNodeObj) {
-	/**
-	 * Empty string for parsed inner HTML.
-	 */
+	// Empty string for parsed inner HTML.
 	var paragraphInnerHTML = '';
 
-	/**
-	 * Initialize paragraph node variable.
-	 */
+	// Initialize paragraph node variable.
 	var paragraphNode;
 
-	/**
-	 * Check if we have a paragraph node.
-	 */
+	// Check if we have a paragraph node.
 	if ('P' === currentNodeObj.node.nodeName) {
-		/**
-		 * Parse the innerHTML
-		 */
+		// Parse the innerHTML
 		paragraphInnerHTML = currentNodeObj.node.innerHTML;
 		paragraphNode = currentNodeObj.node;
 	} else {
-		/**
-		 * We need to get the innerHTML of the parent paragraph.
-		 */
+		// We need to get the innerHTML of the parent paragraph.
 
-		/**
-		 * get an array of the parent elements.
-		 * @type {array}
-		 */
+		// get an array of the parent elements.
 		var parentNodes = currentNodeObj.parents;
 
-		/**
-		 * Loop them to find a paragraph.
-		 */
+		// Loop them to find a paragraph.
 		jQuery.each(parentNodes, function (index, value) {
-			/**
-			 * Check if it is a paragraph element.
-			 */
+			// Check if it is a paragraph element.
 			if ('P' === parentNodes[index].nodeName) {
-				/**
-				 * Parse the innerHTML
-				 */
+				// Parse the innerHTML
 				paragraphInnerHTML = parentNodes[index].innerHTML;
 				paragraphNode = parentNodes[index];
 			}
 		});
 	}
 
-	/**
-	 * Check if we have parsedInnerHTML
-	 */
+	// Check if we have parsedInnerHTML
 	if ('' === paragraphInnerHTML) {
 		return;
 	}
 
 	var paragraphParsedHTML = jQuery.parseHTML(paragraphInnerHTML);
 
-	/**
-	 * Check if the drop cap option is active.
-	 * In that case, currentNodeObj is the paragraph element.
-	 */
+	// Check if the drop cap option is active. In that case, currentNodeObj is the paragraph element.
 	if (true === state) {
-		/**
-		 * Check if the paragraph not already has a dropcap.
-		 */
+		// Check if the paragraph not already has a dropcap.
 		if (0 === jQuery(paragraphParsedHTML).find('span.dropcap').length) {
-			/**
-			 * Get first word.
-			 */
+			// Get first word.
 			var firstWordRegexp = /(?:<(?:[^>]*)>)*([^<\s]\w+)/;
 			var matches = firstWordRegexp.exec(paragraphInnerHTML);
 			var firstWord = matches[1];
 
-			/**
-			 * Explode first word.
-			 *
-			 * @link https://stackoverflow.com/a/24467067
-			 */
+			// Explode first word.
+			// @link https://stackoverflow.com/a/24467067
 			var firstWordArray = firstWord.split('');
 			firstWordArray[0] = '<span class="dropcap">' + firstWordArray[0] + '</span>';
 			var firstWord = firstWordArray.join('');
 
-			/**
-			 * Replace the first word from innerHTML with new markup.
-			 */
+			// Replace the first word from innerHTML with new markup.
 			var innerHtml = currentNodeObj.node.innerHTML.replace(firstWordRegexp, '<span class="small-caps">' + firstWord + '</span>');
 
-			/**
-			 * Update the paragraph’s HTML.
-			 */
+			// Update the paragraph’s HTML.
 			paragraphNode.innerHTML = innerHtml;
 		}
 	} else {
-		/**
-		 * Check if we have a dropcap span.
-		 */
+		// Check if we have a dropcap span.
 		if (0 !== jQuery(paragraphParsedHTML).find('span.dropcap').length) {
-			/**
-			 * Remove the drop cap span.
-			 */
+			// Remove the drop cap span.
 			var innerHtmlWithoutDroCap = paragraphInnerHTML.replace(/(<(?:[^>]*(?:class="dropcap"))>){1}([^<\s]\w*)(<\/span>)/, '$2');
 
-			/**
-			 * Remove the small-caps span.
-			 */
+			// Remove the small-caps span.
 			var cleanInnerHTML = innerHtmlWithoutDroCap.replace(/(<(?:[^>]*(?:class="small-caps"))>){1}([^<\s]\w*)(<\/span>)/, '$2');
 
-			/**
-			 * Update the paragraph’s HTML.
-			 * @type {string}
-			 */
+			// Update the paragraph’s HTML.
 			paragraphNode.innerHTML = cleanInnerHTML;
 		}
 	}

@@ -2,7 +2,7 @@
 /**
  * Template for displaying single post content
  *
- * @version 1.2.1
+ * @version 1.3.2
  *
  * @package Schlicht
  */
@@ -11,9 +11,7 @@
 <article <?php post_class( 'clearfix' ); ?>>
 	<header class="entry-header">
 		<?php
-		/**
-		 * Display the title as h1 without linking it.
-		 */
+		// Display the title as h1 without linking it.
 		schlicht_the_title( 'h1', false ) ?>
 		<div class="author-date">
 			<p class="author"><?php
@@ -24,27 +22,19 @@
 	</header>
 	<div class="entry-content">
 		<?php
-		/**
-		 * Display large post thumbnail.
-		 */
+		// Display large post thumbnail.
 		the_post_thumbnail( 'large' );
 
-		/**
-		 * Display the content.
-		 */
+		// Display the content.
 		schlicht_the_content();
 
-		/**
-		 * Display pagination.
-		 */
+		// Display pagination.
 		schlicht_wp_link_pages(); ?>
 	</div>
 	<footer class="entry-footer">
 		<div class="entry-footer-content">
 			<?php
-			/**
-			 * Display post meta.
-			 */
+			// Display post meta.
 			schlicht_the_post_meta(); ?>
 		</div>
 	</footer>

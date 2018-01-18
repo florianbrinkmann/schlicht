@@ -48,6 +48,9 @@ Source: http://vollkorn-typeface.com/
 ## Changelog
 
 ### 1.3.2 - 18.01.2018
+#### Changed
+* Inline style of inline comments.
+
 #### Fixed
 * Replaced invalid `aria-labelledby` attribute from comments area element with `aria-label`.
 

@@ -2,7 +2,7 @@
 /**
  * Template for website footer
  *
- * @version 1.2.1
+ * @version 1.3.2
  *
  * @package Schlicht
  */
@@ -11,9 +11,7 @@
 </div><!--.content-wrapper-->
 <footer class="site-footer clearfix">
 	<?php
-	/**
-	 * Check if the menu location footer has a menu.
-	 */
+	// Check if the menu location footer has a menu.
 	if ( has_nav_menu( 'footer' ) ) { ?>
 		<nav class="footer-nav-container">
 			<h2 class="screen-reader-text">
@@ -21,9 +19,7 @@
 				_e( 'Footer navigation', 'schlicht' ); ?>
 			</h2>
 			<?php
-			/**
-			 * Display the menu.
-			 */
+			// Display the menu.
 			wp_nav_menu(
 				[
 					'theme_location' => 'footer',
@@ -35,18 +31,14 @@
 		</nav>
 	<?php }
 
-	/**
-	 * Check if the footer sidebar has widgets.
-	 */
+	// Check if the footer sidebar has widgets.
 	if ( is_active_sidebar( 'sidebar-footer' ) ) { ?>
 		<aside class="site-footer-widget-area clearfix">
 			<h2 class="screen-reader-text">
 				<?php /* translators: screen reader text for the footer widget area */
 				_e( 'Footer widget area', 'schlicht' ) ?></h2>
 			<?php
-			/**
-			 * Display the widgets.
-			 */
+			// Display the widgets.
 			dynamic_sidebar( 'sidebar-footer' ); ?>
 		</aside>
 	<?php } ?>
@@ -55,9 +47,7 @@
 			sprintf( '<a rel="nofollow" href="%s">Florian Brinkmann</a>', __( 'https://florianbrinkmann.com/en/', 'schlicht' ) ) ); ?></p>
 </footer>
 <?php
-/**
- * Includes scripts, et cetera, which are hooked to the wp_footer action.
- */
+// Includes scripts, et cetera, which are hooked to the wp_footer action.
 wp_footer(); ?>
 </body>
 </html>

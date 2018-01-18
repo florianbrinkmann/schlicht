@@ -2,14 +2,12 @@
 /**
  * Template for 404 error
  *
- * @version 1.2.1
+ * @version 1.3.2
  *
  * @package Schlicht
  */
 
-/**
- * Include header.php.
- */
+// Include header.php.
 get_header(); ?>
 	<main>
 		<div class="main-content">
@@ -20,21 +18,15 @@ get_header(); ?>
 				<div class="content-404">
 					<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'schlicht' ); ?></p>
 					<?php
-					/**
-					 * Display the search form.
-					 */
+					// Display the search form.
 					get_search_form(); ?>
 				</div>
 			</article>
 		</div>
 	</main>
 <?php
-/**
- * Include the sidebar.php.
- */
+// Include the sidebar.php.
 get_sidebar();
 
-/**
- * Include the footer.php.
- */
+// Include the footer.php.
 get_footer();

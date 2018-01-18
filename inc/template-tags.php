@@ -2,7 +2,7 @@
 /**
  * Functions which are called from template files.
  *
- * @version 1.3.0
+ * @version 1.3.2
  *
  * @package Schlicht
  */
@@ -14,24 +14,16 @@ if ( ! function_exists( 'schlicht_get_custom_logo' ) ) {
 	 * @return string Logo HTML or empty string.
 	 */
 	function schlicht_get_custom_logo() {
-		/**
-		 * Wrap inside function_exists() to preserve back compat with WordPress versions older than 4.5.
-		 */
+		// Wrap inside function_exists() to preserve back compat with WordPress versions older than 4.5.
 		if ( function_exists( 'get_custom_logo' ) ) {
-			/**
-			 * Check if we have a custom logo.
-			 */
+			// Check if we have a custom logo.
 			if ( has_custom_logo() ) {
-				/**
-				 * Return the custom logo.
-				 */
+				// Return the custom logo.
 				return get_custom_logo();
-			}
-		}
+			} // End if().
+		} // End if().
 
-		/**
-		 * Return empty string, if we do not have a custom logo or WordPress is older than 4.5.
-		 */
+		// Return empty string, if we do not have a custom logo or WordPress is older than 4.5.
 		return '';
 	}
 } // End if().
@@ -95,15 +87,11 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 	 * Displays footer meta for a post.
 	 */
 	function schlicht_the_post_meta() {
-		/**
-		 * Check if we have categories.
-		 */
+		// Check if we have categories.
 		if ( get_the_category() ) { ?>
 			<p class="entry-footer-block categories"><span class="entry-footer-block-label">
 				<?php
-				/**
-				 * Display label in singular or plural.
-				 */
+				// Display label in singular or plural.
 				printf( _n( /* translators: Label for category list in entry footer. s=categories */
 					'Category',
 					'Categories',
@@ -112,23 +100,17 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 				) )
 				?><span class="screen-reader-text">:</span></span>
 				<?php
-				/**
-				 * Display the category list.
-				 */
+				// Display the category list.
 				/* translators: term delimiter */
 				echo get_the_category_list( __( ', ', 'schlicht' ) ); ?>
 			</p>
 		<?php }
 
-		/**
-		 * Check if we have tags.
-		 */
+		// Check if we have tags.
 		if ( get_the_tags() ) { ?>
 			<p class="entry-footer-block tags"><span class="entry-footer-block-label">
 				<?php
-				/**
-				 * Display label in singular or plural.
-				 */
+				// Display label in singular or plural.
 				printf( _n( /* translators: Label for tags list in entry footer. */
 					'Tag',
 					'Tags',
@@ -137,26 +119,18 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 				) )
 				?><span class="screen-reader-text">:</span></span>
 				<?php
-				/**
-				 * Display the tag list.
-				 */
+				// Display the tag list.
 				/* translators: term delimiter */
 				echo get_the_tag_list( '', __( ', ', 'schlicht' ) ); ?>
 			</p>
 		<?php }
 
-		/**
-		 * Get the post reactions by type.
-		 */
+		// Get the post reactions by type.
 		$comments_by_type = schlicht_get_comments_by_type();
 
-		/**
-		 * Check if we have comments.
-		 */
+		// Check if we have comments.
 		if ( $comments_by_type['comment'] ) {
-			/**
-			 * Count the comments.
-			 */
+			// Count the comments.
 			$comment_number = count( $comments_by_type['comment'] ); ?>
 			<p class="entry-footer-block comments"><span class="entry-footer-block-label">
 				<?php /* translators: Label for comment number in entry footer. */
@@ -164,22 +138,16 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 				?><span class="screen-reader-text">:</span></span>
 				<a href="<?php the_permalink(); ?>#comments-title">
 					<?php
-					/**
-					 * Display the comments number in the correct internationalized format for the site’s locale.
-					 */
+					// Display the comments number in the correct internationalized format for the site’s locale.
 					/* translators: term delimiter */
 					echo number_format_i18n( $comment_number ); ?>
 				</a>
 			</p>
 		<?php }
 
-		/**
-		 * Check if we have pings.
-		 */
+		// Check if we have pings.
 		if ( $comments_by_type['pings'] ) {
-			/**
-			 * Count the pings.
-			 */
+			// Count the pings.
 			$trackback_number = count( $comments_by_type['pings'] ); ?>
 			<p class="entry-footer-block trackbacks"><span class="entry-footer-block-label">
 				<?php /* translators: Label for trackback number in entry footer. */
@@ -187,9 +155,7 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 				?><span class="screen-reader-text">:</span></span>
 				<a href="<?php the_permalink(); ?>#trackbacks-title">
 					<?php
-					/**
-					 * Display the pings number in the correct internationalized format for the site’s locale.
-					 */
+					// Display the pings number in the correct internationalized format for the site’s locale.
 					/* translators: term delimiter */
 					echo number_format_i18n( $trackback_number ); ?>
 				</a>
@@ -233,16 +199,12 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 				<?php echo get_avatar( $comment, 50 ); ?>
 				<p class="comment-author-name">
 					<?php
-					/**
-					 * Display the name of the comment author. Linked to the site he submitted in the Website field.
-					 */
+					// Display the name of the comment author. Linked to the site he submitted in the Website field.
 					comment_author_link(); ?>
 				</p>
 
 				<?php
-				/**
-				 * Display the comment date, linked to the comment’s permalink.
-				 */
+				// Display the comment date, linked to the comment’s permalink.
 				printf(
 					'<p class="comment-date"><a href="%1$s"><time datetime="%2$s">%3$s</time></a></p>',
 					get_comment_link( $comment->comment_ID ),
@@ -253,9 +215,7 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 			</div>
 
 			<?php
-			/**
-			 * Check if the comment is not approved yet.
-			 */
+			// Check if the comment is not approved yet.
 			if ( '0' === $comment->comment_approved ) { ?>
 				<p class="comment-awaiting-moderation">
 					<?php _e( 'Your comment is awaiting moderation.', 'schlicht' ); ?>
@@ -265,23 +225,17 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 			<div class="comment-content-wrapper">
 				<div class="comment-content">
 					<?php
-					/**
-					 * Display the comment text.
-					 */
+					// Display the comment text.
 					comment_text();
 
-					/**
-					 * Display the edit link (only visible for users with the right capabilities).
-					 */
+					// Display the edit link (only visible for users with the right capabilities).
 					edit_comment_link( __( 'Edit', 'schlicht' ), '<p class="edit-link">', '</p>' ); ?>
 				</div>
 			</div>
 
 			<div class="reply">
 				<?php
-				/**
-				 * Display the reply link.
-				 */
+				// Display the reply link.
 				comment_reply_link(
 					[
 						'reply_text' => __( 'Reply', 'schlicht' ),

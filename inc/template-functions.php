@@ -3,7 +3,7 @@
  * Functions that are not called from the template files
  * and cannot be grouped together into another file.
  *
- * @version 1.3.0
+ * @version 1.3.2
  *
  * @package Schlicht
  */
@@ -12,16 +12,12 @@
  * Load translation.
  */
 function schlicht_load_translation() {
-	/**
-	 * Check if:
-	 * - we do not have an AJAX call.
-	 * - we are not on the login page.
-	 * - we are not on the wp-comments-post.php.
-	 */
+	// Check if:
+	// - we do not have an AJAX call.
+	// - we are not on the login page.
+	// - we are not on the wp-comments-post.php.
 	if ( ( ! defined( 'DOING_AJAX' ) && ! 'DOING_AJAX' ) || ! schlicht_is_login_page() || ! schlicht_is_wp_comments_post() ) {
-		/**
-		 * Load the translation.
-		 */
+		// Load the translation.
 		load_theme_textdomain( 'schlicht', get_theme_file_path() . '/languages' );
 	}
 }
@@ -52,9 +48,7 @@ if ( ! function_exists( 'schlicht_is_wp_comments_post' ) ) {
  * Set the content width.
  */
 function schlicht_set_content_width() {
-	/**
-	 * Set the content width to 791.
-	 */
+	// Set the content width to 791.
 	$content_width = 791;
 
 	/**
@@ -70,24 +64,16 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 	 * Adds theme support for feed links, custom head, html5, post formats, post thumbnails, title element and custom logo.
 	 */
 	function schlicht_add_theme_support() {
-		/**
-		 * Add theme support for the custom header feature.
-		 */
+		// Add theme support for the custom header feature.
 		add_theme_support( 'custom-header' );
 
-		/**
-		 * Add theme support for automatic feed links (like post feed, comments feed, …).
-		 */
+		// Add theme support for automatic feed links (like post feed, comments feed, …).
 		add_theme_support( 'automatic-feed-links' );
 
-		/**
-		 * Add theme support for title tag.
-		 */
+		// Add theme support for title tag.
 		add_theme_support( 'title-tag' );
 
-		/**
-		 * Add theme support for post formats.
-		 */
+		// Add theme support for post formats.
 		add_theme_support( 'post-formats', [
 			'aside',
 			'link',
@@ -100,9 +86,7 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 			'chat',
 		] );
 
-		/**
-		 * Add theme support for HTML5 markup for core components.
-		 */
+		// Add theme support for HTML5 markup for core components.
 		add_theme_support( 'html5', [
 			'comment-list',
 			'comment-form',
@@ -111,43 +95,32 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 			'caption',
 		] );
 
-		/**
-		 * Add theme support for post thumbnails.
-		 */
+		// Add theme support for post thumbnails.
 		add_theme_support( 'post-thumbnails' );
 
-		/**
-		 * Add theme support for custom logo feature.
-		 */
+		// Add theme support for custom logo feature.
 		add_theme_support( 'custom-logo' );
 	}
 } // End if().
+
 if ( ! function_exists( 'schlicht_add_editor_style' ) ) {
 	/**
 	 * Adds stylesheet for Tiny MCE editor in the backend.
 	 */
 	function schlicht_add_editor_style() {
-		/**
-		 * Get the value of the Vollkorn font customizer option.
-		 */
+		// Get the value of the Vollkorn font customizer option.
 		$vollkorn_font = get_theme_mod( 'schlicht_vollkorn_font', false );
 
-		/**
-		 * Check if Vollkorn option is disabled.
-		 */
+		// Check if Vollkorn option is disabled.
 		if ( false === $vollkorn_font ) {
-			/**
-			 * Include editor styles with default font Sorts Mill Goudy.
-			 */
+			// Include editor styles with default font Sorts Mill Goudy.
 			if ( is_rtl() ) {
 				add_editor_style( 'css/editor-style-rtl.css' );
 			} else {
 				add_editor_style( 'css/editor-style.css' );
 			}
 		} else {
-			/**
-			 * Include editor styles with Vollkorn font.
-			 */
+			// Include editor styles with Vollkorn font.
 			if ( is_rtl() ) {
 				add_editor_style( 'css/editor-style-vollkorn-rtl.css' );
 			} else {
@@ -178,9 +151,7 @@ if ( ! function_exists( 'schlicht_register_sidebars' ) ) {
 	 * Register sidebar.
 	 */
 	function schlicht_register_sidebars() {
-		/**
-		 * Register the main sidebar.
-		 */
+		// Register the main sidebar.
 		register_sidebar( [
 			'name'          => __( 'Main Sidebar', 'schlicht' ),
 			'id'            => 'sidebar-1',
@@ -191,9 +162,7 @@ if ( ! function_exists( 'schlicht_register_sidebars' ) ) {
 			'after_title'   => '</h3>',
 		] );
 
-		/**
-		 * Register the footer widget area.
-		 */
+		// Register the footer widget area.
 		register_sidebar( [
 			'name'          => __( 'Footer Sidebar', 'schlicht' ),
 			'id'            => 'sidebar-footer',
@@ -211,12 +180,10 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 	 * Adds the scripts and styles to the header.
 	 */
 	function schlicht_scripts_styles() {
-		/**
-		 * Check if:
-		 * - singular view.
-		 * - comments are open.
-		 * - Threaded comments are enabled.
-		 */
+		// Check if:
+		// - singular view.
+		// - comments are open.
+		// - Threaded comments are enabled.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			/**
 			 * Enqueue comment-reply script.
@@ -224,27 +191,19 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		/**
-		 * Get value of Vollkorn customizer option.
-		 */
+		// Get value of Vollkorn customizer option.
 		$vollkorn_font = get_theme_mod( 'schlicht_vollkorn_font', false );
 
-		/**
-		 * Check if Vollkorn option is disabled.
-		 */
+		// Check if Vollkorn option is disabled.
 		if ( false === $vollkorn_font ) {
-			/**
-			 * Include default style.
-			 */
+			// Include default style.
 			if ( is_rtl() ) {
 				wp_enqueue_style( 'schlicht-style', get_theme_file_uri() . '/css/schlicht-rtl.css', [], null );
 			} else {
 				wp_enqueue_style( 'schlicht-style', get_theme_file_uri() . '/css/schlicht.css', [], null );
 			}
 		} else {
-			/**
-			 * Include Vollkorn style.
-			 */
+			// Include Vollkorn style.
 			if ( is_rtl() ) {
 				wp_enqueue_style( 'schlicht-style', get_theme_file_uri() . '/css/schlicht-vollkorn-rtl.css', [], null );
 			} else {
@@ -261,13 +220,9 @@ if ( ! function_exists( 'schlicht_admin_script' ) ) {
 	 * @param string $hook_suffix The current admin page.
 	 */
 	function schlicht_admin_script( $hook_suffix ) {
-		/**
-		 * Check for post or page edit page.
-		 */
+		// Check for post or page edit page.
 		if ( 'post.php' === $hook_suffix ) {
-			/**
-			 * Include the editor functions js.
-			 */
+			// Include the editor functions js.
 			wp_enqueue_script( 'schlicht_editor-functions', get_theme_file_uri( 'js/backend-editor-functions.js' ), [], false, true );
 		}
 	}
