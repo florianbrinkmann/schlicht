@@ -10,7 +10,7 @@
 if ( post_password_required() ) {
 	return;
 } ?>
-<aside aria-labelledby="aside" class="comments-area">
+<aside aria-label="<?php _e( 'Comments and trackbacks area', 'schlicht' ); ?>" class="comments-area">
 	<?php if ( have_comments() ) {
 		/**
 		 * We cannot use the second parameter from comments_template()
