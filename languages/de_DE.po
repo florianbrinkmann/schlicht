@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Schlicht\n"
-"POT-Creation-Date: 2018-01-18 18:10+0100\n"
-"PO-Revision-Date: 2018-01-18 18:10+0100\n"
+"POT-Creation-Date: 2018-01-18 19:32+0100\n"
+"PO-Revision-Date: 2018-01-18 19:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -20,21 +20,21 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:18
+#: 404.php:16
 msgid "Nothing Found"
 msgstr "Nichts gefunden"
 
-#: 404.php:21
+#: 404.php:19
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr "Sorry, leider wurden keine Ergebnisse gefunden."
 
-#: archive.php:67 index.php:57 search.php:75
+#: archive.php:47 index.php:41 search.php:57
 msgid "Previous"
 msgstr "Neuere"
 
-#: archive.php:68 index.php:58 search.php:76
+#: archive.php:48 index.php:42 search.php:58
 msgid "Next"
 msgstr "Ältere"
 
@@ -42,59 +42,59 @@ msgstr "Ältere"
 msgid "Comments and trackbacks area"
 msgstr "Bereich für Trackbacks und Kommentare"
 
-#: comments.php:33
+#: comments.php:29
 #, php-format
 msgid "%1$s Comment on “%2$s”"
 msgid_plural "%1$s Comments on “%2$s”"
 msgstr[0] "%1$s Kommentar zu „%2$s“"
 msgstr[1] "%1$s Kommentare zu „%2$s“"
 
-#: comments.php:64
+#: comments.php:56
 #, php-format
 msgid "%1$s Trackback on “%2$s”"
 msgid_plural "%1$s Trackbacks on “%2$s”"
 msgstr[0] "%1$s Trackback zu „%2$s“"
 msgstr[1] "%1$s Trackbacks zu „%2$s“"
 
-#: comments.php:100
+#: comments.php:87
 msgid "Comments are closed."
 msgstr "Kommentare sind deaktiviert."
 
-#: comments.php:107
+#: comments.php:92
 msgid "Submit Comment"
 msgstr "Kommentar abschicken"
 
-#: footer.php:21
+#: footer.php:19
 msgid "Footer navigation"
 msgstr "Footer-Navigation"
 
-#: footer.php:45
+#: footer.php:39
 msgid "Footer widget area"
 msgstr "Widget-Bereich im Footer"
 
-#: footer.php:54
+#: footer.php:46
 #, php-format
 msgid "Theme: Schlicht by %s"
 msgstr "Theme: Schlicht von %s"
 
 #. Author URI of the plugin/theme
-#: footer.php:55
+#: footer.php:47
 msgid "https://florianbrinkmann.com/en/"
 msgstr "https://florianbrinkmann.com/"
 
-#: header.php:30
+#: header.php:26
 msgid "[Skip to Content]"
 msgstr "[Zum Inhalt springen]"
 
-#: header.php:126
+#: header.php:93
 msgid "Main navigation"
 msgstr "Hauptmenü"
 
-#: inc/customizer.php:30
+#: inc/customizer.php:24
 msgid "Theme options"
 msgstr "Theme-Optionen"
 
-#: inc/customizer.php:47
+#: inc/customizer.php:37
 msgid ""
 "Enable alternate post/page layout where title is displayed in a column left "
 "of the content (only works if no widgets are in the sidebar)."
@@ -103,108 +103,108 @@ msgstr ""
 "dem Inhalt angezeigt wird (funktioniert nur, wenn keine Widgets in der "
 "Sidebar sind)."
 
-#: inc/customizer.php:64
+#: inc/customizer.php:50
 msgid "Use the Vollkorn font instead of Sorts Mill Goudy."
 msgstr "Nutze den Vollkorn-Font statt Sorts Mill Goudy."
 
-#: inc/template-functions.php:168
+#: inc/template-functions.php:141
 msgid "Primary Menu"
 msgstr "Hauptmenü"
 
-#: inc/template-functions.php:170
+#: inc/template-functions.php:143
 msgid "Footer Menu"
 msgstr "Footer-Menü"
 
-#: inc/template-functions.php:185
+#: inc/template-functions.php:156
 msgid "Main Sidebar"
 msgstr "Sidebar"
 
-#: inc/template-functions.php:187
+#: inc/template-functions.php:158
 msgid ""
 "Widgets in this area will be displayed on all posts and pages by default."
 msgstr ""
 "Widgets aus diesem Bereich werden standardmäßig auf allen Beiträgen und "
 "Seiten angezeigt."
 
-#: inc/template-functions.php:198
+#: inc/template-functions.php:167
 msgid "Footer Sidebar"
 msgstr "Footer-Sidebar"
 
-#: inc/template-functions.php:200
+#: inc/template-functions.php:169
 msgid "Widgets will be displayed in the footer."
 msgstr "Widgets werden im Footer angezeigt."
 
-#: inc/template-tags.php:69
+#: inc/template-tags.php:61
 msgid "Continue reading"
 msgstr "Weiterlesen"
 
-#: inc/template-tags.php:71
+#: inc/template-tags.php:63
 #, php-format
 msgid "Continue reading %s"
 msgstr "%s weiterlesen"
 
-#: inc/template-tags.php:86
+#: inc/template-tags.php:78
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: inc/template-tags.php:108
+#: inc/template-tags.php:96
 msgid "Category"
 msgid_plural "Categories"
 msgstr[0] "Kategorie"
 msgstr[1] "Kategorien"
 
-#: inc/template-tags.php:119 inc/template-tags.php:144
+#: inc/template-tags.php:105 inc/template-tags.php:124
 msgid ", "
 msgstr ", "
 
-#: inc/template-tags.php:133
+#: inc/template-tags.php:115
 msgid "Tag"
 msgid_plural "Tags"
 msgstr[0] "Tag"
 msgstr[1] "Tags"
 
-#: inc/template-tags.php:163
+#: inc/template-tags.php:137
 msgid "Comments"
 msgstr "Kommentare"
 
-#: inc/template-tags.php:186
+#: inc/template-tags.php:154
 msgid "Trackbacks"
 msgstr "Trackbacks"
 
-#: inc/template-tags.php:251
+#: inc/template-tags.php:213
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr "%1$s @ %2$s"
 
-#: inc/template-tags.php:261
+#: inc/template-tags.php:221
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: inc/template-tags.php:276
+#: inc/template-tags.php:232
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: inc/template-tags.php:287
+#: inc/template-tags.php:241
 msgid "Reply"
 msgstr "Antworten"
 
-#: inc/theme-updates.php:36
+#: inc/theme-updates.php:30
 msgid ""
 "Paste your download link for »Schlicht« to enable automatic theme updates."
 msgstr ""
 "Füge deinen Download-Link für »Schlicht« ein, um automatische Updates zu "
 "aktivieren."
 
-#: inc/theme-updates.php:124
+#: inc/theme-updates.php:96
 msgid "https://florianbrinkmann.com/en/wordpress-themes/schlicht/changelog/"
 msgstr "https://florianbrinkmann.com/wordpress-themes/schlicht/changelog/"
 
-#: search.php:28
+#: search.php:22
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Suchergebnisse für: %s"
 
-#: search.php:56
+#: search.php:42
 #, php-format
 msgid "Nothing found for: %s"
 msgstr "Nichts gefunden für: %s"
@@ -224,7 +224,7 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Suche"
 
-#: sidebar.php:17
+#: sidebar.php:15
 msgid "Sidebar"
 msgstr "Sidebar"
 
@@ -232,12 +232,12 @@ msgstr "Sidebar"
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, nichts gefunden."
 
-#: template-parts/content-single.php:21 template-parts/content.php:29
+#: template-parts/content-single.php:19 template-parts/content.php:25
 #, php-format
 msgid "by %s"
 msgstr "von %s"
 
-#: template-parts/content.php:19
+#: template-parts/content.php:17
 msgid "Featured"
 msgstr "Featured"
 
