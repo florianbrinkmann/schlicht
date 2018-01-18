@@ -47,6 +47,10 @@ Source: http://vollkorn-typeface.com/
 
 ## Changelog
 
+### 1.3.2 - 18.01.2018
+#### Fixed
+* Replaced invalid `aria-labelledby` attribute from comments area element with `aria-label`.
+
 ### 1.3.1 - 26.07.2017
 #### Fixed
 * Removed drop cap options from the customizer (obsolete since 1.3.0).
