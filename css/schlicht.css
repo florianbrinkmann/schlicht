@@ -936,26 +936,26 @@ figure.alignright {
 	position: relative;
 }
 
-.author-date {
+.entry-header .author-date {
 	color: #666;
 	font-style: italic;
 }
 
-.author {
+.entry-header .author {
 	display: inline;
 	margin-top: 0;
 }
 
-.date {
+.entry-header .date {
 	display: inline;
 }
 
-.date::before {
+.entry-header .date::before {
 	content: " · ";
 	font-style: normal;
 }
 
-.featured {
+.entry-header .featured {
 	-webkit-font-feature-settings: "smcp";
 	font-feature-settings: "smcp";
 	letter-spacing: .03rem;
@@ -970,20 +970,20 @@ figure.alignright {
 }
 
 .entry-title a,
-.date a {
+.entry-header .date a {
 	background-size: 100% 1px;
 	background-position: 0 calc(100% + 2px);
 }
 
 .entry-title a:hover,
 .entry-title a:active,
-.date a:hover,
-.date a:active {
+.entry-header .date a:hover,
+.entry-header .date a:active {
 	background-position: 0 93%;
 }
 
 .entry-title a:focus,
-.date a:focus {
+.entry-header .date a:focus {
 	background-size: 100% 3px;
 	background-position: 0 calc(93% + 2px);
 }
@@ -1358,20 +1358,20 @@ figure.alignright {
 		display: inline;
 	}
 
-	.alternate-layout .date::before {
+	.alternate-layout .entry-header .date::before {
 		display: none;
 	}
 
-	.sidebar-template .date::before {
+	.sidebar-template .entry-header .date::before {
 		display: inline;
 	}
 
-	.alternate-layout .date {
+	.alternate-layout .entry-header .date {
 		display: block;
 		margin-top: -.375rem;
 	}
 
-	.sidebar-template .date {
+	.sidebar-template .entry-header .date {
 		display: inline;
 		margin-top: inherit;
 	}
