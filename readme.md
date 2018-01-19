@@ -47,11 +47,12 @@ Source: http://vollkorn-typeface.com/
 
 ## Changelog
 
-### 1.3.2 - 18.01.2018
+### 1.3.2 - 19.01.2018
 #### Changed
 * Inline style of inline comments.
 
 #### Fixed
+* Small CSS fix for date archive pages.
 * Replaced invalid `aria-labelledby` attribute from comments area element with `aria-label`.
 
 ### 1.3.1 - 26.07.2017
