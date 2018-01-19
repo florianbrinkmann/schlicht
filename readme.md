@@ -49,7 +49,7 @@ Source: http://vollkorn-typeface.com/
 
 ### 1.3.2 - 19.01.2018
 #### Changed
-* Inline style of inline comments.
+* Use `//` for inline comments.
 
 #### Fixed
 * Small CSS fix for date archive pages.
