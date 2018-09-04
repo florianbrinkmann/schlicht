@@ -1,14 +1,20 @@
 language: php
 php:
 - '7.1'
+  env: SNIFF=1
 addons:
   ssh_known_hosts:
   - "$STAGING_SERVER"
   - "$PRODUCTION_SERVER"
+before_install:
+  # Install CodeSniffer
+  - if [[ "$SNIFF" == "1" ]]; then composer install; fi
 before_script:
 - echo -e "Host $STAGING_SERVER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - echo -e "Host $PRODUCTION_SERVER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
+# run the PHPCS tests (also checks PHP compatibility).
+- if [[ "$SNIFF" == "1" ]]; then vendor/bin/phpcs -p . --standard=WordPress; fi
 - chmod +x ./scripts/deploy-production.sh
 - chmod +x ./scripts/deploy-staging.sh
 before_deploy:

@@ -1,0 +1,18 @@
+{
+    "name": "florianbrinkmann/schlicht",
+    "description": "Schlicht is a blogger theme, kept simple with clear focus on content.",
+    "type": "wordpress-plugin",
+    "license": "GNU General Public License v2",
+    "authors": [
+        {
+            "name": "Florian Brinkmann",
+            "email": "kontakt@florianbrinkmann.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "wp-coding-standards/wpcs": "^1.0"
+    }
+}
