@@ -10,7 +10,7 @@
 if ( post_password_required() ) {
 	return;
 } ?>
-<aside aria-label="<?php _e( 'Comments and trackbacks area', 'schlicht' ); ?>" class="comments-area">
+<aside aria-label="<?php esc_html_e( 'Comments and trackbacks area', 'schlicht' ); ?>" class="comments-area">
 	<?php
 	if ( have_comments() ) {
 		// We cannot use the second parameter from comments_template()
@@ -20,22 +20,23 @@ if ( post_password_required() ) {
 		// on the current page, not the total.
 		//
 		// Because of that, we use our own function to get the comments by type.
-		$comments_by_type = schlicht_get_comments_by_type();
-		if ( ! empty( $comments_by_type['comment'] ) ) {
+		$schlicht_comments_by_type = schlicht_get_comments_by_type();
+		if ( ! empty( $schlicht_comments_by_type['comment'] ) ) {
 			// Save the comment count.
-			$comment_number = count( $comments_by_type['comment'] );
+			$schlicht_comment_number = count( $schlicht_comments_by_type['comment'] );
 			?>
 			<h2 class="comments-title" id="comments-title">
 				<?php
-				/* translators: Title for comment list. 1=comment number, 2=post title */
 				printf(
-					_n(
-						'%1$s Comment on “%2$s”',
-						'%1$s Comments on “%2$s”',
-						$comment_number,
-						'schlicht'
-					), number_format_i18n( $comment_number ),
-					get_the_title()
+					esc_html( // translators: Title for comment list. 1=comment number, 2=post title.
+						_n(
+							'%1$s Comment on “%2$s”',
+							'%1$s Comments on “%2$s”',
+							$schlicht_comment_number,
+							'schlicht'
+						), number_format_i18n( $schlicht_comment_number ),
+						get_the_title()
+					)
 				)
 				?>
 			</h2>
@@ -56,21 +57,22 @@ if ( post_password_required() ) {
 				?>
 			</ul>
 			<?php
-		} // End if().
-		if ( ! empty( $comments_by_type['pings'] ) ) {
+		}
+		if ( ! empty( $schlicht_comments_by_type['pings'] ) ) {
 			// Save the count of trackbacks and pingbacks.
-			$trackback_number = count( $comments_by_type['pings'] );
+			$schlicht_trackback_number = count( $schlicht_comments_by_type['pings'] );
 			?>
 			<h2 class="trackbacks-title" id="trackbacks-title">
 				<?php
-				/* translators: Title for trackback list. 1=trackback number, 2=post title */
 				printf(
-					_n(
-						'%1$s Trackback on “%2$s”',
-						'%1$s Trackbacks on “%2$s”',
-						$trackback_number,
-						'schlicht'
-					), number_format_i18n( $trackback_number ), get_the_title()
+					esc_html( // translators: Title for trackback list. 1=trackback number, 2=post title.
+						_n(
+							'%1$s Trackback on “%2$s”',
+							'%1$s Trackbacks on “%2$s”',
+							$schlicht_trackback_number,
+							'schlicht'
+						), number_format_i18n( $schlicht_trackback_number ), get_the_title()
+					)
 				)
 				?>
 			</h2>
@@ -88,26 +90,26 @@ if ( post_password_required() ) {
 				?>
 			</ul>
 			<?php
-		} // End if().
+		}
 
 		// Only show the comments navigation, of one of the reaction counts
 		// is larger than the set number of comments per page. Necessary because
 		// of our separation. Otherwise, the navigation would also be displayed if
 		// we should display 4 comments per page and have 3 comments and 2 trackbacks.
 		if (
-			( ( isset( $trackback_number ) && isset( $comment_args['number'] ) ) && $trackback_number > $comment_args['number'] )
-			|| ( ( isset( $comment_number ) && isset( $comment_args['number'] ) ) && $comment_number > $comment_args['number'] )
+			( ( isset( $schlicht_trackback_number ) && isset( $comment_args['number'] ) ) && $schlicht_trackback_number > $comment_args['number'] )
+			|| ( ( isset( $schlicht_comment_number ) && isset( $comment_args['number'] ) ) && $schlicht_comment_number > $comment_args['number'] )
 		) {
 			the_comments_navigation();
-		} // End if().
+		}
 
 		// Display comments closed hint if comments are closed but we already have comments.
 		if ( ! comments_open() && get_comments_number() ) {
 			?>
-			<p class="nocomments"><?php _e( 'Comments are closed.', 'schlicht' ); ?></p>
+			<p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'schlicht' ); ?></p>
 			<?php
-		} // End if().
-	} // End if().
+		}
+	}
 
 	// Display comment form with modified submit label.
 	comment_form( [ 'label_submit' => __( 'Submit Comment', 'schlicht' ) ] );

@@ -13,10 +13,10 @@ get_header(); ?>
 		<div class="main-content">
 			<article class="clearfix">
 				<header>
-					<h1 class="archive-title"><?php _e( 'Nothing Found', 'schlicht' ); ?></h1>
+					<h1 class="archive-title"><?php esc_html_e( 'Nothing Found', 'schlicht' ); ?></h1>
 				</header>
 				<div class="content-404">
-					<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'schlicht' ); ?></p>
+					<p><?php esc_html_e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'schlicht' ); ?></p>
 					<?php
 					// Display the search form.
 					get_search_form();

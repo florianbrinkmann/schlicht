@@ -18,15 +18,8 @@ get_header(); ?>
 				<header>
 					<h1 class="archive-title"><?php the_archive_title(); ?></h1>
 					<?php
-					// Save the archive description.
-					$archive_description = get_the_archive_description();
-
-					// Check if we have a description.
-					if ( '' !== $archive_description ) {
-
-						// Display the archive description.
-						echo $archive_description;
-					}
+					// Display the archive description.
+					echo wp_kses_post( get_the_archive_description() );
 					?>
 				</header>
 				<?php
@@ -41,7 +34,7 @@ get_header(); ?>
 			} else {
 				// Include template-parts/content-none.php.
 				get_template_part( 'template-parts/content', 'none' );
-			} // End if().
+			}
 
 			// Display the posts pagination.
 			the_posts_pagination(

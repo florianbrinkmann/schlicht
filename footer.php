@@ -17,8 +17,8 @@
 		<nav class="footer-nav-container">
 			<h2 class="screen-reader-text">
 				<?php
-				/* translators: hidden screen reader headline for the footer navigation */
-				_e( 'Footer navigation', 'schlicht' );
+				// translators: hidden screen reader headline for the footer navigation.
+				esc_html_e( 'Footer navigation', 'schlicht' );
 				?>
 			</h2>
 			<?php
@@ -42,8 +42,8 @@
 		<aside class="site-footer-widget-area clearfix">
 			<h2 class="screen-reader-text">
 				<?php
-				/* translators: screen reader text for the footer widget area */
-				_e( 'Footer widget area', 'schlicht' )
+				// translators: screen reader text for the footer widget area.
+				esc_html_e( 'Footer widget area', 'schlicht' )
 				?>
 				</h2>
 			<?php
@@ -53,13 +53,13 @@
 		</aside>
 	<?php } ?>
 	<p class="theme-author">
-	<?php
-	printf(
-		__( 'Theme: Schlicht by %s', 'schlicht' ),
-		sprintf( '<a rel="nofollow" href="%s">Florian Brinkmann</a>', __( 'https://florianbrinkmann.com/en/', 'schlicht' ) )
-	);
-	?>
-			</p>
+		<?php
+		printf( // translators: s=name of theme author.
+			esc_html__( 'Theme: Schlicht by %s', 'schlicht' ),
+			sprintf( '<a rel="nofollow" href="%s">Florian Brinkmann</a>', esc_attr__( 'https://florianbrinkmann.com/en/', 'schlicht' ) )
+		);
+		?>
+	</p>
 </footer>
 <?php
 // Includes scripts, et cetera, which are hooked to the wp_footer action.
