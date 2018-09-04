@@ -47,6 +47,10 @@ Source: http://vollkorn-typeface.com/
 
 ## Changelog
 
+### 1.3.5 - 04.09.2018
+#### Fixed
+* Wrong usage of `get_theme_file_uri()` function.
+
 ### 1.3.4 - 15.05.2018
 #### Fixed
 * Styling of new comment cookie consent checkbox for Vollkorn option.
