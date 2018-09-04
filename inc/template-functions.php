@@ -198,16 +198,16 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 		if ( false === $vollkorn_font ) {
 			// Include default style.
 			if ( is_rtl() ) {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri() . '/css/schlicht-rtl.css', [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-rtl.css' ), [], null );
 			} else {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri() . '/css/schlicht.css', [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht.css' ), [], null );
 			}
 		} else {
 			// Include Vollkorn style.
 			if ( is_rtl() ) {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri() . '/css/schlicht-vollkorn-rtl.css', [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-vollkorn-rtl.css' ), [], null );
 			} else {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri() . '/css/schlicht-vollkorn.css', [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-vollkorn.css' ), [], null );
 			}
 		}
 	}
