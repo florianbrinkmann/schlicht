@@ -31,7 +31,8 @@ get_header(); ?>
 			} else {
 				// Include template-parts/content-none.php.
 				get_template_part( 'template-parts/content', 'none' );
-			} ?>
+			}
+			?>
 		</div>
 	</main>
 <?php

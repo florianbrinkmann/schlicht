@@ -12,7 +12,8 @@
 	<header class="entry-header">
 		<?php
 		// Display the post title as h1 and without linking it.
-		schlicht_the_title( 'h1', false ) ?>
+		schlicht_the_title( 'h1', false )
+		?>
 	</header>
 	<div class="entry-content">
 		<?php
@@ -23,6 +24,7 @@
 		schlicht_the_content();
 
 		// Display pagination.
-		schlicht_wp_link_pages(); ?>
+		schlicht_wp_link_pages();
+		?>
 	</div>
 </article>

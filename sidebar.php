@@ -11,10 +11,15 @@
 if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
 	<aside class="sidebar" role="complementary">
 		<h2 class="screen-reader-text">
-			<?php /* translators: screen reader text for the sidebar */
-			_e( 'Sidebar', 'schlicht' ) ?></h2>
+			<?php
+			/* translators: screen reader text for the sidebar */
+			_e( 'Sidebar', 'schlicht' )
+			?>
+			</h2>
 		<?php
 		// Display the widgets.
-		dynamic_sidebar( 'sidebar-1' ); ?>
+		dynamic_sidebar( 'sidebar-1' );
+		?>
 	</aside>
-<?php }
+	<?php
+}

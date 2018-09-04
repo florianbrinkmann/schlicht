@@ -16,19 +16,23 @@ function schlicht_update_customize_register( $wp_customize ) {
 	// Only add setting and control if we are not on a multisite.
 	if ( ! is_multisite() ) {
 		// Add setting for URL.
-		$wp_customize->add_setting( 'schlicht_upgrade_url', [
-			'type'              => 'option',
-			'default'           => '',
-			'sanitize_callback' => 'schlicht_esc_update_url',
-		] );
+		$wp_customize->add_setting(
+			'schlicht_upgrade_url', [
+				'type'              => 'option',
+				'default'           => '',
+				'sanitize_callback' => 'schlicht_esc_update_url',
+			]
+		);
 
 		// Add control for update URL.
-		$wp_customize->add_control( 'schlicht_upgrade_url', [
-			'priority' => 1,
-			'type'     => 'url',
-			'section'  => 'schlicht_options',
-			'label'    => __( 'Paste your download link for »Schlicht« to enable automatic theme updates.', 'schlicht' ),
-		] );
+		$wp_customize->add_control(
+			'schlicht_upgrade_url', [
+				'priority' => 1,
+				'type'     => 'url',
+				'section'  => 'schlicht_options',
+				'label'    => __( 'Paste your download link for »Schlicht« to enable automatic theme updates.', 'schlicht' ),
+			]
+		);
 	}
 }
 
@@ -50,7 +54,7 @@ function schlicht_esc_update_url( $url ) {
 	preg_match( $pattern, $url, $matches );
 
 	// If match, return the URL. Otherwise an empty string.
-	if ( ! empty ( $matches ) ) {
+	if ( ! empty( $matches ) ) {
 		return $url;
 	} else {
 		return '';
@@ -99,7 +103,7 @@ function schlicht_theme_update( $transient ) {
 		$theme_package = get_option( 'schlicht_upgrade_url' );
 
 		// Check if we have a URL.
-		if ( ! empty ( $theme_package ) ) {
+		if ( ! empty( $theme_package ) ) {
 			// Upgrade URL pattern (this time with theme ID, not without like in the customizer).
 			$pattern = '/^https:\/\/florianbrinkmann\.com\/(en\/)?\?download_file=' . $theme_id . '|^https:\/\/(en\.)?florianbrinkmann\.de\/\?download_file=' . $theme_id . '/';
 
@@ -107,7 +111,7 @@ function schlicht_theme_update( $transient ) {
 			preg_match( $pattern, $theme_package, $matches );
 
 			// If match, add the package.
-			if ( ! empty ( $matches ) ) {
+			if ( ! empty( $matches ) ) {
 				$transient->response['schlicht']['package'] = $theme_package;
 			}
 		}

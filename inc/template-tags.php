@@ -37,15 +37,19 @@ if ( ! function_exists( 'schlicht_the_title' ) ) {
 	 */
 	function schlicht_the_title( $heading, $link = true ) {
 		if ( $link ) {
-			the_title( sprintf(
-				'<%1$s class="entry-title"><a href="%2$s" rel="bookmark">',
-				$heading, esc_url( get_permalink() )
-			), sprintf( '</a></%s>', $heading ) );
+			the_title(
+				sprintf(
+					'<%1$s class="entry-title"><a href="%2$s" rel="bookmark">',
+					$heading, esc_url( get_permalink() )
+				), sprintf( '</a></%s>', $heading )
+			);
 		} else {
-			the_title( sprintf(
-				'<%1$s class="entry-title">',
-				$heading, esc_url( get_permalink() )
-			), sprintf( '</%s>', $heading ) );
+			the_title(
+				sprintf(
+					'<%1$s class="entry-title">',
+					$heading, esc_url( get_permalink() )
+				), sprintf( '</%s>', $heading )
+			);
 		}
 	}
 }
@@ -74,11 +78,13 @@ if ( ! function_exists( 'schlicht_wp_link_pages' ) ) {
 	 */
 	function schlicht_wp_link_pages() {
 		/* translators: Label for pagination of paginated posts and pages */
-		wp_link_pages( [
-			'before'    => '<ul class="page-numbers"><li><span>' . __( 'Pages:', 'schlicht' ) . '</span></li><li>',
-			'after'     => '</li></ul>',
-			'separator' => '</li><li>',
-		] );
+		wp_link_pages(
+			[
+				'before'    => '<ul class="page-numbers"><li><span>' . __( 'Pages:', 'schlicht' ) . '</span></li><li>',
+				'after'     => '</li></ul>',
+				'separator' => '</li><li>',
+			]
+		);
 	}
 }
 
@@ -92,38 +98,49 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 			<p class="entry-footer-block categories"><span class="entry-footer-block-label">
 				<?php
 				// Display label in singular or plural.
-				printf( _n( /* translators: Label for category list in entry footer. s=categories */
-					'Category',
-					'Categories',
-					count( get_the_category() ),
-					'schlicht'
-				) )
-				?><span class="screen-reader-text">:</span></span>
+				printf(
+					_n( /* translators: Label for category list in entry footer. s=categories */
+						'Category',
+						'Categories',
+						count( get_the_category() ),
+						'schlicht'
+					)
+				)
+				?>
+				<span class="screen-reader-text">:</span></span>
 				<?php
 				// Display the category list.
 				/* translators: term delimiter */
-				echo get_the_category_list( __( ', ', 'schlicht' ) ); ?>
+				echo get_the_category_list( __( ', ', 'schlicht' ) );
+				?>
 			</p>
-		<?php }
+			<?php
+		}
 
 		// Check if we have tags.
-		if ( get_the_tags() ) { ?>
+		if ( get_the_tags() ) {
+			?>
 			<p class="entry-footer-block tags"><span class="entry-footer-block-label">
 				<?php
 				// Display label in singular or plural.
-				printf( _n( /* translators: Label for tags list in entry footer. */
-					'Tag',
-					'Tags',
-					count( get_the_tags() ),
-					'schlicht'
-				) )
-				?><span class="screen-reader-text">:</span></span>
+				printf(
+					_n( /* translators: Label for tags list in entry footer. */
+						'Tag',
+						'Tags',
+						count( get_the_tags() ),
+						'schlicht'
+					)
+				)
+				?>
+				<span class="screen-reader-text">:</span></span>
 				<?php
 				// Display the tag list.
 				/* translators: term delimiter */
-				echo get_the_tag_list( '', __( ', ', 'schlicht' ) ); ?>
+				echo get_the_tag_list( '', __( ', ', 'schlicht' ) );
+				?>
 			</p>
-		<?php }
+			<?php
+		}
 
 		// Get the post reactions by type.
 		$comments_by_type = schlicht_get_comments_by_type();
@@ -131,36 +148,46 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 		// Check if we have comments.
 		if ( $comments_by_type['comment'] ) {
 			// Count the comments.
-			$comment_number = count( $comments_by_type['comment'] ); ?>
+			$comment_number = count( $comments_by_type['comment'] );
+			?>
 			<p class="entry-footer-block comments"><span class="entry-footer-block-label">
-				<?php /* translators: Label for comment number in entry footer. */
+				<?php
+				/* translators: Label for comment number in entry footer. */
 				_e( 'Comments', 'schlicht' );
-				?><span class="screen-reader-text">:</span></span>
+				?>
+				<span class="screen-reader-text">:</span></span>
 				<a href="<?php the_permalink(); ?>#comments-title">
 					<?php
 					// Display the comments number in the correct internationalized format for the site’s locale.
 					/* translators: term delimiter */
-					echo number_format_i18n( $comment_number ); ?>
+					echo number_format_i18n( $comment_number );
+					?>
 				</a>
 			</p>
-		<?php }
+			<?php
+		}
 
 		// Check if we have pings.
 		if ( $comments_by_type['pings'] ) {
 			// Count the pings.
-			$trackback_number = count( $comments_by_type['pings'] ); ?>
+			$trackback_number = count( $comments_by_type['pings'] );
+			?>
 			<p class="entry-footer-block trackbacks"><span class="entry-footer-block-label">
-				<?php /* translators: Label for trackback number in entry footer. */
+				<?php
+				/* translators: Label for trackback number in entry footer. */
 				_e( 'Trackbacks', 'schlicht' );
-				?><span class="screen-reader-text">:</span></span>
+				?>
+				<span class="screen-reader-text">:</span></span>
 				<a href="<?php the_permalink(); ?>#trackbacks-title">
 					<?php
 					// Display the pings number in the correct internationalized format for the site’s locale.
 					/* translators: term delimiter */
-					echo number_format_i18n( $trackback_number ); ?>
+					echo number_format_i18n( $trackback_number );
+					?>
 				</a>
 			</p>
-		<?php };
+			<?php
+		};
 	}
 } // End if().
 
@@ -192,7 +219,8 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 	 * @param array  $args    Array of arguments.
 	 * @param int    $depth   Depth of comment.
 	 */
-	function schlicht_comments( $comment, $args, $depth ) { ?>
+	function schlicht_comments( $comment, $args, $depth ) {
+		?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<div id="comment-<?php comment_ID(); ?>">
 			<div class="comment-meta">
@@ -200,7 +228,8 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 				<p class="comment-author-name">
 					<?php
 					// Display the name of the comment author. Linked to the site he submitted in the Website field.
-					comment_author_link(); ?>
+					comment_author_link();
+					?>
 				</p>
 
 				<?php
@@ -211,12 +240,14 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 					get_comment_time( 'c' ),
 					/* translators: 1=date 2=time */
 					sprintf( __( '%1$s @ %2$s', 'schlicht' ), get_comment_date(), get_comment_time() )
-				); ?>
+				);
+				?>
 			</div>
 
 			<?php
 			// Check if the comment is not approved yet.
-			if ( '0' === $comment->comment_approved ) { ?>
+			if ( '0' === $comment->comment_approved ) {
+				?>
 				<p class="comment-awaiting-moderation">
 					<?php _e( 'Your comment is awaiting moderation.', 'schlicht' ); ?>
 				</p>
@@ -229,7 +260,8 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 					comment_text();
 
 					// Display the edit link (only visible for users with the right capabilities).
-					edit_comment_link( __( 'Edit', 'schlicht' ), '<p class="edit-link">', '</p>' ); ?>
+					edit_comment_link( __( 'Edit', 'schlicht' ), '<p class="edit-link">', '</p>' );
+					?>
 				</div>
 			</div>
 
@@ -242,7 +274,8 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 						'depth'      => $depth,
 						'max_depth'  => $args['max_depth'],
 					]
-				); ?>
+				);
+				?>
 			</div>
 		</div>
 		<?php

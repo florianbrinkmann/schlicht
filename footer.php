@@ -12,11 +12,14 @@
 <footer class="site-footer clearfix">
 	<?php
 	// Check if the menu location footer has a menu.
-	if ( has_nav_menu( 'footer' ) ) { ?>
+	if ( has_nav_menu( 'footer' ) ) {
+		?>
 		<nav class="footer-nav-container">
 			<h2 class="screen-reader-text">
-				<?php /* translators: hidden screen reader headline for the footer navigation */
-				_e( 'Footer navigation', 'schlicht' ); ?>
+				<?php
+				/* translators: hidden screen reader headline for the footer navigation */
+				_e( 'Footer navigation', 'schlicht' );
+				?>
 			</h2>
 			<?php
 			// Display the menu.
@@ -27,27 +30,40 @@
 					'container'      => '',
 					'depth'          => 1,
 				]
-			); ?>
+			);
+			?>
 		</nav>
-	<?php }
+		<?php
+	}
 
 	// Check if the footer sidebar has widgets.
-	if ( is_active_sidebar( 'sidebar-footer' ) ) { ?>
+	if ( is_active_sidebar( 'sidebar-footer' ) ) {
+		?>
 		<aside class="site-footer-widget-area clearfix">
 			<h2 class="screen-reader-text">
-				<?php /* translators: screen reader text for the footer widget area */
-				_e( 'Footer widget area', 'schlicht' ) ?></h2>
+				<?php
+				/* translators: screen reader text for the footer widget area */
+				_e( 'Footer widget area', 'schlicht' )
+				?>
+				</h2>
 			<?php
 			// Display the widgets.
-			dynamic_sidebar( 'sidebar-footer' ); ?>
+			dynamic_sidebar( 'sidebar-footer' );
+			?>
 		</aside>
 	<?php } ?>
-	<p class="theme-author"><?php printf(
-			__( 'Theme: Schlicht by %s', 'schlicht' ),
-			sprintf( '<a rel="nofollow" href="%s">Florian Brinkmann</a>', __( 'https://florianbrinkmann.com/en/', 'schlicht' ) ) ); ?></p>
+	<p class="theme-author">
+	<?php
+	printf(
+		__( 'Theme: Schlicht by %s', 'schlicht' ),
+		sprintf( '<a rel="nofollow" href="%s">Florian Brinkmann</a>', __( 'https://florianbrinkmann.com/en/', 'schlicht' ) )
+	);
+	?>
+			</p>
 </footer>
 <?php
 // Includes scripts, et cetera, which are hooked to the wp_footer action.
-wp_footer(); ?>
+wp_footer();
+?>
 </body>
 </html>

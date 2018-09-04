@@ -74,26 +74,30 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 		add_theme_support( 'title-tag' );
 
 		// Add theme support for post formats.
-		add_theme_support( 'post-formats', [
-			'aside',
-			'link',
-			'gallery',
-			'status',
-			'quote',
-			'image',
-			'video',
-			'audio',
-			'chat',
-		] );
+		add_theme_support(
+			'post-formats', [
+				'aside',
+				'link',
+				'gallery',
+				'status',
+				'quote',
+				'image',
+				'video',
+				'audio',
+				'chat',
+			]
+		);
 
 		// Add theme support for HTML5 markup for core components.
-		add_theme_support( 'html5', [
-			'comment-list',
-			'comment-form',
-			'search-form',
-			'gallery',
-			'caption',
-		] );
+		add_theme_support(
+			'html5', [
+				'comment-list',
+				'comment-form',
+				'search-form',
+				'gallery',
+				'caption',
+			]
+		);
 
 		// Add theme support for post thumbnails.
 		add_theme_support( 'post-thumbnails' );
@@ -152,26 +156,30 @@ if ( ! function_exists( 'schlicht_register_sidebars' ) ) {
 	 */
 	function schlicht_register_sidebars() {
 		// Register the main sidebar.
-		register_sidebar( [
-			'name'          => __( 'Main Sidebar', 'schlicht' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Widgets in this area will be displayed on all posts and pages by default.', 'schlicht' ),
-			'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		] );
+		register_sidebar(
+			[
+				'name'          => __( 'Main Sidebar', 'schlicht' ),
+				'id'            => 'sidebar-1',
+				'description'   => __( 'Widgets in this area will be displayed on all posts and pages by default.', 'schlicht' ),
+				'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			]
+		);
 
 		// Register the footer widget area.
-		register_sidebar( [
-			'name'          => __( 'Footer Sidebar', 'schlicht' ),
-			'id'            => 'sidebar-footer',
-			'description'   => __( 'Widgets will be displayed in the footer.', 'schlicht' ),
-			'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		] );
+		register_sidebar(
+			[
+				'name'          => __( 'Footer Sidebar', 'schlicht' ),
+				'id'            => 'sidebar-footer',
+				'description'   => __( 'Widgets will be displayed in the footer.', 'schlicht' ),
+				'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			]
+		);
 	}
 } // End if().
 

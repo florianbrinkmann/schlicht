@@ -23,7 +23,9 @@ get_header(); ?>
 			} else {
 				// Include template-parts/content-none.php if we do not have a post.
 				get_template_part( 'template-parts/content', 'none' );
-			} ?>
+			}
+			?>
 		</div>
 	</main>
-<?php get_footer();
+<?php
+get_footer();

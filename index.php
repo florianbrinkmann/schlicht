@@ -16,11 +16,13 @@ get_header(); ?>
 			if ( have_posts() ) {
 				// Check if we are on the latest posts page but not on the front page.
 				// This means, a static site was chosen to display the latest posts.
-				if ( is_home() && ! is_front_page() ) { ?>
+				if ( is_home() && ! is_front_page() ) {
+					?>
 					<header>
 						<h1 class="screen-reader-text"><?php single_post_title(); ?></h1>
 					</header>
-				<?php }
+					<?php
+				}
 
 				// Loop through the posts.
 				while ( have_posts() ) {
@@ -36,11 +38,14 @@ get_header(); ?>
 			}
 
 			// Display the posts pagination.
-			the_posts_pagination( [
-				'type'      => 'list',
-				'prev_text' => __( 'Previous', 'schlicht' ),
-				'next_text' => __( 'Next', 'schlicht' ),
-			] ); ?>
+			the_posts_pagination(
+				[
+					'type'      => 'list',
+					'prev_text' => __( 'Previous', 'schlicht' ),
+					'next_text' => __( 'Next', 'schlicht' ),
+				]
+			);
+			?>
 		</div>
 	</main>
 <?php

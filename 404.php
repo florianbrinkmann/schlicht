@@ -19,7 +19,8 @@ get_header(); ?>
 					<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'schlicht' ); ?></p>
 					<?php
 					// Display the search form.
-					get_search_form(); ?>
+					get_search_form();
+					?>
 				</div>
 			</article>
 		</div>

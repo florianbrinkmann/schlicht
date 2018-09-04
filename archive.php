@@ -13,7 +13,8 @@ get_header(); ?>
 		<div class="main-content">
 			<?php
 			// Check if we have posts.
-			if ( have_posts() ) { ?>
+			if ( have_posts() ) {
+				?>
 				<header>
 					<h1 class="archive-title"><?php the_archive_title(); ?></h1>
 					<?php
@@ -25,7 +26,8 @@ get_header(); ?>
 
 						// Display the archive description.
 						echo $archive_description;
-					} ?>
+					}
+					?>
 				</header>
 				<?php
 				// Loop the posts.
@@ -42,11 +44,14 @@ get_header(); ?>
 			} // End if().
 
 			// Display the posts pagination.
-			the_posts_pagination( [
-				'type'      => 'list',
-				'prev_text' => __( 'Previous', 'schlicht' ),
-				'next_text' => __( 'Next', 'schlicht' ),
-			] ); ?>
+			the_posts_pagination(
+				[
+					'type'      => 'list',
+					'prev_text' => __( 'Previous', 'schlicht' ),
+					'next_text' => __( 'Next', 'schlicht' ),
+				]
+			);
+			?>
 		</div>
 	</main>
 <?php
