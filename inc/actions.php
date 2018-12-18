@@ -42,3 +42,6 @@ add_action( 'customize_register', 'schlicht_update_customize_register', 12 );
 
 // Remove upgrade URL option value after switching away from Schlicht or a child theme.
 add_action( 'switch_theme', 'schlicht_remove_upgrade_url', 10, 2 );
+
+// Remove Gutenberg block styles.
+add_action( 'wp_print_styles', 'schlicht_dequeue_gutenberg_block_styles' );

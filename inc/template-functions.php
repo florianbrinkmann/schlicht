@@ -104,6 +104,12 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 
 		// Add theme support for custom logo feature.
 		add_theme_support( 'custom-logo' );
+
+		// Disable custom font sizes and colors in Gutenberg.
+		add_theme_support( 'disable-custom-font-sizes' );
+		add_theme_support( 'disable-custom-colors' );
+
+		add_theme_support( 'editor-styles' );
 	}
 } // End if().
 
@@ -235,3 +241,11 @@ if ( ! function_exists( 'schlicht_admin_script' ) ) {
 		}
 	}
 } // End if().
+
+/**
+ * Dequeue default Gutenberg block styles.
+ */
+function schlicht_dequeue_gutenberg_block_styles() {
+    wp_dequeue_style( 'wp-block-library' );
+	wp_deregister_style( 'wp-block-library' );
+}
