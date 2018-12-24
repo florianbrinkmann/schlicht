@@ -553,6 +553,11 @@ img {
 	height: auto;
 }
 
+figcaption {
+	margin: #{$line-height / 5}em 0 0;
+	font-style: italic;
+}
+
 table {
 	border-spacing: 0;
 	width: 100%;
