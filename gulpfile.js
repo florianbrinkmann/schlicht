@@ -40,7 +40,7 @@ function sassProduction() {
 }
 
 function watchTask() {
-	return gulp.watch('css/scss/*.scss', gulp.series(
+	return gulp.watch('css/**/*.scss', gulp.series(
 		sassTask,
 		rtlTask
 	))
@@ -49,12 +49,12 @@ function watchTask() {
 gulp.task('default', gulp.series(
 		sassTask,
 		rtlTask,
-		watchTask,
-	),
+		watchTask
+	)
 );
 
 gulp.task('production', gulp.series(
 		sassProduction,
 		rtlTask
-	),
+	)
 );

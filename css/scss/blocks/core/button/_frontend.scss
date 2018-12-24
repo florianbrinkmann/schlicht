@@ -1,0 +1,50 @@
+.wp-block-button {
+	a {
+		display: inline-block;
+		padding: #{$line-height / 4}em #{$line-height / 2}em #{$line-height / 5}em;
+	}
+
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignleft,
+	&.alignright {
+		margin-top: 1.2em;
+	}
+
+	&.is-style-default,
+	&.is-style-squared {
+		a {
+			background: $color-text;
+			color: $color-white;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background: transparent;
+				color: $color-text;
+			}
+		}
+	}
+
+	&.is-style-default {
+		a {
+			border-radius: .5em;
+		}
+	}
+
+	&.is-style-outline {
+		a {
+			background: none;
+			border: 1px solid currentColor;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background: none;
+				border-color: transparent;
+			}
+		}
+	}
+}

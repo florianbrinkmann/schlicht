@@ -1,3 +1,6 @@
+@import 'abstracts/variables';
+$line-height: 1.6;
+
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 
 /**
@@ -21,12 +24,12 @@
 
 html {
 	background: #f9f9f9;
-	color: #333;
+	color: $color-text;
 	font-family: "Sorts Mill Goudy", serif; /* 1 */
 	-webkit-font-feature-settings: "onum";
 	font-feature-settings: "onum";
 	font-size: 1rem;
-	line-height: 1.6;
+	line-height: $line-height;
 	overflow-y: scroll;
 	-ms-text-size-adjust: 100%; /* 2 */
 	-webkit-text-size-adjust: 100%; /* 2 */
@@ -259,7 +262,6 @@ code {
 
 hr {
 	box-sizing: content-box; /* 1 */
-	height: 0; /* 1 */
 	overflow: visible; /* 2 */
 }
 
@@ -607,13 +609,6 @@ ul ol {
 ul > li {
 	list-style-type: none;
 	position: relative;
-}
-
-hr {
-	border: none;
-	height: 1px;
-	margin: 1.6em auto;
-	width: 33%;
 }
 
 ::-webkit-input-placeholder {
@@ -1044,6 +1039,8 @@ figure.alignright {
 /**
  * Gutenberg blocks.
  */
+
+@import 'blocks/frontend';
 
 /**
  * Comments
