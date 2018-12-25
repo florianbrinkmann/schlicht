@@ -1,4 +1,4 @@
 node_modules
-css/*-rtl.css
-
+css/*.css
+css/*.map
 /vendor/
