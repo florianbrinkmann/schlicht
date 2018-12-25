@@ -1,0 +1,80 @@
+.wp-block-cover {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	margin-top: 1.2em;
+	min-height: 15em;
+	justify-content: center;
+	padding: #{$line-height / 2}em;
+	position: relative;
+
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> * {
+		position: relative;
+	}
+
+	&.alignleft,
+	&.alignright {
+		@media screen and ( max-width: 30em ) {
+			float: none;
+			margin: 0;
+			width: 100%;
+		}
+
+		width: 50%;
+	}
+
+	&.has-background-dim {
+		&::before {
+			background-color: $color-text;
+			content: '';
+			height: 100%;
+			opacity: .5;
+			position: absolute;
+			width: 100%;
+		}
+
+		&-10::before {
+			opacity: .1;
+		}
+
+		&-20::before {
+			opacity: .2;
+		}
+
+		&-30::before {
+			opacity: .3;
+		}
+
+		&-40::before {
+			opacity: .4;
+		}
+
+		&-50::before {
+			opacity: .5;
+		}
+
+		&-60::before {
+			opacity: .6;
+		}
+
+		&-70::before {
+			opacity: .7;
+		}
+
+		&-80::before {
+			opacity: .8;
+		}
+
+		&-90::before {
+			opacity: .9;
+		}
+
+		&-100::before {
+			opacity: 1;
+		}
+	}
+}
