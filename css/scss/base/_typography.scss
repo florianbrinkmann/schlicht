@@ -1,0 +1,129 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 400;
+	margin: 2.25rem 0 0;
+}
+
+h1,
+.entry-title {
+	font-size: 1.476em;
+	line-height: line-height(1.476, 1.25);
+}
+
+h2 {
+	font-size: 1.383em;
+	line-height: line-height(1.383, 1.25);
+}
+
+h3 {
+	font-size: 1.296em;
+	line-height: line-height(1.296, 1.125);
+}
+
+h4 {
+	font-size: 1.215em;
+	line-height: line-height(1.215, 1.125);
+}
+
+h5 {
+	font-size: 1.138em;
+	line-height: line-height(1.138, 1.125);
+}
+
+h6 {
+	font-size: 1em;
+	line-height: $line-height;
+}
+
+h2 + h3 {
+	margin-top: .8em;
+}
+
+h3 + h4 {
+	margin-top: .8em;
+}
+
+h4 + h5 {
+	margin-top: .8em;
+}
+
+h5 + h6 {
+	margin-top: .8rem;
+}
+
+p,
+blockquote {
+	margin: .8em 0 0;
+	padding: 0;
+}
+
+b,
+strong {
+	-webkit-font-feature-settings: "smcp", "onum";
+	font-feature-settings: "smcp", "onum";
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: .06em;
+	text-transform: lowercase;
+}
+
+blockquote {
+	margin-left: .375rem;
+	padding-left: .8rem;
+	position: relative;
+}
+
+blockquote::before {
+	border: 1px solid #333;
+	border-right: 0;
+	content: '';
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: -.1rem;
+	width: .2rem;
+}
+
+blockquote cite {
+	display: block;
+	margin-top: .375rem;
+}
+
+cite {
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";
+	font-style: normal;
+	letter-spacing: .06rem;
+	text-transform: lowercase;
+}
+
+a {
+	background: transparent url('../img/link-underline.png') repeat no-repeat 0 93%;
+	background: transparent -webkit-linear-gradient(left, #333, #333) no-repeat 0 93%;
+	background: transparent linear-gradient(90deg, #333, #333) no-repeat 0 93%;
+	background-size: 100% 1px;
+	color: inherit;
+	outline-width: 0;
+	text-decoration: none;
+	-webkit-text-decoration-skip: objects; /* 2 */
+	-webkit-transition: all .2s ease 0s;
+	transition: all .2s ease 0s;
+}
+
+a:active,
+a:hover,
+a:focus,
+.current-menu-item a {
+	background-position: 0 calc(100% + 2px);
+}
+
+a:focus {
+	background-image: -webkit-linear-gradient(left, rgba(51, 51, 51, .7), rgba(51, 51, 51, .7));
+	background-image: linear-gradient(90deg, rgba(51, 51, 51, .7), rgba(51, 51, 51, .7));
+	background-size: 100% 3px;
+	background-position: 0 calc(93% + 2px);
+}

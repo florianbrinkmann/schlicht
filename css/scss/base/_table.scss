@@ -1,0 +1,32 @@
+table {
+	border-spacing: 0;
+	margin: .8em 0 0;
+	padding: 0;
+	width: 100%;
+}
+
+th {
+	border-bottom: 2px solid;
+	text-align: left;
+	font-weight: normal;
+}
+
+td {
+	border: 0;
+	border-bottom: 1px solid;
+	margin: 0;
+}
+
+tr:last-child td {
+	border-bottom: 0;
+}
+
+td,
+th {
+	padding: .375rem;
+}
+
+th {
+	letter-spacing: .06em;
+	text-transform: uppercase;
+}

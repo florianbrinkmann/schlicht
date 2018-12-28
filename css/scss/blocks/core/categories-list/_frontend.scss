@@ -1,0 +1,13 @@
+.wp-block-categories-list {
+	&.alignleft {
+	}
+
+	&.aligncenter {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&.alignright {
+	}
+}

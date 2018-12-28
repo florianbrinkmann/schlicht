@@ -1,3 +1,77 @@
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+
+.wp-block {
+	background: #f9f9f9;
+	color: $color-text;
+	font-family: "Sorts Mill Goudy", serif; /* 1 */
+	-webkit-font-feature-settings: "onum";
+	font-feature-settings: "onum";
+	font-size: 1em;
+	line-height: $line-height;
+	max-width: 37em;
+	-ms-text-size-adjust: 100%; /* 2 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+	word-wrap: break-word;
+
+	@media screen and (min-width: 40em) {
+		font-size: 1.1em;
+	}
+
+	@media screen and (min-width: 45em) {
+		font-size: 1.2em;
+	}
+}
+
+.wp-block .wp-block {
+	font-size: inherit;
+}
+
+p {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.mce-content-body,
+.editor-rich-text__tinymce {
+	line-height: inherit;
+}
+
+.wp-block-heading h1.editor-rich-text__tinymce {
+	font-size: 1.476em;
+	line-height: line-height(1.476, 1.25);
+}
+
+.wp-block-heading h2.editor-rich-text__tinymce {
+	font-size: 1.383em;
+	line-height: line-height(1.383, 1.25);
+}
+
+.wp-block-heading h3.editor-rich-text__tinymce {
+	font-size: 1.296em;
+	line-height: line-height(1.296, 1.125);
+}
+
+.wp-block-heading h4.editor-rich-text__tinymce {
+	font-size: 1.215em;
+	line-height: line-height(1.215, 1.125);
+}
+
+.wp-block-heading h5.editor-rich-text__tinymce {
+	font-size: 1.138em;
+	line-height: line-height(1.138, 1.125);
+}
+
+.wp-block-heading h6.editor-rich-text__tinymce {
+	font-size: 1em;
+	line-height: $line-height;
+}
+
+@import '../base/html';
+@import '../base/fonts';
+@import '../base/typography';
+@import '../base/list';
+@import '../base/table';
 @import 'core/quote/editor';
 @import 'core/button/editor';
 @import 'core/gallery/editor';
@@ -6,4 +80,6 @@
 @import 'core/separator/editor';
 @import 'core/verse/editor';
 @import 'core/cover/editor';
+@import 'core/categories-list/editor';
+@import 'core/archives-list/editor';
 @import 'core/latest-posts/editor';

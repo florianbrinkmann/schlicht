@@ -1,1 +1,8 @@
 @import 'frontend';
+.wp-block-gallery {
+	.blocks-gallery-image,
+	.blocks-gallery-item {
+		margin: 0;
+		width: auto;
+	}
+}

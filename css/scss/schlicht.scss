@@ -1,40 +1,14 @@
-@import 'abstracts/variables';
 $line-height: 1.6;
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'base/html';
+@import 'base/fonts';
+@import 'base/typography';
+@import 'base/list';
+@import 'base/table';
+
 
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
-
-/**
- * 1. Change the default font family in all browsers (opinionated).
- * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
- */
-
- @font-face {
-	font-family: 'Sorts Mill Goudy';
-	font-style: normal;
-	font-weight: 400;
-	src: local('OFL Sorts Mill Goudy'), url('../fonts/sortsmillgoudy-400.woff') format('woff')
-}
-
-@font-face {
-	font-family: 'Sorts Mill Goudy';
-	font-style: italic;
-	font-weight: 400;
-	src: local('OFL Sorts Mill Goudy Italic'), url('../fonts/sortsmillgoudy-400i.woff') format('woff')
-}
-
-html {
-	background: #f9f9f9;
-	color: $color-text;
-	font-family: "Sorts Mill Goudy", serif; /* 1 */
-	-webkit-font-feature-settings: "onum";
-	font-feature-settings: "onum";
-	font-size: 1rem;
-	line-height: $line-height;
-	overflow-y: scroll;
-	-ms-text-size-adjust: 100%; /* 2 */
-	-webkit-text-size-adjust: 100%; /* 2 */
-	word-wrap: break-word;
-}
 
 /**
  * Remove the margin in all browsers (opinionated).
@@ -109,43 +83,6 @@ template, /* 1 */
 
 /* Links
    ========================================================================== */
-
-/**
- * 1. Remove the gray background on active links in IE 10.
- * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
- */
-
-a {
-	background: transparent url('../img/link-underline.png') repeat no-repeat 0 93%;
-	background: transparent -webkit-linear-gradient(left, #333, #333) no-repeat 0 93%;
-	background: transparent linear-gradient(90deg, #333, #333) no-repeat 0 93%;
-	background-size: 100% 1px;
-	color: inherit;
-	outline-width: 0;
-	text-decoration: none;
-	-webkit-text-decoration-skip: objects; /* 2 */
-	-webkit-transition: all .2s ease 0s;
-	transition: all .2s ease 0s;
-}
-
-/**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
- */
-
-a:active,
-a:hover,
-a:focus,
-.current-menu-item a {
-	background-position: 0 calc(100% + 2px);
-}
-
-a:focus {
-	background-image: -webkit-linear-gradient(left, rgba(51, 51, 51, .7), rgba(51, 51, 51, .7));
-	background-image: linear-gradient(90deg, rgba(51, 51, 51, .7), rgba(51, 51, 51, .7));
-	background-size: 100% 3px;
-	background-position: 0 calc(93% + 2px);
-}
 
 /* Text-level semantics
    ========================================================================== */
@@ -438,113 +375,9 @@ legend {
 /*------------------------------------*\
 	#BASE
 \*------------------------------------*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: 400;
-	margin: 2.25rem 0 0;
-}
-
-h1,
-.entry-title {
-	font-size: 1.476rem;
-	line-height: 2rem;
-}
-
-h2 {
-	font-size: 1.383rem;
-	line-height: 2rem;
-}
-
-h3 {
-	font-size: 1.296rem;
-	line-height: 1.8rem;
-}
-
-h4 {
-	font-size: 1.215rem;
-	line-height: 1.6rem;
-}
-
-h5 {
-	font-size: 1.138rem;
-	line-height: 1.4rem;
-}
-
-h6 {
-	font-size: 1rem;
-	line-height: 1.4rem;
-}
-
-h2 + h3 {
-	margin-top: .8rem;
-}
-
-h3 + h4 {
-	margin-top: .8rem;
-}
-
-h4 + h5 {
-	margin-top: .8rem;
-}
-
-h5 + h6 {
-	margin-top: .8rem;
-}
-
-p,
-blockquote,
-dl,
-ol,
-ul,
-table,
 figure {
 	margin: .8rem 0 0;
 	padding: 0;
-}
-
-b,
-strong {
-	-webkit-font-feature-settings: "smcp", "onum";
-	font-feature-settings: "smcp", "onum";
-	font-style: normal;
-	font-weight: 400;
-	letter-spacing: .06rem;
-	text-transform: lowercase;
-}
-
-blockquote {
-	margin-left: .375rem;
-	padding-left: .8rem;
-	position: relative;
-}
-
-blockquote::before {
-	border: 1px solid #333;
-	border-right: 0;
-	content: '';
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: -.1rem;
-	width: .2rem;
-}
-
-blockquote cite {
-	display: block;
-	margin-top: .375rem;
-}
-
-cite {
-	-webkit-font-feature-settings: "smcp";
-	font-feature-settings: "smcp";
-	font-style: normal;
-	letter-spacing: .06rem;
-	text-transform: lowercase;
 }
 
 figure,
@@ -556,64 +389,6 @@ img {
 figcaption {
 	margin: #{$line-height / 5}em 0 0;
 	font-style: italic;
-}
-
-table {
-	border-spacing: 0;
-	width: 100%;
-}
-
-th {
-	border-bottom: 2px solid;
-	text-align: left;
-	font-weight: normal;
-}
-
-td {
-	border: 0;
-	border-bottom: 1px solid;
-	margin: 0;
-}
-
-tr:last-child td {
-	border-bottom: 0;
-}
-
-td,
-th {
-	padding: .375rem;
-}
-
-dt,
-th {
-	letter-spacing: .06rem;
-	text-transform: uppercase;
-}
-
-dd {
-	margin-bottom: .8rem;
-	margin-left: .8rem;
-}
-
-ul,
-ol {
-	padding-left: .8rem;
-}
-
-li {
-	margin-top: .375rem;
-}
-
-ul ul,
-ol ol,
-ol ul,
-ul ol {
-	margin: 0;
-}
-
-ul > li {
-	list-style-type: none;
-	position: relative;
 }
 
 ::-webkit-input-placeholder {
@@ -999,13 +774,6 @@ figure.alignright {
 	margin-top: 1.2rem;
 }
 
-.entry-content ul > li::before {
-	content: "–";
-	left: -.8rem;
-	top: 0;
-	position: absolute;
-}
-
 .entry-footer {
 	clear: both;
 	margin-left: auto;
@@ -1293,28 +1061,9 @@ figure.alignright {
 	blockquote {
 		margin-left: .8rem;
 	}
-
-	dd {
-		margin-left: 1.6rem;
-	}
-
-	ul ul,
-	ol ol {
-		padding-left: 1.6rem;
-	}
-}
-
-@media screen and (min-width: 40em) {
-	html {
-		font-size: 1.1em;
-	}
 }
 
 @media screen and (min-width: 45em) {
-	html {
-		font-size: 1.2em;
-	}
-
 	.primary-nav li {
 		display: block;
 		float: left;
@@ -1329,11 +1078,6 @@ figure.alignright {
 }
 
 @media screen and (min-width: 60em) {
-	ul,
-	ol {
-		padding-left: 0;
-	}
-
 	.sidebar-template .main-content {
 		box-sizing: border-box;
 		clear: both;

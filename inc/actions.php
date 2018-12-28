@@ -13,8 +13,8 @@ add_action( 'after_setup_theme', 'schlicht_load_translation' );
 // Add theme support for various core features.
 add_action( 'after_setup_theme', 'schlicht_add_theme_support' );
 
-// Add editor style sheet.
-add_action( 'after_setup_theme', 'schlicht_add_editor_style' );
+// Add editor stylesheet.
+add_action( 'admin_init', 'schlicht_add_editor_style' );
 
 // Set the content width.
 add_action( 'after_setup_theme', 'schlicht_set_content_width' );

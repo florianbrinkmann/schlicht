@@ -1,1 +1,55 @@
 @import 'frontend';
+
+.wp-block-button {
+	.wp-block-button__link {
+		display: inline-block;
+		padding: #{$line-height / 4}em #{$line-height / 2}em #{$line-height / 5}em;
+	}
+
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignleft,
+	&.alignright {
+		.wp-block-button__link {
+			margin-top: 1.2em;
+		}
+	}
+
+	&.is-style-default,
+	&.is-style-squared {
+		.wp-block-button__link {
+			background: $color-text;
+			color: $color-white;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background: transparent;
+				color: $color-text;
+			}
+		}
+	}
+
+	&.is-style-default {
+		.wp-block-button__link {
+			border-radius: .5em;
+		}
+	}
+
+	&.is-style-outline {
+		.wp-block-button__link {
+			background: none;
+			border: 1px solid currentColor;
+			border-radius: 0;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background: none;
+				border-color: transparent;
+			}
+		}
+	}
+}
