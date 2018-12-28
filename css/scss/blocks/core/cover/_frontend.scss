@@ -18,7 +18,7 @@
 
 	&.alignleft,
 	&.alignright {
-		@media screen and ( max-width: 30em ) {
+		@media screen and (max-width: 30em) {
 			float: none;
 			margin: 0;
 			width: 100%;
