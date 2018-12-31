@@ -41,7 +41,7 @@
 	font-family: "Sorts Mill Goudy", serif; /* 1 */
 	-webkit-font-feature-settings: "onum";
 	font-feature-settings: "onum";
-	font-size: 1em;
+	font-size: 1rem;
 	line-height: $line-height;
 	max-width: 37em;
 	-ms-text-size-adjust: 100%; /* 2 */
@@ -49,15 +49,15 @@
 	word-wrap: break-word;
 
 	@media screen and (min-width: 40em) {
-		font-size: 1.1em;
+		font-size: 1.1rem;
 	}
 
 	@media screen and (min-width: 45em) {
-		font-size: 1.2em;
+		font-size: 1.2rem;
 	}
 
 	@media screen and (min-width: 50em) {
-		font-size: 1.3em;
+		font-size: 1.3rem;
 	}
 }
 

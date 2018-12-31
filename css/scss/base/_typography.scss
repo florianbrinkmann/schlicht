@@ -139,7 +139,8 @@ a:focus {
 	text-transform: lowercase;
 }
 
-.dropcap {
+.dropcap,
+p.has-drop-cap::first-letter {
 	float: left;
 	-webkit-font-feature-settings: unset;
 	font-feature-settings: unset;
@@ -151,6 +152,13 @@ a:focus {
 		margin-top: 0.45rem;
 	}
 	text-transform: uppercase;
+}
+
+p.has-drop-cap::first-letter {
+	margin-right: 0;
+	@if $font == 'goudy' {
+		margin-top: 0.3rem;
+	}
 }
 
 .side-note {
