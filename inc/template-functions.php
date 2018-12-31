@@ -124,9 +124,9 @@ if ( ! function_exists( 'schlicht_add_editor_style' ) ) {
 		// Check if Vollkorn option is disabled.
 		if ( false === $vollkorn_font ) {
 			// Include editor styles with default font Sorts Mill Goudy.
-			add_editor_style( "css/editor-style.css" );
+			add_editor_style( 'css/editor-style.css' );
 		} else {
-			add_editor_style( "css/editor-style-vollkorn.css" );
+			add_editor_style( 'css/editor-style-vollkorn.css' );
 		}
 	}
 } // End if().
@@ -237,6 +237,6 @@ if ( ! function_exists( 'schlicht_admin_script' ) ) {
  * Dequeue default Gutenberg block styles.
  */
 function schlicht_dequeue_gutenberg_block_styles() {
-    wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library' );
 	wp_deregister_style( 'wp-block-library' );
 }
