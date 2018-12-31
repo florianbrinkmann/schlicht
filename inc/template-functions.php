@@ -113,7 +113,7 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 
 		add_theme_support( 'editor-styles' );
 	}
-} // End if().
+}
 
 if ( ! function_exists( 'schlicht_add_editor_style' ) ) {
 	/**
@@ -131,7 +131,7 @@ if ( ! function_exists( 'schlicht_add_editor_style' ) ) {
 			add_editor_style( 'css/editor-style-vollkorn.css' );
 		}
 	}
-} // End if().
+}
 
 if ( ! function_exists( 'schlicht_register_menus' ) ) {
 	/**
@@ -147,7 +147,7 @@ if ( ! function_exists( 'schlicht_register_menus' ) ) {
 			]
 		);
 	}
-} // End if().
+}
 
 if ( ! function_exists( 'schlicht_register_sidebars' ) ) {
 	/**
@@ -180,7 +180,7 @@ if ( ! function_exists( 'schlicht_register_sidebars' ) ) {
 			]
 		);
 	}
-} // End if().
+}
 
 if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 	/**
@@ -218,7 +218,7 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 			}
 		}
 	}
-} // End if().
+}
 
 if ( ! function_exists( 'schlicht_admin_script' ) ) {
 	/**
@@ -233,7 +233,7 @@ if ( ! function_exists( 'schlicht_admin_script' ) ) {
 			wp_enqueue_script( 'schlicht_editor-functions', get_theme_file_uri( 'js/backend-editor-functions.js' ), [], false, true );
 		}
 	}
-} // End if().
+}
 
 /**
  * Dequeue default Gutenberg block styles.

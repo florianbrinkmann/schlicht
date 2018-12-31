@@ -117,7 +117,7 @@ function schlicht_theme_update( $transient ) {
 				$transient->response['schlicht']['package'] = $theme_package;
 			}
 		}
-	} // End if().
+	}
 
 	return $transient;
 }

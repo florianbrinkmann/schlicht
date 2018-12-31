@@ -21,7 +21,7 @@ if ( ! function_exists( 'schlicht_remove_more_link_scroll' ) ) {
 
 		return $link;
 	}
-} // End if().
+}
 
 if ( ! function_exists( 'schlicht_body_classes' ) ) {
 	/**
@@ -50,4 +50,4 @@ if ( ! function_exists( 'schlicht_body_classes' ) ) {
 
 		return $classes;
 	}
-} // End if().
+}

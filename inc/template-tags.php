@@ -20,13 +20,13 @@ if ( ! function_exists( 'schlicht_get_custom_logo' ) ) {
 			if ( has_custom_logo() ) {
 				// Return the custom logo.
 				return get_custom_logo();
-			} // End if().
-		} // End if().
+			}
+		}
 
 		// Return empty string, if we do not have a custom logo or WordPress is older than 4.5.
 		return '';
 	}
-} // End if().
+}
 
 if ( ! function_exists( 'schlicht_the_title' ) ) {
 	/**
@@ -193,7 +193,7 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 			<?php
 		};
 	}
-} // End if().
+}
 
 if ( ! function_exists( 'schlicht_get_comments_by_type' ) ) {
 	/**
@@ -213,7 +213,7 @@ if ( ! function_exists( 'schlicht_get_comments_by_type' ) ) {
 
 		return $comments_by_type;
 	}
-} // End if().
+}
 
 if ( ! function_exists( 'schlicht_comments' ) ) {
 	/**
@@ -284,4 +284,4 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 		</div>
 		<?php
 	}
-} // End if().
+}
