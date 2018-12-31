@@ -2,7 +2,7 @@
 /**
  * Template for displaying pages
  *
- * @version 1.3.2
+ * @version 1.4.0
  *
  * @package Schlicht
  */
