@@ -836,10 +836,14 @@ figure.alignright {
 .comment {
 	list-style-type: none;
 	margin-top: 2.25rem;
-}
 
-.comment:first-of-type {
-	margin-top: 0;
+	&:first-of-type {
+		margin-top: 0;
+	}
+
+	&::before {
+		display: none;
+	}
 }
 
 .comment-meta {
