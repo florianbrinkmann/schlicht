@@ -1,0 +1,26 @@
+.wp-block-latest-comments {
+	> li {
+		align-items: flex-start;
+		display: flex;
+		list-style-type: none;
+
+		+ li {
+			margin-top: #{$line-height}em;
+		}
+	}
+
+	.avatar {
+		margin-right: #{$line-height / 2}rem;
+		margin-top: .2em;
+	}
+
+	time::before {
+		content: ' · ';
+	}
+}
+
+.wp-block-latest-comments__comment-excerpt {
+	p {
+		margin-top: #{$line-height / 4}em;
+	}
+}
