@@ -1,0 +1,65 @@
+::-webkit-input-placeholder {
+	opacity: 1;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	opacity: 1;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+	opacity: 1;
+}
+
+:-ms-input-placeholder {
+	opacity: 1;
+}
+
+label {
+	display: block;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+	overflow: auto;
+	resize: vertical;
+}
+
+input:not([type=submit]),
+textarea {
+	background: none;
+	border: 1px solid;
+	padding: .375rem .375rem .1rem;
+	width: 100%;
+}
+
+[type="submit"] {
+	background: none;
+	border: 1px solid;
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";
+	letter-spacing: .06rem;
+	margin-top: .375rem;
+	padding: .2rem .375rem;
+	text-transform: lowercase;
+}
+
+input:hover,
+input:focus,
+input:active,
+textarea:hover,
+textarea:focus,
+textarea:active {
+	border-left-width: 3px;
+	outline: none !important;
+	padding-left: calc(.375rem - 2px);
+}
+
+[type=submit]:hover,
+[type=submit]:focus,
+[type=submit]:active {
+	border-right-width: 3px;
+	padding-right: calc(.375rem - 2px);
+}

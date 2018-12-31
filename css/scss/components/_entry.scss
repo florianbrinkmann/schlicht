@@ -1,0 +1,103 @@
+.entry-content .page-numbers {
+	margin-top: 1.6rem;
+}
+
+.entry-header {
+	position: relative;
+}
+
+.entry-header .author-date {
+	color: #666;
+	font-style: italic;
+}
+
+.entry-header .author {
+	display: inline;
+	margin-top: 0;
+}
+
+.entry-header .date {
+	display: inline;
+}
+
+.entry-header .date::before {
+	content: " · ";
+	font-style: normal;
+}
+
+.entry-header .featured {
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";
+	letter-spacing: .03rem;
+	position: absolute;
+	left: 0;
+	text-transform: lowercase;
+	transform: translateY(-100%);
+}
+
+.entry-title {
+	margin-top: 0;
+}
+
+.entry-title a,
+.entry-header .date a {
+	background-size: 100% 1px;
+	background-position: 0 calc(100% + 2px);
+}
+
+.entry-title a:hover,
+.entry-title a:active,
+.entry-header .date a:hover,
+.entry-header .date a:active {
+	background-position: 0 93%;
+}
+
+.entry-title a:focus,
+.entry-header .date a:focus {
+	background-size: 100% 3px;
+	background-position: 0 calc(93% + 2px);
+}
+
+.entry-content {
+	margin-top: 1.2rem;
+}
+
+.entry-footer {
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: .4rem;
+}
+
+.entry-footer-content {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.entry-footer-block {
+	box-sizing: border-box;
+	color: #666;
+	-webkit-font-feature-settings: "smcp", "onum";
+	font-feature-settings: "smcp", "onum";
+	letter-spacing: .06rem;
+	line-height: 1.3rem;
+	text-transform: lowercase;
+	width: 100%;
+
+	@media screen and (min-width: 60em) {
+		padding-left: 1.6rem;
+		width: 50%;
+	}
+}
+
+.entry-footer-block + .entry-footer-block {
+	text-indent: 0;
+	margin-top: .8rem;
+}
+
+.entry-footer-block-label {
+	display: block;
+}

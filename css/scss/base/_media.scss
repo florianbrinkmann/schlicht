@@ -1,0 +1,88 @@
+figure {
+	margin: .8rem 0 0;
+	padding: 0;
+}
+
+figure,
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+figcaption {
+	margin: #{$line-height / 5}em 0 0;
+	font-style: italic;
+}
+
+.alignleft {
+	display: block;
+	float: left;
+	margin-right: 1.125rem;
+}
+
+.alignright {
+	display: block;
+	float: right;
+	margin-left: 1.125rem;
+}
+
+.aligncenter,
+.alignnone {
+	display: block;
+	margin: 1.6rem 0;
+}
+
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft,
+.alignright {
+	margin-top: .4rem;
+	margin-bottom: .8rem;
+}
+
+figure.alignleft,
+figure.alignright {
+	margin-top: 1.125rem;
+}
+
+.alignleft img,
+.alignright img {
+	margin: 0;
+}
+
+.wp-caption-text {
+	font-style: italic;
+	margin-top: .3rem;
+}
+
+.gallery {
+	margin-left: -.8rem;
+	margin-right: -.8rem;
+}
+
+.gallery a {
+	border-bottom: none;
+}
+
+.gallery::after {
+	clear: both;
+	content: '';
+	display: block;
+}
+
+.gallery-item {
+	display: block;
+	float: left;
+	margin: .8rem;
+}
+
+.gallery-caption {
+	display: none;
+}
+
+.gallery-size-large .gallery-caption {
+	display: block;
+}

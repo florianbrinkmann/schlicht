@@ -47,6 +47,13 @@ Source: http://vollkorn-typeface.com/
 
 ## Changelog
 
+### 1.4.0 - 31.12.2018
+#### Added
+* Gutenberg compatibility.
+
+#### Fixed
+* Coding standard issues.
+
 ### 1.3.5 - 04.09.2018
 #### Fixed
 * Wrong usage of `get_theme_file_uri()` function.

@@ -1,0 +1,22 @@
+.site-title {
+	font-size: 1.575rem;
+	line-height: 2rem;
+	margin: 0;
+}
+
+.site-title a {
+	background-position: 0 calc(100% + 2px);
+	background-size: 100% 1px;
+}
+
+.site-title a:hover,
+.site-title a:active,
+.site-title a:focus {
+	background-position: 0 calc(93% + 2px);
+}
+
+.site-description {
+	color: #666;
+	font-style: italic;
+	margin-top: .375rem;
+}

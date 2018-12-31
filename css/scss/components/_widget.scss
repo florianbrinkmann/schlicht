@@ -1,0 +1,26 @@
+.widget {
+	margin-top: 2.25rem;
+}
+
+.widget-title {
+	margin-top: 0;
+}
+
+.widget li::before {
+	content: "–";
+	left: -.8rem;
+	top: 0;
+	position: absolute;
+}
+
+.tagcloud {
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";
+	letter-spacing: .06rem;
+	text-transform: lowercase;
+}
+
+.widget_calendar tbody td,
+.widget_calendar th {
+	text-align: center;
+}

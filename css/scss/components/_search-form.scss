@@ -1,0 +1,36 @@
+.search-form {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin-top: .8rem;
+}
+
+.search-form label {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+}
+
+.search-field {
+	border: none;
+	border-bottom: 1px solid;
+}
+
+.search-submit {
+	height: 1.6rem;
+	margin-left: .375rem;
+	padding: 0;
+	position: relative;
+	top: .3rem;
+	width: 1.6rem;
+}
+
+.search-submit:hover,
+.search-submit:focus,
+.search-submit:active {
+	padding: 0;
+	border: 0;
+}

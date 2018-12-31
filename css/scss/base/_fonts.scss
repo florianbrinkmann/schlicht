@@ -1,13 +1,15 @@
-@font-face {
-	font-family: 'Sorts Mill Goudy';
-	font-style: normal;
-	font-weight: 400;
-	src: local('OFL Sorts Mill Goudy'), url('../fonts/sortsmillgoudy-400.woff') format('woff')
-}
+@if $font == 'goudy' {
+	@font-face {
+		font-family: 'Sorts Mill Goudy';
+		font-style: normal;
+		font-weight: 400;
+		src: local('OFL Sorts Mill Goudy'), url('../fonts/sortsmillgoudy-400.woff') format('woff')
+	}
 
-@font-face {
-	font-family: 'Sorts Mill Goudy';
-	font-style: italic;
-	font-weight: 400;
-	src: local('OFL Sorts Mill Goudy Italic'), url('../fonts/sortsmillgoudy-400i.woff') format('woff')
+	@font-face {
+		font-family: 'Sorts Mill Goudy';
+		font-style: italic;
+		font-weight: 400;
+		src: local('OFL Sorts Mill Goudy Italic'), url('../fonts/sortsmillgoudy-400i.woff') format('woff')
+	}
 }

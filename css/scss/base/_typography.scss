@@ -75,6 +75,10 @@ blockquote {
 	margin-left: .375rem;
 	padding-left: .8rem;
 	position: relative;
+
+	@media screen and (min-width: 30em) {
+		margin-left: .8rem;
+	}
 }
 
 blockquote::before {
@@ -126,4 +130,44 @@ a:focus {
 	background-image: linear-gradient(90deg, rgba(51, 51, 51, .7), rgba(51, 51, 51, .7));
 	background-size: 100% 3px;
 	background-position: 0 calc(93% + 2px);
+}
+
+.small-caps {
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";
+	letter-spacing: .06em;
+	text-transform: lowercase;
+}
+
+.dropcap {
+	float: left;
+	-webkit-font-feature-settings: unset;
+	font-feature-settings: unset;
+	padding: 0;
+	@if $font == 'goudy' {
+		font-size: 3.353em;
+		height: 2.2802rem;
+		line-height: .8em;
+		margin-top: 0.45rem;
+	}
+	text-transform: uppercase;
+}
+
+.side-note {
+	font-style: italic;
+	display: block;
+
+	@media screen and (min-width: 30em) {
+		float: left;
+		font-style: italic;
+		display: block;
+		margin-bottom: .8em;
+		margin-right: 1.2em;
+		max-width: 35%;
+	}
+
+	@media screen and (min-width: 60em) {
+		margin-left: -1.6rem;
+		max-width: calc(35% + 1.6rem);
+	}
 }

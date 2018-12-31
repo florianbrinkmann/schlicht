@@ -1,0 +1,84 @@
+.comment {
+	list-style-type: none;
+	margin-top: 2.25rem;
+
+	&:first-of-type {
+		margin-top: 0;
+	}
+
+	&::before {
+		display: none;
+	}
+}
+
+.comment-meta {
+	max-width: 35rem;
+	text-align: center;
+}
+
+.comment .avatar {
+	display: block;
+	margin: 0 auto;
+}
+
+.comment-author-name {
+	display: block;
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";
+	letter-spacing: .06rem;
+	margin-top: .8rem;
+	text-transform: lowercase;
+}
+
+.reply {
+	display: inline-block;
+	margin-top: .375rem;
+}
+
+.comment-date {
+	margin-top: 0;
+}
+
+.comment-form p + p {
+	text-indent: 0;
+	margin-top: .8rem;
+}
+
+.comment-form-cookies-consent {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: baseline;
+	-ms-flex-align: baseline;
+	align-items: baseline;
+}
+
+.comment-form-cookies-consent label {
+	margin-left: .5em;
+}
+
+.comment-form-cookies-consent input {
+	width: auto;
+}
+
+.comment-navigation {
+	margin-top: 1.6rem;
+}
+
+@media screen and (min-width: 60em) {
+	.comment-meta,
+	.comment-content-wrapper {
+		box-sizing: border-box;
+	}
+
+	.comment-meta {
+		position: relative;
+		text-align: left;
+	}
+
+	.comment .avatar {
+		position: absolute;
+		left: -3rem;
+		top: .5rem;
+	}
+}

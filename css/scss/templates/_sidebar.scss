@@ -1,0 +1,74 @@
+.sidebar-template {
+	@media screen and (min-width: 60em) {
+		.sidebar {
+			float: left;
+			width: 30%;
+
+			.widget:first-of-type {
+				margin-top: 4.8rem;
+			}
+		}
+
+		.main-content {
+			box-sizing: border-box;
+			clear: both;
+			float: left;
+			padding-right: 2.4rem;
+			width: 70%;
+		}
+
+		.entry-header {
+			float: none;
+			text-align: left;
+			width: 100%;
+
+			.date {
+				display: inline;
+				margin-top: inherit;
+
+				&::before {
+					display: inline;
+				}
+			}
+
+			@media screen and (min-width: 80em) {
+				width: inherit;
+			}
+		}
+
+		.entry-title {
+			font-size: 1.476rem;
+			line-height: 2rem;
+		}
+
+		.author {
+			display: inline;
+		}
+
+		.entry-content {
+			padding-left: 0;
+			width: 100%;
+
+			> :first-child {
+				margin-top: 1.2rem;
+			}
+
+			@media screen and (min-width: 80em) {
+				width: inherit;
+			}
+		}
+
+		.entry-footer {
+			margin-left: -1.6rem;
+			width: calc(100% + 1.6rem);
+
+			@media screen and (min-width: 80em) {
+				width: inherit;
+			}
+		}
+
+		.comments-area {
+			margin-left: 0;
+		}
+	}
+}
