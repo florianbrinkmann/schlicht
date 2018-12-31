@@ -21,14 +21,16 @@ function schlicht_customize_register( $wp_customize ) {
 
 	// Add Section for theme options.
 	$wp_customize->add_section(
-		'schlicht_options', [
+		'schlicht_options',
+		[
 			'title' => __( 'Theme options', 'schlicht' ),
 		]
 	);
 
 	// Add setting for alternative post layout.
 	$wp_customize->add_setting(
-		'schlicht_alternate_post_layout', [
+		'schlicht_alternate_post_layout',
+		[
 			'default'           => 0,
 			'sanitize_callback' => 'schlicht_sanitize_checkbox',
 		]
@@ -36,7 +38,8 @@ function schlicht_customize_register( $wp_customize ) {
 
 	// Add control for alternative post layout.
 	$wp_customize->add_control(
-		'schlicht_alternate_post_layout', [
+		'schlicht_alternate_post_layout',
+		[
 			'type'    => 'checkbox',
 			'section' => 'schlicht_options',
 			'label'   => __( 'Enable alternate post/page layout where title is displayed in a column left of the content (only works if no widgets are in the sidebar).', 'schlicht' ),
@@ -45,7 +48,8 @@ function schlicht_customize_register( $wp_customize ) {
 
 	// Add setting for Vollkorn font option.
 	$wp_customize->add_setting(
-		'schlicht_vollkorn_font', [
+		'schlicht_vollkorn_font',
+		[
 			'default'           => 0,
 			'sanitize_callback' => 'schlicht_sanitize_checkbox',
 		]
@@ -53,7 +57,8 @@ function schlicht_customize_register( $wp_customize ) {
 
 	// Add control for Vollkorn font option.
 	$wp_customize->add_control(
-		'schlicht_vollkorn_font', [
+		'schlicht_vollkorn_font',
+		[
 			'type'    => 'checkbox',
 			'section' => 'schlicht_options',
 			'label'   => __( 'Use the Vollkorn font instead of Sorts Mill Goudy.', 'schlicht' ),

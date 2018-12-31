@@ -1,3 +1,9 @@
+/**
+ * The Gulp file.
+ *
+ * @package Schlicht
+ */
+
 const gulp         = require( 'gulp' );
 const sass         = require( 'gulp-sass' );
 const autoprefixer = require( 'gulp-autoprefixer' );
@@ -43,7 +49,8 @@ function sassProduction() {
 
 function watchTask() {
 	return gulp.watch(
-		'css/**/*.scss', gulp.series(
+		'css/**/*.scss',
+		gulp.series(
 			sassTask,
 			rtlTask
 		)
@@ -51,7 +58,8 @@ function watchTask() {
 }
 
 gulp.task(
-	'default', gulp.series(
+	'default',
+	gulp.series(
 		sassTask,
 		rtlTask,
 		watchTask
@@ -59,7 +67,8 @@ gulp.task(
 );
 
 gulp.task(
-	'production', gulp.series(
+	'production',
+	gulp.series(
 		sassProduction,
 		rtlTask
 	)

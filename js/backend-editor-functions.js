@@ -1,12 +1,14 @@
 // Listen to setup of a TinyMCE instance.
 jQuery( document ).on(
-	'tinymce-editor-setup', function (event, editor) {
+	'tinymce-editor-setup',
+	function (event, editor) {
 		// Add the id of the soon-to-create button to the toolbar1.
 		editor.settings.toolbar1 += ',schlicht-formats';
 
 		// Create the button.
 		editor.addButton(
-			'schlicht-formats', {
+			'schlicht-formats',
+			{
 				// It is a menubutton.
 				type: 'menubutton',
 				text: '»Schlicht« Formats',
@@ -37,10 +39,12 @@ jQuery( document ).on(
 		// Original hint from http://archive.tinymce.com/forum/viewtopic.php?pid=92762#p92762
 		// onInit is deprecated, so https://www.tinymce.com/docs/advanced/migration-guide-from-3.x/#eventhandling
 		editor.on(
-			'init', function () {
+			'init',
+			function () {
 				// Register the new format for the side note.
 				editor.formatter.register(
-					'schlicht_side_note_format', {
+					'schlicht_side_note_format',
+					{
 						// It is the block element div.
 						block: 'div',
 
@@ -54,7 +58,8 @@ jQuery( document ).on(
 
 				// Register the new format for the drop cap.
 				editor.formatter.register(
-					'schlicht_drop_cap_format', {
+					'schlicht_drop_cap_format',
+					{
 						// It is the block element p.
 						block: 'p',
 
@@ -68,7 +73,8 @@ jQuery( document ).on(
 
 				// Callback on drop cap format change.
 				editor.formatter.formatChanged(
-					'schlicht_drop_cap_format', function (state, currentNodeObj) {
+					'schlicht_drop_cap_format',
+					function (state, currentNodeObj) {
 						schlicht_toggle_dropcap_markup( state, currentNodeObj );
 					}
 				);
@@ -102,7 +108,8 @@ function schlicht_toggle_dropcap_markup(state, currentNodeObj) {
 
 		// Loop them to find a paragraph.
 		jQuery.each(
-			parentNodes, function (index, value) {
+			parentNodes,
+			function (index, value) {
 				// Check if it is a paragraph element.
 				if ('P' === parentNodes[index].nodeName) {
 					// Parse the innerHTML

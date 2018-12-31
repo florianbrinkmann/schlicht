@@ -75,7 +75,8 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 
 		// Add theme support for post formats.
 		add_theme_support(
-			'post-formats', [
+			'post-formats',
+			[
 				'aside',
 				'link',
 				'gallery',
@@ -90,7 +91,8 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 
 		// Add theme support for HTML5 markup for core components.
 		add_theme_support(
-			'html5', [
+			'html5',
+			[
 				'comment-list',
 				'comment-form',
 				'search-form',

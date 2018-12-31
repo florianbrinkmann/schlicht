@@ -17,7 +17,8 @@ function schlicht_update_customize_register( $wp_customize ) {
 	if ( ! is_multisite() ) {
 		// Add setting for URL.
 		$wp_customize->add_setting(
-			'schlicht_upgrade_url', [
+			'schlicht_upgrade_url',
+			[
 				'type'              => 'option',
 				'default'           => '',
 				'sanitize_callback' => 'schlicht_esc_update_url',
@@ -26,7 +27,8 @@ function schlicht_update_customize_register( $wp_customize ) {
 
 		// Add control for update URL.
 		$wp_customize->add_control(
-			'schlicht_upgrade_url', [
+			'schlicht_upgrade_url',
+			[
 				'priority' => 1,
 				'type'     => 'url',
 				'section'  => 'schlicht_options',

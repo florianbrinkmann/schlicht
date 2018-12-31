@@ -26,7 +26,7 @@
 	?>
 </head>
 <body <?php body_class(); ?>>
-<a class="screen-reader-text skip-link" href="#content"><?php _e( '[Skip to Content]', 'schlicht' ); ?></a>
+<a class="screen-reader-text skip-link" href="#content"><?php esc_html_e( '[Skip to Content]', 'schlicht' ); ?></a>
 <header class="site-header" role="banner">
 	<?php
 	// Check if we have a custom logo.
@@ -41,7 +41,7 @@
 		}
 
 		// Display the logo.
-		echo schlicht_get_custom_logo();
+		echo schlicht_get_custom_logo(); // phpcs:ignore
 
 		// Check again for home page which display the latests posts.
 		if ( ( is_front_page() && is_home() ) ) {
@@ -54,44 +54,45 @@
 		if ( ( is_front_page() && is_home() ) ) {
 			?>
 			<h1 class="site-title">
-			<?php
-				// Check if we are not on the first page of the posts page. If so, we link the title to the home page.
-			if ( is_paged() ) {
-				?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<?php
+					// Check if we are not on the first page of the posts page. If so, we link the title to the home page.
+				if ( is_paged() ) {
+					?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<?php
-			}
+				}
 
-					// Display the site title.
-					bloginfo( 'name' );
+				// Display the site title.
+				bloginfo( 'name' );
 
 					// Check again for paged view.
-			if ( is_paged() ) {
-				?>
-				</a>
-			<?php } ?></h1>
+				if ( is_paged() ) {
+					?>
+					</a>
+				<?php } ?>
+			</h1>
 		<?php } else { ?>
 			<p class="site-title">
 				<?php
 				// Check if we are not on the front page. In that case, we link the title.
 				if ( ! is_front_page() ) {
 					?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<?php
 				}
 
-					// Display the blog title.
-					bloginfo( 'name' );
+				// Display the blog title.
+				bloginfo( 'name' );
 
-					// Check again for front page.
+				// Check again for front page.
 				if ( ! is_front_page() ) {
 					?>
-				</a>
-			<?php } ?>
+					</a>
+				<?php } ?>
 			</p>
 			<?php
-} // End if().
-	} // End if().
+		}
+	}
 
 	// Get the site description.
 	$description = get_bloginfo( 'description', 'display' );

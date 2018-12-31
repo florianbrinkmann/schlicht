@@ -40,15 +40,19 @@ if ( ! function_exists( 'schlicht_the_title' ) ) {
 			the_title(
 				sprintf(
 					'<%1$s class="entry-title"><a href="%2$s" rel="bookmark">',
-					$heading, esc_url( get_permalink() )
-				), sprintf( '</a></%s>', $heading )
+					$heading,
+					esc_url( get_permalink() )
+				),
+				sprintf( '</a></%s>', $heading )
 			);
 		} else {
 			the_title(
 				sprintf(
 					'<%1$s class="entry-title">',
-					$heading, esc_url( get_permalink() )
-				), sprintf( '</%s>', $heading )
+					$heading,
+					esc_url( get_permalink() )
+				),
+				sprintf( '</%s>', $heading )
 			);
 		}
 	}
