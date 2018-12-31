@@ -34,9 +34,10 @@ if ( post_password_required() ) {
 							'%1$s Comments on “%2$s”',
 							$schlicht_comment_number,
 							'schlicht'
-						), number_format_i18n( $schlicht_comment_number ),
-						get_the_title()
-					)
+						)
+					),
+					number_format_i18n( $schlicht_comment_number ),
+					get_the_title()
 				)
 				?>
 			</h2>
@@ -71,8 +72,9 @@ if ( post_password_required() ) {
 							'%1$s Trackbacks on “%2$s”',
 							$schlicht_trackback_number,
 							'schlicht'
-						), number_format_i18n( $schlicht_trackback_number ), get_the_title()
-					)
+						)
+					),
+					number_format_i18n( $schlicht_trackback_number ), get_the_title()
 				)
 				?>
 			</h2>
