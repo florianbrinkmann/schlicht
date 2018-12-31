@@ -2,7 +2,7 @@
 /**
  * Template for displaying the sidebar
  *
- * @version 1.3.2
+ * @version 1.4.0
  *
  * @package Schlicht
  */
@@ -13,7 +13,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
 		<h2 class="screen-reader-text">
 			<?php
 			/* translators: screen reader text for the sidebar */
-			_e( 'Sidebar', 'schlicht' )
+			esc_html_e( 'Sidebar', 'schlicht' )
 			?>
 			</h2>
 		<?php

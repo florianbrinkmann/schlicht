@@ -2,7 +2,7 @@
 /**
  * Template for displaying single post content
  *
- * @version 1.3.2
+ * @version 1.4.0
  *
  * @package Schlicht
  */
@@ -18,7 +18,7 @@
 			<p class="author">
 			<?php
 				/* translators: s=author name */
-				printf( __( 'by %s', 'schlicht' ), '<span class="author-name">' . get_the_author() . '</span>' )
+				printf( esc_html__( 'by %s', 'schlicht' ), '<span class="author-name">' . get_the_author() . '</span>' )
 			?>
 				</p>
 			<p class="date"><?php echo get_the_date(); ?></p>

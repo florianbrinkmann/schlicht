@@ -2,7 +2,7 @@
 /**
  * Handling automatic theme updates
  *
- * @version 1.3.2
+ * @version 1.4.0
  *
  * @package Schlicht
  */
@@ -80,7 +80,7 @@ function schlicht_theme_update( $transient ) {
 
 	// Check if request is not valid and return the $transient.
 	// Otherwise get the data body.
-	if ( is_wp_error( $request ) || wp_remote_retrieve_response_code( $request ) != 200 ) {
+	if ( is_wp_error( $request ) || wp_remote_retrieve_response_code( $request ) !== 200 ) {
 		return $transient;
 	} else {
 		$response = wp_remote_retrieve_body( $request );

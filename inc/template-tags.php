@@ -2,7 +2,7 @@
 /**
  * Functions which are called from template files.
  *
- * @version 1.3.2
+ * @version 1.4.0
  *
  * @package Schlicht
  */
@@ -102,20 +102,20 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 			<p class="entry-footer-block categories"><span class="entry-footer-block-label">
 				<?php
 				// Display label in singular or plural.
-				printf(
+				echo esc_html(
 					_n( /* translators: Label for category list in entry footer. s=categories */
 						'Category',
 						'Categories',
 						count( get_the_category() ),
 						'schlicht'
 					)
-				)
+				);
 				?>
 				<span class="screen-reader-text">:</span></span>
 				<?php
 				// Display the category list.
 				/* translators: term delimiter */
-				echo get_the_category_list( __( ', ', 'schlicht' ) );
+				echo esc_html( get_the_category_list( __( ', ', 'schlicht' ) ) );
 				?>
 			</p>
 			<?php
@@ -127,20 +127,20 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 			<p class="entry-footer-block tags"><span class="entry-footer-block-label">
 				<?php
 				// Display label in singular or plural.
-				printf(
+				echo esc_html(
 					_n( /* translators: Label for tags list in entry footer. */
 						'Tag',
 						'Tags',
 						count( get_the_tags() ),
 						'schlicht'
 					)
-				)
+				);
 				?>
 				<span class="screen-reader-text">:</span></span>
 				<?php
 				// Display the tag list.
 				/* translators: term delimiter */
-				echo get_the_tag_list( '', __( ', ', 'schlicht' ) );
+				echo esc_html( get_the_tag_list( '', __( ', ', 'schlicht' ) ) );
 				?>
 			</p>
 			<?php
@@ -157,14 +157,14 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 			<p class="entry-footer-block comments"><span class="entry-footer-block-label">
 				<?php
 				/* translators: Label for comment number in entry footer. */
-				_e( 'Comments', 'schlicht' );
+				esc_html_e( 'Comments', 'schlicht' );
 				?>
 				<span class="screen-reader-text">:</span></span>
 				<a href="<?php the_permalink(); ?>#comments-title">
 					<?php
 					// Display the comments number in the correct internationalized format for the site’s locale.
 					/* translators: term delimiter */
-					echo number_format_i18n( $comment_number );
+					echo esc_html( number_format_i18n( $comment_number ) );
 					?>
 				</a>
 			</p>
@@ -179,14 +179,14 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 			<p class="entry-footer-block trackbacks"><span class="entry-footer-block-label">
 				<?php
 				/* translators: Label for trackback number in entry footer. */
-				_e( 'Trackbacks', 'schlicht' );
+				esc_html_e( 'Trackbacks', 'schlicht' );
 				?>
 				<span class="screen-reader-text">:</span></span>
 				<a href="<?php the_permalink(); ?>#trackbacks-title">
 					<?php
 					// Display the pings number in the correct internationalized format for the site’s locale.
 					/* translators: term delimiter */
-					echo number_format_i18n( $trackback_number );
+					echo esc_html( number_format_i18n( $trackback_number ) );
 					?>
 				</a>
 			</p>
@@ -240,10 +240,10 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 				// Display the comment date, linked to the comment’s permalink.
 				printf(
 					'<p class="comment-date"><a href="%1$s"><time datetime="%2$s">%3$s</time></a></p>',
-					get_comment_link( $comment->comment_ID ),
-					get_comment_time( 'c' ),
+					esc_url( get_comment_link( $comment->comment_ID ) ),
+					esc_attr( get_comment_time( 'c' ) ),
 					/* translators: 1=date 2=time */
-					sprintf( __( '%1$s @ %2$s', 'schlicht' ), get_comment_date(), get_comment_time() )
+					sprintf( esc_html( __( '%1$s @ %2$s', 'schlicht' ) ), esc_html( get_comment_date() ), esc_html( get_comment_time() ) )
 				);
 				?>
 			</div>
@@ -253,7 +253,7 @@ if ( ! function_exists( 'schlicht_comments' ) ) {
 			if ( '0' === $comment->comment_approved ) {
 				?>
 				<p class="comment-awaiting-moderation">
-					<?php _e( 'Your comment is awaiting moderation.', 'schlicht' ); ?>
+					<?php esc_html_e( 'Your comment is awaiting moderation.', 'schlicht' ); ?>
 				</p>
 			<?php } ?>
 

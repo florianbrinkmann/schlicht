@@ -1,3 +1,9 @@
+/**
+ * Functions for the TinyMCE backend editor.
+ *
+ * @package Schlicht
+ */
+
 // Listen to setup of a TinyMCE instance.
 jQuery( document ).on(
 	'tinymce-editor-setup',
@@ -35,9 +41,8 @@ jQuery( document ).on(
 		);
 
 		// Wait until the editor is initialized before registering style.
-		//
-		// Original hint from http://archive.tinymce.com/forum/viewtopic.php?pid=92762#p92762
-		// onInit is deprecated, so https://www.tinymce.com/docs/advanced/migration-guide-from-3.x/#eventhandling
+		// @link http://archive.tinymce.com/forum/viewtopic.php?pid=92762#p92762.
+		// @link https://www.tinymce.com/docs/advanced/migration-guide-from-3.x/#eventhandling.
 		editor.on(
 			'init',
 			function () {
@@ -98,7 +103,7 @@ function schlicht_toggle_dropcap_markup(state, currentNodeObj) {
 
 	// Check if we have a paragraph node.
 	if ('P' === currentNodeObj.node.nodeName) {
-		// Parse the innerHTML
+		// Parse the innerHTML.
 		paragraphInnerHTML = currentNodeObj.node.innerHTML;
 		paragraphNode      = currentNodeObj.node;
 	} else {
@@ -112,7 +117,7 @@ function schlicht_toggle_dropcap_markup(state, currentNodeObj) {
 			function (index, value) {
 				// Check if it is a paragraph element.
 				if ('P' === parentNodes[index].nodeName) {
-					// Parse the innerHTML
+					// Parse the innerHTML.
 					paragraphInnerHTML = parentNodes[index].innerHTML;
 					paragraphNode      = parentNodes[index];
 				}
@@ -120,7 +125,7 @@ function schlicht_toggle_dropcap_markup(state, currentNodeObj) {
 		);
 	}
 
-	// Check if we have parsedInnerHTML
+	// Check if we have parsedInnerHTML.
 	if ('' === paragraphInnerHTML) {
 		return;
 	}
@@ -137,7 +142,7 @@ function schlicht_toggle_dropcap_markup(state, currentNodeObj) {
 			var firstWord       = matches[1];
 
 			// Explode first word.
-			// @link https://stackoverflow.com/a/24467067
+			// @link https://stackoverflow.com/a/24467067.
 			var firstWordArray = firstWord.split( '' );
 			firstWordArray[0]  = '<span class="dropcap">' + firstWordArray[0] + '</span>';
 			var firstWord      = firstWordArray.join( '' );

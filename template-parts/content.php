@@ -2,7 +2,7 @@
 /**
  * Template part for posts
  *
- * @version 1.3.2
+ * @version 1.4.0
  *
  * @package Schlicht
  */
@@ -15,7 +15,7 @@
 		if ( is_sticky() ) {
 			/* translators: String displayed above headline of sticky post(s) */
 			?>
-			<span class="featured"><?php _e( 'Featured', 'schlicht' ); ?></span>
+			<span class="featured"><?php esc_html_e( 'Featured', 'schlicht' ); ?></span>
 			<?php
 		}
 
@@ -26,7 +26,7 @@
 			<p class="author">
 			<?php
 				/* translators: s=author name */
-				printf( __( 'by %s', 'schlicht' ), '<span class="author-name">' . get_the_author() . '</span>' )
+				printf( esc_html__( 'by %s', 'schlicht' ), '<span class="author-name">' . get_the_author() . '</span>' )
 			?>
 				</p>
 			<p class="date"><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a></p>
@@ -34,14 +34,11 @@
 	</header>
 	<div class="entry-content">
 		<?php
-		// Get the post thumbnail in large size.
-		$post_thumbnail = get_the_post_thumbnail( $post->ID, 'large' );
-
 		// Check if we have a post thumbnail.
-		if ( '' !== $post_thumbnail ) {
+		if ( has_post_thumbnail() ) {
 			?>
 			<a href="<?php the_permalink(); ?>">
-				<?php echo $post_thumbnail; ?>
+				<?php the_post_thumbnail( 'large' ); ?>
 			</a>
 			<?php
 		}

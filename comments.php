@@ -36,8 +36,8 @@ if ( post_password_required() ) {
 							'schlicht'
 						)
 					),
-					number_format_i18n( $schlicht_comment_number ),
-					get_the_title()
+					esc_html( number_format_i18n( $schlicht_comment_number ) ),
+					esc_html( get_the_title() )
 				)
 				?>
 			</h2>
@@ -74,8 +74,8 @@ if ( post_password_required() ) {
 							'schlicht'
 						)
 					),
-					number_format_i18n( $schlicht_trackback_number ),
-					get_the_title()
+					esc_html( number_format_i18n( $schlicht_trackback_number ) ),
+					esc_html( get_the_title() )
 				)
 				?>
 			</h2>

@@ -2,7 +2,7 @@
 /**
  * Template file for search result page
  *
- * @version 1.3.2
+ * @version 1.4.0
  *
  * @package Schlicht
  */
@@ -20,8 +20,8 @@ get_header(); ?>
 						<?php
 						// Display headline with search string.
 						printf( /* translators: s=search query. */
-							__( 'Search Results for: %s', 'schlicht' ),
-							esc_html( get_search_query() )
+							esc_html__( 'Search Results for: %s', 'schlicht' ),
+							get_search_query()
 						);
 						?>
 					</h1>
@@ -42,8 +42,8 @@ get_header(); ?>
 						<?php
 						// Display headline with search string.
 						printf( /* translators: s=search query. */
-							__( 'Nothing found for: %s', 'schlicht' ),
-							esc_html( get_search_query() )
+							esc_html__( 'Nothing found for: %s', 'schlicht' ),
+							get_search_query()
 						);
 						?>
 					</h1>

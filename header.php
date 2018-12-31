@@ -95,12 +95,12 @@
 	}
 
 	// Get the site description.
-	$description = get_bloginfo( 'description', 'display' );
+	$schlicht_description = get_bloginfo( 'description', 'display' );
 
 	// Check if we have a description.
-	if ( $description ) {
+	if ( $schlicht_description ) {
 		?>
-		<p class="site-description"><?php echo $description; ?></p>
+		<p class="site-description"><?php echo esc_html( $schlicht_description ); ?></p>
 		<?php
 	}
 
@@ -111,7 +111,7 @@
 			<h2 class="screen-reader-text">
 				<?php
 				/* translators: hidden screen reader headline for the main navigation */
-				_e( 'Main navigation', 'schlicht' );
+				esc_html_e( 'Main navigation', 'schlicht' );
 				?>
 			</h2>
 			<?php

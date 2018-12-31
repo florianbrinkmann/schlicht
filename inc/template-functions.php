@@ -3,7 +3,7 @@
  * Functions that are not called from the template files
  * and cannot be grouped together into another file.
  *
- * @version 1.3.2
+ * @version 1.4.0
  *
  * @package Schlicht
  */
@@ -48,15 +48,12 @@ if ( ! function_exists( 'schlicht_is_wp_comments_post' ) ) {
  * Set the content width.
  */
 function schlicht_set_content_width() {
-	// Set the content width to 791.
-	$content_width = 791;
-
 	/**
 	 * Make the content width filterable.
 	 *
 	 * @param int $content_width Content width in pixels.
 	 */
-	$GLOBALS['content_width'] = apply_filters( 'schlicht_content_width', $content_width );
+	$GLOBALS['content_width'] = apply_filters( 'schlicht_content_width', 791 ); //phpcs:ignore
 }
 
 if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
@@ -205,16 +202,16 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 		if ( false === $vollkorn_font ) {
 			// Include default style.
 			if ( is_rtl() ) {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-rtl.css' ), [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-rtl.css' ), [], filemtime( get_theme_file_path( '/css/schlicht-rtl.css' ) ) );
 			} else {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht.css' ), [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht.css' ), [], filemtime( get_theme_file_path( '/css/schlicht.css' ) ) );
 			}
 		} else {
 			// Include Vollkorn style.
 			if ( is_rtl() ) {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-vollkorn-rtl.css' ), [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-vollkorn-rtl.css' ), [], filemtime( get_theme_file_path( '/css/schlicht-vollkorn-rtl.css' ) ) );
 			} else {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-vollkorn.css' ), [], null );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-vollkorn.css' ), [], filemtime( get_theme_file_path( '/css/schlicht-vollkorn.css' ) ) );
 			}
 		}
 	}
@@ -230,7 +227,7 @@ if ( ! function_exists( 'schlicht_admin_script' ) ) {
 		// Check for post or page edit page.
 		if ( 'post.php' === $hook_suffix ) {
 			// Include the editor functions js.
-			wp_enqueue_script( 'schlicht_editor-functions', get_theme_file_uri( 'js/backend-editor-functions.js' ), [], false, true );
+			wp_enqueue_script( 'schlicht_editor-functions', get_theme_file_uri( 'js/backend-editor-functions.js' ), [], filemtime( get_theme_file_path( 'js/backend-editor-functions.js' ) ), true );
 		}
 	}
 }
