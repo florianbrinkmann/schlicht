@@ -109,6 +109,22 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 		add_theme_support( 'disable-custom-colors' );
 
 		add_theme_support( 'editor-styles' );
+
+		add_theme_support(
+			'editor-color-palette',
+			[
+				[
+					'name'  => __( 'Dark grey', 'schlicht' ),
+					'slug'  => 'dark-grey',
+					'color' => '#333',
+				],
+				[
+					'name'  => __( 'White', 'schlicht' ),
+					'slug'  => 'white',
+					'color' => '#fff',
+				],
+			]
+		);
 	}
 }
 
