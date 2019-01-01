@@ -10,6 +10,7 @@ const autoprefixer = require( 'gulp-autoprefixer' );
 const sourcemaps   = require( 'gulp-sourcemaps' );
 const rename       = require( 'gulp-rename' );
 const flipper      = require( 'gulp-css-flipper' );
+const prettier     = require('gulp-prettier');
 
 function sassTask() {
 	return (
@@ -18,6 +19,7 @@ function sassTask() {
 			.pipe( sourcemaps.init() )
 			.pipe( sass( {indentWidth: 1, outputStyle: 'expanded', indentType: 'tab'} ).on( 'error', sass.logError ) )
 			.pipe( autoprefixer() )
+			.pipe( prettier( { tabWidth: 4, useTabs: true,  } ) )
 			.pipe( sourcemaps.write( '.' ) )
 			.pipe( gulp.dest( 'css' ) )
 	);
@@ -43,6 +45,7 @@ function sassProduction() {
 			.src( 'css/scss/*.scss' )
 			.pipe( sass( {indentWidth: 1, outputStyle: 'expanded', indentType: 'tab'} ).on( 'error', sass.logError ) )
 			.pipe( autoprefixer() )
+			.pipe( prettier( { tabWidth: 4, useTabs: true,  } ) )
 			.pipe( gulp.dest( 'css' ) )
 	);
 }

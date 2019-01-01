@@ -8,3 +8,4 @@
 - deploy_rsa.enc
 - .*
 - vendor
+- css/scss/
