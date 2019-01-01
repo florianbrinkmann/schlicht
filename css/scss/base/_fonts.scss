@@ -12,4 +12,20 @@
 		font-weight: 400;
 		src: local('OFL Sorts Mill Goudy Italic'), url('../fonts/sortsmillgoudy-400i.woff') format('woff')
 	}
+} @else {
+	@font-face {
+		font-family: 'Vollkorn';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Vollkorn'), url('../fonts/vollkorn-regular.woff2') format('woff2'),
+		url('../fonts/vollkorn-regular.woff') format('woff');
+	}
+
+	@font-face {
+		font-family: 'Vollkorn';
+		font-style: italic;
+		font-weight: 400;
+		src: local('Vollkorn Italic'), url('../fonts/vollkorn-italic.woff2') format('woff2'),
+		url('../fonts/vollkorn-italic.woff') format('woff');
+	}
 }

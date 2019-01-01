@@ -4,7 +4,11 @@
 #tinymce {
 	background-color: transparent;
 	color: $color-text;
-	font-family: "Sorts Mill Goudy", serif; /* 1 */
+	@if $font == 'goudy' {
+		font-family: "Sorts Mill Goudy", serif;
+	} @else {
+		font-family: 'Vollkorn', serif;
+	}
 	-webkit-font-feature-settings: "onum";
 	font-feature-settings: "onum";
 	font-size: inherit;
@@ -38,10 +42,18 @@
 .wp-block {
 	background: #f9f9f9;
 	color: $color-text;
-	font-family: "Sorts Mill Goudy", serif; /* 1 */
+	@if $font == 'goudy' {
+		font-family: "Sorts Mill Goudy", serif;
+	} @else {
+		font-family: 'Vollkorn', serif;
+	}
 	-webkit-font-feature-settings: "onum";
 	font-feature-settings: "onum";
-	font-size: 1rem;
+	@if $font == 'goudy' {
+		font-size: 1rem;
+	} @else {
+		font-size: 1.02rem;
+	}
 	line-height: $line-height;
 	max-width: 37em;
 	-ms-text-size-adjust: 100%; /* 2 */
