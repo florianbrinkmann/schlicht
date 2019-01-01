@@ -115,7 +115,7 @@ if ( ! function_exists( 'schlicht_the_post_meta' ) ) {
 				<?php
 				// Display the category list.
 				/* translators: term delimiter */
-				echo get_the_category_list( __( ', ', 'schlicht' ) );
+				echo get_the_category_list( __( ', ', 'schlicht' ) ); //phpcs:ignore
 				?>
 			</p>
 			<?php
