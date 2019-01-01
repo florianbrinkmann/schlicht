@@ -1411,12 +1411,29 @@ th {
 	margin-top: .2em;
 }
 
+.wp-block-latest-comments time {
+	font-style: italic;
+}
+
 .wp-block-latest-comments time::before {
 	content: ' · ';
 }
 
 .wp-block-latest-comments__comment-excerpt p {
 	margin-top: 0.375em;
+}
+
+.wp-block-latest-comments__comment {
+	font-size: inherit;
+	line-height: inherit;
+	margin-bottom: 0;
+}
+
+.wp-block-latest-comments__comment-date {
+	color: inherit;
+	display: inline;
+	font-size: inherit;
+	line-height: inherit;
 }
 
 /*# sourceMappingURL=editor-style-vollkorn.css.map */

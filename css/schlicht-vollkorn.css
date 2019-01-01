@@ -1595,6 +1595,10 @@ textarea:active {
 	margin-top: .2em;
 }
 
+.wp-block-latest-comments time {
+	font-style: italic;
+}
+
 .wp-block-latest-comments time::before {
 	content: ' · ';
 }

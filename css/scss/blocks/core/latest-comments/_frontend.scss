@@ -14,8 +14,12 @@
 		margin-top: .2em;
 	}
 
-	time::before {
-		content: ' · ';
+	time {
+		font-style: italic;
+
+		&::before {
+			content: ' · ';
+		}
 	}
 }
 

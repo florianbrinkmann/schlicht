@@ -1,1 +1,13 @@
 @import 'frontend';
+.wp-block-latest-comments__comment {
+	font-size: inherit;
+	line-height: inherit;
+	margin-bottom: 0;
+}
+
+.wp-block-latest-comments__comment-date {
+	color: inherit;
+	display: inline;
+	font-size: inherit;
+	line-height: inherit;
+}
