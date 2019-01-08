@@ -26,7 +26,6 @@
     "gulp-autoprefixer": "~3.1.1",
     "gulp-clean-css": "^3.0.4",
     "gulp-css-flipper": "^1.0.2",
-    "gulp-csso": "^3.0.1",
     "gulp-jshint": "~2.0.4",
     "gulp-prettier": "^2.0.0",
     "gulp-rename": "^1.2.2",
