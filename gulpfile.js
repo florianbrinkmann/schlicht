@@ -11,7 +11,7 @@ const sourcemaps   = require( 'gulp-sourcemaps' );
 const rename       = require( 'gulp-rename' );
 const flipper      = require( 'gulp-css-flipper' );
 const prettier     = require( 'gulp-prettier' );
-const cleanCSS     = require( 'gulp-clean-css' );
+const csso         = require( 'gulp-csso' );
 
 function sassTask() {
 	return (
@@ -55,7 +55,7 @@ function minifyCSS() {
 	return (
 		gulp
 			.src( ['css/*.css', '!css/*.min.css', '!css/editor-*.css'] )
-			.pipe( cleanCSS( {compatibility: 'ie11'} ) )
+			.pipe( csso() )
 			.pipe(
 				rename(
 					{suffix: ".min"}
