@@ -28,6 +28,10 @@
 		width: 50%;
 	}
 
+	.wp-block-cover-text {
+		color: $color-white;
+	}
+
 	&.has-background-dim {
 		&::before {
 			background-color: $color-text;
