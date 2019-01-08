@@ -47,7 +47,7 @@ Source: http://vollkorn-typeface.com/
 
 ## Changelog
 
-### 1.4.0 - 01.01.2019
+### 1.4.0 - 08.01.2019
 #### Added
 * Gutenberg compatibility.
 
