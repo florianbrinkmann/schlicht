@@ -11,7 +11,6 @@ const sourcemaps   = require( 'gulp-sourcemaps' );
 const rename       = require( 'gulp-rename' );
 const flipper      = require( 'gulp-css-flipper' );
 const prettier     = require( 'gulp-prettier' );
-const csso         = require( 'gulp-csso' );
 
 function sassTask() {
 	return (
