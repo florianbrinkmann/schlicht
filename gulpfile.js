@@ -29,7 +29,7 @@ function sassTask() {
 function rtlTask() {
 	return (
 		gulp
-			.src( ['css/*.css', '!css/*-rtl.css'] )
+			.src( ['css/*.css', '!css/*-rtl.css', '!css/*.min.css'] )
 			.pipe( flipper() )
 			.pipe(
 				rename(
@@ -54,8 +54,13 @@ function sassProduction() {
 function minifyCSS() {
 	return (
 		gulp
-			.src( ['css/*.css', '!css/*.min.css'] )
+			.src( ['css/*.css', '!css/*.min.css', '!css/editor-*.css'] )
 			.pipe( cleanCSS( {compatibility: 'ie11'} ) )
+			.pipe(
+				rename(
+					{suffix: ".min"}
+				)
+			)
 			.pipe( gulp.dest( 'css' ) )
 	);
 }
@@ -65,7 +70,8 @@ function watchTask() {
 		'css/**/*.scss',
 		gulp.series(
 			sassTask,
-			rtlTask
+			rtlTask,
+			minifyCSS
 		)
 	)
 }
@@ -75,6 +81,7 @@ gulp.task(
 	gulp.series(
 		sassTask,
 		rtlTask,
+		minifyCSS,
 		watchTask
 	)
 );
@@ -83,6 +90,7 @@ gulp.task(
 	'production',
 	gulp.series(
 		sassProduction,
-		rtlTask
+		rtlTask,
+		minifyCSS
 	)
 );

@@ -213,21 +213,28 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 
 		// Get value of Vollkorn customizer option.
 		$vollkorn_font = get_theme_mod( 'schlicht_vollkorn_font', false );
+		
+		// Check if SCRIPT_DEBUG is defined and enabled.
+		if ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {
+			$suffix = '.css';
+		} else {
+			$suffix = '.min.css';
+		}
 
 		// Check if Vollkorn option is disabled.
 		if ( false === $vollkorn_font ) {
 			// Include default style.
 			if ( is_rtl() ) {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-rtl.css' ), [], filemtime( get_theme_file_path( '/css/schlicht-rtl.css' ) ) );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( "/css/schlicht-rtl$suffix" ), [], filemtime( get_theme_file_path( "/css/schlicht-rtl$suffix" ) ) );
 			} else {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht.css' ), [], filemtime( get_theme_file_path( '/css/schlicht.css' ) ) );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( "/css/schlicht$suffix" ), [], filemtime( get_theme_file_path( "/css/schlicht$suffix" ) ) );
 			}
 		} else {
 			// Include Vollkorn style.
 			if ( is_rtl() ) {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-vollkorn-rtl.css' ), [], filemtime( get_theme_file_path( '/css/schlicht-vollkorn-rtl.css' ) ) );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( "/css/schlicht-vollkorn-rtl$suffix" ), [], filemtime( get_theme_file_path( "/css/schlicht-vollkorn-rtl$suffix" ) ) );
 			} else {
-				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( '/css/schlicht-vollkorn.css' ), [], filemtime( get_theme_file_path( '/css/schlicht-vollkorn.css' ) ) );
+				wp_enqueue_style( 'schlicht-style', get_theme_file_uri( "/css/schlicht-vollkorn$suffix" ), [], filemtime( get_theme_file_path( "/css/schlicht-vollkorn$suffix" ) ) );
 			}
 		}
 	}
