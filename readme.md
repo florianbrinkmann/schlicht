@@ -49,7 +49,7 @@ Source: http://vollkorn-typeface.com/
 
 ### 1.4.0 - 08.01.2019
 #### Added
-* Gutenberg compatibility.
+* Compatibility with the new block editor.
 
 #### Fixed
 * Coding standard issues.
