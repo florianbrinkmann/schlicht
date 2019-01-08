@@ -3,7 +3,7 @@
 **Contributors:** Florian Brinkmann  
 **Requires at least:** WordPress 4.7  
 **Tested up to:** WordPress 5.0.2  
-**Version:** 1.4.0  
+**Version:** 1.4.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -46,6 +46,11 @@ Licence: SIL Open Font License
 Source: http://vollkorn-typeface.com/  
 
 ## Changelog
+
+### 1.4.1 - 08.01.2019
+
+#### Fixed
+* Removed list style before primary menu items.
 
 ### 1.4.0 - 08.01.2019
 #### Added

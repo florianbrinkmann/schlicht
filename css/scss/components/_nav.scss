@@ -6,6 +6,10 @@
 .primary-nav li {
 	margin: 0 .4rem .4rem;
 
+	&::before {
+		display: none;
+	}
+
 	@media screen and (min-width: 45em) {
 		display: block;
 		float: left;
