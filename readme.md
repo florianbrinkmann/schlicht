@@ -52,7 +52,7 @@ Source: http://vollkorn-typeface.com/
 * Compatibility with the new block editor.
 
 #### Fixed
-* Coding standard issues.
+* Issues with coding standards.
 
 ### 1.3.5 - 04.09.2018
 #### Fixed
