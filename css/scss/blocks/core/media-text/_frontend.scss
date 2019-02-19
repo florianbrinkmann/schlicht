@@ -1,0 +1,27 @@
+.wp-block-media-text {
+	@media screen and (min-width: 40em) {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: #{$space}em;
+		margin-top: #{$space}em;
+
+		&.has-media-on-the-right {
+			flex-direction: row-reverse;
+		}
+
+		.wp-block-media-text {
+			&__media,
+			&__content {
+				width: calc(50% - #{$space / 2}rem);
+			}
+
+			&__media {
+				margin-top: 0;
+			}
+
+			&__content > :first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
