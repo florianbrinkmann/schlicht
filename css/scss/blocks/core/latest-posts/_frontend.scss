@@ -59,4 +59,10 @@
 		line-height: calc( #{$line-height * .8} );
 		margin-top: #{$line-height / 6}em;
 	}
+
+	&.aligncenter:not(.is-grid) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }

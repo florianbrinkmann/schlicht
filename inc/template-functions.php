@@ -125,6 +125,14 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 				],
 			]
 		);
+
+		add_theme_support( 'editor-font-sizes', [
+			[
+				'name' => __( 'Normal', 'schlicht' ),
+				'size' => 16,
+				'slug' => 'normal'
+			],
+		] );
 	}
 }
 
