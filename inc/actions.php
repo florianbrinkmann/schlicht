@@ -16,6 +16,9 @@ add_action( 'after_setup_theme', 'schlicht_add_theme_support' );
 // Add editor stylesheet.
 add_action( 'admin_init', 'schlicht_add_editor_style' );
 
+// Add Gutenberg script.
+add_action( 'enqueue_block_editor_assets', 'schlicht_enqueue_block_editor_assets' );
+
 // Set the content width.
 add_action( 'after_setup_theme', 'schlicht_set_content_width' );
 
