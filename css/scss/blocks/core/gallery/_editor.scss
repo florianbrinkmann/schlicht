@@ -1,1 +1,5 @@
 @import 'frontend';
+.wp-block-file .wp-block-file__button {
+	border-radius: 0;
+	font-size: inherit;
+}
