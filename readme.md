@@ -2,8 +2,8 @@
 
 **Contributors:** Florian Brinkmann  
 **Requires at least:** WordPress 4.7  
-**Tested up to:** WordPress 5.0.2  
-**Version:** 1.4.1  
+**Tested up to:** WordPress 5.1  
+**Version:** 1.4.2  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -46,6 +46,16 @@ Licence: SIL Open Font License
 Source: http://vollkorn-typeface.com/  
 
 ## Changelog
+
+### 1.4.2 - 20.02.2019
+
+#### Changed
+* Use flexbox again for styling of columns and galleries.
+* Removed solid style from pullquote block.
+
+#### Fixed
+* Added missing styles for media text and file block.
+* Styling of button without selected style.
 
 ### 1.4.1 - 08.01.2019
 
