@@ -226,9 +226,7 @@ if ( ! function_exists( 'schlicht_scripts_styles' ) ) {
 		// - comments are open.
 		// - Threaded comments are enabled.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			/**
-			 * Enqueue comment-reply script.
-			 */
+			// Enqueue comment-reply script.
 			wp_enqueue_script( 'comment-reply' );
 		}
 
