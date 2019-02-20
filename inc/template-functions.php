@@ -162,12 +162,11 @@ if ( ! function_exists( 'schlicht_enqueue_block_editor_assets' ) ) {
 	 * Add JS to block editor.
 	 */
 	function schlicht_enqueue_block_editor_assets() {
+		// phpcs:ignore
 		wp_enqueue_script(
 			'schlicht-gutenberg-block-editor-script',
 			get_theme_file_uri( '/js/block-editor-script.js' ),
-			[ 'wp-blocks', 'wp-element', 'wp-edit-post', 'lodash' ],
-			filemtime( get_theme_file_uri( '/js/block-editor-script.js' ) ),
-			false
+			[ 'wp-blocks', 'wp-element', 'wp-edit-post', 'lodash' ]
 		);
 	}
 }
