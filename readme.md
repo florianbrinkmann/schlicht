@@ -48,6 +48,11 @@ Source: http://vollkorn-typeface.com/
 
 ## Changelog
 
+### 2.0.2 - 20.02.2019
+
+#### Fixed
+* Wrong call of function for adding a version string to the block editor backend script.
+
 ### 2.0.1 - 20.02.2019
 
 #### Fixed
