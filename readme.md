@@ -52,7 +52,10 @@ Source: http://vollkorn-typeface.com/
 
 #### Changed
 * Use flexbox again for styling of columns and galleries.
-* Removed solid style from pullquote block.
+* Only allow normal font size for paragraph blocks (the other options had no styling anyway).
+
+#### Removed
+* Solid style from pullquote block (was not styled anyway).
 
 #### Fixed
 * Added missing styles for media text and file block.
