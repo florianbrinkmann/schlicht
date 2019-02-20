@@ -4,7 +4,7 @@
 **Requires at least:** WordPress 4.7  
 **Tested up to:** WordPress 5.1  
 **Requires PHP:** 5.4  
-**Version:** 1.4.2  
+**Version:** 2.0.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -48,14 +48,14 @@ Source: http://vollkorn-typeface.com/
 
 ## Changelog
 
-### 1.4.2 - 20.02.2019
+### 2.0.0 - 20.02.2019
 
 #### Changed
 * Use flexbox again for styling of columns and galleries.
-* Only allow normal font size for paragraph blocks (the other options had no styling anyway).
+* Only allow normal font size for paragraph blocks.
 
 #### Removed
-* Solid style from pullquote block (was not styled anyway).
+* Solid style from pullquote block.
 
 #### Fixed
 * Added missing styles for media text and file block.
