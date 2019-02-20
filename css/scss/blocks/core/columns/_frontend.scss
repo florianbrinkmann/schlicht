@@ -1,43 +1,48 @@
+$grid-size-large: 1.5;
+// Styles from the Gutenberg repo.
 .wp-block-columns {
-	&.has-2-columns,
-	&.has-3-columns,
-	&.has-4-columns,
-	&.has-5-columns,
-	&.has-6-columns {
-		@media screen and (min-width: 35em) {
-			display: grid;
-			grid-gap: #{$line-height}rem;
-			grid-template-columns: repeat(2, 1fr);
+	display: flex;
+
+	// Responsiveness: Allow wrapping on mobile.
+	flex-wrap: wrap;
+
+	@media screen and (min-width: 45em) {
+		flex-wrap: nowrap;
+	}
+}
+
+.wp-block-column {
+	flex-grow: 1;
+	margin-bottom: 1em;
+
+	// Responsiveness: Show at most one columns on mobile.
+	flex-basis: 100%;
+
+	// Prevent the columns from growing wider than their distributed sizes.
+	min-width: 0;
+
+	// Prevent long unbroken words from overflowing.
+	word-break: break-word; // For back-compat.
+	overflow-wrap: break-word; // New standard.
+
+	@media screen and (min-width: 30em) {
+
+		// Beyond mobile, allow 2 columns.
+		flex-basis: calc(50% - #{$grid-size-large}rem);
+		flex-grow: 0;
+
+		// Add space between the 2 columns. Themes can customize this if they wish to work differently.
+		// Only apply this beyond the mobile breakpoint, as there's only a single column on mobile.
+		&:nth-child(even) {
+			margin-left: #{$grid-size-large}rem;
 		}
 	}
 
-	&.has-3-columns,
-	&.has-4-columns,
-	&.has-5-columns,
-	&.has-6-columns {
-		@media screen and (min-width: 42em) {
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
+	@media screen and (min-width: 45em) {
 
-	&.has-4-columns,
-	&.has-5-columns,
-	&.has-6-columns {
-		@media screen and (min-width: 49em) {
-			grid-template-columns: repeat(4, 1fr);
-		}
-	}
-
-	&.has-5-columns,
-	&.has-6-columns {
-		@media screen and (min-width: 70em) {
-			grid-template-columns: repeat(5, 1fr);
-		}
-	}
-
-	&.has-6-columns {
-		@media screen and (min-width: 78em) {
-			grid-template-columns: repeat(6, 1fr);
+		// When columns are in a single row, add space before all except the first.
+		&:not(:first-child) {
+			margin-left: #{$grid-size-large}rem;
 		}
 	}
 }
