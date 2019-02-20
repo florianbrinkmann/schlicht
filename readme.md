@@ -4,7 +4,7 @@
 **Requires at least:** WordPress 4.7  
 **Tested up to:** WordPress 5.1  
 **Requires PHP:** 5.4  
-**Version:** 2.0.0  
+**Version:** 2.0.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -47,6 +47,11 @@ Licence: SIL Open Font License
 Source: http://vollkorn-typeface.com/  
 
 ## Changelog
+
+### 2.0.1 - 20.02.2019
+
+#### Fixed
+* Added missing German translation for three strings in the block editor interface.
 
 ### 2.0.0 - 20.02.2019
 
