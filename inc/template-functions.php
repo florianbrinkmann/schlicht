@@ -126,13 +126,16 @@ if ( ! function_exists( 'schlicht_add_theme_support' ) ) {
 			]
 		);
 
-		add_theme_support( 'editor-font-sizes', [
+		add_theme_support(
+			'editor-font-sizes',
 			[
-				'name' => __( 'Normal', 'schlicht' ),
-				'size' => 16,
-				'slug' => 'normal'
-			],
-		] );
+				[
+					'name' => __( 'Normal', 'schlicht' ),
+					'size' => 16,
+					'slug' => 'normal',
+				],
+			]
+		);
 	}
 }
 
@@ -162,7 +165,9 @@ if ( ! function_exists( 'schlicht_enqueue_block_editor_assets' ) ) {
 		wp_enqueue_script(
 			'schlicht-gutenberg-block-editor-script',
 			get_theme_file_uri( '/js/block-editor-script.js' ),
-			[ 'wp-blocks', 'wp-element', 'wp-edit-post', 'lodash' ]
+			[ 'wp-blocks', 'wp-element', 'wp-edit-post', 'lodash' ],
+			filemtime( get_theme_file_uri( '/js/block-editor-script.js' ) ),
+			false
 		);
 	}
 }
