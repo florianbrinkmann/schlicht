@@ -6,6 +6,9 @@
 }
 
 .wp-block-button {
+	margin-bottom: #{$space}em;
+	margin-top: #{$space}em;
+
 	a {
 		border-radius: .5em;
 		background: $color-text;
@@ -27,7 +30,7 @@
 
 	&.alignleft,
 	&.alignright {
-		margin-top: 1.2em;
+		margin-top: .3em;
 	}
 
 	&.is-style-outline,
