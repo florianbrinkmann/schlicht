@@ -1,5 +1,38 @@
 .wp-block-quote {
-	&.is-large p {
+	&.is-style-large p {
 		font-size: 1.296em;
+	}
+
+	&[style*="text-align: center"],
+	&[style*="text-align:center"],
+	&[style*="text-align: right"],
+	&[style*="text-align:right"] {
+		margin-right: .375rem;
+		padding-right: #{$line-height / 2}rem;
+
+		&::after {
+			border: 1px solid #333;
+			border-left: 0;
+			content: '';
+			height: 100%;
+			right: 0;
+			position: absolute;
+			top: -.1rem;
+			width: .2rem;
+		}
+
+		@media screen and (min-width: 30em) {
+			margin-right: #{$line-height / 2}rem;
+		}
+	}
+
+	&[style*="text-align: right"],
+	&[style*="text-align:right"] {
+		margin-left: 0;
+		padding-left: 0;
+
+		&::before {
+			display: none;
+		}
 	}
 }
