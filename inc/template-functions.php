@@ -278,3 +278,14 @@ function schlicht_dequeue_gutenberg_block_styles() {
 	wp_dequeue_style( 'wp-block-library' );
 	wp_deregister_style( 'wp-block-library' );
 }
+
+// phpcs:disable
+if ( ! function_exists( 'wp_body_open' ) ) {
+	/**
+	 * If WP prior to 5.2, shim wp_body_open function.
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
+// phpcs:enable

@@ -26,6 +26,7 @@
 	?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <a class="screen-reader-text skip-link" href="#content"><?php esc_html_e( '[Skip to Content]', 'schlicht' ); ?></a>
 <header class="site-header" role="banner">
 	<?php
