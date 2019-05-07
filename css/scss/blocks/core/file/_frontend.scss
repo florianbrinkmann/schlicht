@@ -1,14 +1,19 @@
-.wp-block-file .wp-block-file__button {
-	background: $color-text;
-	color: $color-white;
-	display: inline-block;
-	margin-left: #{$space / 2}em;
-	padding: #{$line-height / 4}em #{$line-height / 2}em #{$line-height / 5}em;
+.wp-block-file {
+	margin-bottom: #{$space}em;
+	margin-top: #{$space}em;
 
-	&:hover,
-	&:focus,
-	&:active {
-		background: transparent;
-		color: $color-text;
+	.wp-block-file__button {
+		background: $color-text;
+		color: $color-white;
+		display: inline-block;
+		margin-left: #{$space / 2}em;
+		padding: #{$line-height / 4}em #{$line-height / 2}em #{$line-height / 5}em;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: transparent;
+			color: $color-text;
+		}
 	}
 }
