@@ -3,7 +3,7 @@
  * Functions that are not called from the template files
  * and cannot be grouped together into another file.
  *
- * @version 1.4.0
+ * @version 2.1.0
  *
  * @package Schlicht
  */
