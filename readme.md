@@ -2,9 +2,9 @@
 
 **Contributors:** Florian Brinkmann  
 **Requires at least:** WordPress 4.7  
-**Tested up to:** WordPress 5.1  
+**Tested up to:** WordPress 5.2  
 **Requires PHP:** 5.4  
-**Version:** 2.0.1  
+**Version:** 2.1.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -47,6 +47,14 @@ Licence: SIL Open Font License
 Source: http://vollkorn-typeface.com/  
 
 ## Changelog
+
+### 2.1.0 - 07.05.2019
+
+*Tested with WordPress 5.2.*
+
+#### Added
+* Styles for new Gutenberg blocks coming with WP 5.2.
+* Call to new `wp_body_open()` theme hook.
 
 ### 2.0.2 - 20.02.2019
 
