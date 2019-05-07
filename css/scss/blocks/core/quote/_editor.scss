@@ -1,4 +1,8 @@
 @import 'frontend';
 .wp-block-quote {
-	border-left: none !important;
+	border: none !important;
+
+	&.is-style-large {
+		font-style: normal;
+	}
 }
