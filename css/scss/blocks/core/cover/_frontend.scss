@@ -2,6 +2,7 @@
 	align-items: center;
 	background-size: cover;
 	box-sizing: border-box;
+	color: $color-white;
 	display: flex;
 	margin-top: 1.2em;
 	min-height: 15em;
@@ -26,10 +27,6 @@
 		}
 
 		width: 50%;
-	}
-
-	.wp-block-cover-text {
-		color: $color-white;
 	}
 
 	&.has-background-dim {
